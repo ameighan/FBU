@@ -1,0 +1,10 @@
+{
+  "project_id" : "hungry",
+  "conduit_uri" : "https://phab.parse.com/",
+  "history.immutable" : false,
+  "base" : "arc:upstream, git:merge-base(origin\/master), arc:prompt",
+  "arc.feature.start.default" : "origin/master",
+  "load" : [
+    "arcanist/src/"
+  ]
+}
