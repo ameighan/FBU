@@ -20,7 +20,6 @@
 		D2AF54C11970595F00F0A0F2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D2AF54BF1970595F00F0A0F2 /* InfoPlist.strings */; };
 		D2AF54C31970595F00F0A0F2 /* FBUFoodTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D2AF54C21970595F00F0A0F2 /* FBUFoodTests.m */; };
 		D2AF54CD197059B000F0A0F2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2AF54CC197059B000F0A0F2 /* Main.storyboard */; };
-		D2AF54D019705A4800F0A0F2 /* FBULoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2AF54CF19705A4800F0A0F2 /* FBULoginViewController.m */; };
 		D2AF54D319705B4B00F0A0F2 /* FBUProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2AF54D219705B4B00F0A0F2 /* FBUProfileViewController.m */; };
 		D2AF54D619705DF200F0A0F2 /* FBUDashboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2AF54D519705DF200F0A0F2 /* FBUDashboardViewController.m */; };
 		D2AF54D919705E0700F0A0F2 /* FBUSubscriptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2AF54D819705E0700F0A0F2 /* FBUSubscriptionsViewController.m */; };
@@ -69,8 +68,6 @@
 		D2AF54C01970595F00F0A0F2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D2AF54C21970595F00F0A0F2 /* FBUFoodTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FBUFoodTests.m; sourceTree = "<group>"; };
 		D2AF54CC197059B000F0A0F2 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		D2AF54CE19705A4800F0A0F2 /* FBULoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBULoginViewController.h; sourceTree = "<group>"; };
-		D2AF54CF19705A4800F0A0F2 /* FBULoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBULoginViewController.m; sourceTree = "<group>"; };
 		D2AF54D119705B4B00F0A0F2 /* FBUProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBUProfileViewController.h; sourceTree = "<group>"; };
 		D2AF54D219705B4B00F0A0F2 /* FBUProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBUProfileViewController.m; sourceTree = "<group>"; };
 		D2AF54D419705DF200F0A0F2 /* FBUDashboardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBUDashboardViewController.h; sourceTree = "<group>"; };
@@ -199,8 +196,6 @@
 				D2AF54D819705E0700F0A0F2 /* FBUSubscriptionsViewController.m */,
 				D2AF54D119705B4B00F0A0F2 /* FBUProfileViewController.h */,
 				D2AF54D219705B4B00F0A0F2 /* FBUProfileViewController.m */,
-				D2AF54CE19705A4800F0A0F2 /* FBULoginViewController.h */,
-				D2AF54CF19705A4800F0A0F2 /* FBULoginViewController.m */,
 				D2AF54AC1970595F00F0A0F2 /* FBUAppDelegate.h */,
 				D2AF54AD1970595F00F0A0F2 /* FBUAppDelegate.m */,
 				D2AF54AF1970595F00F0A0F2 /* Images.xcassets */,
@@ -338,7 +333,6 @@
 				D2AF54DF197062F100F0A0F2 /* FBUGroupsViewController.m in Sources */,
 				D2AF54D619705DF200F0A0F2 /* FBUDashboardViewController.m in Sources */,
 				D2AF54AE1970595F00F0A0F2 /* FBUAppDelegate.m in Sources */,
-				D2AF54D019705A4800F0A0F2 /* FBULoginViewController.m in Sources */,
 				D2AF54D319705B4B00F0A0F2 /* FBUProfileViewController.m in Sources */,
 				D2AF54DC1970607A00F0A0F2 /* FBURecipesListViewController.m in Sources */,
 				D2AF54E21970661D00F0A0F2 /* FBUEventCreatorViewController.m in Sources */,
@@ -548,6 +542,7 @@
 				D2AF54C81970595F00F0A0F2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D2AF54C91970595F00F0A0F2 /* Build configuration list for PBXNativeTarget "FBUFoodTests" */ = {
 			isa = XCConfigurationList;
@@ -556,6 +551,7 @@
 				D2AF54CB1970595F00F0A0F2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
