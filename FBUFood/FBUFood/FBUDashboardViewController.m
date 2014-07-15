@@ -8,38 +8,55 @@
 
 #import "FBUDashboardViewController.h"
 #import <Parse/Parse.h>
+#import <FacebookSDK/FacebookSDK.h>
 
 @interface FBUDashboardViewController () <PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate>
 
 -(void)showAlertWithTitle:(NSString *)title message:(NSString *)message;
+-(void)makeLoginAppear;
 
 @end
 
 @implementation FBUDashboardViewController
 
+-(void)makeLoginAppear
+{
+    // Create the log in view controller
+    PFLogInViewController *logInViewController = [[PFLogInViewController alloc] init];
+    [logInViewController setDelegate:self]; // Set ourselves as the delegate
+    
+    [logInViewController setFacebookPermissions:@[ @"user_about_me", @"user_relationships", @"user_birthday", @"user_location"]];
+    [logInViewController setFields: PFLogInFieldsFacebook | PFLogInFieldsDismissButton | PFLogInFieldsUsernameAndPassword | PFLogInFieldsLogInButton | PFLogInFieldsSignUpButton];
+    
+    // Create the sign up view controller
+    PFSignUpViewController *signUpViewController = [[PFSignUpViewController alloc] init];
+    [signUpViewController setDelegate:self]; // Set ourselves as the delegate
+    
+    // Assign our sign up controller to be displayed from the login controller
+    [logInViewController setSignUpController:signUpViewController];
+    
+    // Present the log in view controller
+    [self presentViewController:logInViewController animated:YES completion:NULL];
+ 
+}
+
+
+- (IBAction)logoutButtonPressed:(id)sender
+{
+    // Log out
+    [PFUser logOut];
+    
+    // Return to login page
+    [self makeLoginAppear];
+}
+                                                  
+
+
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
     if (![PFUser currentUser]) { // No user logged in
-        // Create the log in view controller
-        PFLogInViewController *logInViewController = [[PFLogInViewController alloc] init];
-        [logInViewController setDelegate:self]; // Set ourselves as the delegate
-        
-        [logInViewController setFacebookPermissions:[NSArray arrayWithObjects:@"friends_about_me", nil]];
-        [logInViewController setFields: PFLogInFieldsFacebook | PFLogInFieldsDismissButton | PFLogInFieldsUsernameAndPassword | PFLogInFieldsLogInButton | PFLogInFieldsSignUpButton];
-        
-        // Create the sign up view controller
-        PFSignUpViewController *signUpViewController = [[PFSignUpViewController alloc] init];
-        [signUpViewController setDelegate:self]; // Set ourselves as the delegate
-        
-        // Assign our sign up controller to be displayed from the login controller
-        [logInViewController setSignUpController:signUpViewController];
-        
-        // Present the log in view controller
-        [self presentViewController:logInViewController animated:YES completion:NULL];
-        
-        
-        
+        [self makeLoginAppear];
     }
 }
 
@@ -59,12 +76,44 @@
 
 // Sent to the delegate when a PFUser is logged in.
 - (void)logInViewController:(PFLogInViewController *)logInController didLogInUser:(PFUser *)user {
-    [self dismissViewControllerAnimated:YES completion:NULL];
+
+    
+    if ([PFFacebookUtils session]) {
+       
+            //Create request for user's Facebook data
+            FBRequest *request = [FBRequest requestForMe];
+            
+            // Send request to Facebook
+            [request startWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
+                if (!error) {
+                    // result is a dictionary with the user's Facebook data
+                    NSDictionary *userData = (NSDictionary *)result;
+                    
+                    NSString *facebookID = userData[@"id"];
+                    NSString *name = userData[@"name"];
+                    //NSString *location = userData[@"location"][@"name"];
+                    NSString *email = userData[@"email"];
+                    
+                    NSString *pictureURL = [NSString stringWithFormat:@"https://graph.facebook.com/%@/picture?type=large&return_ssl_resources=1", facebookID];
+                    
+                    //Now add the data to the UI elements ...
+
+                    PFUser *user = [PFUser currentUser];
+                    user[@"FBid"] = facebookID;
+                    user[@"Name"]=name;
+                    user[@"email"] = email;
+                    user[@"profileImage"] = pictureURL;
+                    [user saveInBackground];
+                }
+            }];
+        
+        
+        [self dismissViewControllerAnimated:YES completion:NULL];
+    }
 }
 
 // Sent to the delegate when the log in attempt fails.
 - (void)logInViewController:(PFLogInViewController *)logInController didFailToLogInWithError:(NSError *)error {
-    NSLog(@"Failed to log in...");
     [self showAlertWithTitle:@"Login failed"
                      message:@"Username and/or password was not entered correctly. Try again."];
 
@@ -102,7 +151,8 @@
 }
 
 // Sent to the delegate when a PFUser is signed up.
-- (void)signUpViewController:(PFSignUpViewController *)signUpController didSignUpUser:(PFUser *)user {
+- (void)signUpViewController:(PFSignUpViewController *)signUpController didSignUpUser:(PFUser *)user
+{
     [self dismissViewControllerAnimated:YES
                              completion:nil]; // Dismiss the PFSignUpViewController
 }
@@ -130,7 +180,6 @@
     
     [alert show];
 }
-
 
 
 

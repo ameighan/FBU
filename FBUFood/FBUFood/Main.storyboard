@@ -425,7 +425,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="dzM-KA-Efw">
-                                        <rect key="frame" x="16" y="64" width="289" height="50"/>
+                                        <rect key="frame" x="16" y="0.0" width="289" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="289" height="50"/>
@@ -443,7 +443,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="c6o-mR-psF"/>
+                    <navigationItem key="navigationItem" id="c6o-mR-psF">
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="f74-zA-qVO">
+                            <connections>
+                                <action selector="logoutButtonPressed:" destination="BT5-Zb-hnn" id="tTB-Po-y1d"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qYS-II-0pt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -605,6 +611,6 @@
         </simulatedScreenMetrics>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="8Iv-hi-pCm"/>
+        <segue reference="O7O-kE-bhK"/>
     </inferredMetricsTieBreakers>
 </document>

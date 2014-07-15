@@ -7,12 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+<<<<<<< HEAD
 		966554D61973B28700DDBED0 /* FBUEditProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 966554D51973B28700DDBED0 /* FBUEditProfileViewController.m */; };
 		966554D9197443B200DDBED0 /* FBUBucketListDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 966554D8197443B200DDBED0 /* FBUBucketListDetailViewController.m */; };
 		966554DC197449AA00DDBED0 /* FBUBucketListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 966554DB197449AA00DDBED0 /* FBUBucketListItem.m */; };
 		966554DF197450B500DDBED0 /* FBUBucketListItemsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 966554DE197450B500DDBED0 /* FBUBucketListItemsViewController.m */; };
 		966554E21974543100DDBED0 /* FBUBucketListItemStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 966554E11974543100DDBED0 /* FBUBucketListItemStore.m */; };
 		96EBDE8F1970AF1300DE0033 /* FBUGroupsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96EBDE8E1970AF1300DE0033 /* FBUGroupsListViewController.m */; };
+=======
+		93F1D0CB197488C2000A1E0E /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93F1D0CA197488C2000A1E0E /* FacebookSDK.framework */; };
+		93F1D0CD197488EB000A1E0E /* FBUserSettingsViewResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 93F1D0CC197488EB000A1E0E /* FBUserSettingsViewResources.bundle */; };
+>>>>>>> App now logins in with facebook and logs out.
 		D2AF549E1970595E00F0A0F2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2AF549D1970595E00F0A0F2 /* Foundation.framework */; };
 		D2AF54A01970595E00F0A0F2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2AF549F1970595E00F0A0F2 /* CoreGraphics.framework */; };
 		D2AF54A21970595E00F0A0F2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2AF54A11970595E00F0A0F2 /* UIKit.framework */; };
@@ -57,6 +62,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+<<<<<<< HEAD
 		966554D41973B28700DDBED0 /* FBUEditProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBUEditProfileViewController.h; sourceTree = "<group>"; };
 		966554D51973B28700DDBED0 /* FBUEditProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBUEditProfileViewController.m; sourceTree = "<group>"; };
 		966554D7197443B200DDBED0 /* FBUBucketListDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBUBucketListDetailViewController.h; sourceTree = "<group>"; };
@@ -69,6 +75,10 @@
 		966554E11974543100DDBED0 /* FBUBucketListItemStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBUBucketListItemStore.m; sourceTree = "<group>"; };
 		96EBDE8D1970AF1300DE0033 /* FBUGroupsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBUGroupsListViewController.h; sourceTree = "<group>"; };
 		96EBDE8E1970AF1300DE0033 /* FBUGroupsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBUGroupsListViewController.m; sourceTree = "<group>"; };
+=======
+		93F1D0CA197488C2000A1E0E /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
+		93F1D0CC197488EB000A1E0E /* FBUserSettingsViewResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = FBUserSettingsViewResources.bundle; sourceTree = "<group>"; };
+>>>>>>> App now logins in with facebook and logs out.
 		D2AF549A1970595E00F0A0F2 /* FBUFood.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FBUFood.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2AF549D1970595E00F0A0F2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D2AF549F1970595E00F0A0F2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -134,6 +144,7 @@
 				D2AF54F219706CC800F0A0F2 /* AudioToolbox.framework in Frameworks */,
 				D2AF54A01970595E00F0A0F2 /* CoreGraphics.framework in Frameworks */,
 				D2AF54A21970595E00F0A0F2 /* UIKit.framework in Frameworks */,
+				93F1D0CB197488C2000A1E0E /* FacebookSDK.framework in Frameworks */,
 				D2AF54E419706C0100F0A0F2 /* Parse.framework in Frameworks */,
 				D2AF549E1970595E00F0A0F2 /* Foundation.framework in Frameworks */,
 			);
@@ -174,6 +185,8 @@
 		D2AF549C1970595E00F0A0F2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				93F1D0CC197488EB000A1E0E /* FBUserSettingsViewResources.bundle */,
+				93F1D0CA197488C2000A1E0E /* FacebookSDK.framework */,
 				D2AF54F319706CC800F0A0F2 /* CFNetwork.framework */,
 				D2AF54F419706CC800F0A0F2 /* CoreLocation.framework */,
 				D2AF54F519706CC800F0A0F2 /* libz.dylib */,
@@ -339,6 +352,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93F1D0CD197488EB000A1E0E /* FBUserSettingsViewResources.bundle in Resources */,
 				D2AF54CD197059B000F0A0F2 /* Main.storyboard in Resources */,
 				D2AF54A81970595F00F0A0F2 /* InfoPlist.strings in Resources */,
 				D2AF54B01970595F00F0A0F2 /* Images.xcassets in Resources */,
@@ -493,6 +507,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/FBUFood",
+					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FBUFood/FBUFood-Prefix.pch";
@@ -510,6 +525,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/FBUFood",
+					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FBUFood/FBUFood-Prefix.pch";
