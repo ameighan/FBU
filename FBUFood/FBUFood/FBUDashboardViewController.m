@@ -49,7 +49,6 @@
     // Return to login page
     [self makeLoginAppear];
 }
-                                                  
 
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -100,7 +99,7 @@
 
                     PFUser *user = [PFUser currentUser];
                     user[@"FBid"] = facebookID;
-                    user[@"Name"]=name;
+                    user[@"name"]= name;
                     user[@"email"] = email;
                     user[@"profileImage"] = pictureURL;
                     [user saveInBackground];

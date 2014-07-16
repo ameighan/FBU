@@ -10,4 +10,10 @@
 
 @interface FBUProfileViewController : UIViewController
 
+
+@property (weak, nonatomic) IBOutlet UIImageView *profileImage;
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *emailLabel;
+@property (weak, nonatomic) IBOutlet UILabel *phoneLabel;
+
 @end
