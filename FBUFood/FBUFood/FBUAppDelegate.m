@@ -9,16 +9,25 @@
 #import "FBUAppDelegate.h"
 #import <Parse/Parse.h>
 #import <FacebookSDK/FacebookSDK.h>
+#import "FBUGroup.h"
+#import "FBUEvent.h"
+#import "FBURecipe.h"
+#import "FBUGroceryList.h"
 
 @implementation FBUAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [FBUGroup registerSubclass];
+    [FBUEvent registerSubclass];
+    [FBURecipe registerSubclass];
+    [FBUGroceryList registerSubclass];
     
     [Parse setApplicationId:@"1MLHKB8J5A4HP8jUG0NbtlNxslsQmYUDsuIf5luJ"
                   clientKey:@"t51Gjc5rnNTNlX4npEHowiYolcGc6h755Xjbbsil"];
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     [PFFacebookUtils initializeFacebook];
+
     
     
     return YES;
