@@ -8,12 +8,11 @@
 
 #import "FBUBucketListItemsViewController.h"
 #import "FBUBucketListDetailViewController.h"
-#import "FBUBucketListItemStore.h"
 #import "FBUBucketListItem.h"
 
 @interface FBUBucketListItemsViewController()
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
-@property (nonatomic, weak) IBOutlet UIView *headerView;
 @property (nonatomic, weak) NSArray *items;
 
 @end
@@ -22,8 +21,8 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"UITableViewCell"];
-    FBUBucketListItem *item = self.items[indexPath.row];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"UITableViewCell" forIndexPath:indexPath];
+    FBUBucketListItem *item = [[FBUBucketListItem alloc] init];
     cell.textLabel.text = [item description];
     return cell;
 }
@@ -31,12 +30,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.items = [[FBUBucketListItemStore sharedStore] allItems];
+    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"UITableViewCell"];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return  [self.items count];
+    NSInteger num = 5;
+    return num;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -47,7 +47,7 @@
 
 - (IBAction)addNewItem:(id)sender
 {
-    
+
 }
 
 - (IBAction)toggleEditingMode:(id)sender

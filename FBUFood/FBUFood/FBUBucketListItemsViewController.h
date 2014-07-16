@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FBUBucketListItemsViewController : UITableViewController
+@interface FBUBucketListItemsViewController : UIViewController
 
 @end

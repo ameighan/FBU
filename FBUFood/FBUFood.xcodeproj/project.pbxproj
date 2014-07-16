@@ -13,7 +13,6 @@
 		966554D9197443B200DDBED0 /* FBUBucketListDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 966554D8197443B200DDBED0 /* FBUBucketListDetailViewController.m */; };
 		966554DC197449AA00DDBED0 /* FBUBucketListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 966554DB197449AA00DDBED0 /* FBUBucketListItem.m */; };
 		966554DF197450B500DDBED0 /* FBUBucketListItemsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 966554DE197450B500DDBED0 /* FBUBucketListItemsViewController.m */; };
-		966554E21974543100DDBED0 /* FBUBucketListItemStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 966554E11974543100DDBED0 /* FBUBucketListItemStore.m */; };
 		96EBDE8F1970AF1300DE0033 /* FBUGroupsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96EBDE8E1970AF1300DE0033 /* FBUGroupsListViewController.m */; };
 		D295F9971975FBB3000ED2C1 /* FBUGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = D295F9961975FBB3000ED2C1 /* FBUGroup.m */; };
 		D295F99A1976028F000ED2C1 /* FBUEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = D295F9991976028F000ED2C1 /* FBUEvent.m */; };
@@ -73,8 +72,6 @@
 		966554DB197449AA00DDBED0 /* FBUBucketListItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBUBucketListItem.m; sourceTree = "<group>"; };
 		966554DD197450B500DDBED0 /* FBUBucketListItemsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBUBucketListItemsViewController.h; sourceTree = "<group>"; };
 		966554DE197450B500DDBED0 /* FBUBucketListItemsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBUBucketListItemsViewController.m; sourceTree = "<group>"; };
-		966554E01974543100DDBED0 /* FBUBucketListItemStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBUBucketListItemStore.h; sourceTree = "<group>"; };
-		966554E11974543100DDBED0 /* FBUBucketListItemStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBUBucketListItemStore.m; sourceTree = "<group>"; };
 		96EBDE8D1970AF1300DE0033 /* FBUGroupsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBUGroupsListViewController.h; sourceTree = "<group>"; };
 		96EBDE8E1970AF1300DE0033 /* FBUGroupsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBUGroupsListViewController.m; sourceTree = "<group>"; };
 		D295F9951975FBB3000ED2C1 /* FBUGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBUGroup.h; sourceTree = "<group>"; };
@@ -223,12 +220,10 @@
 				D2AF54CC197059B000F0A0F2 /* Main.storyboard */,
 				966554D7197443B200DDBED0 /* FBUBucketListDetailViewController.h */,
 				966554D8197443B200DDBED0 /* FBUBucketListDetailViewController.m */,
-				966554DA197449AA00DDBED0 /* FBUBucketListItem.h */,
-				966554DB197449AA00DDBED0 /* FBUBucketListItem.m */,
 				966554DD197450B500DDBED0 /* FBUBucketListItemsViewController.h */,
 				966554DE197450B500DDBED0 /* FBUBucketListItemsViewController.m */,
-				966554E01974543100DDBED0 /* FBUBucketListItemStore.h */,
-				966554E11974543100DDBED0 /* FBUBucketListItemStore.m */,
+				966554DA197449AA00DDBED0 /* FBUBucketListItem.h */,
+				966554DB197449AA00DDBED0 /* FBUBucketListItem.m */,
 				966554D41973B28700DDBED0 /* FBUEditProfileViewController.h */,
 				966554D51973B28700DDBED0 /* FBUEditProfileViewController.m */,
 				96EBDE8D1970AF1300DE0033 /* FBUGroupsListViewController.h */,
@@ -405,7 +400,6 @@
 				D2AF54D919705E0700F0A0F2 /* FBUSubscriptionsViewController.m in Sources */,
 				966554DC197449AA00DDBED0 /* FBUBucketListItem.m in Sources */,
 				D2AF54AA1970595F00F0A0F2 /* main.m in Sources */,
-				966554E21974543100DDBED0 /* FBUBucketListItemStore.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

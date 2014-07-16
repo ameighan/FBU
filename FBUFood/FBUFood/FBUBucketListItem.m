@@ -15,6 +15,11 @@
     return [self initWithItemName:name];
 }
 
+- (instancetype)init
+{
+    return [self initWithItemName:@"Item"];
+}
+
 - (NSString *)description
 {
     return [[NSString alloc] initWithFormat:@"%@", self.itemName];
