@@ -552,25 +552,24 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="42" id="0oM-Je-CSR">
-                                <rect key="frame" x="0.0" y="86" width="320" height="42"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0oM-Je-CSR" id="iva-GA-L2I">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="41"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="X70-fx-Ggs" id="5zj-jp-uiI"/>
-                            <outlet property="delegate" destination="X70-fx-Ggs" id="Vzm-2b-sjO"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" id="QTl-mV-9em"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ta3-s2-VKD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="TDt-cI-1lF">
+                        <barButtonItem key="leftBarButtonItem" title="New" id="OfB-oi-sjr">
+                            <connections>
+                                <segue destination="W7W-PL-w08" kind="push" id="PQQ-4Z-emp"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Profile" id="VUf-Ta-Qpw">
+                            <connections>
+                                <segue destination="ePa-N9-Sum" kind="push" id="Nq2-bk-SHR"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="dPy-ps-jCP" id="Adb-OI-uU1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kkr-aV-eeO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="610" y="170"/>
         </scene>
