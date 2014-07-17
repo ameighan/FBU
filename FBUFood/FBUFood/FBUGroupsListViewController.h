@@ -8,6 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
-@interface FBUGroupsListViewController : UIViewController
+@interface FBUGroupsListViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *createGroupButton;
+@property (weak, nonatomic) IBOutlet UITableView *myGroupsTableView;
+
+@property (strong, nonatomic) NSArray *myGroupsArray;
+
 
 @end

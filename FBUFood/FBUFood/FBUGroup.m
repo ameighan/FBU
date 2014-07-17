@@ -20,9 +20,10 @@
     return @"FBUGroup";
 }
 
-@dynamic groupTitle;
+@dynamic groupName;
 @dynamic groupDescription;
 @dynamic generalMeetingTimes;
+@dynamic owner;
 @dynamic recipesInGroup;
 @dynamic eventsInGroup;
 @dynamic cooksInGroup;
@@ -39,7 +40,6 @@
 {
     self.recipesInGroup = [self addObject:recipe
                                   toGroup:self.recipesInGroup];
-    
 }
 
 - (void)addEventToGroup:(FBUEvent *)event

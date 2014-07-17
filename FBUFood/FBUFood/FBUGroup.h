@@ -16,9 +16,10 @@
 + (NSString *)parseClassName;
 
 
-@property (strong, nonatomic) NSString *groupTitle;
+@property (strong, nonatomic) NSString *groupName;
 @property (strong, nonatomic) NSString *groupDescription;
 @property (strong, nonatomic) NSString *generalMeetingTimes;
+@property (strong, nonatomic) PFUser *owner;
 
 //NSArrays of Parse Objects (FBURecipe and FBUEvent respectively)
 @property (strong, nonatomic) NSArray *recipesInGroup;

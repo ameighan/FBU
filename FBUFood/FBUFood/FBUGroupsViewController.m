@@ -7,7 +7,21 @@
 //
 
 #import "FBUGroupsViewController.h"
+#import "FBUGroup.h"
 
 @implementation FBUGroupsViewController
+
+- (IBAction)addUserToGroupAsCook:(id)sender
+{
+    
+}
+
+
+- (IBAction)addUserToGroupAsSubscriber:(id)sender
+{
+    
+}
+
+
 
 @end
