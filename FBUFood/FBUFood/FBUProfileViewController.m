@@ -8,23 +8,27 @@
 
 #import "FBUProfileViewController.h"
 #import <Parse/Parse.h>
-#import <FacebookSDK/FacebookSDK.h>
-#import "FBUDashboardViewController.h"
+
 
 @implementation FBUProfileViewController
 
--(void)viewDidLoad
+-(void)viewWillAppear:(BOOL)animated
 {
-    [super viewDidLoad];
+    [super viewWillAppear:animated];
     
     if ([PFUser currentUser]){
         PFUser *user = [PFUser currentUser];
-        NSURL *url = [NSURL URLWithString:user[@"profileImage"]];
-        NSData *data = [NSData dataWithContentsOfURL:url];
-        UIImage *img = [[UIImage alloc] initWithData:data];
-        self.profileImage.image = img;
+        if(user[@"fbImage"]) {
+            UIImage *img = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:user[@"fbImage"]]]];
+            self.profileImage.image = img;
+
+        } else {
+            UIImage *image = [UIImage imageWithData:[user[@"profileImage"] getData]];
+            self.profileImage.image = image;
+        }
         self.nameLabel.text = user[@"name"];
         self.emailLabel.text = user[@"email"];
+        self.phoneLabel.text = user[@"additional"];
     }
 }
 

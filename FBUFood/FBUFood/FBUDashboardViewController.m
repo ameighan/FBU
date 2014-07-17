@@ -26,11 +26,17 @@
     [logInViewController setDelegate:self]; // Set ourselves as the delegate
     
     [logInViewController setFacebookPermissions:@[ @"user_about_me", @"user_relationships", @"user_birthday", @"user_location"]];
-    [logInViewController setFields: PFLogInFieldsFacebook | PFLogInFieldsDismissButton | PFLogInFieldsUsernameAndPassword | PFLogInFieldsLogInButton | PFLogInFieldsSignUpButton];
+    [logInViewController setFields: PFLogInFieldsFacebook | PFLogInFieldsUsernameAndPassword | PFLogInFieldsLogInButton | PFLogInFieldsSignUpButton];
     
     // Create the sign up view controller
     PFSignUpViewController *signUpViewController = [[PFSignUpViewController alloc] init];
     [signUpViewController setDelegate:self]; // Set ourselves as the delegate
+    [signUpViewController setFields:PFSignUpFieldsAdditional | PFSignUpFieldsDismissButton | PFSignUpFieldsSignUpButton | PFSignUpFieldsEmail | PFSignUpFieldsAdditional];
+    
+    // Formats the additional field
+    signUpViewController.signUpView.additionalField.placeholder = @"Phone Number";
+    signUpViewController.signUpView.additionalField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Phone Number" attributes:@{NSForegroundColorAttributeName: [UIColor lightGrayColor]}];
+    
     
     // Assign our sign up controller to be displayed from the login controller
     [logInViewController setSignUpController:signUpViewController];
@@ -101,14 +107,12 @@
                     user[@"FBid"] = facebookID;
                     user[@"name"]= name;
                     user[@"email"] = email;
-                    user[@"profileImage"] = pictureURL;
+                    user[@"fbImage"] = pictureURL;
                     [user saveInBackground];
                 }
             }];
-        
-        
-        [self dismissViewControllerAnimated:YES completion:NULL];
     }
+    [self dismissViewControllerAnimated:YES completion:NULL];
 }
 
 // Sent to the delegate when the log in attempt fails.

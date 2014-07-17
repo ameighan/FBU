@@ -166,6 +166,52 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		930320D61976F38B00629269 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				D2AF54D119705B4B00F0A0F2 /* FBUProfileViewController.h */,
+				D2AF54D219705B4B00F0A0F2 /* FBUProfileViewController.m */,
+				966554D41973B28700DDBED0 /* FBUEditProfileViewController.h */,
+				966554D51973B28700DDBED0 /* FBUEditProfileViewController.m */,
+			);
+			name = Profile;
+			sourceTree = "<group>";
+		};
+		930320D71976F41100629269 /* BucketList */ = {
+			isa = PBXGroup;
+			children = (
+				966554D7197443B200DDBED0 /* FBUBucketListDetailViewController.h */,
+				966554D8197443B200DDBED0 /* FBUBucketListDetailViewController.m */,
+				966554DA197449AA00DDBED0 /* FBUBucketListItem.h */,
+				966554DB197449AA00DDBED0 /* FBUBucketListItem.m */,
+				966554DD197450B500DDBED0 /* FBUBucketListItemsViewController.h */,
+				966554DE197450B500DDBED0 /* FBUBucketListItemsViewController.m */,
+				966554E01974543100DDBED0 /* FBUBucketListItemStore.h */,
+				966554E11974543100DDBED0 /* FBUBucketListItemStore.m */,
+			);
+			name = BucketList;
+			sourceTree = "<group>";
+		};
+		930320D81976F42000629269 /* Recipes */ = {
+			isa = PBXGroup;
+			children = (
+				D2AF54DA1970607A00F0A0F2 /* FBURecipesListViewController.h */,
+				D2AF54DB1970607A00F0A0F2 /* FBURecipesListViewController.m */,
+			);
+			name = Recipes;
+			sourceTree = "<group>";
+		};
+		930320D91976F6E900629269 /* Groups */ = {
+			isa = PBXGroup;
+			children = (
+				D2AF54DD197062F100F0A0F2 /* FBUGroupsViewController.h */,
+				96EBDE8E1970AF1300DE0033 /* FBUGroupsListViewController.m */,
+				96EBDE8D1970AF1300DE0033 /* FBUGroupsListViewController.h */,
+				D2AF54DE197062F100F0A0F2 /* FBUGroupsViewController.m */,
+			);
+			name = Groups;
+			sourceTree = "<group>";
+		};
 		D2AF54911970595E00F0A0F2 = {
 			isa = PBXGroup;
 			children = (
@@ -218,14 +264,12 @@
 			isa = PBXGroup;
 			children = (
 				D2AF54CC197059B000F0A0F2 /* Main.storyboard */,
-				966554D7197443B200DDBED0 /* FBUBucketListDetailViewController.h */,
-				966554D8197443B200DDBED0 /* FBUBucketListDetailViewController.m */,
-				966554DD197450B500DDBED0 /* FBUBucketListItemsViewController.h */,
-				966554DE197450B500DDBED0 /* FBUBucketListItemsViewController.m */,
-				966554DA197449AA00DDBED0 /* FBUBucketListItem.h */,
-				966554DB197449AA00DDBED0 /* FBUBucketListItem.m */,
-				966554D41973B28700DDBED0 /* FBUEditProfileViewController.h */,
-				966554D51973B28700DDBED0 /* FBUEditProfileViewController.m */,
+				D2AF54AC1970595F00F0A0F2 /* FBUAppDelegate.h */,
+				D2AF54AD1970595F00F0A0F2 /* FBUAppDelegate.m */,
+				930320D91976F6E900629269 /* Groups */,
+				930320D81976F42000629269 /* Recipes */,
+				930320D71976F41100629269 /* BucketList */,
+				930320D61976F38B00629269 /* Profile */,
 				96EBDE8D1970AF1300DE0033 /* FBUGroupsListViewController.h */,
 				96EBDE8E1970AF1300DE0033 /* FBUGroupsListViewController.m */,
 				D295F9951975FBB3000ED2C1 /* FBUGroup.h */,
@@ -238,18 +282,10 @@
 				D295F99F19760D68000ED2C1 /* FBUGroceryList.m */,
 				D2AF54E01970661D00F0A0F2 /* FBUEventCreatorViewController.h */,
 				D2AF54E11970661D00F0A0F2 /* FBUEventCreatorViewController.m */,
-				D2AF54DD197062F100F0A0F2 /* FBUGroupsViewController.h */,
-				D2AF54DE197062F100F0A0F2 /* FBUGroupsViewController.m */,
-				D2AF54DA1970607A00F0A0F2 /* FBURecipesListViewController.h */,
-				D2AF54DB1970607A00F0A0F2 /* FBURecipesListViewController.m */,
-				D2AF54D419705DF200F0A0F2 /* FBUDashboardViewController.h */,
-				D2AF54D519705DF200F0A0F2 /* FBUDashboardViewController.m */,
 				D2AF54D719705E0700F0A0F2 /* FBUSubscriptionsViewController.h */,
 				D2AF54D819705E0700F0A0F2 /* FBUSubscriptionsViewController.m */,
-				D2AF54D119705B4B00F0A0F2 /* FBUProfileViewController.h */,
-				D2AF54D219705B4B00F0A0F2 /* FBUProfileViewController.m */,
-				D2AF54AC1970595F00F0A0F2 /* FBUAppDelegate.h */,
-				D2AF54AD1970595F00F0A0F2 /* FBUAppDelegate.m */,
+				D2AF54D419705DF200F0A0F2 /* FBUDashboardViewController.h */,
+				D2AF54D519705DF200F0A0F2 /* FBUDashboardViewController.m */,
 				D2AF54AF1970595F00F0A0F2 /* Images.xcassets */,
 				D2AF54A41970595F00F0A0F2 /* Supporting Files */,
 			);

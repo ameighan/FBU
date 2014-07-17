@@ -7,7 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "FBUProfileViewController.h"
 
 @interface FBUEditProfileViewController : UIViewController
+
 
 @end
