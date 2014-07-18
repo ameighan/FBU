@@ -42,25 +42,26 @@
     
 }
 
--(void) viewWillDisappear:(BOOL)animated {
-    [super viewWillDisappear:animated];
-    
-    if ([self.navigationController.viewControllers indexOfObject:self]==NSNotFound) {
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if([segue.identifier isEqualToString:@"editProfileToProfile"]) {
         PFUser *user = [PFUser currentUser];
         user[@"name"] = self.fullNameTextField.text;
         user[@"additional"] = self.phoneNumberTextField.text;
         user[@"email"] = self.emailTextField.text;
         if(!user[@"fbImage"]) {
+            if(self.imageView.image) {
             NSData *imageData = UIImageJPEGRepresentation(self.imageView.image, 0.8);
             NSString *filename = [NSString stringWithFormat:@"%@.png", self.fullNameTextField.text];
             PFFile *imageFile = [PFFile fileWithName:filename data:imageData];
             user[@"profileImage"] = imageFile;
+            }
         }
         [user saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
             NSLog(@"Saving Profile Data");
         }];
+
     }
-    
 }
 
 - (IBAction)takePicture:(id)sender
