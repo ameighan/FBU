@@ -7,12 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <Parse/Parse.h>
 
-@interface FBUBucketListItem : NSObject
-{
-    
-}
+@interface FBUBucketListItem : PFObject <PFSubclassing>
 
-@property (nonatomic, copy) NSString *itemName;
++ (NSString *)parseClassName;
+
+@property (strong, nonatomic) NSString *itemName;
+@property (strong, nonatomic) PFUser *owner;
 
 @end

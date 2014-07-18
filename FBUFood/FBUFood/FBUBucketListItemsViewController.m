@@ -9,50 +9,44 @@
 #import "FBUBucketListItemsViewController.h"
 #import "FBUBucketListDetailViewController.h"
 #import "FBUBucketListItem.h"
-
-@interface FBUBucketListItemsViewController()
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
-
-@property (nonatomic, weak) NSArray *items;
-
-@end
+#import <Parse/Parse.h>
 
 @implementation FBUBucketListItemsViewController
 
+- (NSArray *)queryingForBucketListItems
+{
+    PFQuery *query = [FBUBucketListItem query];
+    //[query whereKey:@"owner" equalTo:[PFUser currentUser]];
+    return [query findObjects];
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"UITableViewCell" forIndexPath:indexPath];
-    FBUBucketListItem *item = [[FBUBucketListItem alloc] init];
-    cell.textLabel.text = [item description];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"UITableViewCell"
+                                                            forIndexPath:indexPath];
+    FBUBucketListItem *bucketItem = self.items[indexPath.row];
+    cell.textLabel.text = [bucketItem itemName];
     return cell;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return [self.items count];
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"UITableViewCell"];
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+- (void)viewDidAppear:(BOOL)animated
 {
-    NSInteger num = 5;
-    return num;
-}
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    FBUBucketListDetailViewController *detailViewController = [[FBUBucketListDetailViewController alloc] init];
-    [self.navigationController pushViewController:detailViewController animated:YES];
-}
-
-- (IBAction)addNewItem:(id)sender
-{
-
-}
-
-- (IBAction)toggleEditingMode:(id)sender
-{
-    
+    [super viewDidAppear:animated];
+    self.items = [self queryingForBucketListItems];
+    [self.tableView reloadData];
 }
 
 @end

@@ -10,6 +10,7 @@
 #import <Parse/Parse.h>
 #import <FacebookSDK/FacebookSDK.h>
 #import "FBUGroup.h"
+#import "FBUBucketListItem.h"
 #import "FBUEvent.h"
 #import "FBURecipe.h"
 #import "FBUGroceryList.h"
@@ -22,6 +23,7 @@
     [FBUEvent registerSubclass];
     [FBURecipe registerSubclass];
     [FBUGroceryList registerSubclass];
+    [FBUBucketListItem registerSubclass];
     
     [Parse setApplicationId:@"1MLHKB8J5A4HP8jUG0NbtlNxslsQmYUDsuIf5luJ"
                   clientKey:@"t51Gjc5rnNTNlX4npEHowiYolcGc6h755Xjbbsil"];

@@ -7,22 +7,16 @@
 //
 
 #import "FBUBucketListItem.h"
+#import <Parse/PFObject+Subclass.h>
 
 @implementation FBUBucketListItem
 
-- (instancetype)initWithItemName:(NSString *)name
++ (NSString *)parseClassName
 {
-    return [self initWithItemName:name];
+    return @"FBUBucketListItem";
 }
 
-- (instancetype)init
-{
-    return [self initWithItemName:@"Item"];
-}
-
-- (NSString *)description
-{
-    return [[NSString alloc] initWithFormat:@"%@", self.itemName];
-}
+@dynamic itemName;
+@dynamic owner;
 
 @end

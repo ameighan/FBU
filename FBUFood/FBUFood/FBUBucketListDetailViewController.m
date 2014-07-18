@@ -7,14 +7,9 @@
 //
 
 #import "FBUBucketListDetailViewController.h"
+#import "FBUBucketListItem.h"
 
-@interface FBUBucketListDetailViewController() <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
-
-@property (weak, nonatomic) IBOutlet UILabel *addLabel;
-@property (weak, nonatomic) IBOutlet UILabel *uploadImageLabel;
-@property (weak, nonatomic) IBOutlet UITextField *addTextfield;
-@property (weak, nonatomic) IBOutlet UIImageView *imageView;
-@property (weak, nonatomic) IBOutlet UIToolbar *toolbar;
+@interface FBUBucketListDetailViewController() <UINavigationControllerDelegate, UIImagePickerControllerDelegate, UITextViewDelegate>
 
 @end
 
@@ -34,6 +29,48 @@
     UIImage *image = info[UIImagePickerControllerOriginalImage];
     self.imageView.image = image;
     [self dismissViewControllerAnimated:YES completion:NULL];
+}
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+}
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    return YES;
+}
+
+- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
+{
+    if([text isEqualToString:@"\n"]) {
+        [textView resignFirstResponder];
+        return NO;
+    }
+    
+    return YES;
+}
+
+- (IBAction)backgroundTapped:(id)sender
+{
+    [self.view endEditing:YES];
+}
+
+
+- (IBAction)userDidSave:(id)sender
+{
+    FBUBucketListItem *newBucketItem = [FBUBucketListItem object];
+    newBucketItem.itemName = self.addTextfield.text;
+    //newBucketItem.owner = [PFUser currentUser];
+    [newBucketItem saveInBackground];
+    
+    
 }
 
 @end

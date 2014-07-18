@@ -6,8 +6,14 @@
 //  Copyright (c) 2014 FacebookU. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface FBUBucketListDetailViewController : UIViewController
+
+@property (weak, nonatomic) IBOutlet UILabel *addLabel;
+@property (weak, nonatomic) IBOutlet UILabel *uploadImageLabel;
+@property (weak, nonatomic) IBOutlet UITextField *addTextfield;
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (weak, nonatomic) IBOutlet UIToolbar *toolbar;
 
 @end

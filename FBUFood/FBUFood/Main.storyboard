@@ -185,7 +185,7 @@
                                 <rect key="frame" x="20" y="155" width="280" height="94"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <connections>
@@ -206,7 +206,7 @@
                                     <!--2014-07-16 22:35:01 +0000-->
                                 </date>
                                 <timeZone key="timeZone" name="America/Los_Angeles">
-                                    <mutableData key="data">
+                                    <data key="data">
 VFppZgAAAAAAAAAAAAAAAAAAAAAAAAAEAAAABAAAAAAAAAC5AAAABAAAABCepkign7sVkKCGKqChmveQ
 y4kaoNIj9HDSYSYQ1v50INiArZDa/tGg28CQENzes6DdqayQ3r6VoN+JjpDgnneg4WlwkOJ+WaDjSVKQ
 5F47oOUpNJDmR1gg5xJREOgnOiDo8jMQ6gccIOrSFRDr5v4g7LH3EO3G4CDukdkQ76/8oPBxuxDxj96g
@@ -224,7 +224,7 @@ f5gqkAABAAECAwEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEA
 AQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEA
 AQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEA
 AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
-</mutableData>
+</data>
                                 </timeZone>
                             </datePicker>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="General Meeting Times" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sF6-GJ-WKR">
@@ -594,7 +594,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
             </objects>
             <point key="canvasLocation" x="206" y="57"/>
         </scene>
-        <!--Bucket List Detail View Controller-->
+        <!--Bucket List Detail View Controller - New Bucket List Item-->
         <scene sceneID="Cbb-5u-fxf">
             <objects>
                 <viewController id="W7W-PL-w08" customClass="FBUBucketListDetailViewController" sceneMemberID="viewController">
@@ -644,7 +644,13 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="YhX-2x-EXU"/>
+                    <navigationItem key="navigationItem" title="New Bucket List Item" id="YhX-2x-EXU">
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="m4T-dD-Qhj">
+                            <connections>
+                                <action selector="userDidSave:" destination="W7W-PL-w08" id="VAb-Wr-0gx"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="addLabel" destination="MHf-T5-w3a" id="WHm-Dv-RZa"/>
                         <outlet property="addTextfield" destination="bs4-Yb-P03" id="XOQ-xF-rtm"/>
@@ -657,7 +663,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
             </objects>
             <point key="canvasLocation" x="242" y="693"/>
         </scene>
-        <!--Bucket List Items View Controller-->
+        <!--Bucket List Items View Controller - Bucket List-->
         <scene sceneID="iRB-L6-HRC">
             <objects>
                 <viewController id="Vox-zI-Ga8" customClass="FBUBucketListItemsViewController" sceneMemberID="viewController">
@@ -677,7 +683,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                 <rect key="frame" x="0.0" y="65" width="320" height="503"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="xY5-9n-UPa">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="xY5-9n-UPa">
                                         <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xY5-9n-UPa" id="Qhr-bV-yy9">
@@ -686,24 +692,24 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Vox-zI-Ga8" id="nOo-xU-1lp"/>
+                                    <outlet property="delegate" destination="Vox-zI-Ga8" id="zXo-m1-Hku"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="TDt-cI-1lF">
-                        <barButtonItem key="leftBarButtonItem" title="New" id="OfB-oi-sjr">
+                    <navigationItem key="navigationItem" title="Bucket List" id="TDt-cI-1lF">
+                        <barButtonItem key="rightBarButtonItem" title="Create" id="VUf-Ta-Qpw">
                             <connections>
-                                <segue destination="W7W-PL-w08" kind="push" id="PQQ-4Z-emp"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Profile" id="VUf-Ta-Qpw">
-                            <connections>
-                                <segue destination="ePa-N9-Sum" kind="push" id="Nq2-bk-SHR"/>
+                                <segue destination="W7W-PL-w08" kind="push" id="GR2-9c-aeg"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="tableView" destination="dPy-ps-jCP" id="Adb-OI-uU1"/>
+                        <outlet property="createButton" destination="VUf-Ta-Qpw" id="gH8-H4-wOe"/>
+                        <outlet property="tableView" destination="dPy-ps-jCP" id="WMT-ko-Fum"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kkr-aV-eeO" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -768,8 +774,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="abT-Rh-8Hr"/>
         <segue reference="WXx-WE-LSn"/>
-        <segue reference="PQQ-4Z-emp"/>
+        <segue reference="GR2-9c-aeg"/>
     </inferredMetricsTieBreakers>
 </document>
