@@ -13,14 +13,14 @@
 
 + (NSString *)parseClassName
 {
-    return @"FBURecipe";
+    return @"Recipe";
 }
 
-@dynamic titleOfRecipe;
+@dynamic title;
 @dynamic pictureOfMeal;
 @dynamic ingredientsList;
 @dynamic quantityOfIngredients;
 @dynamic directions;
-
+@dynamic publisher;
 
 @end

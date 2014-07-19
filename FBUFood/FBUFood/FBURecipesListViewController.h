@@ -7,7 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <Parse/Parse.h>
+#import "FBURecipe.h"
 
-@interface FBURecipesListViewController : UIViewController
+@interface FBURecipesListViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) NSArray *recipeArray;
+
+-(void)queryForRecipes;
+
+
 
 @end

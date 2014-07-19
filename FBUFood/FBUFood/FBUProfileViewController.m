@@ -18,6 +18,10 @@
     
     if ([PFUser currentUser]){
         PFUser *user = [PFUser currentUser];
+        
+        self.nameLabel.text = user[@"name"];
+        self.emailLabel.text = user[@"email"];
+        self.phoneLabel.text = user[@"additional"];
         if(user[@"fbImage"]) {
             UIImage *img = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:user[@"fbImage"]]]];
             self.profileImage.image = img;
@@ -26,11 +30,7 @@
             UIImage *image = [UIImage imageWithData:[user[@"profileImage"] getData]];
             self.profileImage.image = image;
         }
-        self.nameLabel.text = user[@"name"];
-        self.emailLabel.text = user[@"email"];
-        self.phoneLabel.text = user[@"additional"];
     }
 }
-
 
 @end

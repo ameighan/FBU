@@ -13,8 +13,9 @@
 
 + (NSString *)parseClassName;
 
-@property (strong, nonatomic) NSString *titleOfRecipe;
+@property (strong, nonatomic) NSString *title;
 @property (strong, nonatomic) UIImage *pictureOfMeal;
+@property (strong, nonatomic) PFUser *publisher;
 
 //NSArrays will contain NSStrings of ingredient names and ints of quantity of each ingredient
 //Index numbers of each array will match up
