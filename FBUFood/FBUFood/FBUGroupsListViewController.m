@@ -23,7 +23,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"UITableViewCell"
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"groupCell"
                                                             forIndexPath:indexPath];
     
     FBUGroup *group = self.myGroupsArray[indexPath.row];
@@ -42,7 +42,7 @@
 {
     [super viewDidLoad];
     
-    [self.myGroupsTableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"UITableViewCell"];
+    [self.myGroupsTableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"groupCell"];
     
     self.myGroupsTableView.delegate = self;
     self.myGroupsTableView.dataSource = self;
@@ -54,6 +54,29 @@
     
     self.myGroupsArray = [self queryingForGroupsCurrentUserIsIn];
     [self.myGroupsTableView reloadData];
+}
+
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    [self performSegueWithIdentifier:@"groupCell" sender:self];
+    
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"groupCell"]) {
+        NSIndexPath *indexPath = [self.myGroupsTableView indexPathForSelectedRow];
+        
+        FBUGroup *selectedGroup = self.myGroupsArray[indexPath.row];
+        
+        FBUGroupsViewController *groupViewController = segue.destinationViewController;
+        
+        groupViewController.group = selectedGroup;
+        NSLog(@"%@", selectedGroup.groupName);
+        
+    }
 }
 
 

@@ -7,9 +7,19 @@
 //
 
 #import "FBUGroupsViewController.h"
+#import "FBUGroupsListViewController.h"
 #import "FBUGroup.h"
 
 @implementation FBUGroupsViewController
+
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    self.groupNameLabel.text = self.group.groupName;
+    self.groupDescriptionTextView.text = self.group.groupDescription;
+    self.generalMeetingTimesLabel.text = self.group.generalMeetingTimes;
+}
 
 - (IBAction)addUserToGroupAsCook:(id)sender
 {
