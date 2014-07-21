@@ -17,7 +17,7 @@
 }
 
 @dynamic title;
-@dynamic pictureOfMeal;
+@dynamic image;
 @dynamic ingredientsList;
 @dynamic quantityOfIngredients;
 @dynamic directions;

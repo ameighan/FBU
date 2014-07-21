@@ -14,15 +14,15 @@
 + (NSString *)parseClassName;
 
 @property (strong, nonatomic) NSString *title;
-@property (strong, nonatomic) UIImage *pictureOfMeal;
+@property (strong, nonatomic) PFFile *image;
 @property (strong, nonatomic) PFUser *publisher;
 
 //NSArrays will contain NSStrings of ingredient names and ints of quantity of each ingredient
 //Index numbers of each array will match up
-@property (strong, nonatomic) NSArray *ingredientsList;
+@property (strong, nonatomic) NSString *ingredientsList;
 @property (strong, nonatomic) NSArray *quantityOfIngredients;
 
 //Directions will be an NSArray of strings for Step 1, 2, etc.
-@property (strong, nonatomic) NSArray *directions;
+@property (strong, nonatomic) NSString *directions;
 
 @end

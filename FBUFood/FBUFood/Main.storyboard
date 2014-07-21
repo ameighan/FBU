@@ -181,17 +181,17 @@
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
-                        <outlet property="directions" destination="Oin-Vt-ISq" id="w4M-ik-EsK"/>
-                        <outlet property="imageView" destination="AzY-M0-lFm" id="tMl-5d-0rS"/>
-                        <outlet property="ingredientsList" destination="ofD-js-Hm9" id="ZdS-0k-fPh"/>
-                        <outlet property="navBar" destination="1mY-VD-MQO" id="Lzv-yp-nqb"/>
+                        <outlet property="directions" destination="Oin-Vt-ISq" id="KMH-qk-n3t"/>
+                        <outlet property="imageView" destination="AzY-M0-lFm" id="ZmE-Cr-tsd"/>
+                        <outlet property="ingredientsList" destination="ofD-js-Hm9" id="YtD-bU-OKW"/>
+                        <outlet property="navBar" destination="1mY-VD-MQO" id="exc-Cw-CJJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6S9-jS-nBe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1059" y="1959"/>
         </scene>
-        <!--Groups View Controller - Name of Group-->
+        <!--Groups View Controller - FBUGroupsViewController-->
         <scene sceneID="po8-AG-mth">
             <objects>
                 <viewController storyboardIdentifier="FBUGroupsViewController" title="FBUGroupsViewController" id="H9r-p1-AHy" customClass="FBUGroupsViewController" sceneMemberID="viewController">
@@ -485,10 +485,10 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
             </objects>
             <point key="canvasLocation" x="2005" y="541"/>
         </scene>
-        <!--New Recipe Controller - Title-->
+        <!--Edit Recipe View Controller - Title-->
         <scene sceneID="Z64-lF-KEz">
             <objects>
-                <viewController id="BQl-mP-k22" customClass="FBUNewRecipeController" sceneMemberID="viewController">
+                <viewController id="BQl-mP-k22" customClass="FBUEditRecipeViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="paN-Z9-F5k"/>
                         <viewControllerLayoutGuide type="bottom" id="tBl-xj-buk"/>
@@ -539,7 +539,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                 <items>
                                     <barButtonItem title="Item" systemItem="camera" id="I70-i3-x4x">
                                         <connections>
-                                            <action selector="takePicture:" destination="BQl-mP-k22" id="q8f-BH-1ix"/>
+                                            <action selector="takePicture:" destination="BQl-mP-k22" id="Fhs-BF-WkO"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
@@ -548,6 +548,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <connections>
+                            <action selector="backgroundPressed:" destination="BQl-mP-k22" eventType="valueChanged" id="WoD-3T-GCp"/>
                             <action selector="backgroundPressed:" destination="BQl-mP-k22" eventType="touchUpInside" id="b4M-ld-0eC"/>
                         </connections>
                     </view>
@@ -566,11 +567,11 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
-                        <outlet property="directionsTextView" destination="eU5-Bo-F0i" id="1fI-8t-neq"/>
-                        <outlet property="imageView" destination="R2s-Gf-VL1" id="CKq-68-MZr"/>
-                        <outlet property="ingredientsTextView" destination="4TR-I3-LL6" id="l7h-hc-dhp"/>
-                        <outlet property="navBar" destination="TaU-lV-h4H" id="2US-JL-tBX"/>
-                        <outlet property="recipeTextField" destination="b0a-6g-rXc" id="tTN-iv-MEC"/>
+                        <outlet property="directionsTextView" destination="eU5-Bo-F0i" id="Qzj-8S-iZq"/>
+                        <outlet property="imageView" destination="R2s-Gf-VL1" id="Izy-FW-Lax"/>
+                        <outlet property="ingredientsTextView" destination="4TR-I3-LL6" id="JwY-mm-WVC"/>
+                        <outlet property="navBar" destination="TaU-lV-h4H" id="c2U-7K-RSR"/>
+                        <outlet property="recipeTextField" destination="b0a-6g-rXc" id="LCr-vg-AHV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bjj-vF-fbC" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -967,9 +968,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="abT-Rh-8Hr"/>
-        <segue reference="GR2-9c-aeg"/>
-        <segue reference="O7O-kE-bhK"/>
         <segue reference="bHf-LT-zzi"/>
         <segue reference="twc-tm-pyx"/>
         <segue reference="C77-9N-VAU"/>

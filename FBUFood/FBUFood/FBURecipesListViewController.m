@@ -10,6 +10,7 @@
 #import <Parse/Parse.h>
 #import "FBURecipe.h"
 #import "FBURecipeViewController.h"
+#import "FBUEditRecipeViewController.h"
 
 @interface FBURecipesListViewController ()
 
@@ -47,6 +48,9 @@
         blockSelf.recipeArray = objects;
         [blockSelf.tableView reloadData];
     }];
+    
+    //This line causes the code to crash because it makes the operation with Parse take even longer. Must fix in the futur when we sort out memory and Parsing
+//    [getRecipes orderByDescending:@"createdAt"];
     
 }
 
@@ -87,6 +91,11 @@
 
         
     } else if ([segue.identifier isEqualToString:@"listViewToEditView"]){
+        
+        FBUEditRecipeViewController *controller = (FBUEditRecipeViewController *)segue.destinationViewController;
+
+        [controller.navBar setTitle:@"New Recipe"];
+
         
     }
 }
