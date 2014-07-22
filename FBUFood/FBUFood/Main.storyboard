@@ -5,6 +5,66 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
+        <!--Tab Bar Controller-->
+        <scene sceneID="3pt-sz-V0z">
+            <objects>
+                <tabBarController definesPresentationContext="YES" id="sn4-G5-Yf1" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="BSs-Si-6N9"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="xCH-e4-gv5">
+                        <rect key="frame" x="129" y="330" width="163" height="49"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BT5-Zb-hnn" kind="relationship" relationship="viewControllers" id="qTL-nS-V1e"/>
+                        <segue destination="IKZ-S5-mvs" kind="relationship" relationship="viewControllers" id="q6T-JB-BgF"/>
+                        <segue destination="iV8-kv-3cG" kind="relationship" relationship="viewControllers" id="NXq-HR-qKf"/>
+                        <segue destination="ePa-N9-Sum" kind="relationship" relationship="viewControllers" id="voQ-Dh-66C"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KAO-ns-ZIh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1152" y="-359"/>
+        </scene>
+        <!--View Controller - Explore-->
+        <scene sceneID="77f-mL-JdB">
+            <objects>
+                <viewController id="IKZ-S5-mvs" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="vwE-6f-i7X"/>
+                        <viewControllerLayoutGuide type="bottom" id="pZs-Bx-J9K"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="OgG-K6-OOU">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Explore" id="YyU-pI-mCB"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BXb-QD-ljQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-647" y="430"/>
+        </scene>
+        <!--View Controller - Map-->
+        <scene sceneID="yPA-qx-urV">
+            <objects>
+                <viewController id="iV8-kv-3cG" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ae1-fW-N1e"/>
+                        <viewControllerLayoutGuide type="bottom" id="lFs-5u-8p1"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="FEX-pa-WA1">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Map" id="QOL-9e-PVO"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1hB-yE-Slk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-140" y="347"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="gld-uP-9tS">
             <objects>
@@ -13,12 +73,12 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="BT5-Zb-hnn" kind="relationship" relationship="rootViewController" id="UUV-hR-eMZ"/>
+                        <segue destination="sn4-G5-Yf1" kind="relationship" relationship="rootViewController" id="Zmj-MJ-A7r"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="azl-Ze-xcE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-306" y="49"/>
+            <point key="canvasLocation" x="-1498" y="-359"/>
         </scene>
         <!--Groups List View Controller - My Groups-->
         <scene sceneID="ynF-80-7Pm">
@@ -37,15 +97,12 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="groupCell" id="yzp-HE-B9b">
-                                        <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yzp-HE-B9b" id="jA9-V0-UCv">
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="H9r-p1-AHy" kind="push" identifier="groupCell" id="A23-gI-gaF"/>
-                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <sections/>
@@ -58,11 +115,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="My Groups" id="wD3-sP-2Vz">
-                        <barButtonItem key="rightBarButtonItem" title="Create" id="pz8-Ug-Av1">
-                            <connections>
-                                <segue destination="oA1-3b-vE0" kind="push" id="0gm-3U-bc9"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Create" id="pz8-Ug-Av1"/>
                     </navigationItem>
                     <connections>
                         <outlet property="createGroupButton" destination="pz8-Ug-Av1" id="Hut-Mp-vik"/>
@@ -71,7 +124,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VbC-8K-Fhb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1130" y="587"/>
+            <point key="canvasLocation" x="512" y="587"/>
         </scene>
         <!--Recipes List View Controller - My Recipes-->
         <scene sceneID="KH6-os-jad">
@@ -96,9 +149,6 @@
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="kQr-eQ-54T" kind="push" identifier="cellToDetailView" id="8gU-Iz-7DH"/>
-                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -110,16 +160,8 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="My Recipes" id="jW3-NW-7au">
-                        <barButtonItem key="leftBarButtonItem" title="Profile" id="h4J-DX-5AV">
-                            <connections>
-                                <segue destination="ePa-N9-Sum" kind="push" id="bHf-LT-zzi"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="AOV-JI-UbY">
-                            <connections>
-                                <segue destination="BQl-mP-k22" kind="push" identifier="listViewToEditView" id="C77-9N-VAU"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="leftBarButtonItem" title="Profile" id="h4J-DX-5AV"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="AOV-JI-UbY"/>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
@@ -128,7 +170,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="agO-15-gc5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="595" y="1959"/>
+            <point key="canvasLocation" x="600" y="1368"/>
         </scene>
         <!--Recipe View Controller - Title-->
         <scene sceneID="vQh-XC-GTY">
@@ -173,11 +215,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="1mY-VD-MQO">
-                        <barButtonItem key="rightBarButtonItem" title="Edit" id="Z3n-jh-sk2">
-                            <connections>
-                                <segue destination="BQl-mP-k22" kind="push" identifier="detailToEditView" id="xsa-dR-Yq7"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Edit" id="Z3n-jh-sk2"/>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
@@ -189,7 +227,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6S9-jS-nBe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1059" y="1959"/>
+            <point key="canvasLocation" x="982" y="1368"/>
         </scene>
         <!--Groups View Controller - FBUGroupsViewController-->
         <scene sceneID="po8-AG-mth">
@@ -292,7 +330,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JPs-9s-xLb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1580" y="587"/>
+            <point key="canvasLocation" x="881" y="587"/>
         </scene>
         <!--Groups Detail View Controller - New Group-->
         <scene sceneID="68d-oi-hxv">
@@ -424,7 +462,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qxF-Ia-cWg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1580" y="1250"/>
+            <point key="canvasLocation" x="1247" y="587"/>
         </scene>
         <!--Event Creator View Controller-->
         <scene sceneID="0L2-Ga-unU">
@@ -483,7 +521,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sEF-I5-BnS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2005" y="541"/>
+            <point key="canvasLocation" x="1820" y="587"/>
         </scene>
         <!--Edit Recipe View Controller - Title-->
         <scene sceneID="Z64-lF-KEz">
@@ -554,16 +592,8 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Title" id="TaU-lV-h4H">
-                        <barButtonItem key="leftBarButtonItem" title="Save" id="4Hh-rR-8Pt">
-                            <connections>
-                                <segue destination="9SS-2X-QQj" kind="push" identifier="newRecipeToRecipeTableView" id="twc-tm-pyx"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="0o9-SB-dFj">
-                            <connections>
-                                <segue destination="9SS-2X-QQj" kind="push" id="yWg-by-FV2"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="leftBarButtonItem" title="Save" id="4Hh-rR-8Pt"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="0o9-SB-dFj"/>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
@@ -576,7 +606,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bjj-vF-fbC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1611" y="1959"/>
+            <point key="canvasLocation" x="1392" y="1368"/>
         </scene>
         <!--Edit Profile View Controller - Edit Profile-->
         <scene sceneID="ews-rI-1jQ">
@@ -646,9 +676,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                 <state key="normal" title="Add to Bucket List">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <segue destination="W7W-PL-w08" kind="push" id="8mj-OV-Mbc"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ee-Ef-VVr">
                                 <rect key="frame" x="113" y="513" width="95" height="30"/>
@@ -667,11 +694,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Edit Profile" id="zhP-EW-Hxz">
-                        <barButtonItem key="leftBarButtonItem" systemItem="save" id="e62-se-UhI">
-                            <connections>
-                                <segue destination="ePa-N9-Sum" kind="push" identifier="editProfileToProfile" id="h8F-Fx-1uV"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="leftBarButtonItem" systemItem="save" id="e62-se-UhI"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="camera" id="QsI-Zs-wRE">
                             <connections>
                                 <action selector="takePicture:" destination="Aib-qs-nCG" id="Ofg-Kz-5HY"/>
@@ -689,7 +712,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JmF-w6-EvT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="610" y="-512"/>
+            <point key="canvasLocation" x="466" y="-502"/>
         </scene>
         <!--Profile View Controller - Profile-->
         <scene sceneID="jiH-e9-1BY">
@@ -733,46 +756,31 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                 <state key="normal" title="Bucket List">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <segue destination="Vox-zI-Ga8" kind="push" id="WpU-FD-IxJ"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YDu-UU-UWF">
                                 <rect key="frame" x="199" y="439" width="56" height="30"/>
                                 <state key="normal" title="Recipes">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <segue destination="9SS-2X-QQj" kind="push" id="j0V-1J-VhU"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FBO-hh-cm1">
                                 <rect key="frame" x="64" y="498" width="51" height="30"/>
                                 <state key="normal" title="Groups">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <segue destination="Lvc-0M-h8P" kind="push" id="6sR-hQ-hCp"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jv8-TK-vFW">
                                 <rect key="frame" x="190" y="498" width="75" height="30"/>
                                 <state key="normal" title="Dashboard">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <segue destination="BT5-Zb-hnn" kind="push" id="O7O-kE-bhK"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Profile" id="iVZ-sK-KBW"/>
                     <navigationItem key="navigationItem" title="Profile" id="GP3-2m-X7D">
-                        <barButtonItem key="rightBarButtonItem" title="Edit" id="lb1-58-v6o">
-                            <connections>
-                                <segue destination="Aib-qs-nCG" kind="push" id="uZU-vO-NVH"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Edit" id="lb1-58-v6o"/>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
@@ -784,7 +792,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LhX-rd-lsx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1082" y="-197"/>
+            <point key="canvasLocation" x="-626" y="-800"/>
         </scene>
         <!--Dashboard View Controller - Dasboard-->
         <scene sceneID="Vg3-AS-tMo">
@@ -799,7 +807,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="vOa-b2-yPK">
-                                <rect key="frame" x="0.0" y="65" width="320" height="503"/>
+                                <rect key="frame" x="0.0" y="65" width="320" height="448"/>
                                 <color key="backgroundColor" red="0.68600369930000005" green="0.2527399977" blue="0.75" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="uaq-5H-6HF">
                                     <size key="itemSize" width="289" height="50"/>
@@ -822,22 +830,12 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Dasboard" id="c6o-mR-psF">
-                        <barButtonItem key="leftBarButtonItem" title="Logout" id="gt5-oS-aoo">
-                            <connections>
-                                <action selector="logoutButtonPressed:" destination="BT5-Zb-hnn" id="pMY-MA-k08"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Profile" id="Ka8-G6-8kZ">
-                            <connections>
-                                <segue destination="ePa-N9-Sum" kind="push" id="abT-Rh-8Hr"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <tabBarItem key="tabBarItem" title="Dashboard" id="OIg-jL-KvB"/>
+                    <navigationItem key="navigationItem" title="Dasboard" id="c6o-mR-psF"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qYS-II-0pt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="206" y="57"/>
+            <point key="canvasLocation" x="-156" y="-340"/>
         </scene>
         <!--Bucket List Detail View Controller - New Bucket List Item-->
         <scene sceneID="Cbb-5u-fxf">
@@ -906,7 +904,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3SC-Hl-dcy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="242" y="693"/>
+            <point key="canvasLocation" x="1885" y="-185"/>
         </scene>
         <!--Bucket List Items View Controller - Bucket List-->
         <scene sceneID="iRB-L6-HRC">
@@ -946,11 +944,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Bucket List" id="TDt-cI-1lF">
-                        <barButtonItem key="rightBarButtonItem" title="Create" id="VUf-Ta-Qpw">
-                            <connections>
-                                <segue destination="W7W-PL-w08" kind="push" id="GR2-9c-aeg"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Create" id="VUf-Ta-Qpw"/>
                     </navigationItem>
                     <connections>
                         <outlet property="createButton" destination="VUf-Ta-Qpw" id="gH8-H4-wOe"/>
@@ -959,7 +953,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kkr-aV-eeO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="610" y="170"/>
+            <point key="canvasLocation" x="1540" y="-185"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
@@ -967,11 +961,4 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
-    <inferredMetricsTieBreakers>
-        <segue reference="bHf-LT-zzi"/>
-        <segue reference="twc-tm-pyx"/>
-        <segue reference="C77-9N-VAU"/>
-        <segue reference="GR2-9c-aeg"/>
-        <segue reference="UUV-hR-eMZ"/>
-    </inferredMetricsTieBreakers>
 </document>
