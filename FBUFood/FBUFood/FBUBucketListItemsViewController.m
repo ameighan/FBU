@@ -9,6 +9,7 @@
 #import "FBUBucketListItemsViewController.h"
 #import "FBUBucketListDetailViewController.h"
 #import "FBUBucketListItem.h"
+#import "FBUBucketListViewController.h"
 #import <Parse/Parse.h>
 
 @implementation FBUBucketListItemsViewController
@@ -16,13 +17,13 @@
 - (NSArray *)queryingForBucketListItems
 {
     PFQuery *query = [FBUBucketListItem query];
-    //[query whereKey:@"owner" equalTo:[PFUser currentUser]];
+    [query whereKey:@"owner" equalTo:[PFUser currentUser]];
     return [query findObjects];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"UITableViewCell"
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"BucketListCell"
                                                             forIndexPath:indexPath];
     FBUBucketListItem *bucketItem = self.items[indexPath.row];
     cell.textLabel.text = [bucketItem itemName];
@@ -34,10 +35,24 @@
     return [self.items count];
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"BucketListCell"]) {
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        
+        FBUBucketListItem *myItem = self.items[indexPath.row];
+        
+        FBUBucketListViewController *itemsViewController = segue.destinationViewController;
+        
+        itemsViewController.item = myItem;
+        NSLog(@"%@", myItem.itemName);
+    }
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"UITableViewCell"];
+    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"BucketListCell"];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
 }

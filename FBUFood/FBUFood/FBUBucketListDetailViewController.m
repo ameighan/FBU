@@ -67,7 +67,7 @@
 {
     FBUBucketListItem *newBucketItem = [FBUBucketListItem object];
     newBucketItem.itemName = self.addTextfield.text;
-    //newBucketItem.owner = [PFUser currentUser];
+    newBucketItem.owner = [PFUser currentUser];
     [newBucketItem saveInBackground];
     
     

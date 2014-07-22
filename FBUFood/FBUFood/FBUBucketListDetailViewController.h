@@ -8,7 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+@class FBUBucketListItem;
+
 @interface FBUBucketListDetailViewController : UIViewController
+
+@property (nonatomic, strong) FBUBucketListItem *item;
 
 @property (weak, nonatomic) IBOutlet UILabel *addLabel;
 @property (weak, nonatomic) IBOutlet UILabel *uploadImageLabel;
