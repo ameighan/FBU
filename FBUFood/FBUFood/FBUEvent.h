@@ -20,7 +20,10 @@
 @property (strong, nonatomic) NSTimeZone *timeZoneOfEvent;
 @property (nonatomic) int mealsLeftCounter;
 @property (strong, nonatomic) NSArray *recipesInEvent;
+@property (strong, nonatomic) NSArray *subscribersToEvent;
 @property (strong, nonatomic) FBUGroceryList *groceryList;
 
+
+- (void)addSubscriberToEvent:(PFUser *)subscriber;
 
 @end

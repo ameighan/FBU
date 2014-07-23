@@ -8,6 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-@interface FBUDashboardViewController : UIViewController
+@interface FBUDashboardViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+
+@property (strong, nonatomic) NSArray *eventsArray;
+@property (weak, nonatomic) IBOutlet UITableView *dashboardTableView;
 
 @end

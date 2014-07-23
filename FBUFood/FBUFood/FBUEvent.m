@@ -22,6 +22,12 @@
 @dynamic timeZoneOfEvent;
 @dynamic mealsLeftCounter;
 @dynamic recipesInEvent;
+@dynamic subscribersToEvent;
 @dynamic groceryList;
+
+- (void)addSubscriberToEvent:(PFUser *)subscriber
+{
+    [self addObject:subscriber forKey:@"subscribersToEvent"];
+}
 
 @end
