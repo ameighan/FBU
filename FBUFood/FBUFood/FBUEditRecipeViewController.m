@@ -51,9 +51,7 @@
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
     UIImage *image = info[UIImagePickerControllerOriginalImage];
-//    NSLog(@"Picked a photo: %@", image);
     self.imageView.image = image;
-//        NSLog(@"Assigning the image: %@", self.imageView.image);
     [self dismissViewControllerAnimated:YES completion:NULL];
 }
 

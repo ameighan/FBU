@@ -49,9 +49,8 @@
         
         [controller.navBar setTitle:@"Edit Recipe"];
         
-//        UIImage *ig = [UIImage imageWithData:[self.recipe.image getData]];
         controller.recipe.image= self.recipe.image;
-        NSLog(@"It has been assigned: %@", controller.recipe.image);
+//        NSLog(@"It has been assigned: %@", controller.recipe.image);
         
         controller.recipe.ingredientsList = self.recipe.ingredientsList;
         
