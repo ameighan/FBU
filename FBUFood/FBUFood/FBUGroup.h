@@ -32,8 +32,8 @@
 - (NSArray *)addObject:(id)object toGroup:(NSArray *)group;
 - (void)addRecipeToGroup:(FBURecipe *)recipe;
 - (void)addEventToGroup:(FBUEvent *)event;
-- (void)addCookToGroup:(PFUser *)cook;
-- (void)addSubScriberToGroup:(PFUser *)subscriber;
+- (void)addMemberToGroup:(PFUser *)member;
+- (void)addSubscriberToGroup:(PFUser *)subscriber;
 
 
 

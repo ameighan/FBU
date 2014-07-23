@@ -48,17 +48,29 @@
                                  toGroup:self.eventsInGroup];
 }
 
-- (void)addCookToGroup:(PFUser *)cook
+- (void)addMemberToGroup:(PFUser *)member
 {
-    self.cooksInGroup = [self addObject:cook
+    self.cooksInGroup = [self addObject:member
                                 toGroup:self.cooksInGroup];
     
 }
 
-- (void)addSubScriberToGroup:(PFUser *)subscriber
+- (void)addSubscriberToGroup:(PFUser *)subscriber
 {
     self.subscribersOfGroup = [self addObject:subscriber
                                       toGroup:self.subscribersOfGroup];
+}
+
+- (instancetype)init
+{
+    self = [super init];
+    
+    if (!self) {
+        self.owner = [PFUser currentUser];
+        [self addMemberToGroup:self.owner];
+    }
+    
+    return self;
 }
 
 @end
