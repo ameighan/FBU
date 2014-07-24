@@ -9,6 +9,7 @@
 #import "FBUEvent.h"
 #import <Parse/PFObject+Subclass.h>
 
+
 @implementation FBUEvent
 
 + (NSString *)parseClassName
@@ -16,18 +17,15 @@
     return @"FBUEvent";
 }
 
-@dynamic eventTitle;
-@dynamic hourOfEvent;
-@dynamic minuteOfEvent;
+@dynamic eventName;
+@dynamic eventDescription;
+@dynamic eventTimeDate;
+@dynamic eventAddress;
+@dynamic eventGeoPoint;
 @dynamic timeZoneOfEvent;
 @dynamic mealsLeftCounter;
 @dynamic recipesInEvent;
-@dynamic subscribersToEvent;
+@dynamic membersOfEvent;
 @dynamic groceryList;
-
-- (void)addSubscriberToEvent:(PFUser *)subscriber
-{
-    [self addObject:subscriber forKey:@"subscribersToEvent"];
-}
 
 @end

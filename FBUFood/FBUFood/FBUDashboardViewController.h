@@ -7,8 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreLocation/CoreLocation.h>
 
-@interface FBUDashboardViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface FBUDashboardViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, CLLocationManagerDelegate>
 
 @property (strong, nonatomic) NSArray *eventsArray;
 @property (weak, nonatomic) IBOutlet UITableView *dashboardTableView;

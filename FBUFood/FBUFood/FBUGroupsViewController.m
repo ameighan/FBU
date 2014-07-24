@@ -10,13 +10,6 @@
 #import "FBUGroupsListViewController.h"
 #import "FBUGroup.h"
 
-@interface FBUGroupsViewController ()
-
-@property (strong, nonatomic) NSArray *membersOfGroup;
-@property (strong, nonatomic) NSArray *subscribersOfGroup;
-
-@end
-
 
 @implementation FBUGroupsViewController
 
@@ -28,11 +21,14 @@
     self.groupDescriptionTextView.text = self.group.groupDescription;
     self.generalMeetingTimesLabel.text = self.group.generalMeetingTimes;
     
-    if ([self.membersOfGroup containsObject:[PFUser currentUser]]) {
+    if ([self.group.cooksInGroup containsObject:[PFUser currentUser]]) {
+        //Show buttons now that the user is part of the group
         self.createEventInGroupButton.hidden = NO;
         self.addRecipeInGroupButton.hidden = NO;
         self.viewSubscribersInGroupButton.hidden = NO;
         
+        
+        //Disable and hide the old buttons
         self.joinGroupButton.hidden = YES;
         self.joinGroupButton.enabled = NO;
         self.subscribeGroupButton.hidden = YES;
@@ -43,16 +39,17 @@
 
 - (IBAction)addUserToGroupAsMember:(id)sender
 {
-    [self.group addMemberToGroup:[PFUser currentUser]];
+    [self.group addObject:[PFUser currentUser] forKey:@"cooksInGroup"];
+    [self.group saveInBackground];
     
 }
 
 
 - (IBAction)addUserToGroupAsSubscriber:(id)sender
 {
-    [self.group addSubscriberToGroup:[PFUser currentUser]];
+    [self.group addObject:[PFUser currentUser] forKey:@"subscribersOfGroup"];
+    [self.group saveInBackground];
 }
-
 
 
 @end

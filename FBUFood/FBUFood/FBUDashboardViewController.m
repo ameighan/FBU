@@ -13,6 +13,8 @@
 
 @interface FBUDashboardViewController () <PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate>
 
+@property (strong, nonatomic) CLLocationManager *locationManager;
+
 -(void)showAlertWithTitle:(NSString *)title message:(NSString *)message;
 -(void)makeLoginAppear;
 
@@ -66,6 +68,20 @@
     }
     
     [self queryForEvents];
+}
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    //Establishing a location manager that will start updating the location of the user
+    self.locationManager = [[CLLocationManager alloc] init];
+    self.locationManager.delegate = self;
+    self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    
+    [self.locationManager startUpdatingLocation];
+    NSLog(@"Location manager is beginning to update location.");
+    
 }
 
 // LOGIN SCREEN//
@@ -207,7 +223,7 @@
     
     FBUEvent *event = self.eventsArray[indexPath.row];
     
-    cell.textLabel.text = [event eventTitle];
+    cell.textLabel.text = [event eventName];
     
     return cell;
 }

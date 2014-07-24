@@ -29,12 +29,6 @@
 @property (strong, nonatomic) NSArray *cooksInGroup;
 @property (strong, nonatomic) NSArray *subscribersOfGroup;
 
-- (NSArray *)addObject:(id)object toGroup:(NSArray *)group;
-- (void)addRecipeToGroup:(FBURecipe *)recipe;
-- (void)addEventToGroup:(FBUEvent *)event;
-- (void)addMemberToGroup:(PFUser *)member;
-- (void)addSubscriberToGroup:(PFUser *)subscriber;
-
 
 
 @end
