@@ -16,11 +16,11 @@
 @property (strong, nonatomic) CLLocationManager *locationManager;
 
 -(void)showAlertWithTitle:(NSString *)title message:(NSString *)message;
--(void)makeLoginAppear;
 
 @end
 
 @implementation FBUDashboardViewController
+
 
 -(void)makeLoginAppear
 {
@@ -50,14 +50,7 @@
 }
 
 
-- (IBAction)logoutButtonPressed:(id)sender
-{
-    // Log out
-    [PFUser logOut];
-    
-    // Return to login page
-    [self makeLoginAppear];
-}
+
 
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -67,7 +60,7 @@
         [self makeLoginAppear];
     }
     
-    [self queryForEvents];
+//    [self queryForEvents];
 }
 
 - (void)viewDidLoad
@@ -99,9 +92,8 @@
 }
 
 // Sent to the delegate when a PFUser is logged in.
-- (void)logInViewController:(PFLogInViewController *)logInController didLogInUser:(PFUser *)user {
-
-    
+- (void)logInViewController:(PFLogInViewController *)logInController didLogInUser:(PFUser *)user
+{
     if ([PFFacebookUtils session]) {
        
             //Create request for user's Facebook data
@@ -131,6 +123,7 @@
                 }
             }];
     }
+    
     [self dismissViewControllerAnimated:YES completion:NULL];
 }
 
@@ -204,17 +197,17 @@
 }
 
 
-- (void)queryForEvents
-{
-    __weak FBUDashboardViewController *blockSelf = self;
-    PFQuery *eventQuery = [FBUEvent query];
-    [eventQuery whereKey:@"subscribersToEvent" equalTo:[PFUser currentUser]];
-    [eventQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        blockSelf.eventsArray = objects;
-        [blockSelf.dashboardTableView reloadData];
-    }];
-    
-}
+//- (void)queryForEvents
+//{
+//    __weak FBUDashboardViewController *blockSelf = self;
+//    PFQuery *eventQuery = [FBUEvent query];
+//    [eventQuery whereKey:@"subscribersToEvent" equalTo:[PFUser currentUser]];
+//    [eventQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+//        blockSelf.eventsArray = objects;
+//        [blockSelf.dashboardTableView reloadData];
+//    }];
+//    
+//}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {

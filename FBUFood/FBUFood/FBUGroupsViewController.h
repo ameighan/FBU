@@ -13,7 +13,6 @@
 
 @property (strong, nonatomic) FBUGroup *group;
 
-@property (weak, nonatomic) IBOutlet UILabel *groupNameLabel;
 @property (weak, nonatomic) IBOutlet UITextView *groupDescriptionTextView;
 @property (weak, nonatomic) IBOutlet UILabel *generalMeetingTimesLabel;
 @property (weak, nonatomic) IBOutlet UIButton *recipesInGroupButton;

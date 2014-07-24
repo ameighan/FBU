@@ -12,7 +12,6 @@
 
 @interface FBURecipeViewController ()
 
-@property (weak, nonatomic) IBOutlet UINavigationItem *navBar;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UITextView *ingredientsList;
 @property (weak, nonatomic) IBOutlet UITextView *directions;
@@ -28,7 +27,7 @@
     [super viewWillAppear:animated];
     
     
-    [self.navBar setTitle:self.recipe.title];
+    self.title = self.recipe.title;
     
     UIImage *image = [UIImage imageWithData:[self.recipe.image getData]];
     self.imageView.image = image;
@@ -47,10 +46,9 @@
         
         FBUEditRecipeViewController *controller = (FBUEditRecipeViewController *)segue.destinationViewController;
         
-        [controller.navBar setTitle:@"Edit Recipe"];
+        controller.title = @"Edit Recipe";
         
         controller.recipe.image= self.recipe.image;
-//        NSLog(@"It has been assigned: %@", controller.recipe.image);
         
         controller.recipe.ingredientsList = self.recipe.ingredientsList;
         

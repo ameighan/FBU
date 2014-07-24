@@ -7,14 +7,20 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <Parse/Parse.h>
 
-@interface FBUProfileViewController : UIViewController
+@interface FBUProfileViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate>
 
-
+// Properties for profile data
 @property (weak, nonatomic) IBOutlet UIImageView *profileImage;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *emailLabel;
 @property (weak, nonatomic) IBOutlet UILabel *phoneLabel;
+
+// Properties for the group table view
+@property (weak, nonatomic) IBOutlet UITableView *myGroupsTableView;
+
+@property (strong, nonatomic) NSArray *myGroupsArray;
 
 
 @end

@@ -14,10 +14,10 @@
 @implementation FBUGroupsViewController
 
 
-- (void)viewWillAppear:(BOOL)animated
+- (void)viewDidLoad
 {
-    [super viewDidAppear:animated];
-    self.groupNameLabel.text = self.group.groupName;
+    [super viewDidLoad];
+    self.title = self.group.groupName;
     self.groupDescriptionTextView.text = self.group.groupDescription;
     self.generalMeetingTimesLabel.text = self.group.generalMeetingTimes;
     

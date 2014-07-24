@@ -12,11 +12,7 @@
 #import "FBURecipeViewController.h"
 #import "FBUEditRecipeViewController.h"
 
-@interface FBURecipesListViewController ()
 
-@property (strong, nonatomic) FBURecipe *recipe;
-
-@end
 
 @implementation FBURecipesListViewController
 
@@ -34,6 +30,8 @@
 {
     [super viewWillAppear:animated];
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"UITableViewCell"];
+    
+    //Might do better in viewDidAppear while providing a waiting icon for the user
     [self queryForRecipes];
 }
 
@@ -42,14 +40,13 @@
 {
     __weak FBURecipesListViewController *blockSelf = self;
     PFQuery *getRecipes = [FBURecipe query];
-//    PFQuery *getRecipes = [PFQuery queryWithClassName:@"Recipe"];
     [getRecipes whereKey:@"publisher" equalTo:[PFUser currentUser]];
     [getRecipes findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         blockSelf.recipeArray = objects;
         [blockSelf.tableView reloadData];
     }];
     
-    //This line causes the code to crash because it makes the operation with Parse take even longer. Must fix in the futur when we sort out memory and Parsing
+//  Fix the asynchronous behavior so that the code doesn't crash when this line is run. 
 //    [getRecipes orderByDescending:@"createdAt"];
     
 }
@@ -94,12 +91,19 @@
         
         FBUEditRecipeViewController *controller = (FBUEditRecipeViewController *)segue.destinationViewController;
 
-        [controller.navBar setTitle:@"New Recipe"];
+        controller.title = @"New Recipe";
 
         
     }
 }
 
+- (IBAction)unwindToRecipeListViewController:(UIStoryboardSegue *)segue
+{
+    if([segue.identifier isEqualToString:@"save"]) {
+        FBUEditRecipeViewController *controller = segue.sourceViewController;
+        [controller saveRecipe];
+    }
+}
 
 
 @end

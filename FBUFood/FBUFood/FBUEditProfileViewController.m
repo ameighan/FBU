@@ -10,13 +10,9 @@
 #import <Parse/Parse.h>
 #import "FBUProfileViewController.h"
 
-@interface FBUEditProfileViewController() <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
+@interface FBUEditProfileViewController() 
 
-@property (weak, nonatomic) IBOutlet UIImageView *imageView;
-@property (weak, nonatomic) IBOutlet UITextField *fullNameTextField;
-@property (weak, nonatomic) IBOutlet UITextField *emailTextField;
-@property (weak, nonatomic) IBOutlet UITextField *phoneNumberTextField;
-@property (weak, nonatomic) IBOutlet UITextView *allergiesTextView;
+
 
 @end
 
@@ -42,27 +38,25 @@
     
 }
 
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+-(void)saveProfileData
 {
-    if([segue.identifier isEqualToString:@"editProfileToProfile"]) {
-        PFUser *user = [PFUser currentUser];
-        user[@"name"] = self.fullNameTextField.text;
-        user[@"additional"] = self.phoneNumberTextField.text;
-        user[@"email"] = self.emailTextField.text;
-        if(!user[@"fbImage"]) {
-            if(self.imageView.image) {
+    PFUser *user = [PFUser currentUser];
+    user[@"name"] = self.fullNameTextField.text;
+    user[@"additional"] = self.phoneNumberTextField.text;
+    user.email = self.emailTextField.text;
+    if(!user[@"fbImage"]) {
+        if(self.imageView.image) {
             NSData *imageData = UIImageJPEGRepresentation(self.imageView.image, 0.8);
             NSString *filename = [NSString stringWithFormat:@"%@.png", self.fullNameTextField.text];
             PFFile *imageFile = [PFFile fileWithName:filename data:imageData];
             user[@"profileImage"] = imageFile;
-            }
         }
-        [user saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-            NSLog(@"Saving Profile Data");
-        }];
-
     }
+    [user saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        NSLog(@"Saving Profile Data");
+    }];
 }
+
 
 - (IBAction)takePicture:(id)sender
 {
