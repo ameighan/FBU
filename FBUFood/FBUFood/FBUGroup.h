@@ -22,12 +22,12 @@
 @property (strong, nonatomic) PFUser *owner;
 
 //NSArrays of Parse Objects (FBURecipe and FBUEvent respectively)
-@property (strong, nonatomic) NSArray *recipesInGroup;
-@property (strong, nonatomic) NSArray *eventsInGroup;
+@property (strong, nonatomic) NSMutableArray *recipesInGroup;
+@property (strong, nonatomic) NSMutableArray *eventsInGroup;
 
 //NSArrays of users...
-@property (strong, nonatomic) NSArray *cooksInGroup;
-@property (strong, nonatomic) NSArray *subscribersOfGroup;
+@property (strong, nonatomic) NSMutableArray *cooksInGroup;
+@property (strong, nonatomic) NSMutableArray *subscribersOfGroup;
 
 
 

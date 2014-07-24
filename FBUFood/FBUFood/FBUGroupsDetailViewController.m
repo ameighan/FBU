@@ -67,6 +67,7 @@
     newGroup.groupName = self.nameOfGroupTextField.text;
     newGroup.groupDescription = self.descriptionOfGroupTextView.text;
     newGroup.owner = [PFUser currentUser];
+    [newGroup addObject:[PFUser currentUser] forKey:@"cooksInGroup"];
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"h:mm a"];

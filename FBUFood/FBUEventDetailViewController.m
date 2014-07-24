@@ -32,6 +32,7 @@
     newEvent.eventName = self.eventNameTextField.text;
     newEvent.eventDescription = self.eventDescriptionTextView.text;
     newEvent.eventAddress = self.eventAddressTextField.text;
+//    newEvent.eventParentGroup = self.group;
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"MM-dd-yyyy 'at' h:mm a"];

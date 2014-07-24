@@ -29,16 +29,4 @@
 @dynamic cooksInGroup;
 @dynamic subscribersOfGroup;
 
-- (instancetype)init
-{
-    self = [super init];
-    
-    if (!self) {
-        self.owner = [PFUser currentUser];
-        [self addObject:self.owner forKey:@"cooksInGroup"];
-    }
-    
-    return self;
-}
-
 @end

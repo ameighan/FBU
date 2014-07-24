@@ -7,13 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
+//#import "FBUGroup.h"
 
-@interface FBUEventDetailViewController : UIViewController
+@interface FBUEventDetailViewController : UIViewController <UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *eventNameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *eventAddressTextField;
 @property (weak, nonatomic) IBOutlet UITextView *eventDescriptionTextView;
 @property (weak, nonatomic) IBOutlet UIDatePicker *eventDatePicker;
-@property (weak, nonatomic) IBOutlet UIButton *saveButton;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *saveButton;
 
+//@property (strong, nonatomic) FBUGroup *group;
 @end

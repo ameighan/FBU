@@ -23,6 +23,8 @@
 {
     [super viewWillAppear:animated];
     
+    [self queryForRecipes];
+    
     if ([PFUser currentUser]){
         PFUser *user = [PFUser currentUser];
         
@@ -43,7 +45,7 @@
 -(void)viewDidLoad
 {
     [self.myGroupsTableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"UITableViewCell"];
-    [self queryForRecipes];
+//    [self queryForRecipes];
 
 }
 -(void)queryForRecipes
