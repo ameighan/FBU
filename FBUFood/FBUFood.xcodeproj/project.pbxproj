@@ -17,9 +17,9 @@
 		966554D9197443B200DDBED0 /* FBUBucketListDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 966554D8197443B200DDBED0 /* FBUBucketListDetailViewController.m */; };
 		966554DF197450B500DDBED0 /* FBUBucketListItemsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 966554DE197450B500DDBED0 /* FBUBucketListItemsViewController.m */; };
 		96C1E241197D825300266DB8 /* FBUBucketListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96C1E240197D825300266DB8 /* FBUBucketListViewController.m */; };
+		96C1E245197F01DF00266DB8 /* FBUExploreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96C1E244197F01DF00266DB8 /* FBUExploreViewController.m */; };
 		96EBDE8F1970AF1300DE0033 /* FBUGroupsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96EBDE8E1970AF1300DE0033 /* FBUGroupsListViewController.m */; };
 		D28632CB19772779007BBD28 /* FBUGroupsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D28632C919772779007BBD28 /* FBUGroupsDetailViewController.m */; };
-		D28632D2197ED5A7007BBD28 /* FBUExploreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D28632D1197ED5A7007BBD28 /* FBUExploreViewController.m */; };
 		D28632D7197ED5D0007BBD28 /* FBUMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D28632D6197ED5D0007BBD28 /* FBUMapViewController.m */; };
 		D28632DB197F1E0B007BBD28 /* FBUEventDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D28632DA197F1E0B007BBD28 /* FBUEventDetailViewController.m */; };
 		D28632DE197F1E4C007BBD28 /* FBUEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D28632DD197F1E4C007BBD28 /* FBUEventViewController.m */; };
@@ -86,12 +86,12 @@
 		966554DE197450B500DDBED0 /* FBUBucketListItemsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBUBucketListItemsViewController.m; sourceTree = "<group>"; };
 		96C1E23F197D825300266DB8 /* FBUBucketListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBUBucketListViewController.h; sourceTree = "<group>"; };
 		96C1E240197D825300266DB8 /* FBUBucketListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBUBucketListViewController.m; sourceTree = "<group>"; };
+		96C1E243197F01DF00266DB8 /* FBUExploreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBUExploreViewController.h; sourceTree = "<group>"; };
+		96C1E244197F01DF00266DB8 /* FBUExploreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBUExploreViewController.m; sourceTree = "<group>"; };
 		96EBDE8D1970AF1300DE0033 /* FBUGroupsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBUGroupsListViewController.h; sourceTree = "<group>"; };
 		96EBDE8E1970AF1300DE0033 /* FBUGroupsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBUGroupsListViewController.m; sourceTree = "<group>"; };
 		D28632C819772779007BBD28 /* FBUGroupsDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBUGroupsDetailViewController.h; sourceTree = "<group>"; };
 		D28632C919772779007BBD28 /* FBUGroupsDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBUGroupsDetailViewController.m; sourceTree = "<group>"; };
-		D28632D0197ED5A7007BBD28 /* FBUExploreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FBUExploreViewController.h; path = ../FBUExploreViewController.h; sourceTree = "<group>"; };
-		D28632D1197ED5A7007BBD28 /* FBUExploreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FBUExploreViewController.m; path = ../FBUExploreViewController.m; sourceTree = "<group>"; };
 		D28632D5197ED5D0007BBD28 /* FBUMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBUMapViewController.h; sourceTree = "<group>"; };
 		D28632D6197ED5D0007BBD28 /* FBUMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBUMapViewController.m; sourceTree = "<group>"; };
 		D28632D9197F1E0B007BBD28 /* FBUEventDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FBUEventDetailViewController.h; path = ../FBUEventDetailViewController.h; sourceTree = "<group>"; };
@@ -231,8 +231,8 @@
 		930320D91976F6E900629269 /* Groups */ = {
 			isa = PBXGroup;
 			children = (
-				D295F9951975FBB3000ED2C1 /* FBUGroup.h */,
 				D295F9961975FBB3000ED2C1 /* FBUGroup.m */,
+				D295F9951975FBB3000ED2C1 /* FBUGroup.h */,
 				D2AF54DD197062F100F0A0F2 /* FBUGroupsViewController.h */,
 				9607499C1978985C00853E97 /* FBUGroupsViewController.m */,
 				96EBDE8D1970AF1300DE0033 /* FBUGroupsListViewController.h */,
@@ -256,13 +256,13 @@
 			name = Events;
 			sourceTree = "<group>";
 		};
-		D28632D4197ED5BA007BBD28 /* Explore */ = {
+		96C1E242197F019500266DB8 /* ExploreApp */ = {
 			isa = PBXGroup;
 			children = (
-				D28632D0197ED5A7007BBD28 /* FBUExploreViewController.h */,
-				D28632D1197ED5A7007BBD28 /* FBUExploreViewController.m */,
+				96C1E243197F01DF00266DB8 /* FBUExploreViewController.h */,
+				96C1E244197F01DF00266DB8 /* FBUExploreViewController.m */,
 			);
-			name = Explore;
+			name = ExploreApp;
 			sourceTree = "<group>";
 		};
 		D28632D8197ED5D6007BBD28 /* Map */ = {
@@ -325,11 +325,12 @@
 		D2AF54A31970595E00F0A0F2 /* FBUFood */ = {
 			isa = PBXGroup;
 			children = (
+				96C1E242197F019500266DB8 /* ExploreApp */,
+				D28632D8197ED5D6007BBD28 /* Map */,
 				D2AF54CC197059B000F0A0F2 /* Main.storyboard */,
 				D2AF54AC1970595F00F0A0F2 /* FBUAppDelegate.h */,
 				D2AF54AD1970595F00F0A0F2 /* FBUAppDelegate.m */,
 				D28632D8197ED5D6007BBD28 /* Map */,
-				D28632D4197ED5BA007BBD28 /* Explore */,
 				93E4BC2C1979C2C500074647 /* Events */,
 				930320D91976F6E900629269 /* Groups */,
 				930320D81976F42000629269 /* Recipes */,
@@ -484,6 +485,7 @@
 				966554D9197443B200DDBED0 /* FBUBucketListDetailViewController.m in Sources */,
 				931404C5197D84F0004D4447 /* FBUEditRecipeViewController.m in Sources */,
 				D295F99A1976028F000ED2C1 /* FBUEvent.m in Sources */,
+				96C1E245197F01DF00266DB8 /* FBUExploreViewController.m in Sources */,
 				D28632D7197ED5D0007BBD28 /* FBUMapViewController.m in Sources */,
 				D2AF54AE1970595F00F0A0F2 /* FBUAppDelegate.m in Sources */,
 				D2AF54D319705B4B00F0A0F2 /* FBUProfileViewController.m in Sources */,
@@ -492,7 +494,6 @@
 				96EBDE8F1970AF1300DE0033 /* FBUGroupsListViewController.m in Sources */,
 				D28632CB19772779007BBD28 /* FBUGroupsDetailViewController.m in Sources */,
 				93E4BC2F1979C89800074647 /* FBURecipeViewController.m in Sources */,
-				D28632D2197ED5A7007BBD28 /* FBUExploreViewController.m in Sources */,
 				D295F9971975FBB3000ED2C1 /* FBUGroup.m in Sources */,
 				D295F9A019760D68000ED2C1 /* FBUGroceryList.m in Sources */,
 				D2AF54D919705E0700F0A0F2 /* FBUSubscriptionsViewController.m in Sources */,

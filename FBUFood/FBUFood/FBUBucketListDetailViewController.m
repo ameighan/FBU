@@ -70,7 +70,6 @@
     newBucketItem.owner = [PFUser currentUser];
     [newBucketItem saveInBackground];
     
-    
 }
 
 @end
