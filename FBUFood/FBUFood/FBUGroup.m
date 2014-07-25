@@ -29,4 +29,22 @@
 @dynamic cooksInGroup;
 @dynamic subscribersOfGroup;
 
+
+- (BOOL)checkIfUserIsInGroupArray:(NSMutableArray *)groupArray
+{
+    
+    int index = [groupArray indexOfObjectPassingTest:^BOOL(id obj, NSUInteger idx, BOOL *stop) {
+        PFUser *user = obj;
+        return [user.objectId isEqualToString:[PFUser currentUser].objectId];
+    }];
+    
+    if (index == NSNotFound) {
+        return NO;
+    }
+    
+    return index != NSNotFound;
+    
+    
+}
+
 @end

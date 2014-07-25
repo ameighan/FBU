@@ -29,6 +29,7 @@
 @property (strong, nonatomic) NSMutableArray *cooksInGroup;
 @property (strong, nonatomic) NSMutableArray *subscribersOfGroup;
 
+- (BOOL)checkIfUserIsInGroupArray:(NSMutableArray *)groupArray;
 
 
 @end

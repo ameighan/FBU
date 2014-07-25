@@ -66,6 +66,11 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+    
+    if (![PFUser currentUser]) { // No user logged in
+        [self makeLoginAppear];
+    }
+    
     [self queryForEvents];
 }
 
@@ -182,6 +187,18 @@
 // Sent to the delegate when the sign up screen is dismissed.
 - (void)signUpViewControllerDidCancelSignUp:(PFSignUpViewController *)signUpController {
     NSLog(@"User dismissed the signUpViewController");
+}
+
+-(void)showAlertWithTitle:(NSString *)title message:(NSString *)message
+{
+    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title
+                                                    message:message
+                                                   delegate:nil
+                                          cancelButtonTitle:@"OK"
+                                          otherButtonTitles:nil];
+    
+    [alert show];
 }
 
 

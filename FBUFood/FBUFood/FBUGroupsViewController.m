@@ -16,12 +16,14 @@
 @implementation FBUGroupsViewController
 
 
-- (void)viewDidLoad
+- (void)viewWillAppear:(BOOL)animated
 {
-    [super viewDidLoad];
+    [super viewWillAppear:animated];
     
-    if ([self.group.cooksInGroup containsObject:[PFUser currentUser]]) {
+    NSLog(@"%@", self.group.cooksInGroup);
+    if ([self.group checkIfUserIsInGroupArray:self.group.cooksInGroup]) {
         [self toggleCookView];
+        
     }
     
     self.title = self.group.groupName;

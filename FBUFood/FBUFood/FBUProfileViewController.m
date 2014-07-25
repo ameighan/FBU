@@ -53,7 +53,7 @@
 {
     __weak FBUProfileViewController *blockSelf = self;
     PFQuery *getGroups = [FBUGroup query];
-    [getGroups whereKey:@"owner" equalTo:[PFUser currentUser]];
+    [getGroups whereKey:@"cooksInGroup" equalTo:[PFUser currentUser]];
     [getGroups findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         blockSelf.myGroupsArray = objects;
         [blockSelf.myGroupsTableView reloadData];
