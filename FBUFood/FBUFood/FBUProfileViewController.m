@@ -45,9 +45,9 @@
 -(void)viewDidLoad
 {
     [self.myGroupsTableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"UITableViewCell"];
-//    [self queryForRecipes];
 
 }
+
 -(void)queryForRecipes
 {
     __weak FBUProfileViewController *blockSelf = self;
@@ -60,6 +60,14 @@
     
     
 }
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [self queryForRecipes];
+}
+
+
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -94,6 +102,7 @@
         NSLog(@"%@", selectedGroup.groupName);
         
     }
+    
 }
 
 - (IBAction)unwindToProfileViewController:(UIStoryboardSegue *)segue
@@ -104,10 +113,6 @@
     }
 }
 
-- (IBAction)logoutButtonPressed:(id)sender
-{
-       
-}
 
 
 

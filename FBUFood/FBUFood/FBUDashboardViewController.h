@@ -14,6 +14,6 @@
 @property (strong, nonatomic) NSArray *eventsArray;
 @property (weak, nonatomic) IBOutlet UITableView *dashboardTableView;
 
--(void)makeLoginAppear;
+//-(void)makeLoginAppear;
 
 @end
