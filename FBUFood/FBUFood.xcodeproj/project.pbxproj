@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		931404C5197D84F0004D4447 /* FBUEditRecipeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 931404C4197D84F0004D4447 /* FBUEditRecipeViewController.m */; };
 		931404C9197F03F9004D4447 /* FBUBucketListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 931404C8197F03F9004D4447 /* FBUBucketListItem.m */; };
+		93B8D2741982BE96009F2D16 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93B8D2731982BE96009F2D16 /* MapKit.framework */; };
 		93E4BC2F1979C89800074647 /* FBURecipeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E4BC2E1979C89800074647 /* FBURecipeViewController.m */; };
 		93F1D0CB197488C2000A1E0E /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93F1D0CA197488C2000A1E0E /* FacebookSDK.framework */; };
 		93F1D0CD197488EB000A1E0E /* FBUserSettingsViewResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 93F1D0CC197488EB000A1E0E /* FBUserSettingsViewResources.bundle */; };
@@ -75,6 +76,7 @@
 		931404C3197D84F0004D4447 /* FBUEditRecipeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBUEditRecipeViewController.h; sourceTree = "<group>"; };
 		931404C4197D84F0004D4447 /* FBUEditRecipeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBUEditRecipeViewController.m; sourceTree = "<group>"; };
 		931404C8197F03F9004D4447 /* FBUBucketListItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBUBucketListItem.m; sourceTree = "<group>"; };
+		93B8D2731982BE96009F2D16 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		93E4BC2D1979C89800074647 /* FBURecipeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBURecipeViewController.h; sourceTree = "<group>"; };
 		93E4BC2E1979C89800074647 /* FBURecipeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBURecipeViewController.m; sourceTree = "<group>"; };
 		93F1D0CA197488C2000A1E0E /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93B8D2741982BE96009F2D16 /* MapKit.framework in Frameworks */,
 				D2AF54FC19706CC800F0A0F2 /* CFNetwork.framework in Frameworks */,
 				D2AF54FD19706CC800F0A0F2 /* CoreLocation.framework in Frameworks */,
 				D2AF54FE19706CC800F0A0F2 /* libz.dylib in Frameworks */,
@@ -309,6 +312,7 @@
 		D2AF549C1970595E00F0A0F2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				93B8D2731982BE96009F2D16 /* MapKit.framework */,
 				93F1D0CC197488EB000A1E0E /* FBUserSettingsViewResources.bundle */,
 				93F1D0CA197488C2000A1E0E /* FacebookSDK.framework */,
 				D2AF54F319706CC800F0A0F2 /* CFNetwork.framework */,

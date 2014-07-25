@@ -70,7 +70,6 @@
     if (![PFUser currentUser]) { // No user logged in
         [self makeLoginAppear];
     }
-    
     [self queryForEvents];
 }
 
@@ -94,17 +93,17 @@
 
 # pragma mark - Table View
 
-- (void)queryForEvents
-{
-    __weak FBUDashboardViewController *blockSelf = self;
-    PFQuery *eventQuery = [FBUEvent query];
-    [eventQuery whereKey:@"subscribersToEvent" equalTo:[PFUser currentUser]];
-    [eventQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        blockSelf.eventsArray = objects;
-        [blockSelf.dashboardTableView reloadData];
-    }];
-    
-}
+//- (void)queryForEvents
+//{
+//    __weak FBUDashboardViewController *blockSelf = self;
+//    PFQuery *eventQuery = [FBUEvent query];
+//    [eventQuery whereKey:@"subscribersToEvent" equalTo:[PFUser currentUser]];
+//    [eventQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+//        blockSelf.eventsArray = objects;
+//        [blockSelf.dashboardTableView reloadData];
+//    }];
+//    
+//}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
