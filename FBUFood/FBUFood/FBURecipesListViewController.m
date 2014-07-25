@@ -22,17 +22,16 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(queryForRecipes) name:@"savedToParse" object:nil];
+    if (self.recipeArray == nil) {
+        [self queryForRecipes];
+    }
 }
 
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"UITableViewCell"];
-    
-    //Might do better in viewDidAppear while providing a waiting icon for the user
-    [self queryForRecipes];
 }
 
 
@@ -45,10 +44,6 @@
         blockSelf.recipeArray = objects;
         [blockSelf.tableView reloadData];
     }];
-    
-//  Fix the asynchronous behavior so that the code doesn't crash when this line is run. 
-//    [getRecipes orderByDescending:@"createdAt"];
-    
 }
 
 

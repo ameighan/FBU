@@ -14,6 +14,7 @@
 #import "FBUGroup.h"
 #import "FBUDashboardViewController.h"
 #import "FBUEditProfileViewController.h"
+#import "FBURecipesListViewController.h"
 
 
 @implementation FBUProfileViewController
@@ -99,10 +100,8 @@
         FBUGroupsViewController *groupViewController = segue.destinationViewController;
         
         groupViewController.group = selectedGroup;
-        NSLog(@"%@", selectedGroup.groupName);
-        
-    }
-    
+        NSLog(@"%@", selectedGroup.groupName);       
+    } 
 }
 
 - (IBAction)unwindToProfileViewController:(UIStoryboardSegue *)segue
@@ -112,7 +111,6 @@
         [controller saveProfileData];
     }
 }
-
 
 
 
