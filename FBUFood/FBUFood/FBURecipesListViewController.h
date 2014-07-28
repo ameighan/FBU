@@ -13,7 +13,7 @@
 @interface FBURecipesListViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
-@property (strong, nonatomic) NSArray *recipeArray;
+@property (strong, nonatomic) NSMutableArray *recipeArray;
 
 -(void)queryForRecipes;
 

@@ -41,9 +41,7 @@
     if (index == NSNotFound) {
         return NO;
     }
-    
     return index != NSNotFound;
-    
     
 }
 

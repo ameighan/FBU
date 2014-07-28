@@ -22,6 +22,7 @@
 @dynamic eventTimeDate;
 @dynamic eventAddress;
 //@dynamic eventParentGroup;
+@dynamic eventOwner;
 @dynamic eventGeoPoint;
 @dynamic timeZoneOfEvent;
 @dynamic mealsLeftCounter;

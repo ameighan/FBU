@@ -61,6 +61,7 @@
 		D2AF550419706CC800F0A0F2 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2AF54FB19706CC800F0A0F2 /* SystemConfiguration.framework */; };
 		D2D378091980D1AA00CB0EC2 /* FBUGroupSubscribersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D378081980D1AA00CB0EC2 /* FBUGroupSubscribersViewController.m */; };
 		D2D3780C1981A4AD00CB0EC2 /* FBUMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D3780B1981A4AD00CB0EC2 /* FBUMapViewController.m */; };
+		D2D378131986C3AF00CB0EC2 /* FBUAddRecipesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D378121986C3AF00CB0EC2 /* FBUAddRecipesViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -162,6 +163,8 @@
 		D2D378081980D1AA00CB0EC2 /* FBUGroupSubscribersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBUGroupSubscribersViewController.m; sourceTree = "<group>"; };
 		D2D3780A1981A4AD00CB0EC2 /* FBUMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBUMapViewController.h; sourceTree = "<group>"; };
 		D2D3780B1981A4AD00CB0EC2 /* FBUMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBUMapViewController.m; sourceTree = "<group>"; };
+		D2D378111986C3AF00CB0EC2 /* FBUAddRecipesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBUAddRecipesViewController.h; sourceTree = "<group>"; };
+		D2D378121986C3AF00CB0EC2 /* FBUAddRecipesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBUAddRecipesViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -233,6 +236,8 @@
 			children = (
 				D295F99B1976029D000ED2C1 /* FBURecipe.h */,
 				D295F99C1976029D000ED2C1 /* FBURecipe.m */,
+				D2D378111986C3AF00CB0EC2 /* FBUAddRecipesViewController.h */,
+				D2D378121986C3AF00CB0EC2 /* FBUAddRecipesViewController.m */,
 				931404C3197D84F0004D4447 /* FBUEditRecipeViewController.h */,
 				931404C4197D84F0004D4447 /* FBUEditRecipeViewController.m */,
 				D2AF54DA1970607A00F0A0F2 /* FBURecipesListViewController.h */,
@@ -519,6 +524,7 @@
 				931404C5197D84F0004D4447 /* FBUEditRecipeViewController.m in Sources */,
 				93F248D31981D86300FC82BD /* FBULogInViewController.m in Sources */,
 				D295F99A1976028F000ED2C1 /* FBUEvent.m in Sources */,
+				D2D378131986C3AF00CB0EC2 /* FBUAddRecipesViewController.m in Sources */,
 				96C1E245197F01DF00266DB8 /* FBUExploreViewController.m in Sources */,
 				D2D378091980D1AA00CB0EC2 /* FBUGroupSubscribersViewController.m in Sources */,
 				D2AF54AE1970595F00F0A0F2 /* FBUAppDelegate.m in Sources */,

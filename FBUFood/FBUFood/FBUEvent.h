@@ -22,6 +22,7 @@
 @property (strong, nonatomic) NSString *eventAddress;
 //@property (strong, nonatomic) FBUGroup *eventParentGroup;
 @property (nonatomic) PFGeoPoint *eventGeoPoint;
+@property (strong, nonatomic) PFUser *eventOwner;
 @property (strong, nonatomic) NSTimeZone *timeZoneOfEvent;
 @property (nonatomic) int mealsLeftCounter;
 @property (strong, nonatomic) NSMutableArray *recipesInEvent;

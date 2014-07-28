@@ -347,7 +347,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rkx-0U-VVe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1123" y="-772"/>
+            <point key="canvasLocation" x="609" y="-544"/>
         </scene>
         <!--Groups View Controller - FBUGroupsViewController-->
         <scene sceneID="po8-AG-mth">
@@ -397,6 +397,9 @@
                                 <state key="normal" title="Add Recipes">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="ioq-xv-ETc" kind="push" identifier="addRecipes" id="Woi-Wy-NMG"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7rf-70-uKN">
                                 <rect key="frame" x="187" y="464" width="70" height="30"/>
@@ -700,7 +703,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I9y-Ps-M8o" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="305" y="-772"/>
+            <point key="canvasLocation" x="159" y="-321"/>
         </scene>
         <!--Event Detail View Controller-->
         <scene sceneID="0L2-Ga-unU">
@@ -789,7 +792,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sEF-I5-BnS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1027" y="-1817"/>
+            <point key="canvasLocation" x="1009" y="-1279"/>
         </scene>
         <!--Edit Recipe View Controller-->
         <scene sceneID="Z64-lF-KEz">
@@ -883,6 +886,57 @@
                 <exit id="V2d-tn-euH" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="24" y="-2019"/>
+        </scene>
+        <!--Add Recipes View Controller - Add Recipes-->
+        <scene sceneID="kBc-wl-TPb">
+            <objects>
+                <viewController id="ioq-xv-ETc" customClass="FBUAddRecipesViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="uKV-Ct-Qy6"/>
+                        <viewControllerLayoutGuide type="bottom" id="o9c-LF-ugw"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5MB-lr-4gR">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsMultipleSelection="YES" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="QO8-5L-nxc">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="recipeCell" id="vhU-XD-zru">
+                                        <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vhU-XD-zru" id="ARo-W2-Dhz">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="ioq-xv-ETc" id="72a-z1-W2A"/>
+                                    <outlet property="delegate" destination="ioq-xv-ETc" id="bYY-jy-qGp"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Add Recipes" id="9Py-Ce-yDy">
+                        <barButtonItem key="rightBarButtonItem" title="Add" id="Roc-6Y-3J4">
+                            <connections>
+                                <action selector="userDidAddRecipes:" destination="ioq-xv-ETc" id="tjS-hc-PVg"/>
+                                <segue destination="9SS-2X-QQj" kind="push" identifier="addRecipes" id="SGc-SZ-PEX"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="addRecipesButton" destination="Roc-6Y-3J4" id="T77-nc-Gud"/>
+                        <outlet property="recipesTableView" destination="QO8-5L-nxc" id="CzQ-57-b7C"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rpa-Ky-9GT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="609" y="-1805"/>
         </scene>
         <!--Edit Profile View Controller - Edit Profile-->
         <scene sceneID="ews-rI-1jQ">
@@ -1402,5 +1456,6 @@
         <segue reference="V1z-0M-wVZ"/>
         <segue reference="wIr-me-k4C"/>
         <segue reference="E3o-aQ-dmJ"/>
+        <segue reference="SGc-SZ-PEX"/>
     </inferredMetricsTieBreakers>
 </document>

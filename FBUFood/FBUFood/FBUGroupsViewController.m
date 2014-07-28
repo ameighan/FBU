@@ -11,6 +11,7 @@
 #import "FBUGroupSubscribersViewController.h"
 #import "FBURecipesListViewController.h"
 #import "FBUEventDetailViewController.h"
+#import "FBUAddRecipesViewController.h"
 
 
 @implementation FBUGroupsViewController
@@ -79,8 +80,14 @@
         NSLog(@"Accessing subscribers of %@", groupSubscribersViewController.group.groupName);
         
     } else if ([segue.identifier isEqualToString:@"groupRecipe"]) {
+        
         FBURecipesListViewController *recipeViewController = segue.destinationViewController;
         recipeViewController.recipeArray = self.group.recipesInGroup;
+        
+    } else if ([segue.identifier isEqualToString:@"addRecipes"]) {
+        
+        FBUAddRecipesViewController *addRecipesViewController = segue.destinationViewController;
+        addRecipesViewController.group = self.group;
     }
     else if ([segue.identifier isEqualToString:@"createEvent"]) {
         
