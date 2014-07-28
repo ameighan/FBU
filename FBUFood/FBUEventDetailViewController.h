@@ -7,9 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-//#import "FBUGroup.h"
+#include <CoreLocation/CoreLocation.h>
+@class  FBUGroup;
 
-@interface FBUEventDetailViewController : UIViewController <UITextFieldDelegate>
+@interface FBUEventDetailViewController : UIViewController <UITextFieldDelegate, CLLocationManagerDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *eventNameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *eventAddressTextField;
@@ -17,5 +18,5 @@
 @property (weak, nonatomic) IBOutlet UIDatePicker *eventDatePicker;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *saveButton;
 
-//@property (strong, nonatomic) FBUGroup *group;
+@property (strong, nonatomic) FBUGroup *group;
 @end

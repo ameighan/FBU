@@ -10,7 +10,7 @@
 #import "FBUGroupsListViewController.h"
 #import "FBUGroupSubscribersViewController.h"
 #import "FBURecipesListViewController.h"
-//#import "FBUEventDetailViewController.h"
+#import "FBUEventDetailViewController.h"
 
 
 @implementation FBUGroupsViewController
@@ -82,13 +82,13 @@
         FBURecipesListViewController *recipeViewController = segue.destinationViewController;
         recipeViewController.recipeArray = self.group.recipesInGroup;
     }
-//    else if ([segue.identifier isEqualToString:@"createEvent"]) {
-//        
-//        FBUEventDetailViewController *eventDetailViewController = segue.destinationViewController;
-//        
-//        eventDetailViewController.group = self.group;
-//        
-//    }
+    else if ([segue.identifier isEqualToString:@"createEvent"]) {
+        
+        FBUEventDetailViewController *eventDetailViewController = segue.destinationViewController;
+        
+        eventDetailViewController.group = self.group;
+        
+    }
 }
 
 -(void)showAlertWithTitle:(NSString *)title message:(NSString *)message

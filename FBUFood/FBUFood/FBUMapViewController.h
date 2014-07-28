@@ -9,10 +9,12 @@
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
 
-@interface FBUMapViewController : UIViewController <MKMapViewDelegate>
+@class FBUEvent;
+
+@interface FBUMapViewController : UIViewController <MKMapViewDelegate, MKAnnotation>
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
-
+@property (weak, nonatomic) NSArray *eventsArray;
 
 
 @end

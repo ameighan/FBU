@@ -70,7 +70,7 @@
     if (![PFUser currentUser]) { // No user logged in
         [self makeLoginAppear];
     }
-    [self queryForEvents];
+//    [self queryForEvents];
 }
 
 - (void)viewDidLoad

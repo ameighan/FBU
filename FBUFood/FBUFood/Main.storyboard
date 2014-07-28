@@ -111,7 +111,7 @@
             </objects>
             <point key="canvasLocation" x="-1128" y="579"/>
         </scene>
-        <!--Map View Controller - Map-->
+        <!--Map View Controller - Events -->
         <scene sceneID="yPA-qx-urV">
             <objects>
                 <viewController id="iV8-kv-3cG" customClass="FBUMapViewController" sceneMemberID="viewController">
@@ -123,9 +123,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="hybrid" pitchEnabled="NO" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cuT-Od-gGa">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" pitchEnabled="NO" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cuT-Od-gGa">
                                 <rect key="frame" x="0.0" y="64" width="320" height="454"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="iV8-kv-3cG" id="nzS-Tm-P59"/>
+                                </connections>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -137,7 +140,7 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Map" id="QOL-9e-PVO"/>
-                    <navigationItem key="navigationItem" id="gNU-28-IrB"/>
+                    <navigationItem key="navigationItem" title="Events " id="gNU-28-IrB"/>
                     <connections>
                         <outlet property="mapView" destination="cuT-Od-gGa" id="QRs-7a-XCg"/>
                     </connections>
@@ -386,7 +389,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="uHd-qP-I1t" kind="push" id="sVG-bq-LsJ"/>
+                                    <segue destination="uHd-qP-I1t" kind="push" identifier="createEvent" id="Gf1-nK-jxY"/>
                                 </connections>
                             </button>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TBe-bM-M77">
@@ -786,7 +789,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sEF-I5-BnS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1123" y="-1593"/>
+            <point key="canvasLocation" x="1027" y="-1817"/>
         </scene>
         <!--Edit Recipe View Controller-->
         <scene sceneID="Z64-lF-KEz">
@@ -1396,10 +1399,8 @@
         <segue reference="nFV-tO-kgR"/>
         <segue reference="HKn-YS-gnu"/>
         <segue reference="FsN-7N-yNV"/>
-        <segue reference="nFV-tO-kgR"/>
         <segue reference="V1z-0M-wVZ"/>
         <segue reference="wIr-me-k4C"/>
         <segue reference="E3o-aQ-dmJ"/>
-        <segue reference="V1z-0M-wVZ"/>
     </inferredMetricsTieBreakers>
 </document>
