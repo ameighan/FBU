@@ -10,7 +10,6 @@
 #import "FBUGroupsViewController.h"
 #import "FBUGroupsDetailViewController.h"
 #import <Parse/Parse.h>
-#import "FBUGroup.h"
 
 @implementation FBUGroupsListViewController
 

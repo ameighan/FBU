@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "FBUGroup.h"
 
 @interface FBUGroupsListViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
