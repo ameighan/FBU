@@ -34,7 +34,6 @@
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"UITableViewCell"];
 }
 
-
 -(void)queryForRecipes
 {
     __weak FBURecipesListViewController *blockSelf = self;

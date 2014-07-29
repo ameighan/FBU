@@ -6,6 +6,7 @@
 //  Copyright (c) 2014 FacebookU. All rights reserved.
 //
 
+#import "FBUEvent.h"
 #import "FBUGroupsViewController.h"
 #import "FBUGroupsListViewController.h"
 #import "FBUGroupSubscribersViewController.h"
@@ -14,9 +15,36 @@
 #import "FBUAddRecipesViewController.h"
 #import "FBUMembersViewController.h"
 
-
 @implementation FBUGroupsViewController
 
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"groupCell"
+                                                            forIndexPath:indexPath];
+    FBUEvent *myEvent = self.group.eventsInGroup[indexPath.row];
+    cell.textLabel.text = [myEvent eventName];
+    return cell;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return [self.group.eventsInGroup count];
+}
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    [self.eventsInGroupTableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"groupCell"];
+    
+    self.eventsInGroupTableView.delegate = self;
+    self.eventsInGroupTableView.dataSource = self;
+    NSLog(@"Events in group: %@", self.group.eventsInGroup);
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+}
 
 - (void)viewWillAppear:(BOOL)animated
 {
@@ -27,10 +55,10 @@
         [self toggleCookView];
         
     }
-    
     self.title = self.group.groupName;
     self.groupDescriptionTextView.text = self.group.groupDescription;
     self.generalMeetingTimesLabel.text = self.group.generalMeetingTimes;
+    [self.eventsInGroupTableView reloadData];
 }
 
 
@@ -84,16 +112,18 @@
         
         FBURecipesListViewController *recipeViewController = segue.destinationViewController;
         recipeViewController.recipeArray = self.group.recipesInGroup;
-        
     } else if ([segue.identifier isEqualToString:@"addRecipes"]) {
-        
         FBUAddRecipesViewController *addRecipesViewController = segue.destinationViewController;
         addRecipesViewController.group = self.group;
     } else if ([segue.identifier isEqualToString:@"createEvent"]) {
+<<<<<<< HEAD
+=======
         
+>>>>>>> master
         FBUEventDetailViewController *eventDetailViewController = segue.destinationViewController;
-        
         eventDetailViewController.group = self.group;
+<<<<<<< HEAD
+=======
         eventDetailViewController.title = @"Create New Event";
         
     } else if ([segue.identifier isEqualToString:@"viewCooks"]) {
@@ -102,6 +132,7 @@
         
         membersViewController.group = self.group;
         
+>>>>>>> master
     }
 }
 

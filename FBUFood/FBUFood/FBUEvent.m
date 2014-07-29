@@ -7,6 +7,7 @@
 //
 
 #import "FBUEvent.h"
+#import "FBUGroup.h"
 #import <Parse/PFObject+Subclass.h>
 
 
@@ -21,7 +22,7 @@
 @dynamic eventDescription;
 @dynamic eventTimeDate;
 @dynamic eventAddress;
-//@dynamic eventParentGroup;
+@dynamic eventParentGroup;
 @dynamic eventOwner;
 @dynamic eventGeoPoint;
 @dynamic timeZoneOfEvent;

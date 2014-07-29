@@ -10,7 +10,8 @@
 #import <Parse/Parse.h>
 #import <CoreLocation/CoreLocation.h>
 #import "FBUGroceryList.h"
-#import "FBUGroup.h"
+
+@class FBUGroup;
 
 @interface FBUEvent : PFObject <PFSubclassing>
 
@@ -20,7 +21,7 @@
 @property (strong, nonatomic) NSString *eventDescription;
 @property (strong, nonatomic) NSString *eventTimeDate;
 @property (strong, nonatomic) NSString *eventAddress;
-//@property (strong, nonatomic) FBUGroup *eventParentGroup;
+@property (strong, nonatomic) FBUGroup *eventParentGroup;
 @property (nonatomic) PFGeoPoint *eventGeoPoint;
 @property (strong, nonatomic) PFUser *eventOwner;
 @property (strong, nonatomic) NSTimeZone *timeZoneOfEvent;

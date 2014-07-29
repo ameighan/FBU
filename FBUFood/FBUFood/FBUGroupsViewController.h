@@ -7,9 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "FBUGroup.h"
 
-@interface FBUGroupsViewController : UIViewController
+@class FBUGroup;
+
+@interface FBUGroupsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 @property (strong, nonatomic) FBUGroup *group;
 
@@ -25,8 +26,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *addRecipeInGroupButton;
 @property (weak, nonatomic) IBOutlet UIButton *viewSubscribersInGroupButton;
 
-
-
+@property (weak, nonatomic) NSArray *eventsByGroup;
 
 @end
 

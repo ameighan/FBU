@@ -575,7 +575,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qxF-Ia-cWg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+<<<<<<< HEAD
+            <point key="canvasLocation" x="-1284" y="-1103"/>
+=======
             <point key="canvasLocation" x="-2686" y="-1245"/>
+>>>>>>> master
         </scene>
         <!--Navigation Controller - Group-->
         <scene sceneID="Vak-Ef-VPv">
@@ -1459,12 +1463,18 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+<<<<<<< HEAD
+        <segue reference="wIr-me-k4C"/>
+        <segue reference="V1z-0M-wVZ"/>
+        <segue reference="SGc-SZ-PEX"/>
+=======
         <segue reference="SGc-SZ-PEX"/>
         <segue reference="beZ-VQ-lUb"/>
         <segue reference="Gf1-nK-jxY"/>
         <segue reference="FsN-7N-yNV"/>
         <segue reference="V1z-0M-wVZ"/>
         <segue reference="nFV-tO-kgR"/>
+>>>>>>> master
         <segue reference="E3o-aQ-dmJ"/>
     </inferredMetricsTieBreakers>
 </document>

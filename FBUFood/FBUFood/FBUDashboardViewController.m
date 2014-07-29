@@ -67,7 +67,6 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    
     if (![PFUser currentUser]) { // No user logged in
         [self makeLoginAppear];
     }

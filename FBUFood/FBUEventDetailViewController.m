@@ -9,13 +9,13 @@
 #import "FBUEventDetailViewController.h"
 #import "FBUEvent.h"
 #import <CoreLocation/CoreLocation.h>
+#import "FBUGroup.h"
 
 @interface FBUEventDetailViewController ()
 
 @property (strong, nonatomic) CLGeocoder *geocoder;
 
 @end
-
 
 @implementation FBUEventDetailViewController
 
@@ -61,13 +61,41 @@
 
 -(void)convertAddressToCoordinates:(NSString *)address
 {
-    
     if(!self.geocoder) {
         self.geocoder = [[CLGeocoder alloc] init];
     }
     
+    if (self.group.eventsInGroup == nil) {
+        self.group.eventsInGroup = [[NSMutableArray alloc] init];
+    }
+    
     [self.geocoder geocodeAddressString:address
                       completionHandler:^(NSArray* placemarks, NSError* error){
+<<<<<<< HEAD
+                          for (CLPlacemark* aPlacemark in placemarks)
+                          {
+                              self.eventLocation = aPlacemark.location;
+                          }
+
+                          FBUEvent *newEvent = [FBUEvent object];
+                          newEvent.eventName = self.eventNameTextField.text;
+                          newEvent.eventDescription = self.eventDescriptionTextView.text;
+                          newEvent.eventAddress = self.eventAddressTextField.text;
+
+                          [self.group.eventsInGroup addObject:newEvent];
+
+                          CLLocationCoordinate2D coordinate = [self.eventLocation coordinate];
+                          PFGeoPoint *geoPoint = [PFGeoPoint geoPointWithLatitude:coordinate.latitude longitude:coordinate.longitude];
+                          newEvent.eventGeoPoint = geoPoint;
+                          
+                          NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+                          [dateFormatter setDateFormat:@"MM-dd-yyyy 'at' h:mm a"];
+                          newEvent.eventTimeDate = [dateFormatter stringFromDate:self.eventDatePicker.date];
+                          
+                          [newEvent saveInBackground];
+                          [self.group saveInBackground];
+                          NSLog(@"Events in group: %@", self.group.eventsInGroup);
+=======
                           CLLocation *eventLocation = [((CLPlacemark *)[placemarks firstObject])location];
                           
                           if (self.event) {
@@ -93,6 +121,7 @@
                               newEvent.eventDescription = self.eventDescriptionTextView.text;
                               newEvent.eventAddress = self.eventAddressTextField.text;
                               newEvent.creator = [PFUser currentUser];
+>>>>>>> master
                           
                               PFGeoPoint *geoPoint = [PFGeoPoint geoPointWithLocation:eventLocation];
                               newEvent.eventGeoPoint = geoPoint;
