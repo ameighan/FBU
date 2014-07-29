@@ -11,10 +11,9 @@
 
 @class FBUEvent;
 
-@interface FBUMapViewController : UIViewController <MKMapViewDelegate, MKAnnotation>
+@interface FBUMapViewController : UIViewController <MKMapViewDelegate>
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
-@property (weak, nonatomic) NSArray *eventsArray;
 
 
 @end

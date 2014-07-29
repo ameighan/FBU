@@ -9,12 +9,10 @@
 #import "FBUMapViewController.h"
 #import <Parse/Parse.h>
 #import "FBUEvent.h"
-
+#import "FBUMapAnnotation.h"
 
 
 @implementation FBUMapViewController
-
-@synthesize coordinate;
 
 
 -(void)zoomToLocation
@@ -27,12 +25,40 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.mapView.delegate = self;
     [self zoomToLocation];
-    [self queryForEvents];
+    [self queryForMyEvents];
+    [self queryForNearEvents];
 }
 
--(void)queryForEvents
+-(void)queryForMyEvents
+{
+    
+    CLLocation *myLocation = self.mapView.userLocation.location;
+    
+    // User's location
+    PFGeoPoint *userGeoPoint = [PFGeoPoint geoPointWithLocation:myLocation];
+    // Create a query for places
+    PFQuery *eventQuery = [FBUEvent query];
+    // Interested in locations near user.
+    [eventQuery whereKey:@"eventGeoPoint" nearGeoPoint:userGeoPoint];
+    [eventQuery whereKey:@"membersOfEvent" equalTo:[PFUser currentUser]];
+    // Limit what could be a lot of points.
+    eventQuery.limit = 10;
+    // Final list of objects
+    [eventQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            for(FBUEvent *event in objects) {
+                FBUMapAnnotation *annotationPoint = [[FBUMapAnnotation alloc] initWithCoordinate:CLLocationCoordinate2DMake(event.eventGeoPoint.latitude, event.eventGeoPoint.longitude) title:event.eventName];
+                annotationPoint.color = @"green";
+                [self.mapView addAnnotation:annotationPoint];
+            }
+
+        }
+    }];
+    
+}
+
+-(void)queryForNearEvents
 {
     CLLocation *myLocation = self.mapView.userLocation.location;
     
@@ -42,25 +68,19 @@
     PFQuery *eventQuery = [FBUEvent query];
     // Interested in locations near user.
     [eventQuery whereKey:@"eventGeoPoint" nearGeoPoint:userGeoPoint];
+    [eventQuery whereKey:@"membersOfEvent" notEqualTo:[PFUser currentUser]];
+
     // Limit what could be a lot of points.
     eventQuery.limit = 10;
     // Final list of objects
     [eventQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
             for(FBUEvent *event in objects) {
-
-                CLLocationCoordinate2D annotationCoord;
-                annotationCoord.latitude = event.eventGeoPoint.latitude;
-                annotationCoord.longitude = event.eventGeoPoint.longitude;
-                
-                MKPointAnnotation *annotationPoint = [[MKPointAnnotation alloc] init];
-                annotationPoint.coordinate = annotationCoord;
-                annotationPoint.title = event.eventName;
-                annotationPoint.subtitle = event.eventTimeDate;
+                FBUMapAnnotation *annotationPoint = [[FBUMapAnnotation alloc] initWithCoordinate:CLLocationCoordinate2DMake(event.eventGeoPoint.latitude, event.eventGeoPoint.longitude) title:event.eventName];
+                annotationPoint.color = @"purple";
                 [self.mapView addAnnotation:annotationPoint];
-                
             }
-
+            
         }
     }];
     
@@ -74,31 +94,48 @@
 }
 
 
-
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation
 {
-    static NSString *GeoQueryAnnotationIdentifier = @"PurplePin";
+    static NSString *GeoQueryMyAnnotationIdentifier = @"GreenPin";
+    static NSString *GeoQueryNearAnnotationIdentifier = @"PurplePin";
     
     if (annotation == mapView.userLocation) {
+        // Doe snot give the user's locatino a pin
         return nil;
-    } else {
-        MKPinAnnotationView *annotationView = (MKPinAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:GeoQueryAnnotationIdentifier];
-
-        if (!annotationView) {
-            annotationView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:GeoQueryAnnotationIdentifier];
-            annotationView.pinColor = MKPinAnnotationColorPurple;
-            annotationView.canShowCallout = YES;
-            annotationView.draggable = YES;
-            annotationView.animatesDrop = YES;
+        
+         // Makes sure the annotations are of the correct class
+    } else if ([annotation isKindOfClass:[FBUMapAnnotation class]]) {
+        
+       // Casts an annotation as an instance of FBUMapAnnotation
+        FBUMapAnnotation *annotations = (FBUMapAnnotation *)annotation;
+        if ([annotations.color isEqualToString:@"green"]) {
+            MKPinAnnotationView *annotationView = (MKPinAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:GeoQueryMyAnnotationIdentifier];
+            if (!annotationView) {
+                annotationView = [[MKPinAnnotationView alloc] initWithAnnotation:annotations reuseIdentifier:GeoQueryMyAnnotationIdentifier];
+                annotationView.pinColor = MKPinAnnotationColorGreen;
+                annotationView.canShowCallout = YES;
+                annotationView.draggable = YES;
+                annotationView.animatesDrop = YES;
+            }
+            
+            return annotationView;
+            
+        } else if ([annotations.color isEqualToString:@"purple"]) {
+            MKPinAnnotationView *annotationView = (MKPinAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:GeoQueryNearAnnotationIdentifier];
+            
+            if (!annotationView) {
+                annotationView = [[MKPinAnnotationView alloc] initWithAnnotation:annotations reuseIdentifier:GeoQueryNearAnnotationIdentifier];
+                annotationView.pinColor = MKPinAnnotationColorPurple;
+                annotationView.canShowCallout = YES;
+                annotationView.draggable = YES;
+                annotationView.animatesDrop = YES;
+            }
+            
+            return annotationView;
         }
-
-        return annotationView;
     }
-    
+
+    return nil;
 }
-
-
-
-
 
 @end
