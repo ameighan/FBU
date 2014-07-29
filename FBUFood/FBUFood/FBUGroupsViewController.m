@@ -116,14 +116,9 @@
         FBUAddRecipesViewController *addRecipesViewController = segue.destinationViewController;
         addRecipesViewController.group = self.group;
     } else if ([segue.identifier isEqualToString:@"createEvent"]) {
-<<<<<<< HEAD
-=======
         
->>>>>>> master
         FBUEventDetailViewController *eventDetailViewController = segue.destinationViewController;
         eventDetailViewController.group = self.group;
-<<<<<<< HEAD
-=======
         eventDetailViewController.title = @"Create New Event";
         
     } else if ([segue.identifier isEqualToString:@"viewCooks"]) {
@@ -132,7 +127,6 @@
         
         membersViewController.group = self.group;
         
->>>>>>> master
     }
 }
 
