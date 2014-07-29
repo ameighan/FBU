@@ -23,7 +23,11 @@
 {
     __weak FBUExploreViewController *blockSelf = self;
     PFQuery *query = [FBUGroup query];
-    //[query whereKey:[[PFUser currentUser] username] notContainedIn:subscribersOfGroup]; NEED TO COME BACK WHEN THERE IS AN ARRAY OF SUBSCRIBERS
+    [query whereKey:@"subscribersOfGroup" notEqualTo:[PFUser currentUser]];
+    [query whereKey:@"cooksInGroup" notEqualTo:[PFUser currentUser]];
+    [query includeKey:@"eventsInGroup"];
+    [query includeKey:@"recipesInGroup"];
+    [query includeKey:@"cooksInGroup"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         blockSelf.exploratoryGroups = objects;
         [blockSelf.groupsTable reloadData];

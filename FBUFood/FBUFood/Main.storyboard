@@ -245,7 +245,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="agO-15-gc5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1928" y="-229"/>
+            <point key="canvasLocation" x="-1110" y="-2153"/>
         </scene>
         <!--Recipe View Controller-->
         <scene sceneID="vQh-XC-GTY">
@@ -446,14 +446,14 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OGn-pf-l6c">
-                                <rect key="frame" x="216" y="220" width="75" height="30"/>
+                                <rect key="frame" x="216" y="220" width="75" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <state key="normal" title="Members">
+                                <state key="normal" title="Cooks">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="GZv-qx-koQ" kind="push" id="nut-44-e2c"/>
+                                    <segue destination="GZv-qx-koQ" kind="push" identifier="viewCooks" id="nut-44-e2c"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -473,7 +473,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JPs-9s-xLb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2311" y="-144"/>
+            <point key="canvasLocation" x="-375" y="-1086"/>
         </scene>
         <!--Groups Detail View Controller - New Group-->
         <scene sceneID="68d-oi-hxv">
@@ -610,7 +610,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="42" id="2BS-gO-Z8E">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="memberCell" rowHeight="42" id="2BS-gO-Z8E">
                                         <rect key="frame" x="0.0" y="86" width="320" height="42"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2BS-gO-Z8E" id="J55-SS-CKo">
@@ -630,7 +630,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ceH-ix-ugm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2144" y="-852"/>
+            <point key="canvasLocation" x="-778" y="-1568"/>
         </scene>
         <!--Event View Controller-->
         <scene sceneID="8Fd-KC-aBv">
@@ -1212,7 +1212,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qYS-II-0pt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-380" y="-297"/>
+            <point key="canvasLocation" x="-1307" y="-341"/>
         </scene>
         <!--Bucket List View Controller-->
         <scene sceneID="EUa-1q-yPi">
@@ -1434,7 +1434,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jzI-DQ-QCM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1128" y="-321"/>
+            <point key="canvasLocation" x="-1834" y="-333"/>
         </scene>
         <!--Navigation Controller - Explore-->
         <scene sceneID="gim-aA-yDa">
@@ -1465,5 +1465,6 @@
         <segue reference="wIr-me-k4C"/>
         <segue reference="nFV-tO-kgR"/>
         <segue reference="Gf1-nK-jxY"/>
+        <segue reference="FsN-7N-yNV"/>
     </inferredMetricsTieBreakers>
 </document>

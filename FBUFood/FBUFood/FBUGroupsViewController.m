@@ -12,6 +12,7 @@
 #import "FBURecipesListViewController.h"
 #import "FBUEventDetailViewController.h"
 #import "FBUAddRecipesViewController.h"
+#import "FBUMembersViewController.h"
 
 
 @implementation FBUGroupsViewController
@@ -88,13 +89,18 @@
         
         FBUAddRecipesViewController *addRecipesViewController = segue.destinationViewController;
         addRecipesViewController.group = self.group;
-    }
-    else if ([segue.identifier isEqualToString:@"createEvent"]) {
+    } else if ([segue.identifier isEqualToString:@"createEvent"]) {
         
         FBUEventDetailViewController *eventDetailViewController = segue.destinationViewController;
         
         eventDetailViewController.group = self.group;
         eventDetailViewController.title = @"Create New Event";
+        
+    } else if ([segue.identifier isEqualToString:@"viewCooks"]) {
+        
+        FBUMembersViewController *membersViewController = segue.destinationViewController;
+        
+        membersViewController.group = self.group;
         
     }
 }

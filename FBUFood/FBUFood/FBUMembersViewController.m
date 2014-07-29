@@ -20,13 +20,14 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"groupCell"
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"memberCell"
                                                             forIndexPath:indexPath];
     
-    NSString *oneMember = self.membersArray[indexPath.row];
     
-    cell.textLabel.text = oneMember;
+    PFUser *oneMember = self.membersArray[indexPath.row];
     
+    cell.textLabel.text = [oneMember username];
+    NSLog(@"%@", [oneMember username]);
     return cell;
 }
 
@@ -45,9 +46,9 @@
     self.membersTableView.dataSource = self;
 }
 
-- (void)viewDidAppear:(BOOL)animated
+- (void)viewWillAppear:(BOOL)animated
 {
-    [super viewDidAppear:animated];
+    [super viewWillAppear:animated];
     
     [self findMembersOfGroup];
     [self.membersTableView reloadData];
