@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <Parse/Parse.h>
 
-@interface FBUProfileViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate>
+@interface FBUProfileViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 // Properties for profile data
 @property (weak, nonatomic) IBOutlet UIImageView *profileImage;

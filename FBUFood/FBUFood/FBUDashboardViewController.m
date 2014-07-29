@@ -14,6 +14,7 @@
 #import "FBUProfileViewController.h"
 #import "FBULogInViewController.h"
 #import "FBUSignUpViewController.h"
+#import "FBUEventViewController.h"
 
 @interface FBUDashboardViewController () <PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate>
 
@@ -109,6 +110,13 @@
         [blockSelf.dashboardTableView reloadData];
     }];
     
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    FBUEventViewController *controller = (FBUEventViewController *)segue.destinationViewController;
+    NSIndexPath *ip = [self.dashboardTableView indexPathForCell:sender];
+    controller.event = self.eventsArray[ip.row];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath

@@ -94,6 +94,7 @@
         FBUEventDetailViewController *eventDetailViewController = segue.destinationViewController;
         
         eventDetailViewController.group = self.group;
+        eventDetailViewController.title = @"Create New Event";
         
     }
 }
@@ -110,6 +111,11 @@
     [alert show];
 }
 
+- (IBAction)unwindToGroupViewController:(UIStoryboardSegue *)segue
+{
+    FBUEventDetailViewController *controller = segue.sourceViewController;
+    [controller saveEventData];
+}
 
 
 @end

@@ -28,6 +28,6 @@
 @property (strong, nonatomic) NSMutableArray *recipesInEvent;
 @property (strong, nonatomic) NSMutableArray *membersOfEvent;
 @property (strong, nonatomic) FBUGroceryList *groceryList;
-
+@property (strong, nonatomic) PFUser *creator;
 
 @end

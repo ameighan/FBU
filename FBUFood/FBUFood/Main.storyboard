@@ -644,11 +644,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Event Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vgq-64-UU0">
-                                <rect key="frame" x="20" y="40" width="81" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Location" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Du0-4P-zg2">
                                 <rect key="frame" x="20" y="69" width="67" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -689,23 +684,28 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="fuk-kb-Bsb"/>
+                    <navigationItem key="navigationItem" id="fuk-kb-Bsb">
+                        <barButtonItem key="rightBarButtonItem" title="Edit" systemItem="edit" id="c1J-S7-TKG">
+                            <connections>
+                                <segue destination="uHd-qP-I1t" kind="push" identifier="editEvent" id="qXC-cC-bdi"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="eventJoinButton" destination="U0j-rQ-m9B" id="p0z-XR-cKi"/>
                         <outlet property="eventLocationLabel" destination="Du0-4P-zg2" id="hbh-cU-dIe"/>
                         <outlet property="eventRecipesLabel" destination="wJt-Yl-2sE" id="RNd-6f-4kh"/>
                         <outlet property="eventRecipesTableView" destination="GNc-pR-ltE" id="LNX-to-Tk6"/>
                         <outlet property="eventTimeDateLabel" destination="f7w-Es-ggb" id="mGM-kG-Zgw"/>
-                        <outlet property="eventTitleLabel" destination="vgq-64-UU0" id="uZn-TK-B73"/>
                         <outlet property="eventUsersLabel" destination="Qzs-me-1KQ" id="Z8r-Bv-aCf"/>
                         <outlet property="eventUsersTableView" destination="wDD-SL-dF3" id="Zqf-bn-Pef"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I9y-Ps-M8o" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="159" y="-321"/>
+            <point key="canvasLocation" x="205" y="-976"/>
         </scene>
-        <!--Event Detail View Controller-->
+        <!--Event Detail View Controller - Edit Event-->
         <scene sceneID="0L2-Ga-unU">
             <objects>
                 <viewController id="uHd-qP-I1t" customClass="FBUEventDetailViewController" sceneMemberID="viewController">
@@ -713,7 +713,7 @@
                         <viewControllerLayoutGuide type="top" id="z8T-En-A2X"/>
                         <viewControllerLayoutGuide type="bottom" id="nhk-ZI-VVY"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="EGG-t5-pfy">
+                    <view key="view" contentMode="scaleToFill" id="EGG-t5-pfy" customClass="UIControl">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
@@ -727,6 +727,9 @@
                                 <date key="date" timeIntervalSinceReferenceDate="426796343.25326997">
                                     <!--2014-07-11 18:32:23 +0000-->
                                 </date>
+                                <connections>
+                                    <action selector="datePickerTouched:" destination="uHd-qP-I1t" eventType="touchUpInside" id="QQ6-T8-R8R"/>
+                                </connections>
                             </datePicker>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Z8-8g-AaY">
                                 <rect key="frame" x="116" y="488" width="88" height="30"/>
@@ -774,11 +777,19 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <connections>
+                            <action selector="backgroundPressed:" destination="uHd-qP-I1t" eventType="touchUpInside" id="Gr1-I6-8Iu"/>
+                        </connections>
                     </view>
-                    <navigationItem key="navigationItem" id="SWx-Hz-AA1">
-                        <barButtonItem key="rightBarButtonItem" title="Save" id="Eac-hA-UZe">
+                    <navigationItem key="navigationItem" title="Edit Event" id="SWx-Hz-AA1">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="FFG-fn-Tzg">
                             <connections>
-                                <action selector="userDidSaveEvent:" destination="uHd-qP-I1t" id="g8H-Ru-D5h"/>
+                                <segue destination="ue8-Yn-eRb" kind="unwind" identifier="cancelToGroup" unwindAction="unwindToGroupViewController:" id="h4x-rN-5EI"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="Eac-hA-UZe">
+                            <connections>
+                                <segue destination="ue8-Yn-eRb" kind="unwind" identifier="saveEventToGroup" unwindAction="unwindToGroupViewController:" id="Nuc-dZ-FUk"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -787,10 +798,10 @@
                         <outlet property="eventDatePicker" destination="XqR-AW-P4C" id="TQK-vj-0Ww"/>
                         <outlet property="eventDescriptionTextView" destination="mSM-KS-mUX" id="NIU-hu-UOP"/>
                         <outlet property="eventNameTextField" destination="XZz-BG-3LD" id="4Jg-Df-kdn"/>
-                        <outlet property="saveButton" destination="Eac-hA-UZe" id="9Vp-KL-Mnm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sEF-I5-BnS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="ue8-Yn-eRb" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1009" y="-1279"/>
         </scene>
@@ -857,7 +868,6 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <connections>
-                            <action selector="backgroundPressed:" destination="BQl-mP-k22" eventType="valueChanged" id="WoD-3T-GCp"/>
                             <action selector="backgroundPressed:" destination="BQl-mP-k22" eventType="touchUpInside" id="b4M-ld-0eC"/>
                         </connections>
                     </view>
@@ -1202,7 +1212,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qYS-II-0pt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-375" y="-321"/>
+            <point key="canvasLocation" x="-380" y="-297"/>
         </scene>
         <!--Bucket List View Controller-->
         <scene sceneID="EUa-1q-yPi">
@@ -1449,13 +1459,11 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="beZ-VQ-lUb"/>
-        <segue reference="nFV-tO-kgR"/>
-        <segue reference="HKn-YS-gnu"/>
-        <segue reference="FsN-7N-yNV"/>
-        <segue reference="V1z-0M-wVZ"/>
-        <segue reference="wIr-me-k4C"/>
         <segue reference="E3o-aQ-dmJ"/>
         <segue reference="SGc-SZ-PEX"/>
+        <segue reference="HKn-YS-gnu"/>
+        <segue reference="wIr-me-k4C"/>
+        <segue reference="nFV-tO-kgR"/>
+        <segue reference="Gf1-nK-jxY"/>
     </inferredMetricsTieBreakers>
 </document>

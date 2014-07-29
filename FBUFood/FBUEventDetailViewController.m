@@ -13,12 +13,21 @@
 @interface FBUEventDetailViewController ()
 
 @property (strong, nonatomic) CLGeocoder *geocoder;
-@property (strong, nonatomic) CLLocation *eventLocation;
 
 @end
 
 
 @implementation FBUEventDetailViewController
+
+-(void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    if (self.event) {
+        self.eventAddressTextField.text = self.event.eventAddress;
+        self.eventDescriptionTextView.text = self.event.eventDescription;
+    }
+}
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
@@ -27,17 +36,28 @@
 }
 
 
-- (IBAction)userDidSaveEvent:(id)sender
+-(void)saveEventData
 {
     // Gathering geopoint info
     [self convertAddressToCoordinates:self.eventAddressTextField.text];
     
-    //Make an alert that says that the data is saved for UI purposes
-    [self showAlertWithTitle: [NSString stringWithFormat:@"%@", self.eventNameTextField.text]
-                     message: [NSString stringWithFormat:@"%@ was saved!", self.eventNameTextField.text]];
 }
 
+- (IBAction)datePickerTouched:(id)sender
+{
+    // Resave the date only if it has been touched
+    [self saveTheDate];
+}
 
+-(void)saveTheDate
+{
+    if (self.event) {
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        [dateFormatter setDateFormat:@"MM-dd-yyyy 'at' h:mm a"];
+        self.event.eventTimeDate = [dateFormatter stringFromDate:self.eventDatePicker.date];
+        [self.event save];
+    }
+}
 
 -(void)convertAddressToCoordinates:(NSString *)address
 {
@@ -48,30 +68,45 @@
     
     [self.geocoder geocodeAddressString:address
                       completionHandler:^(NSArray* placemarks, NSError* error){
-                          for (CLPlacemark* aPlacemark in placemarks)
-                          {
-                              self.eventLocation = aPlacemark.location;
-                          }
+                          CLLocation *eventLocation = [((CLPlacemark *)[placemarks firstObject])location];
                           
+                          if (self.event) {
+                              //Resaves an event is it is being edited
+                              self.event.eventName = self.eventNameTextField.text;
+                              
+                              self.event.creator = [PFUser currentUser];
+                              
+                              self.event.eventDescription =self.eventDescriptionTextView.text;
+                              self.event.eventAddress = self.eventAddressTextField.text;
+                              
+                              PFGeoPoint *geoPoint = [PFGeoPoint geoPointWithLocation:eventLocation];
+                              self.event.eventGeoPoint = geoPoint;
+                              
+                              [self.event saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                                  NSLog(@"Resaving the event");
+                              }];
+                              
+                          } else {
                           //Saves the data to Parse as a FBUGroup (subclass of PFObject)
-
-                          FBUEvent *newEvent = [FBUEvent object];
-                          newEvent.eventName = self.eventNameTextField.text;
-                          newEvent.eventDescription = self.eventDescriptionTextView.text;
-                          newEvent.eventAddress = self.eventAddressTextField.text;
+                              FBUEvent *newEvent = [FBUEvent object];
+                              newEvent.eventName = self.eventNameTextField.text;
+                              newEvent.eventDescription = self.eventDescriptionTextView.text;
+                              newEvent.eventAddress = self.eventAddressTextField.text;
+                              newEvent.creator = [PFUser currentUser];
                           
-                          
-                          CLLocationCoordinate2D coordinate = [self.eventLocation coordinate];
-                          PFGeoPoint *geoPoint = [PFGeoPoint geoPointWithLatitude:coordinate.latitude longitude:coordinate.longitude];
-                          newEvent.eventGeoPoint = geoPoint;
-                          
-                          NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-                          [dateFormatter setDateFormat:@"MM-dd-yyyy 'at' h:mm a"];
-                          newEvent.eventTimeDate = [dateFormatter stringFromDate:self.eventDatePicker.date];
-                          
-                          [newEvent saveInBackground];
-                          
+                              PFGeoPoint *geoPoint = [PFGeoPoint geoPointWithLocation:eventLocation];
+                              newEvent.eventGeoPoint = geoPoint;
+                              
+                              NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+                              [dateFormatter setDateFormat:@"MM-dd-yyyy 'at' h:mm a"];
+                              newEvent.eventTimeDate = [dateFormatter stringFromDate:self.eventDatePicker.date];
+                              
+                              [newEvent saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                                  NSLog(@"Saving new event");
+                              }];
+                          }
                       }];
+            
 }
 
 
@@ -87,6 +122,10 @@
     [alert show];
 }
 
+- (IBAction)backgroundPressed:(id)sender
+{
+    [self.view endEditing:YES];
+}
 
 
 

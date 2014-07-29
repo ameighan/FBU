@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #include <CoreLocation/CoreLocation.h>
 @class  FBUGroup;
+@class FBUEvent;
 
 @interface FBUEventDetailViewController : UIViewController <UITextFieldDelegate, CLLocationManagerDelegate>
 
@@ -19,4 +20,8 @@
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *saveButton;
 
 @property (strong, nonatomic) FBUGroup *group;
+@property (strong, nonatomic) FBUEvent *event;
+
+-(void)saveEventData;
+
 @end

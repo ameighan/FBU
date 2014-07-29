@@ -20,7 +20,6 @@
     [super viewDidLoad];
     
     if(self.recipe){
-        self.title = self.recipe.title;
         UIImage *image = [UIImage imageWithData:[self.recipe.image getData]];
         self.imageView.image = image;
         self.recipeTextField.text = self.recipe.title;

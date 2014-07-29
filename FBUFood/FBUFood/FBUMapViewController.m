@@ -14,6 +14,8 @@
 
 @implementation FBUMapViewController
 
+@synthesize coordinate;
+
 
 -(void)zoomToLocation
 {

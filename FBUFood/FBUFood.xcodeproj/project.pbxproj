@@ -242,8 +242,8 @@
 				931404C4197D84F0004D4447 /* FBUEditRecipeViewController.m */,
 				D2AF54DA1970607A00F0A0F2 /* FBURecipesListViewController.h */,
 				D2AF54DB1970607A00F0A0F2 /* FBURecipesListViewController.m */,
-				93E4BC2E1979C89800074647 /* FBURecipeViewController.m */,
 				93E4BC2D1979C89800074647 /* FBURecipeViewController.h */,
+				93E4BC2E1979C89800074647 /* FBURecipeViewController.m */,
 			);
 			name = Recipes;
 			sourceTree = "<group>";

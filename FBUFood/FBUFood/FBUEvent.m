@@ -29,5 +29,6 @@
 @dynamic recipesInEvent;
 @dynamic membersOfEvent;
 @dynamic groceryList;
+@dynamic creator;
 
 @end
