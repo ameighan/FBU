@@ -13,7 +13,6 @@
 
 @property (strong, nonatomic) FBUEvent *event;
 
-@property (weak, nonatomic) IBOutlet UILabel *eventTitleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *eventLocationLabel;
 @property (weak, nonatomic) IBOutlet UILabel *eventTimeDateLabel;
 @property (weak, nonatomic) IBOutlet UILabel *eventRecipesLabel;

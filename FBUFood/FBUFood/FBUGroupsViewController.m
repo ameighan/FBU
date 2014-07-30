@@ -14,12 +14,13 @@
 #import "FBUEventDetailViewController.h"
 #import "FBUAddRecipesViewController.h"
 #import "FBUMembersViewController.h"
+#import "FBUEventViewController.h"
 
 @implementation FBUGroupsViewController
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"groupCell"
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"eventCell"
                                                             forIndexPath:indexPath];
     FBUEvent *myEvent = self.group.eventsInGroup[indexPath.row];
     cell.textLabel.text = [myEvent eventName];
@@ -126,7 +127,19 @@
         FBUMembersViewController *membersViewController = segue.destinationViewController;
         
         membersViewController.group = self.group;
+    } else if ([segue.identifier isEqualToString:@"eventCell"]) {
         
+        FBUEventViewController *eventViewController = segue.destinationViewController;
+        
+        NSIndexPath *indexPath = [self.eventsInGroupTableView indexPathForSelectedRow];
+        
+        FBUEvent *selectedEvent= self.group.eventsInGroup[indexPath.row];
+        NSLog(@"Events in Group: %@", self.group.eventsInGroup);
+        
+        eventViewController.event = selectedEvent;
+        
+        NSLog(@"%@ was selected.", selectedEvent.eventName);
+
     }
 }
 
