@@ -17,6 +17,22 @@
 
 @implementation FBUEventViewController
 
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"oneMemberCell"
+                                                            forIndexPath:indexPath];
+    PFUser *personGoing = self.event.membersOfEvent[indexPath.row];
+    [personGoing fetchIfNeeded];
+    cell.textLabel.text = [personGoing username];
+    
+    return cell;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return [self.event.membersOfEvent count];
+}
+
 
 - (void)viewWillAppear:(BOOL)animated
 {
@@ -26,6 +42,16 @@
     if (self.event.creator != [PFUser currentUser]) {
         self.navigationItem.rightBarButtonItem = nil;
     }
+    [self.eventUsersTableView reloadData];
+}
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    [self.eventUsersTableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"oneMemberCell"];
+    
+    self.eventUsersTableView.delegate = self;
+    self.eventUsersTableView.dataSource = self;
 
     NSLog(@"%@", self.event.membersOfEvent);
     if (self.event.membersOfEvent == NULL) {
@@ -36,7 +62,6 @@
         self.eventJoinButton.hidden = YES;
         self.eventJoinButton.enabled = NO;
     }
-    
 }
 
 
@@ -47,11 +72,11 @@
     
     [self.event addObject:[PFUser currentUser] forKey:@"membersOfEvent"];
     [self.event saveInBackground];
+    [self.eventUsersTableView reloadData];
     
     //Disable join button once user has joined.
     self.eventJoinButton.hidden = YES;
     self.eventJoinButton.enabled = NO;
-
 }
 
 

@@ -104,13 +104,18 @@
                               NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
                               [dateFormatter setDateFormat:@"MM-dd-yyyy 'at' h:mm a"];
                               newEvent.eventTimeDate = [dateFormatter stringFromDate:self.eventDatePicker.date];
-                              
+
+                              [newEvent saveInBackground];
+                              [self.group.eventsInGroup addObject:newEvent];
                               [newEvent saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
                                   NSLog(@"Saving new event");
                                   [[NSNotificationCenter defaultCenter] postNotificationName:@"savedEvent" object:self];
 
                               }];
                               [self.group saveInBackground];
+                              //[newEvent saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                              //    NSLog(@"Saving new event");
+                              //}];
                           }
 
                       }];

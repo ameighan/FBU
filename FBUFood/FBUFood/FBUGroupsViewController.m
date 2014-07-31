@@ -42,7 +42,6 @@
     self.eventsInGroupTableView.dataSource = self;
     [[NSNotificationCenter defaultCenter]addObserver:self.eventsInGroupTableView selector:@selector(reloadData) name:@"savedEvent" object:nil];
 
-    
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -136,7 +135,6 @@
         addRecipesViewController.group = self.group;
         
     } else if ([segue.identifier isEqualToString:@"createEvent"]) {
-        
         FBUEventDetailViewController *eventDetailViewController = segue.destinationViewController;
         eventDetailViewController.group = self.group;
         eventDetailViewController.title = @"Create New Event";
@@ -153,12 +151,11 @@
         NSIndexPath *indexPath = [self.eventsInGroupTableView indexPathForSelectedRow];
         
         FBUEvent *selectedEvent= self.group.eventsInGroup[indexPath.row];
-        NSLog(@"Events in Group: %@", self.group.eventsInGroup);
+        //NSLog(@"Events in Group: %@", self.group.eventsInGroup);
         
         eventViewController.event = selectedEvent;
         
-        NSLog(@"%@ was selected.", selectedEvent.eventName);
-
+        //NSLog(@"%@ was selected.", selectedEvent.eventName);
     }
 }
 

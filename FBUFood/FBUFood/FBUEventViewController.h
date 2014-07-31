@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "FBUEvent.h"
 
-@interface FBUEventViewController : UIViewController
+@interface FBUEventViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 @property (strong, nonatomic) FBUEvent *event;
 
@@ -21,6 +21,6 @@
 @property (weak, nonatomic) IBOutlet UITableView *eventUsersTableView;
 @property (weak, nonatomic) IBOutlet UIButton *eventJoinButton;
 
-
+@property (weak, nonatomic) NSArray *peopleGoing;
 
 @end
