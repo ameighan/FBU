@@ -240,6 +240,7 @@
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
+                        <outlet property="addButton" destination="AOV-JI-UbY" id="uSh-fo-RXl"/>
                         <outlet property="tableView" destination="dMd-Fb-2Ki" id="juw-dG-L3U"/>
                     </connections>
                 </viewController>
@@ -396,15 +397,6 @@
                                     <segue destination="uHd-qP-I1t" kind="push" identifier="createEvent" id="Gf1-nK-jxY"/>
                                 </connections>
                             </button>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TBe-bM-M77">
-                                <rect key="frame" x="102" y="489" width="88" height="30"/>
-                                <state key="normal" title="Add Recipes">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="ioq-xv-ETc" kind="push" identifier="addRecipes" id="Woi-Wy-NMG"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7rf-70-uKN">
                                 <rect key="frame" x="187" y="464" width="70" height="30"/>
                                 <state key="normal" title="Subscribe">
@@ -439,7 +431,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="9SS-2X-QQj" kind="push" identifier="groupRecipe" id="HKn-YS-gnu"/>
+                                    <segue destination="5vy-0z-OFu" kind="push" identifier="groupRecipe" id="3dj-aI-oAl"/>
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qSV-Vu-IoO">
@@ -465,7 +457,6 @@
                     </view>
                     <navigationItem key="navigationItem" id="oUS-OW-5fv"/>
                     <connections>
-                        <outlet property="addRecipeInGroupButton" destination="TBe-bM-M77" id="Tpq-Ds-U8d"/>
                         <outlet property="createEventInGroupButton" destination="2OB-zq-6CX" id="5ir-lq-qPF"/>
                         <outlet property="eventsInGroupTableView" destination="JZi-CV-lUe" id="cnn-fh-3pd"/>
                         <outlet property="generalMeetingTimesLabel" destination="xqh-7J-XSJ" id="zNo-ZX-DLB"/>
@@ -709,6 +700,59 @@
             </objects>
             <point key="canvasLocation" x="-1651" y="-576"/>
         </scene>
+        <!--Groups Recipes View Controller - Group Recipes-->
+        <scene sceneID="YbJ-Bt-1iu">
+            <objects>
+                <viewController id="5vy-0z-OFu" customClass="FBUGroupsRecipesViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="UDA-Bp-cVe"/>
+                        <viewControllerLayoutGuide type="bottom" id="aSk-DO-otF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="iA4-SY-sKc">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="KXb-VO-BUx">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="recipeCell" id="bPg-oQ-6vg">
+                                        <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bPg-oQ-6vg" id="xxn-2U-3VI">
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="kQr-eQ-54T" kind="push" identifier="recipeCell" id="218-qX-u7v"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="5vy-0z-OFu" id="Vld-RW-RjJ"/>
+                                    <outlet property="delegate" destination="5vy-0z-OFu" id="scB-WP-Kr8"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Group Recipes" id="l99-SV-h0L">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="r5J-Mx-JH9">
+                            <connections>
+                                <segue destination="ioq-xv-ETc" kind="push" identifier="addRecipes" id="Ra7-8o-DmW"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="addRecipesButton" destination="r5J-Mx-JH9" id="UEf-ra-bzc"/>
+                        <outlet property="recipesTableView" destination="KXb-VO-BUx" id="Kg0-6f-3ho"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zue-9W-iUL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="821" y="-1173"/>
+        </scene>
         <!--Event Detail View Controller - Edit Event-->
         <scene sceneID="0L2-Ga-unU">
             <objects>
@@ -950,7 +994,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rpa-Ky-9GT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1409" y="-2013"/>
+            <point key="canvasLocation" x="1371" y="-1831"/>
         </scene>
         <!--Edit Profile View Controller - Edit Profile-->
         <scene sceneID="ews-rI-1jQ">
@@ -1463,12 +1507,13 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="HKn-YS-gnu"/>
         <segue reference="wIr-me-k4C"/>
         <segue reference="beZ-VQ-lUb"/>
         <segue reference="Gf1-nK-jxY"/>
         <segue reference="nFV-tO-kgR"/>
-        <segue reference="qXC-cC-bdi"/>
+        <segue reference="Gf1-nK-jxY"/>
+        <segue reference="218-qX-u7v"/>
+        <segue reference="SGc-SZ-PEX"/>
         <segue reference="FsN-7N-yNV"/>
     </inferredMetricsTieBreakers>
 </document>

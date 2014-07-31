@@ -63,6 +63,7 @@
 		D2D378091980D1AA00CB0EC2 /* FBUGroupSubscribersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D378081980D1AA00CB0EC2 /* FBUGroupSubscribersViewController.m */; };
 		D2D3780C1981A4AD00CB0EC2 /* FBUMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D3780B1981A4AD00CB0EC2 /* FBUMapViewController.m */; };
 		D2D378131986C3AF00CB0EC2 /* FBUAddRecipesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D378121986C3AF00CB0EC2 /* FBUAddRecipesViewController.m */; };
+		D2D378161989BB3B00CB0EC2 /* FBUGroupsRecipesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D378151989BB3B00CB0EC2 /* FBUGroupsRecipesViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -168,6 +169,8 @@
 		D2D3780B1981A4AD00CB0EC2 /* FBUMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBUMapViewController.m; sourceTree = "<group>"; };
 		D2D378111986C3AF00CB0EC2 /* FBUAddRecipesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBUAddRecipesViewController.h; sourceTree = "<group>"; };
 		D2D378121986C3AF00CB0EC2 /* FBUAddRecipesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBUAddRecipesViewController.m; sourceTree = "<group>"; };
+		D2D378141989BB3B00CB0EC2 /* FBUGroupsRecipesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBUGroupsRecipesViewController.h; sourceTree = "<group>"; };
+		D2D378151989BB3B00CB0EC2 /* FBUGroupsRecipesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBUGroupsRecipesViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -264,6 +267,8 @@
 				D28632C919772779007BBD28 /* FBUGroupsDetailViewController.m */,
 				D2D378071980D1AA00CB0EC2 /* FBUGroupSubscribersViewController.h */,
 				D2D378081980D1AA00CB0EC2 /* FBUGroupSubscribersViewController.m */,
+				D2D378141989BB3B00CB0EC2 /* FBUGroupsRecipesViewController.h */,
+				D2D378151989BB3B00CB0EC2 /* FBUGroupsRecipesViewController.m */,
 			);
 			name = Groups;
 			sourceTree = "<group>";
@@ -523,6 +528,7 @@
 				969C8E6D1983060400D0E7B3 /* FBUMembersViewController.m in Sources */,
 				966554D61973B28700DDBED0 /* FBUEditProfileViewController.m in Sources */,
 				D2AF54D619705DF200F0A0F2 /* FBUDashboardViewController.m in Sources */,
+				D2D378161989BB3B00CB0EC2 /* FBUGroupsRecipesViewController.m in Sources */,
 				D28632DB197F1E0B007BBD28 /* FBUEventDetailViewController.m in Sources */,
 				966554D9197443B200DDBED0 /* FBUBucketListDetailViewController.m in Sources */,
 				D2D3780C1981A4AD00CB0EC2 /* FBUMapViewController.m in Sources */,

@@ -15,6 +15,7 @@
 #import "FBUAddRecipesViewController.h"
 #import "FBUMembersViewController.h"
 #import "FBUEventViewController.h"
+#import "FBUGroupsRecipesViewController.h"
 
 @implementation FBUGroupsViewController
 
@@ -115,11 +116,14 @@
         
     } else if ([segue.identifier isEqualToString:@"groupRecipe"]) {
         
-        FBURecipesListViewController *recipeViewController = segue.destinationViewController;
-        recipeViewController.recipeArray = self.group.recipesInGroup;
+        FBUGroupsRecipesViewController *recipesViewController = segue.destinationViewController;
+        recipesViewController.group = self.group;
+        NSLog(@"Recipes in Group: %@", self.group.recipesInGroup);
+        
     } else if ([segue.identifier isEqualToString:@"addRecipes"]) {
         FBUAddRecipesViewController *addRecipesViewController = segue.destinationViewController;
         addRecipesViewController.group = self.group;
+        
     } else if ([segue.identifier isEqualToString:@"createEvent"]) {
         
         FBUEventDetailViewController *eventDetailViewController = segue.destinationViewController;

@@ -14,6 +14,7 @@
 
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSMutableArray *recipeArray;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *addButton;
 
 -(void)queryForRecipes;
 
