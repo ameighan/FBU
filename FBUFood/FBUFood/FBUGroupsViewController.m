@@ -39,7 +39,10 @@
     
     self.eventsInGroupTableView.delegate = self;
     self.eventsInGroupTableView.dataSource = self;
-    NSLog(@"Events in group: %@", self.group.eventsInGroup);
+    //NSLog(@"Events in group: %@", self.group.eventsInGroup);
+    [[NSNotificationCenter defaultCenter]addObserver:self.eventsInGroupTableView selector:@selector(reloadData) name:@"savedEvent" object:nil];
+
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -51,7 +54,7 @@
 {
     [super viewWillAppear:animated];
     
-    NSLog(@"%@", self.group.cooksInGroup);
+    //NSLog(@"%@", self.group.cooksInGroup);
     if ([self.group checkIfUserIsInGroupArray:self.group.cooksInGroup]) {
         [self toggleCookView];
         
@@ -60,6 +63,7 @@
     self.groupDescriptionTextView.text = self.group.groupDescription;
     self.generalMeetingTimesLabel.text = self.group.generalMeetingTimes;
     [self.eventsInGroupTableView reloadData];
+    
 }
 
 

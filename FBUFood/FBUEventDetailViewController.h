@@ -21,7 +21,6 @@
 @property (weak, nonatomic) IBOutlet UITextField *eventAddressTextField;
 @property (weak, nonatomic) IBOutlet UITextView *eventDescriptionTextView;
 @property (weak, nonatomic) IBOutlet UIDatePicker *eventDatePicker;
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *saveButton;
 
 @property (strong, nonatomic) FBUEvent *event;
 

@@ -38,9 +38,9 @@
 
 -(void)saveEventData
 {
-    // Gathering geopoint info
+    // Gathering geopoint info and saving the event
     [self convertAddressToCoordinates:self.eventAddressTextField.text];
-    
+
 }
 
 - (IBAction)datePickerTouched:(id)sender
@@ -72,7 +72,6 @@
     [self.geocoder geocodeAddressString:address
                       completionHandler:^(NSArray* placemarks, NSError* error){
                           CLLocation *eventLocation = [((CLPlacemark *)[placemarks firstObject])location];
-                          
                           if (self.event) {
                               //Resaves an event is it is being edited
                               self.event.eventName = self.eventNameTextField.text;
@@ -90,13 +89,13 @@
                               }];
                               
                           } else {
-                          //Saves the data to Parse as a FBUGroup (subclass of PFObject)
+                              //Saves the data to Parse as a FBUGroup (subclass of PFObject)
                               FBUEvent *newEvent = [FBUEvent object];
                               newEvent.eventName = self.eventNameTextField.text;
                               newEvent.eventDescription = self.eventDescriptionTextView.text;
                               newEvent.eventAddress = self.eventAddressTextField.text;
                               newEvent.creator = [PFUser currentUser];
-                          
+                              
                               PFGeoPoint *geoPoint = [PFGeoPoint geoPointWithLocation:eventLocation];
                               newEvent.eventGeoPoint = geoPoint;
                               
@@ -108,9 +107,12 @@
                               
                               [newEvent saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
                                   NSLog(@"Saving new event");
+                                  [[NSNotificationCenter defaultCenter] postNotificationName:@"savedEvent" object:self];
+
                               }];
                               [self.group saveInBackground];
                           }
+
                       }];
             
 }
