@@ -40,7 +40,6 @@
     
     self.eventsInGroupTableView.delegate = self;
     self.eventsInGroupTableView.dataSource = self;
-    //NSLog(@"Events in group: %@", self.group.eventsInGroup);
     [[NSNotificationCenter defaultCenter]addObserver:self.eventsInGroupTableView selector:@selector(reloadData) name:@"savedEvent" object:nil];
 
     
@@ -55,11 +54,15 @@
 {
     [super viewWillAppear:animated];
     
-    //NSLog(@"%@", self.group.cooksInGroup);
     if ([self.group checkIfUserIsInGroupArray:self.group.cooksInGroup]) {
         [self toggleCookView];
         
     }
+    
+    if ([self.group checkIfUserIsInGroupArray:self.group.subscribersOfGroup]) {
+        [self toggleSubscriberView];
+    }
+    
     self.title = self.group.groupName;
     self.groupDescriptionTextView.text = self.group.groupDescription;
     self.generalMeetingTimesLabel.text = self.group.generalMeetingTimes;
@@ -76,6 +79,14 @@
     
     
     //Disable and hide the old buttons
+    self.joinGroupButton.hidden = YES;
+    self.joinGroupButton.enabled = NO;
+    self.subscribeGroupButton.hidden = YES;
+    self.subscribeGroupButton.enabled = NO;
+}
+
+- (void)toggleSubscriberView
+{
     self.joinGroupButton.hidden = YES;
     self.joinGroupButton.enabled = NO;
     self.subscribeGroupButton.hidden = YES;

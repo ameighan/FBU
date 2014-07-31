@@ -26,6 +26,17 @@
     if (self.event.creator != [PFUser currentUser]) {
         self.navigationItem.rightBarButtonItem = nil;
     }
+
+    NSLog(@"%@", self.event.membersOfEvent);
+    if (self.event.membersOfEvent == NULL) {
+        self.eventJoinButton.hidden = NO;
+        self.eventJoinButton.enabled = YES;
+    } else if ([self.event checkIfUserIsInEventArray:self.event.membersOfEvent]) {
+        NSLog(@"%@", self.event.membersOfEvent);
+        self.eventJoinButton.hidden = YES;
+        self.eventJoinButton.enabled = NO;
+    }
+    
 }
 
 
@@ -36,6 +47,10 @@
     
     [self.event addObject:[PFUser currentUser] forKey:@"membersOfEvent"];
     [self.event saveInBackground];
+    
+    //Disable join button once user has joined.
+    self.eventJoinButton.hidden = YES;
+    self.eventJoinButton.enabled = NO;
 
 }
 

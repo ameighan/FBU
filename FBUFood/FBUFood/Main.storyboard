@@ -18,7 +18,6 @@
                     <connections>
                         <segue destination="BC0-by-ePe" kind="relationship" relationship="viewControllers" id="SZh-Kf-itk"/>
                         <segue destination="d7L-bS-pfO" kind="relationship" relationship="viewControllers" id="hUB-pE-mzF"/>
-                        <segue destination="VNs-xj-94c" kind="relationship" relationship="viewControllers" id="X0v-EG-D5I"/>
                         <segue destination="hUi-1a-C14" kind="relationship" relationship="viewControllers" id="smR-uN-aXg"/>
                         <segue destination="F8w-D9-YE1" kind="relationship" relationship="viewControllers" id="G5u-Fb-yF6"/>
                     </connections>
@@ -363,7 +362,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="General Meeting Times" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xqh-7J-XSJ">
-                                <rect key="frame" x="20" y="196" width="178" height="21"/>
+                                <rect key="frame" x="20" y="196" width="280" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -550,7 +549,6 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Group" id="XUW-aK-CzW"/>
                     <navigationItem key="navigationItem" title="New Group" id="S4t-bU-QuC">
                         <barButtonItem key="rightBarButtonItem" title="Save" id="8BZ-NY-RxM">
                             <connections>
@@ -570,23 +568,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qxF-Ia-cWg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2686" y="-1245"/>
-        </scene>
-        <!--Navigation Controller - Group-->
-        <scene sceneID="Vak-Ef-VPv">
-            <objects>
-                <navigationController definesPresentationContext="YES" id="VNs-xj-94c" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Group" id="qyI-s8-Be4"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="WSo-vi-94S">
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="oA1-3b-vE0" kind="relationship" relationship="rootViewController" id="fp1-67-Vto"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ueb-cj-PSh" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-3426" y="-1245"/>
+            <point key="canvasLocation" x="-1651" y="497"/>
         </scene>
         <!--Members View Controller - Members-->
         <scene sceneID="5kX-n9-sdz">
@@ -1253,6 +1235,11 @@
                                 <action selector="logoutButtonPressed:" destination="BT5-Zb-hnn" id="MiQ-Rh-ziM"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="New Group" id="DTK-VI-Jlg">
+                            <connections>
+                                <segue destination="oA1-3b-vE0" kind="push" id="Vde-A9-dkg"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="dashboardTableView" destination="vvR-ui-nQN" id="u4g-nd-Gq0"/>
@@ -1260,7 +1247,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qYS-II-0pt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2236" y="103"/>
+            <point key="canvasLocation" x="-2237" y="79"/>
         </scene>
         <!--Bucket List View Controller-->
         <scene sceneID="EUa-1q-yPi">
@@ -1508,10 +1495,8 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="wIr-me-k4C"/>
-        <segue reference="beZ-VQ-lUb"/>
-        <segue reference="Gf1-nK-jxY"/>
         <segue reference="nFV-tO-kgR"/>
-        <segue reference="Gf1-nK-jxY"/>
+        <segue reference="qXC-cC-bdi"/>
         <segue reference="218-qX-u7v"/>
         <segue reference="SGc-SZ-PEX"/>
         <segue reference="FsN-7N-yNV"/>
