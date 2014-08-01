@@ -401,7 +401,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YdQ-7w-44u">
-                                <rect key="frame" x="55" y="464" width="30" height="30"/>
+                                <rect key="frame" x="46" y="464" width="30" height="30"/>
                                 <state key="normal" title="Join">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -1624,9 +1624,9 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="wIr-me-k4C"/>
+        <segue reference="Gf1-nK-jxY"/>
         <segue reference="beZ-VQ-lUb"/>
         <segue reference="nFV-tO-kgR"/>
-        <segue reference="qXC-cC-bdi"/>
         <segue reference="218-qX-u7v"/>
         <segue reference="SGc-SZ-PEX"/>
         <segue reference="FsN-7N-yNV"/>

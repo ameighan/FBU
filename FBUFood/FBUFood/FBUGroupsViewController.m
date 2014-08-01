@@ -55,11 +55,14 @@
     
     if ([self.group checkIfUserIsInGroupArray:self.group.cooksInGroup]) {
         [self toggleCookView];
+        NSLog(@"Toggling cook view");
+        NSLog(@"Cooks: %@", self.group.cooksInGroup);
+        NSLog(@"Subscribers: %@", self.group.subscribersOfGroup);
         
-    }
-    
-    if ([self.group checkIfUserIsInGroupArray:self.group.subscribersOfGroup]) {
+    } else if ([self.group checkIfUserIsInGroupArray:self.group.subscribersOfGroup]) {
         [self toggleSubscriberView];
+        NSLog(@"Toggling subscriber view");
+        NSLog(@"Subscribers: %@", self.group.subscribersOfGroup);
     }
     
     self.title = self.group.groupName;
@@ -99,6 +102,7 @@
     [self showAlertWithTitle:@"Success!" message:@"You have joined this group!"];
     
     [self.group addObject:[PFUser currentUser] forKey:@"cooksInGroup"];
+    [self.group addObject:[PFUser currentUser] forKey:@"subscribersOfGroup"];
     [self.group saveInBackground];
     
     [self toggleCookView];

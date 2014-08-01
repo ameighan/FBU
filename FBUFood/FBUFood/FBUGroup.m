@@ -33,7 +33,7 @@
 - (BOOL)checkIfUserIsInGroupArray:(NSMutableArray *)groupArray
 {
     
-    int index = [groupArray indexOfObjectPassingTest:^BOOL(id obj, NSUInteger idx, BOOL *stop) {
+    NSUInteger index = [groupArray indexOfObjectPassingTest:^BOOL(id obj, NSUInteger idx, BOOL *stop) {
         PFUser *user = obj;
         return [user.objectId isEqualToString:[PFUser currentUser].objectId];
     }];

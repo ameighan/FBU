@@ -42,6 +42,17 @@
     if (self.event.creator != [PFUser currentUser]) {
         self.navigationItem.rightBarButtonItem = nil;
     }
+    
+    if (self.event.membersOfEvent == NULL) {
+        NSLog(@"%@", self.event.membersOfEvent);
+        self.eventJoinButton.hidden = NO;
+        self.eventJoinButton.enabled = YES;
+    } else if ([self.event checkIfUserIsInEventArray:self.event.membersOfEvent]) {
+        NSLog(@"%@", self.event.membersOfEvent);
+        self.eventJoinButton.hidden = YES;
+        self.eventJoinButton.enabled = NO;
+    }
+    
     [self.eventUsersTableView reloadData];
 }
 
@@ -52,16 +63,6 @@
     
     self.eventUsersTableView.delegate = self;
     self.eventUsersTableView.dataSource = self;
-
-    NSLog(@"%@", self.event.membersOfEvent);
-    if (self.event.membersOfEvent == NULL) {
-        self.eventJoinButton.hidden = NO;
-        self.eventJoinButton.enabled = YES;
-    } else if ([self.event checkIfUserIsInEventArray:self.event.membersOfEvent]) {
-        NSLog(@"%@", self.event.membersOfEvent);
-        self.eventJoinButton.hidden = YES;
-        self.eventJoinButton.enabled = NO;
-    }
 }
 
 

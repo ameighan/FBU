@@ -77,6 +77,7 @@
                               self.event.eventName = self.eventNameTextField.text;
                               
                               self.event.creator = [PFUser currentUser];
+                              [self.event addObject:[PFUser currentUser] forKey:@"membersOfEvent"];
                               
                               self.event.eventDescription =self.eventDescriptionTextView.text;
                               self.event.eventAddress = self.eventAddressTextField.text;
@@ -99,23 +100,18 @@
                               PFGeoPoint *geoPoint = [PFGeoPoint geoPointWithLocation:eventLocation];
                               newEvent.eventGeoPoint = geoPoint;
                               
-                              [self.group.eventsInGroup addObject:newEvent];
+                              [self.group addObject:newEvent forKey:@"eventsInGroup"];
                               
                               NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
                               [dateFormatter setDateFormat:@"MM-dd-yyyy 'at' h:mm a"];
                               newEvent.eventTimeDate = [dateFormatter stringFromDate:self.eventDatePicker.date];
 
-                              [newEvent saveInBackground];
-                              [self.group.eventsInGroup addObject:newEvent];
                               [newEvent saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
                                   NSLog(@"Saving new event");
                                   [[NSNotificationCenter defaultCenter] postNotificationName:@"savedEvent" object:self];
 
                               }];
                               [self.group saveInBackground];
-                              //[newEvent saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-                              //    NSLog(@"Saving new event");
-                              //}];
                           }
 
                       }];

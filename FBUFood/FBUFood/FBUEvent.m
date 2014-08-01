@@ -36,7 +36,7 @@
 - (BOOL)checkIfUserIsInEventArray:(NSMutableArray *)eventArray
 {
     
-    int index = [eventArray indexOfObjectPassingTest:^BOOL(id obj, NSUInteger idx, BOOL *stop) {
+    NSUInteger index = [eventArray indexOfObjectPassingTest:^BOOL(id obj, NSUInteger idx, BOOL *stop) {
         PFUser *user = obj;
         return [user.objectId isEqualToString:[PFUser currentUser].objectId];
     }];

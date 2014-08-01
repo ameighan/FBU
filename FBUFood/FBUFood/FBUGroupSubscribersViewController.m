@@ -19,6 +19,8 @@
     
     PFUser *user = self.group.subscribersOfGroup[indexPath.row];
     
+    [user fetchIfNeeded];
+    
     cell.textLabel.text = [user username];
     
     return cell;

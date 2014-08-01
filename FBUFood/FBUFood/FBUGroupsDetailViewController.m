@@ -62,6 +62,7 @@
     newGroup.groupDescription = self.descriptionOfGroupTextView.text;
     newGroup.owner = [PFUser currentUser];
     [newGroup addObject:[PFUser currentUser] forKey:@"cooksInGroup"];
+    [newGroup addObject:[PFUser currentUser] forKey:@"subscribersOfGroup"];
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"h:mm a"];
@@ -70,6 +71,8 @@
     newGroup.generalMeetingTimes = [NSString stringWithFormat:@"%@ at %@", self.dayOfWeekTextField.text, meetingTime];
     
     [newGroup saveInBackground];
+    NSLog(@"%@", newGroup.cooksInGroup);
+    NSLog(@"%@", newGroup.subscribersOfGroup);
     
     
 }
