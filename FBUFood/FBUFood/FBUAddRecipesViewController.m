@@ -77,4 +77,22 @@
     }
 }
 
+- (void)addRecipesToEvent
+{
+    NSArray *selectedCells = [self.recipesTableView indexPathsForSelectedRows];
+    
+    for (NSIndexPath *selectedCell in selectedCells){
+        NSIndexPath *indexPath = selectedCell;
+        
+        FBURecipe *selectedRecipe = self.recipesArray[indexPath.row];
+        
+        //Add each selected recipe to array of recipes to be presented by the instance of RecipesListViewController
+        [self.event addObject:selectedRecipe forKey:@"recipesInEvent"];
+        [self.event saveInBackground];
+        
+        NSLog(@"%@ was added.", selectedRecipe.title);
+        NSLog(@"Event's recipes: %@", self.event.recipesInEvent);
+    }
+}
+
 @end

@@ -14,14 +14,25 @@
 
 @implementation FBUGroupsRecipesViewController
 
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    // populated array from wherever the source was -> rename to unfetchedRecipesArray
+    // fetchAll
+      // in the callback -- set self.recipesArray =
+      // reloadData
+    
+    
+}
+
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
     [self.recipesTableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"recipeCell"];
     
-    if (![self.group checkIfUserIsInGroupArray:self.group.cooksInGroup]) {
-        [self.navigationItem setRightBarButtonItem:nil animated:YES];
-    }
+//    if (![self.group checkIfUserIsInGroupArray:self.group.cooksInGroup]) {
+//        [self.navigationItem setRightBarButtonItem:nil animated:YES];
+//    }
 }
 
 
@@ -31,7 +42,9 @@
     
     UITableViewCell *cell = [self.recipesTableView dequeueReusableCellWithIdentifier:@"recipeCell" forIndexPath:indexPath];
     
-    FBURecipe *recipe = [self.group.recipesInGroup objectAtIndex:indexPath.row];
+    FBURecipe *recipe = [self.recipesArray objectAtIndex:indexPath.row];
+    
+    [recipe fetchIfNeeded];
     
     cell.textLabel.text = recipe[@"title"];
     
@@ -41,7 +54,7 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [self.group.recipesInGroup count];
+    return [self.recipesArray count];
 }
 
 
@@ -64,23 +77,47 @@
         FBURecipeViewController *controller = (FBURecipeViewController *)segue.destinationViewController;
         NSIndexPath *ip = [self.recipesTableView indexPathForSelectedRow];
         
-        FBURecipe *selectedRecipe = self.group.recipesInGroup[ip.row];
+        FBURecipe *selectedRecipe = self.recipesArray[ip.row];
         
         controller.recipe = selectedRecipe;
         NSLog(@"Seguing to the recipe view controller.");
         
+    } else if ([segue.identifier isEqualToString:@"addRecipes"]){
+        FBUAddRecipesViewController *addRecipesVC = [[FBUAddRecipesViewController alloc] init];
+        addRecipesVC = segue.destinationViewController;
+        NSLog(@"reached this point");
+        
+        if ([self.sourceVC isEqualToString:@"group"]) {
+            addRecipesVC.group = self.group;
+            addRecipesVC.sourceVC = @"group";
+            
+        } else if ([self.sourceVC isEqualToString:@"event"]) {
+            addRecipesVC.event = self.event;
+            addRecipesVC.sourceVC = @"event";
+        }
     }
 }
 
 
 - (IBAction)unwindToGroupsRecipesListViewController:(UIStoryboardSegue *)segue
 {
-    if([segue.identifier isEqualToString:@"addRecipes"]) {
-        FBUAddRecipesViewController *controller = segue.sourceViewController;
-        controller.group = self.group;
+    if([segue.identifier isEqualToString:@"toRecipesList"]) {
         
-        NSLog(@"Passing %@ over to AddRecipesVC.", self.group);
-        [controller addRecipesToGroup];
+        FBUAddRecipesViewController *controller = segue.sourceViewController;
+        
+        if ([controller.sourceVC isEqualToString:@"group"]) {
+            
+            [controller addRecipesToGroup];
+            self.recipesArray = controller.group.recipesInGroup;
+
+            
+        } else if ([controller.sourceVC isEqualToString:@"event"]) {
+            
+            [controller addRecipesToEvent];
+            self.recipesArray = controller.event.recipesInEvent;
+            
+        }
+
         [self.recipesTableView reloadData];
     }
 }

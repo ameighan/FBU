@@ -10,6 +10,7 @@
 #import "FBUEvent.h"
 #import "FBUMembersViewController.h"
 #import "FBUEventDetailViewController.h"
+#import "FBUGroupsRecipesViewController.h"
 
 @interface FBUEventViewController ()
 @property (strong, nonatomic) CLGeocoder *geocoder;
@@ -94,6 +95,14 @@
         
         FBUMembersViewController *controller = (FBUMembersViewController *)segue.destinationViewController;
         controller.membersArray = self.event.membersOfEvent;
+    } else if ([segue.identifier isEqualToString:@"eventRecipes"]){
+        
+        FBUGroupsRecipesViewController *recipesViewController = [[FBUGroupsRecipesViewController alloc] init];
+        recipesViewController = segue.destinationViewController;
+        recipesViewController.sourceVC = @"event";
+        recipesViewController.event = self.event;
+        recipesViewController.recipesArray = self.event.recipesInEvent;
+        recipesViewController.title = @"Event Recipes";
         
     }
 }

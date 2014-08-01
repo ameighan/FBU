@@ -16,7 +16,10 @@
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *addRecipesButton;
 
 @property (strong, nonatomic) FBUGroup *group;
+@property (strong, nonatomic) FBUEvent *event;
+@property (strong, nonatomic) NSString *sourceVC;
 
 - (void)addRecipesToGroup;
+- (void)addRecipesToEvent;
 
 @end

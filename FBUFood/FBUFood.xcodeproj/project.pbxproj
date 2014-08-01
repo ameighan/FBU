@@ -280,8 +280,6 @@
 				D28632C919772779007BBD28 /* FBUGroupsDetailViewController.m */,
 				D2D378071980D1AA00CB0EC2 /* FBUGroupSubscribersViewController.h */,
 				D2D378081980D1AA00CB0EC2 /* FBUGroupSubscribersViewController.m */,
-				D2D378141989BB3B00CB0EC2 /* FBUGroupsRecipesViewController.h */,
-				D2D378151989BB3B00CB0EC2 /* FBUGroupsRecipesViewController.m */,
 			);
 			name = Groups;
 			sourceTree = "<group>";
@@ -314,6 +312,8 @@
 				93E4BC2E1979C89800074647 /* FBURecipeViewController.m */,
 				93ED1EE61989B675000CF446 /* FBURecipeSegue.h */,
 				93ED1EE71989B675000CF446 /* FBURecipeSegue.m */,
+				D2D378141989BB3B00CB0EC2 /* FBUGroupsRecipesViewController.h */,
+				D2D378151989BB3B00CB0EC2 /* FBUGroupsRecipesViewController.m */,
 			);
 			name = Recipes;
 			sourceTree = "<group>";

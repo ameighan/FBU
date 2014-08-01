@@ -24,6 +24,7 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"eventCell"
                                                             forIndexPath:indexPath];
     FBUEvent *myEvent = self.group.eventsInGroup[indexPath.row];
+    
     cell.textLabel.text = [myEvent eventName];
     return cell;
 }
@@ -132,12 +133,11 @@
     } else if ([segue.identifier isEqualToString:@"groupRecipe"]) {
         
         FBUGroupsRecipesViewController *recipesViewController = segue.destinationViewController;
+        recipesViewController.sourceVC = @"group";
         recipesViewController.group = self.group;
+        recipesViewController.recipesArray = self.group.recipesInGroup;
+        recipesViewController.title = @"Group Recipes";
         NSLog(@"Recipes in Group: %@", self.group.recipesInGroup);
-        
-    } else if ([segue.identifier isEqualToString:@"addRecipes"]) {
-        FBUAddRecipesViewController *addRecipesViewController = segue.destinationViewController;
-        addRecipesViewController.group = self.group;
         
     } else if ([segue.identifier isEqualToString:@"createEvent"]) {
         FBUEventDetailViewController *eventDetailViewController = segue.destinationViewController;
