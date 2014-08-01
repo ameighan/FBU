@@ -35,6 +35,13 @@
     return [self.items count];
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    [self performSegueWithIdentifier:@"BucketListCell" sender:self];
+    
+}
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([segue.identifier isEqualToString:@"BucketListCell"]) {
@@ -45,7 +52,7 @@
         FBUBucketListViewController *itemsViewController = segue.destinationViewController;
         
         itemsViewController.item = myItem;
-        NSLog(@"%@", myItem.itemName);
+        //NSLog(@"%@", myItem.itemName);
     }
 }
 

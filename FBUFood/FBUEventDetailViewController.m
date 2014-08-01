@@ -26,6 +26,7 @@
     if (self.event) {
         self.eventAddressTextField.text = self.event.eventAddress;
         self.eventDescriptionTextView.text = self.event.eventDescription;
+        self.eventMealsTextField.text = self.event.eventMeals;
     }
 }
 
@@ -81,6 +82,7 @@
                               
                               self.event.eventDescription =self.eventDescriptionTextView.text;
                               self.event.eventAddress = self.eventAddressTextField.text;
+                              self.event.eventMeals = self.eventMealsTextField.text;
                               
                               PFGeoPoint *geoPoint = [PFGeoPoint geoPointWithLocation:eventLocation];
                               self.event.eventGeoPoint = geoPoint;
@@ -95,6 +97,7 @@
                               newEvent.eventName = self.eventNameTextField.text;
                               newEvent.eventDescription = self.eventDescriptionTextView.text;
                               newEvent.eventAddress = self.eventAddressTextField.text;
+                              newEvent.eventMeals = self.eventMealsTextField.text;
                               newEvent.creator = [PFUser currentUser];
                               
                               PFGeoPoint *geoPoint = [PFGeoPoint geoPointWithLocation:eventLocation];

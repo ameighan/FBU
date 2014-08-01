@@ -39,6 +39,7 @@
     self.title = self.event.eventName;
     self.eventLocationLabel.text = self.event.eventAddress;
     self.eventTimeDateLabel.text = self.event.eventTimeDate;
+    self.eventMealsLabel.text = [@"Meals: " stringByAppendingString:self.event.eventMeals];
     if (self.event.creator != [PFUser currentUser]) {
         self.navigationItem.rightBarButtonItem = nil;
     }

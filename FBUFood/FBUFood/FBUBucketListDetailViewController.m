@@ -36,11 +36,6 @@
     [super viewDidLoad];
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-}
-
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
     [textField resignFirstResponder];
@@ -51,25 +46,42 @@
 {
     if([text isEqualToString:@"\n"]) {
         [textView resignFirstResponder];
-        return NO;
+        return YES;
     }
     
     return YES;
 }
 
-- (IBAction)backgroundTapped:(id)sender
+- (IBAction)backgroundPressed:(id)sender
 {
     [self.view endEditing:YES];
 }
 
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+}
 
 - (IBAction)userDidSave:(id)sender
 {
+    
+    [self showAlertWithTitle: [NSString stringWithFormat:@"%@", self.addTextfield.text]
+                     message: [NSString stringWithFormat:@"%@ was saved!", self.addTextfield.text]];
     FBUBucketListItem *newBucketItem = [FBUBucketListItem object];
     newBucketItem.itemName = self.addTextfield.text;
     newBucketItem.owner = [PFUser currentUser];
     [newBucketItem saveInBackground];
     
+}
+
+-(void)showAlertWithTitle:(NSString *)title message:(NSString *)message
+{
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title
+                                                    message:message
+                                                   delegate:nil
+                                          cancelButtonTitle:@"OK"
+                                          otherButtonTitles:nil];
+    [alert show];
 }
 
 @end

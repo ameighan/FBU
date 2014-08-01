@@ -22,6 +22,7 @@
 @dynamic eventDescription;
 @dynamic eventTimeDate;
 @dynamic eventAddress;
+@dynamic eventMeals;
 @dynamic eventParentGroup;
 @dynamic eventOwner;
 @dynamic eventGeoPoint;

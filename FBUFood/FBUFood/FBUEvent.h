@@ -21,6 +21,7 @@
 @property (strong, nonatomic) NSString *eventDescription;
 @property (strong, nonatomic) NSString *eventTimeDate;
 @property (strong, nonatomic) NSString *eventAddress;
+@property (strong, nonatomic) NSString *eventMeals;
 @property (strong, nonatomic) FBUGroup *eventParentGroup;
 @property (nonatomic) PFGeoPoint *eventGeoPoint;
 @property (strong, nonatomic) PFUser *eventOwner;
