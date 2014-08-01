@@ -59,27 +59,21 @@
     }
 }
 
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+- (void)addRecipesToGroup
 {
     NSArray *selectedCells = [self.recipesTableView indexPathsForSelectedRows];
-    if ([segue.identifier isEqualToString:@"addRecipes"]) {
-        FBURecipesListViewController *groupRecipesListViewController = segue.destinationViewController;
+    
+    for (NSIndexPath *selectedCell in selectedCells){
+        NSIndexPath *indexPath = selectedCell;
         
-        for (NSIndexPath *selectedCell in selectedCells){
-            NSIndexPath *indexPath = selectedCell;
-            
-            FBURecipe *selectedRecipe = self.recipesArray[indexPath.row];
-            
-            //Add each selected recipe to array of recipes to be presented by the instance of RecipesListViewController
-            [self.group addObject:selectedRecipe forKey:@"recipesInGroup"];
-            [self.group saveInBackground];
-            groupRecipesListViewController.recipeArray = self.group.recipesInGroup;
-            
-            NSLog(@"%@ was added.", selectedRecipe.title);
-            NSLog(@"Recipes to be added: %@", groupRecipesListViewController.recipeArray);
-            NSLog(@"Group's recipes: %@", self.group.recipesInGroup);
-        }
+        FBURecipe *selectedRecipe = self.recipesArray[indexPath.row];
+        
+        //Add each selected recipe to array of recipes to be presented by the instance of RecipesListViewController
+        [self.group addObject:selectedRecipe forKey:@"recipesInGroup"];
+        [self.group saveInBackground];
+        
+        NSLog(@"%@ was added.", selectedRecipe.title);
+        NSLog(@"Group's recipes: %@", self.group.recipesInGroup);
     }
 }
 

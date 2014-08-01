@@ -69,10 +69,19 @@
         controller.recipe = selectedRecipe;
         NSLog(@"Seguing to the recipe view controller.");
         
-    } else if ([segue.identifier isEqualToString:@"addRecipes"]){
+    }
+}
+
+
+- (IBAction)unwindToGroupsRecipesListViewController:(UIStoryboardSegue *)segue
+{
+    if([segue.identifier isEqualToString:@"addRecipes"]) {
+        FBUAddRecipesViewController *controller = segue.sourceViewController;
+        controller.group = self.group;
         
-        FBUAddRecipesViewController *addRecipesViewController = segue.destinationViewController;
-        addRecipesViewController.group = self.group;
+        NSLog(@"Passing %@ over to AddRecipesVC.", self.group);
+        [controller addRecipesToGroup];
+        [self.recipesTableView reloadData];
     }
 }
 

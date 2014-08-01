@@ -17,4 +17,6 @@
 
 @property (strong, nonatomic) FBUGroup *group;
 
+- (void)addRecipesToGroup;
+
 @end
