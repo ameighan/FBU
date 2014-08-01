@@ -12,11 +12,10 @@
 
 @implementation FBUMembersViewController
 
-- (void)findMembersOfGroup
-{
-    self.membersArray = self.group.cooksInGroup;
-    NSLog(@"I was here");
-}
+//- (void)findMembersOfGroup
+//{
+ //   self.membersArray = self.group.cooksInGroup;
+//}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -50,7 +49,7 @@
 {
     [super viewWillAppear:animated];
     
-    [self findMembersOfGroup];
+    //[self findMembersOfGroup];
     [self.membersTableView reloadData];
 }
 

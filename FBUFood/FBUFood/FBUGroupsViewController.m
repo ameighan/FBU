@@ -147,8 +147,9 @@
     } else if ([segue.identifier isEqualToString:@"viewCooks"]) {
         
         FBUMembersViewController *membersViewController = segue.destinationViewController;
+        //membersViewController.group = self.group;
+        membersViewController.membersArray = self.group.cooksInGroup;
         
-        membersViewController.group = self.group;
     } else if ([segue.identifier isEqualToString:@"eventCell"]) {
         
         FBUEventViewController *eventViewController = segue.destinationViewController;

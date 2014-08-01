@@ -8,6 +8,7 @@
 
 #import "FBUEventViewController.h"
 #import "FBUEvent.h"
+#import "FBUMembersViewController.h"
 #import "FBUEventDetailViewController.h"
 
 @interface FBUEventViewController ()
@@ -53,17 +54,11 @@
         self.eventJoinButton.hidden = YES;
         self.eventJoinButton.enabled = NO;
     }
-    
-    [self.eventUsersTableView reloadData];
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self.eventUsersTableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"oneMemberCell"];
-    
-    self.eventUsersTableView.delegate = self;
-    self.eventUsersTableView.dataSource = self;
 }
 
 
@@ -74,7 +69,6 @@
     
     [self.event addObject:[PFUser currentUser] forKey:@"membersOfEvent"];
     [self.event saveInBackground];
-    [self.eventUsersTableView reloadData];
     
     //Disable join button once user has joined.
     self.eventJoinButton.hidden = YES;
@@ -92,6 +86,16 @@
                                           otherButtonTitles:nil];
     
     [alert show];
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if([segue.identifier isEqualToString:@"PeopleGoing"]){
+        
+        FBUMembersViewController *controller = (FBUMembersViewController *)segue.destinationViewController;
+        controller.membersArray = self.event.membersOfEvent;
+        
+    }
 }
 
 @end

@@ -565,7 +565,7 @@
             </objects>
             <point key="canvasLocation" x="-1651" y="497"/>
         </scene>
-        <!--Members View Controller - Members-->
+        <!--Members View Controller - People-->
         <scene sceneID="5kX-n9-sdz">
             <objects>
                 <viewController id="GZv-qx-koQ" customClass="FBUMembersViewController" sceneMemberID="viewController">
@@ -595,14 +595,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Members" id="8Gp-x8-Jbk"/>
+                    <navigationItem key="navigationItem" title="People" id="8Gp-x8-Jbk"/>
                     <connections>
                         <outlet property="membersTableView" destination="L26-V0-p0Y" id="2g1-ff-NrH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ceH-ix-ugm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1568" y="-492"/>
+            <point key="canvasLocation" x="-191" y="-731"/>
         </scene>
         <!--Event View Controller-->
         <scene sceneID="8Fd-KC-aBv">
@@ -617,35 +617,26 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Location" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Du0-4P-zg2">
-                                <rect key="frame" x="20" y="68" width="280" height="21"/>
+                                <rect key="frame" x="20" y="79" width="280" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Time/Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f7w-Es-ggb">
-                                <rect key="frame" x="20" y="92" width="280" height="21"/>
+                                <rect key="frame" x="20" y="116" width="280" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="GNc-pR-ltE">
-                                <rect key="frame" x="20" y="150" width="280" height="170"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </tableView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="wDD-SL-dF3">
-                                <rect key="frame" x="20" y="352" width="280" height="170"/>
+                                <rect key="frame" x="20" y="245" width="280" height="211"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Recipes" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wJt-Yl-2sE">
-                                <rect key="frame" x="20" y="120" width="62" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="People going" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qzs-me-1KQ">
-                                <rect key="frame" x="20" y="324" width="101" height="21"/>
+                                <rect key="frame" x="20" y="201" width="62" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U0j-rQ-m9B">
-                                <rect key="frame" x="232" y="68" width="30" height="30"/>
+                                <rect key="frame" x="255" y="197" width="30" height="30"/>
                                 <state key="normal" title="Join">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -654,12 +645,22 @@
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Meals: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c6m-ay-Euu">
-                                <rect key="frame" x="206" y="120" width="94" height="21"/>
+                                <rect key="frame" x="20" y="153" width="94" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ciY-UF-VhF">
+                                <rect key="frame" x="20" y="478" width="124" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="See Who Is Going">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="GZv-qx-koQ" kind="push" identifier="PeopleGoing" id="Rz1-mo-Aa8"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -677,13 +678,11 @@
                         <outlet property="eventRecipesLabel" destination="wJt-Yl-2sE" id="RNd-6f-4kh"/>
                         <outlet property="eventRecipesTableView" destination="GNc-pR-ltE" id="LNX-to-Tk6"/>
                         <outlet property="eventTimeDateLabel" destination="f7w-Es-ggb" id="mGM-kG-Zgw"/>
-                        <outlet property="eventUsersLabel" destination="Qzs-me-1KQ" id="Z8r-Bv-aCf"/>
-                        <outlet property="eventUsersTableView" destination="wDD-SL-dF3" id="Zqf-bn-Pef"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I9y-Ps-M8o" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1651" y="-576"/>
+            <point key="canvasLocation" x="-832" y="-767"/>
         </scene>
         <!--Groups Recipes View Controller - Group Recipes-->
         <scene sceneID="YbJ-Bt-1iu">
@@ -1662,9 +1661,9 @@
         <segue reference="beZ-VQ-lUb"/>
         <segue reference="LJK-C2-H1i"/>
         <segue reference="nFV-tO-kgR"/>
-        <segue reference="218-qX-u7v"/>
+        <segue reference="Rz1-mo-Aa8"/>
         <segue reference="qXC-cC-bdi"/>
-        <segue reference="FsN-7N-yNV"/>
+        <segue reference="218-qX-u7v"/>
         <segue reference="E3o-aQ-dmJ"/>
         <segue reference="Gf1-nK-jxY"/>
     </inferredMetricsTieBreakers>

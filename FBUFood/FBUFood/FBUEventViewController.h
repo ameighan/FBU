@@ -17,8 +17,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *eventTimeDateLabel;
 @property (weak, nonatomic) IBOutlet UILabel *eventRecipesLabel;
 @property (weak, nonatomic) IBOutlet UITableView *eventRecipesTableView;
-@property (weak, nonatomic) IBOutlet UILabel *eventUsersLabel;
-@property (weak, nonatomic) IBOutlet UITableView *eventUsersTableView;
 @property (weak, nonatomic) IBOutlet UIButton *eventJoinButton;
 @property (weak, nonatomic) IBOutlet UILabel *eventMealsLabel;
 
