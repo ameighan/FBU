@@ -659,14 +659,6 @@
                                 </state>
                                 <connections>
                                     <segue destination="GZv-qx-koQ" kind="push" identifier="PeopleGoing" id="Rz1-mo-Aa8"/>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DNK-H9-5av">
-                                <rect key="frame" x="20" y="116" width="56" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Recipes">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="5vy-0z-OFu" kind="push" identifier="eventRecipes" id="j4A-s7-UnQ"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -675,7 +667,7 @@
                     <navigationItem key="navigationItem" id="fuk-kb-Bsb">
                         <barButtonItem key="rightBarButtonItem" title="Edit" systemItem="edit" id="c1J-S7-TKG">
                             <connections>
-                                <segue destination="uHd-qP-I1t" kind="push" identifier="editEvent" id="qXC-cC-bdi"/>
+                                <segue destination="uHd-qP-I1t" kind="push" identifier="EditEvent" id="qXC-cC-bdi"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -683,14 +675,14 @@
                         <outlet property="eventJoinButton" destination="U0j-rQ-m9B" id="p0z-XR-cKi"/>
                         <outlet property="eventLocationLabel" destination="Du0-4P-zg2" id="hbh-cU-dIe"/>
                         <outlet property="eventMealsLabel" destination="c6m-ay-Euu" id="uQf-7b-hww"/>
-                        <outlet property="eventRecipesButton" destination="DNK-H9-5av" id="uem-wQ-5PP"/>
+                        <outlet property="eventRecipesLabel" destination="wJt-Yl-2sE" id="RNd-6f-4kh"/>
                         <outlet property="eventRecipesTableView" destination="GNc-pR-ltE" id="LNX-to-Tk6"/>
                         <outlet property="eventTimeDateLabel" destination="f7w-Es-ggb" id="mGM-kG-Zgw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I9y-Ps-M8o" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-307" y="-908"/>
+            <point key="canvasLocation" x="-832" y="-767"/>
         </scene>
         <!--Groups Recipes View Controller - Group Recipes-->
         <scene sceneID="YbJ-Bt-1iu">
@@ -1675,7 +1667,6 @@
         <segue reference="nFV-tO-kgR"/>
         <segue reference="Rz1-mo-Aa8"/>
         <segue reference="beZ-VQ-lUb"/>
-        <segue reference="j4A-s7-UnQ"/>
         <segue reference="218-qX-u7v"/>
         <segue reference="E3o-aQ-dmJ"/>
     </inferredMetricsTieBreakers>
