@@ -1117,19 +1117,23 @@
                                 <rect key="frame" x="88" y="81" width="146" height="139"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pMZ-SH-YW4">
+                                <rect key="frame" x="88" y="81" width="146" height="139"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="takePicture:" destination="Aib-qs-nCG" eventType="touchUpInside" id="DsK-U3-guB"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <connections>
                             <action selector="backgroundTapped:" destination="Aib-qs-nCG" eventType="touchUpInside" id="8OC-L0-j1K"/>
                         </connections>
                     </view>
-                    <toolbarItems>
-                        <barButtonItem systemItem="camera" id="QsI-Zs-wRE">
-                            <connections>
-                                <action selector="takePicture:" destination="Aib-qs-nCG" id="Ofg-Kz-5HY"/>
-                            </connections>
-                        </barButtonItem>
-                    </toolbarItems>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" title="Edit Profile" id="zhP-EW-Hxz">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="fC7-1U-TKM">
                             <connections>
@@ -1659,12 +1663,11 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="beZ-VQ-lUb"/>
-        <segue reference="LJK-C2-H1i"/>
+        <segue reference="Gf1-nK-jxY"/>
         <segue reference="nFV-tO-kgR"/>
         <segue reference="Rz1-mo-Aa8"/>
         <segue reference="qXC-cC-bdi"/>
         <segue reference="218-qX-u7v"/>
         <segue reference="E3o-aQ-dmJ"/>
-        <segue reference="Gf1-nK-jxY"/>
     </inferredMetricsTieBreakers>
 </document>
