@@ -630,11 +630,6 @@
                                 <rect key="frame" x="20" y="245" width="280" height="211"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Recipes" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wJt-Yl-2sE">
-                                <rect key="frame" x="20" y="201" width="62" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U0j-rQ-m9B">
                                 <rect key="frame" x="255" y="197" width="30" height="30"/>
                                 <state key="normal" title="Join">
@@ -661,6 +656,16 @@
                                     <segue destination="GZv-qx-koQ" kind="push" identifier="PeopleGoing" id="Rz1-mo-Aa8"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2qf-0N-e7N">
+                                <rect key="frame" x="20" y="197" width="56" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Recipes">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="5vy-0z-OFu" kind="push" identifier="eventRecipes" id="p3W-a1-UZW"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -675,7 +680,6 @@
                         <outlet property="eventJoinButton" destination="U0j-rQ-m9B" id="p0z-XR-cKi"/>
                         <outlet property="eventLocationLabel" destination="Du0-4P-zg2" id="hbh-cU-dIe"/>
                         <outlet property="eventMealsLabel" destination="c6m-ay-Euu" id="uQf-7b-hww"/>
-                        <outlet property="eventRecipesLabel" destination="wJt-Yl-2sE" id="RNd-6f-4kh"/>
                         <outlet property="eventRecipesTableView" destination="GNc-pR-ltE" id="LNX-to-Tk6"/>
                         <outlet property="eventTimeDateLabel" destination="f7w-Es-ggb" id="mGM-kG-Zgw"/>
                     </connections>
@@ -1663,10 +1667,10 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="qXC-cC-bdi"/>
-        <segue reference="Gf1-nK-jxY"/>
         <segue reference="nFV-tO-kgR"/>
-        <segue reference="Rz1-mo-Aa8"/>
         <segue reference="beZ-VQ-lUb"/>
+        <segue reference="p3W-a1-UZW"/>
+        <segue reference="Rz1-mo-Aa8"/>
         <segue reference="218-qX-u7v"/>
         <segue reference="E3o-aQ-dmJ"/>
     </inferredMetricsTieBreakers>
