@@ -40,6 +40,7 @@
     
     self.eventsInGroupTableView.delegate = self;
     self.eventsInGroupTableView.dataSource = self;
+    
     [[NSNotificationCenter defaultCenter]addObserver:self.eventsInGroupTableView selector:@selector(reloadData) name:@"savedEvent" object:nil];
 
 }

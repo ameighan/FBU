@@ -33,7 +33,7 @@
     FBULogInViewController *logInViewController = [[FBULogInViewController alloc] init];
     [logInViewController setDelegate:self]; // Set ourselves as the delegate
     
-    [logInViewController setFacebookPermissions:@[ @"user_about_me", @"user_relationships", @"user_birthday", @"user_location"]];
+    [logInViewController setFacebookPermissions:@[ @"user_about_me", @"user_relationships", @"user_birthday", @"user_location", @"user_friends"]];
     [logInViewController setFields: PFLogInFieldsFacebook | PFLogInFieldsUsernameAndPassword | PFLogInFieldsLogInButton | PFLogInFieldsSignUpButton];
     
     // Create the sign up view controller
@@ -143,9 +143,10 @@
 // Sent to the delegate to determine whether the log in request should be submitted to the server.
 - (BOOL)logInViewController:(PFLogInViewController *)logInController shouldBeginLogInWithUsername:(NSString *)username password:(NSString *)password {
     if (username && password && username.length && password.length) {
+        //Begin login process
         return YES;
     }
-    
+    // Interrupt login process
     [[[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Missing Information", nil) message:NSLocalizedString(@"Make sure you fill out all of the information!", nil) delegate:nil cancelButtonTitle:NSLocalizedString(@"OK", nil) otherButtonTitles:nil] show];
     return NO;
 }
@@ -154,11 +155,52 @@
 - (void)logInViewController:(PFLogInViewController *)logInController didLogInUser:(PFUser *)user
 {
     NSLog(@"Logging in!");
-    [self dismissViewControllerAnimated:YES completion:NULL];
+    
+    if ([PFFacebookUtils session]) {
+        
+        //Create request for user's Facebook data
+        FBRequest *request = [FBRequest requestForMe];
+        
+        // Send request to Facebook
+        [request startWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
+            if (!error) {
+                // result is a dictionary with the user's Facebook data
+                NSDictionary *userData = (NSDictionary *)result;
+                
+                NSString *facebookID = userData[@"id"];
+                NSString *name = userData[@"name"];
+                //NSString *location = userData[@"location"][@"name"];
+                NSString *email = userData[@"email"];
+                
+                NSString *pictureURL = [NSString stringWithFormat:@"https://graph.facebook.com/%@/picture?type=large&return_ssl_resources=1", facebookID];
+                
+                NSArray* friends = userData[@"data"];
+                NSLog(@"Found: %lu friends", friends.count);
+                for (NSDictionary<FBGraphUser>* friend in friends) {
+                    NSLog(@"I have a friend named %@ with id %@", friend.name, friend.id);
+                }
+                //Now add the data to the UI elements ...
+                
+                PFUser *user = [PFUser currentUser];
+                user[@"FBid"] = facebookID;
+                user[@"name"]= name;
+                user[@"email"] = email;
+                user[@"fbImage"] = pictureURL;
+                [user saveInBackground];
+            }
+        }];
+        
+        [self dismissViewControllerAnimated:YES completion:NULL];
+    } else {
+        [self dismissViewControllerAnimated:YES completion:NULL];
+    }
 }
 
 // Sent to the delegate when the log in attempt fails.
-- (void)logInViewController:(PFLogInViewController *)logInController didFailToLogInWithError:(NSError *)error {
+- (void)logInViewController:(PFLogInViewController *)logInController didFailToLogInWithError:(NSError *)error
+{
+    [self showAlertWithTitle:@"Login failed"
+                     message:@"Username and/or password was not entered correctly. Try again."];
     NSLog(@"Failed to log in...");
 }
 
