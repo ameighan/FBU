@@ -9,14 +9,15 @@
 #import "FBURecipeViewController.h"
 #import "FBURecipe.h"
 #import "FBUEditRecipeViewController.h"
+#import "FBURecipeDishViewController.h"
+#import "FBURecipeContainerViewController.h"
 
 @interface FBURecipeViewController ()
 
-@property (weak, nonatomic) IBOutlet UIImageView *imageView;
-@property (weak, nonatomic) IBOutlet UITextView *ingredientsList;
-@property (weak, nonatomic) IBOutlet UITextView *directions;
 
 
+
+@property (strong, nonatomic) FBURecipeContainerViewController *container;
 @end
 
 @implementation FBURecipeViewController
@@ -26,19 +27,32 @@
 {
     [super viewWillAppear:animated];
     
-    
     self.title = self.recipe.title;
     
-    UIImage *image = [UIImage imageWithData:[self.recipe.image getData]];
-    self.imageView.image = image;
-    
-    self.ingredientsList.text = self.recipe.ingredientsList;
-    
-    self.directions.text = self.recipe.directions;
     
     
 }
 
+-(void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item
+{
+    if (item == [tabBar.items objectAtIndex:0]) {
+        self.container.toViewSegueIdentifier = @"dish";
+        [self.container performSegueWithIdentifier:@"dish" sender:nil];
+
+        NSLog(@"Dish selected");
+    } else if (item == [tabBar.items objectAtIndex:1]) {
+        self.container.toViewSegueIdentifier = @"ingredients";
+        [self.container performSegueWithIdentifier:@"ingredients" sender:nil];
+
+        NSLog(@"Ingredients selected");
+    } else if (item == [tabBar.items objectAtIndex:2]) {
+        self.container.toViewSegueIdentifier = @"directions";
+        [self.container performSegueWithIdentifier:@"directions" sender:nil];
+        
+        NSLog(@"Directions selected");
+    }
+    
+}
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
@@ -58,6 +72,11 @@
         
         controller.recipe = self.recipe;
 
+    } else if ([segue.identifier isEqualToString:@"embedContainer"]) {
+    
+        NSLog(@"%s", __PRETTY_FUNCTION__);
+        self.container = segue.destinationViewController;
+        self.container.recipe = self.recipe;
     }
 }
 

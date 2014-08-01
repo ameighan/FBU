@@ -245,7 +245,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="agO-15-gc5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1512" y="-2349"/>
+            <point key="canvasLocation" x="-1472" y="-2201"/>
         </scene>
         <!--Recipe View Controller-->
         <scene sceneID="vQh-XC-GTY">
@@ -259,33 +259,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AzY-M0-lFm">
-                                <rect key="frame" x="0.0" y="65" width="320" height="151"/>
-                                <color key="backgroundColor" red="0.68600369930000005" green="0.2527399977" blue="0.75" alpha="1" colorSpace="calibratedRGB"/>
-                            </imageView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ingredients" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g8J-N4-eTF">
-                                <rect key="frame" x="117" y="230" width="86" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Directions" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d5x-RQ-UmH">
-                                <rect key="frame" x="122" y="395" width="77" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ofD-js-Hm9">
-                                <rect key="frame" x="20" y="259" width="280" height="128"/>
-                                <color key="backgroundColor" red="0.75261230020000003" green="0.84825067929999998" blue="0.61746695610000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oin-Vt-ISq">
-                                <rect key="frame" x="20" y="420" width="280" height="128"/>
-                                <color key="backgroundColor" red="0.75261230020000003" green="0.84825067929999998" blue="0.61746695610000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
+                            <tabBar contentMode="scaleToFill" fixedFrame="YES" itemPositioning="centered" translatesAutoresizingMaskIntoConstraints="NO" id="JVs-pc-tDF">
+                                <rect key="frame" x="0.0" y="65" width="320" height="49"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <items>
+                                    <tabBarItem title="Dish" id="O8O-ht-OzX"/>
+                                    <tabBarItem title="Ingredients" id="5sm-Q7-O5o"/>
+                                    <tabBarItem title="Directions" id="OSF-Ze-FZh"/>
+                                </items>
+                                <connections>
+                                    <outlet property="delegate" destination="kQr-eQ-54T" id="OLn-9V-ez6"/>
+                                </connections>
+                            </tabBar>
+                            <containerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XOV-R8-Y7k">
+                                <rect key="frame" x="0.0" y="114" width="320" height="404"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <connections>
+                                    <segue destination="Pc0-wX-D9w" kind="embed" identifier="embedContainer" id="neP-51-5b5"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -296,16 +290,17 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics" barStyle="black"/>
                     <connections>
                         <outlet property="directions" destination="Oin-Vt-ISq" id="KMH-qk-n3t"/>
-                        <outlet property="imageView" destination="AzY-M0-lFm" id="ZmE-Cr-tsd"/>
                         <outlet property="ingredientsList" destination="ofD-js-Hm9" id="YtD-bU-OKW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6S9-jS-nBe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-971" y="-3419"/>
+            <point key="canvasLocation" x="-869" y="-3165"/>
         </scene>
         <!--Group Subscribers View Controller - Subscribers-->
         <scene sceneID="AhX-mP-dpI">
@@ -884,17 +879,14 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wKj-z5-yQC">
-                                <rect key="frame" x="0.0" y="524" width="320" height="44"/>
-                                <items>
-                                    <barButtonItem title="Item" systemItem="camera" id="I70-i3-x4x">
-                                        <connections>
-                                            <action selector="takePicture:" destination="BQl-mP-k22" id="Fhs-BF-WkO"/>
-                                        </connections>
-                                    </barButtonItem>
-                                </items>
-                                <color key="barTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                            </toolbar>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E8D-dG-hjb">
+                                <rect key="frame" x="0.0" y="71" width="320" height="101"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <action selector="takePicture:" destination="BQl-mP-k22" eventType="touchUpInside" id="uiv-Ps-tT4"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <connections>
@@ -925,7 +917,68 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bjj-vF-fbC" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="V2d-tn-euH" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-416" y="-3291"/>
+            <point key="canvasLocation" x="-340" y="-2695"/>
+        </scene>
+        <!--Recipe Directions View Controller-->
+        <scene sceneID="ZDD-7f-kMO">
+            <objects>
+                <viewController id="n4g-Ax-ctu" customClass="FBURecipeDirectionsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="E2T-Is-BLT"/>
+                        <viewControllerLayoutGuide type="bottom" id="GOz-5f-miu"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ebl-UR-qUW">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="404"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oin-Vt-ISq">
+                                <rect key="frame" x="20" y="54" width="280" height="330"/>
+                                <color key="backgroundColor" red="0.75261230020000003" green="0.84825067929999998" blue="0.61746695610000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Directions" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d5x-RQ-UmH">
+                                <rect key="frame" x="20" y="20" width="97" height="26"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="404"/>
+                    <connections>
+                        <outlet property="directions" destination="Oin-Vt-ISq" id="jhl-d9-fDF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MI1-VX-zMN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="288" y="-3139"/>
+        </scene>
+        <!--Recipe Container View Controller-->
+        <scene sceneID="i4k-Gz-DTa">
+            <objects>
+                <viewController id="Pc0-wX-D9w" customClass="FBURecipeContainerViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7vF-X5-gx4"/>
+                        <viewControllerLayoutGuide type="bottom" id="E2T-gX-gDZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="LQE-aq-UcI">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="404"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="404"/>
+                    <connections>
+                        <segue destination="tHW-Yc-Vt9" kind="custom" identifier="dish" customClass="FBURecipeSegue" id="VzW-z2-FNg"/>
+                        <segue destination="n4g-Ax-ctu" kind="custom" identifier="directions" customClass="FBURecipeSegue" id="EJM-Ip-GtA"/>
+                        <segue destination="LCd-ER-AJt" kind="custom" identifier="ingredients" customClass="FBURecipeSegue" id="etK-Jh-GnP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xED-CI-gzM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-388" y="-3654"/>
         </scene>
         <!--Add Recipes View Controller - Add Recipes-->
         <scene sceneID="kBc-wl-TPb">
@@ -1487,6 +1540,82 @@
             </objects>
             <point key="canvasLocation" x="-2410" y="2962"/>
         </scene>
+        <!--Recipe Dish View Controller-->
+        <scene sceneID="c8B-ub-y26">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="tHW-Yc-Vt9" customClass="FBURecipeDishViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5YP-ss-1ad"/>
+                        <viewControllerLayoutGuide type="bottom" id="bKm-R6-mfq"/>
+                    </layoutGuides>
+                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="eIK-6C-VLD">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="404"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dW6-c5-eWb">
+                                <rect key="frame" x="0.0" y="64" width="320" height="340"/>
+                                <color key="backgroundColor" red="0.68600369930000005" green="0.2527399977" blue="0.75" alpha="1" colorSpace="calibratedRGB"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Dish" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bqE-A4-8JP">
+                                <rect key="frame" x="20" y="20" width="56" height="39"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="404"/>
+                    <connections>
+                        <outlet property="dishTitleLabel" destination="bqE-A4-8JP" id="ITK-do-fvV"/>
+                        <outlet property="imageView" destination="dW6-c5-eWb" id="8qa-WG-lEh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2X8-6a-rWv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="184" y="-4395"/>
+        </scene>
+        <!--Recipe Ingredient View Controller-->
+        <scene sceneID="H2s-mg-ot6">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="LCd-ER-AJt" customClass="FBURecipeIngredientViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="z0O-if-xbw"/>
+                        <viewControllerLayoutGuide type="bottom" id="FyS-eC-SxH"/>
+                    </layoutGuides>
+                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="8MT-CJ-Nsv">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="404"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ofD-js-Hm9">
+                                <rect key="frame" x="20" y="54" width="280" height="330"/>
+                                <color key="backgroundColor" red="0.75261230020000003" green="0.84825067929999998" blue="0.61746695610000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ingredients" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g8J-N4-eTF">
+                                <rect key="frame" x="20" y="20" width="106" height="37"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="404"/>
+                    <connections>
+                        <outlet property="ingredientsList" destination="ofD-js-Hm9" id="xMr-uK-lEL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pt6-Dh-nBF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="693" y="-3760"/>
+        </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
@@ -1495,10 +1624,12 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="wIr-me-k4C"/>
+        <segue reference="beZ-VQ-lUb"/>
         <segue reference="nFV-tO-kgR"/>
         <segue reference="qXC-cC-bdi"/>
         <segue reference="218-qX-u7v"/>
         <segue reference="SGc-SZ-PEX"/>
         <segue reference="FsN-7N-yNV"/>
+        <segue reference="E3o-aQ-dmJ"/>
     </inferredMetricsTieBreakers>
 </document>

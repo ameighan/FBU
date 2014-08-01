@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 @class FBURecipe;
 
-@interface FBURecipeViewController : UIViewController
+@interface FBURecipeViewController : UIViewController <UITabBarDelegate>
 
 @property (nonatomic) FBURecipe *recipe;
 

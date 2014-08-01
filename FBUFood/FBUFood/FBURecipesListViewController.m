@@ -80,7 +80,6 @@
         NSIndexPath *ip = [self.tableView indexPathForCell:sender];
         controller.recipe = self.recipeArray[ip.row];
 
-        
     } else if ([segue.identifier isEqualToString:@"listViewToEditView"]){
         
         FBUEditRecipeViewController *controller = (FBUEditRecipeViewController *)segue.destinationViewController;

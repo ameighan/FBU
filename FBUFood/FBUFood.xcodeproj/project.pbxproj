@@ -12,6 +12,11 @@
 		93B8D2741982BE96009F2D16 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93B8D2731982BE96009F2D16 /* MapKit.framework */; };
 		93E4BC2F1979C89800074647 /* FBURecipeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E4BC2E1979C89800074647 /* FBURecipeViewController.m */; };
 		93ED1EE0198849F9000CF446 /* FBUMapAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 93ED1EDF198849F9000CF446 /* FBUMapAnnotation.m */; };
+		93ED1EE31989A5C6000CF446 /* FBURecipeDishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93ED1EE21989A5C6000CF446 /* FBURecipeDishViewController.m */; };
+		93ED1EE81989B675000CF446 /* FBURecipeSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 93ED1EE71989B675000CF446 /* FBURecipeSegue.m */; };
+		93ED1EEC1989BC17000CF446 /* FBURecipeIngredientViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93ED1EEB1989BC17000CF446 /* FBURecipeIngredientViewController.m */; };
+		93ED1EEF1989BC36000CF446 /* FBURecipeDirectionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93ED1EEE1989BC36000CF446 /* FBURecipeDirectionsViewController.m */; };
+		93ED1EF31989BC90000CF446 /* FBURecipeContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93ED1EF21989BC90000CF446 /* FBURecipeContainerViewController.m */; };
 		93F1D0CB197488C2000A1E0E /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93F1D0CA197488C2000A1E0E /* FacebookSDK.framework */; };
 		93F1D0CD197488EB000A1E0E /* FBUserSettingsViewResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 93F1D0CC197488EB000A1E0E /* FBUserSettingsViewResources.bundle */; };
 		93F248C61981AEC400FC82BD /* FBUSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F248C51981AEC400FC82BD /* FBUSignUpViewController.m */; };
@@ -85,6 +90,16 @@
 		93E4BC2E1979C89800074647 /* FBURecipeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBURecipeViewController.m; sourceTree = "<group>"; };
 		93ED1EDE198849F9000CF446 /* FBUMapAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBUMapAnnotation.h; sourceTree = "<group>"; };
 		93ED1EDF198849F9000CF446 /* FBUMapAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBUMapAnnotation.m; sourceTree = "<group>"; };
+		93ED1EE11989A5C6000CF446 /* FBURecipeDishViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBURecipeDishViewController.h; sourceTree = "<group>"; };
+		93ED1EE21989A5C6000CF446 /* FBURecipeDishViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBURecipeDishViewController.m; sourceTree = "<group>"; };
+		93ED1EE61989B675000CF446 /* FBURecipeSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBURecipeSegue.h; sourceTree = "<group>"; };
+		93ED1EE71989B675000CF446 /* FBURecipeSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBURecipeSegue.m; sourceTree = "<group>"; };
+		93ED1EEA1989BC17000CF446 /* FBURecipeIngredientViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBURecipeIngredientViewController.h; sourceTree = "<group>"; };
+		93ED1EEB1989BC17000CF446 /* FBURecipeIngredientViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBURecipeIngredientViewController.m; sourceTree = "<group>"; };
+		93ED1EED1989BC36000CF446 /* FBURecipeDirectionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBURecipeDirectionsViewController.h; sourceTree = "<group>"; };
+		93ED1EEE1989BC36000CF446 /* FBURecipeDirectionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBURecipeDirectionsViewController.m; sourceTree = "<group>"; };
+		93ED1EF11989BC90000CF446 /* FBURecipeContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBURecipeContainerViewController.h; sourceTree = "<group>"; };
+		93ED1EF21989BC90000CF446 /* FBURecipeContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBURecipeContainerViewController.m; sourceTree = "<group>"; };
 		93F1D0CA197488C2000A1E0E /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 		93F1D0CC197488EB000A1E0E /* FBUserSettingsViewResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = FBUserSettingsViewResources.bundle; sourceTree = "<group>"; };
 		93F248C41981AEC400FC82BD /* FBUSignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBUSignUpViewController.h; sourceTree = "<group>"; };
@@ -237,21 +252,19 @@
 			name = BucketList;
 			sourceTree = "<group>";
 		};
-		930320D81976F42000629269 /* Recipes */ = {
+		930320D81976F42000629269 /* Container Views */ = {
 			isa = PBXGroup;
 			children = (
-				D295F99B1976029D000ED2C1 /* FBURecipe.h */,
-				D295F99C1976029D000ED2C1 /* FBURecipe.m */,
-				D2D378111986C3AF00CB0EC2 /* FBUAddRecipesViewController.h */,
-				D2D378121986C3AF00CB0EC2 /* FBUAddRecipesViewController.m */,
-				931404C3197D84F0004D4447 /* FBUEditRecipeViewController.h */,
-				931404C4197D84F0004D4447 /* FBUEditRecipeViewController.m */,
-				D2AF54DA1970607A00F0A0F2 /* FBURecipesListViewController.h */,
-				D2AF54DB1970607A00F0A0F2 /* FBURecipesListViewController.m */,
-				93E4BC2D1979C89800074647 /* FBURecipeViewController.h */,
-				93E4BC2E1979C89800074647 /* FBURecipeViewController.m */,
+				93ED1EE11989A5C6000CF446 /* FBURecipeDishViewController.h */,
+				93ED1EE21989A5C6000CF446 /* FBURecipeDishViewController.m */,
+				93ED1EEA1989BC17000CF446 /* FBURecipeIngredientViewController.h */,
+				93ED1EEB1989BC17000CF446 /* FBURecipeIngredientViewController.m */,
+				93ED1EED1989BC36000CF446 /* FBURecipeDirectionsViewController.h */,
+				93ED1EEE1989BC36000CF446 /* FBURecipeDirectionsViewController.m */,
+				93ED1EF11989BC90000CF446 /* FBURecipeContainerViewController.h */,
+				93ED1EF21989BC90000CF446 /* FBURecipeContainerViewController.m */,
 			);
-			name = Recipes;
+			name = "Container Views";
 			sourceTree = "<group>";
 		};
 		930320D91976F6E900629269 /* Groups */ = {
@@ -284,6 +297,34 @@
 				D28632DD197F1E4C007BBD28 /* FBUEventViewController.m */,
 			);
 			name = Events;
+			sourceTree = "<group>";
+		};
+		93ED1EE91989BBBD000CF446 /* Recipes */ = {
+			isa = PBXGroup;
+			children = (
+				930320D81976F42000629269 /* Container Views */,
+				93ED1EF01989BC59000CF446 /* Group View of Recipes */,
+				D295F99B1976029D000ED2C1 /* FBURecipe.h */,
+				D295F99C1976029D000ED2C1 /* FBURecipe.m */,
+				931404C3197D84F0004D4447 /* FBUEditRecipeViewController.h */,
+				931404C4197D84F0004D4447 /* FBUEditRecipeViewController.m */,
+				D2AF54DA1970607A00F0A0F2 /* FBURecipesListViewController.h */,
+				D2AF54DB1970607A00F0A0F2 /* FBURecipesListViewController.m */,
+				93E4BC2D1979C89800074647 /* FBURecipeViewController.h */,
+				93E4BC2E1979C89800074647 /* FBURecipeViewController.m */,
+				93ED1EE61989B675000CF446 /* FBURecipeSegue.h */,
+				93ED1EE71989B675000CF446 /* FBURecipeSegue.m */,
+			);
+			name = Recipes;
+			sourceTree = "<group>";
+		};
+		93ED1EF01989BC59000CF446 /* Group View of Recipes */ = {
+			isa = PBXGroup;
+			children = (
+				D2D378111986C3AF00CB0EC2 /* FBUAddRecipesViewController.h */,
+				D2D378121986C3AF00CB0EC2 /* FBUAddRecipesViewController.m */,
+			);
+			name = "Group View of Recipes";
 			sourceTree = "<group>";
 		};
 		93F248C71981AFEC00FC82BD /* Login/Signup */ = {
@@ -367,7 +408,7 @@
 				96C1E242197F019500266DB8 /* ExploreApp */,
 				93E4BC2C1979C2C500074647 /* Events */,
 				930320D91976F6E900629269 /* Groups */,
-				930320D81976F42000629269 /* Recipes */,
+				93ED1EE91989BBBD000CF446 /* Recipes */,
 				930320D71976F41100629269 /* BucketList */,
 				930320D61976F38B00629269 /* Profile */,
 				93F248C71981AFEC00FC82BD /* Login/Signup */,
@@ -535,7 +576,9 @@
 				931404C5197D84F0004D4447 /* FBUEditRecipeViewController.m in Sources */,
 				93F248D31981D86300FC82BD /* FBULogInViewController.m in Sources */,
 				D295F99A1976028F000ED2C1 /* FBUEvent.m in Sources */,
+				93ED1EEC1989BC17000CF446 /* FBURecipeIngredientViewController.m in Sources */,
 				D2D378131986C3AF00CB0EC2 /* FBUAddRecipesViewController.m in Sources */,
+				93ED1EF31989BC90000CF446 /* FBURecipeContainerViewController.m in Sources */,
 				96C1E245197F01DF00266DB8 /* FBUExploreViewController.m in Sources */,
 				D2D378091980D1AA00CB0EC2 /* FBUGroupSubscribersViewController.m in Sources */,
 				D2AF54AE1970595F00F0A0F2 /* FBUAppDelegate.m in Sources */,
@@ -547,11 +590,14 @@
 				96EBDE8F1970AF1300DE0033 /* FBUGroupsListViewController.m in Sources */,
 				D28632CB19772779007BBD28 /* FBUGroupsDetailViewController.m in Sources */,
 				93E4BC2F1979C89800074647 /* FBURecipeViewController.m in Sources */,
+				93ED1EE81989B675000CF446 /* FBURecipeSegue.m in Sources */,
 				D295F9971975FBB3000ED2C1 /* FBUGroup.m in Sources */,
+				93ED1EEF1989BC36000CF446 /* FBURecipeDirectionsViewController.m in Sources */,
 				D295F9A019760D68000ED2C1 /* FBUGroceryList.m in Sources */,
 				D2AF54D919705E0700F0A0F2 /* FBUSubscriptionsViewController.m in Sources */,
 				D2AF54AA1970595F00F0A0F2 /* main.m in Sources */,
 				96C1E241197D825300266DB8 /* FBUBucketListViewController.m in Sources */,
+				93ED1EE31989A5C6000CF446 /* FBURecipeDishViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
