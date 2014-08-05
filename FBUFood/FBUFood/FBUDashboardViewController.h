@@ -9,11 +9,10 @@
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CoreLocation.h>
 
-@interface FBUDashboardViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, CLLocationManagerDelegate>
+@interface FBUDashboardViewController : UIViewController <CLLocationManagerDelegate, UICollectionViewDelegate, UICollectionViewDataSource>
 
 @property (strong, nonatomic) NSArray *eventsArray;
-@property (weak, nonatomic) IBOutlet UITableView *dashboardTableView;
+@property (weak, nonatomic) IBOutlet UICollectionView *dashboardCollectionView;
 
-//-(void)makeLoginAppear;
 
 @end

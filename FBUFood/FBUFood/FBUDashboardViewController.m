@@ -15,12 +15,13 @@
 #import "FBULogInViewController.h"
 #import "FBUSignUpViewController.h"
 #import "FBUEventViewController.h"
+#import "FBUCollectionViewCell.h"
 
 @interface FBUDashboardViewController () <PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate>
 
 @property (strong, nonatomic) CLLocationManager *locationManager;
 
-//-(void)showAlertWithTitle:(NSString *)title message:(NSString *)message;
+-(void)showAlertWithTitle:(NSString *)title message:(NSString *)message;
 
 @end
 
@@ -97,7 +98,8 @@
     
 }
 
-# pragma mark - Table View
+
+# pragma mark - Collection View
 
 - (void)queryForEvents
 {
@@ -106,7 +108,7 @@
     [eventQuery whereKey:@"membersOfEvent" equalTo:[PFUser currentUser]];
     [eventQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         blockSelf.eventsArray = objects;
-        [blockSelf.dashboardTableView reloadData];
+        [blockSelf.dashboardCollectionView reloadData];
     }];
     
 }
@@ -115,24 +117,31 @@
 {
     if ([segue.identifier isEqualToString:@"eventCell"]) {
         FBUEventViewController *controller = (FBUEventViewController *)segue.destinationViewController;
-        NSIndexPath *ip = [self.dashboardTableView indexPathForCell:sender];
+        NSIndexPath *ip = [self.dashboardCollectionView indexPathForCell:sender];
         controller.event = self.eventsArray[ip.row];
     }
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"eventCell"
-                                                            forIndexPath:indexPath];
+-(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+    FBUCollectionViewCell *cell = [self.dashboardCollectionView dequeueReusableCellWithReuseIdentifier:@"eventCell" forIndexPath:indexPath];
     
     FBUEvent *event = self.eventsArray[indexPath.row];
     
-    cell.textLabel.text = [event eventName];
+    cell.nameLabel.text = [event eventName];
+    cell.descriptionLabel.text = [event eventDescription];
+
     
     return cell;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+- (NSInteger) numberOfSectionsInCollectionView:(UICollectionView *)collectionView
+{
+    return 1;
+}
+
+
+-(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
     return [self.eventsArray count];
 }
