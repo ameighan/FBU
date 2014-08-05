@@ -8,9 +8,12 @@
 
 #import <UIKit/UIKit.h>
 @class FBURecipe;
+@class FBUEvent;
 
 @interface FBURecipeViewController : UIViewController <UITabBarDelegate>
 
 @property (nonatomic) FBURecipe *recipe;
+@property (nonatomic) FBUEvent *event;
+@property (nonatomic) NSString *eventRecipe;
 
 @end

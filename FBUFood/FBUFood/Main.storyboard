@@ -315,17 +315,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="General Meeting Times" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xqh-7J-XSJ">
-                                <rect key="frame" x="20" y="196" width="280" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="JZi-CV-lUe">
-                                <rect key="frame" x="20" y="250" width="280" height="206"/>
+                                <rect key="frame" x="20" y="300" width="280" height="165"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="eventCell" id="Gsk-fT-TF8">
-                                        <rect key="frame" x="0.0" y="22" width="280" height="44"/>
+                                        <rect key="frame" x="0.0" y="86" width="280" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Gsk-fT-TF8" id="JH2-Wj-dzq">
                                             <rect key="frame" x="0.0" y="0.0" width="247" height="43"/>
@@ -378,7 +373,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ysM-N3-UvA">
-                                <rect key="frame" x="20" y="220" width="83" height="30"/>
+                                <rect key="frame" x="20" y="265" width="83" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Recipes">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -387,15 +382,9 @@
                                     <segue destination="5vy-0z-OFu" kind="push" identifier="groupRecipe" id="3dj-aI-oAl"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qSV-Vu-IoO">
-                                <rect key="frame" x="20" y="76" width="280" height="112"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OGn-pf-l6c">
-                                <rect key="frame" x="216" y="220" width="75" height="33"/>
+                                <rect key="frame" x="216" y="265" width="75" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Cooks">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -404,6 +393,18 @@
                                     <segue destination="GZv-qx-koQ" kind="push" identifier="viewCooks" id="nut-44-e2c"/>
                                 </connections>
                             </button>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j77-1k-V2T">
+                                <rect key="frame" x="17" y="71" width="283" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <color key="backgroundColor" red="0.6687863637" green="0.98397025989999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </scrollView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qSV-Vu-IoO">
+                                <rect key="frame" x="18" y="201" width="280" height="61"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -411,7 +412,7 @@
                     <connections>
                         <outlet property="createEventInGroupButton" destination="2OB-zq-6CX" id="5ir-lq-qPF"/>
                         <outlet property="eventsInGroupTableView" destination="JZi-CV-lUe" id="cnn-fh-3pd"/>
-                        <outlet property="generalMeetingTimesLabel" destination="xqh-7J-XSJ" id="zNo-ZX-DLB"/>
+                        <outlet property="eventsScrollView" destination="j77-1k-V2T" id="9oy-eu-8NO"/>
                         <outlet property="groupDescriptionTextView" destination="qSV-Vu-IoO" id="8N4-JQ-0bD"/>
                         <outlet property="joinGroupButton" destination="YdQ-7w-44u" id="SbQ-rV-8Nl"/>
                         <outlet property="subscribeGroupButton" destination="7rf-70-uKN" id="Has-Yc-OqF"/>
@@ -454,7 +455,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="lQ4-DX-I8g">
-                                <rect key="frame" x="20" y="155" width="280" height="94"/>
+                                <rect key="frame" x="20" y="155" width="280" height="195"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -464,37 +465,13 @@
                                 </connections>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DBs-ST-M7O">
-                                <rect key="frame" x="20" y="518" width="88" height="30"/>
+                                <rect key="frame" x="20" y="417" width="88" height="30"/>
                                 <state key="normal" title="Add Recipes">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="10" translatesAutoresizingMaskIntoConstraints="NO" id="2X2-ut-hrb">
-                                <rect key="frame" x="18" y="323" width="284" height="162"/>
-                                <date key="date" timeIntervalSinceReferenceDate="427242901.25675601">
-                                    <!--2014-07-16 22:35:01 +0000-->
-                                </date>
-                            </datePicker>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="General Meeting Times" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sF6-GJ-WKR">
-                                <rect key="frame" x="71" y="257" width="178" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Day Of Week" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0QQ-KH-uf0">
-                                <rect key="frame" x="18" y="294" width="100" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="U15-9h-WE9">
-                                <rect key="frame" x="131" y="290" width="171" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="oA1-3b-vE0" id="S9T-qB-PiC"/>
-                                </connections>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qHc-NI-8Jl">
-                                <rect key="frame" x="223" y="518" width="77" height="30"/>
+                                <rect key="frame" x="217" y="417" width="77" height="30"/>
                                 <state key="normal" title="Add Cooks">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -512,9 +489,7 @@
                     <connections>
                         <outlet property="addCooksToGroupButton" destination="qHc-NI-8Jl" id="BxA-oN-b7h"/>
                         <outlet property="addRecipesToGroupButton" destination="DBs-ST-M7O" id="sDU-Ky-GBu"/>
-                        <outlet property="dayOfWeekTextField" destination="U15-9h-WE9" id="sUQ-dS-59q"/>
                         <outlet property="descriptionOfGroupTextView" destination="lQ4-DX-I8g" id="Lij-7c-YTP"/>
-                        <outlet property="generalMeetingTimesDatePicker" destination="2X2-ut-hrb" id="B0D-OP-jKF"/>
                         <outlet property="nameOfGroupTextField" destination="HYR-8U-EhU" id="fJ2-Yq-xYR"/>
                         <outlet property="saveGroupButton" destination="8BZ-NY-RxM" id="9qi-Gz-n5m"/>
                     </connections>
@@ -1522,11 +1497,22 @@
                                 <color key="backgroundColor" red="0.68600369930000005" green="0.2527399977" blue="0.75" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Dish" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bqE-A4-8JP">
-                                <rect key="frame" x="20" y="20" width="56" height="39"/>
+                                <rect key="frame" x="20" y="20" width="137" height="39"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LHU-cb-fNN">
+                                <rect key="frame" x="171" y="20" width="129" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Make Feature Dish">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="userDidFeatureDish:" destination="tHW-Yc-Vt9" eventType="touchUpInside" id="PIO-gx-aWf"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -1535,6 +1521,7 @@
                     <size key="freeformSize" width="320" height="404"/>
                     <connections>
                         <outlet property="dishTitleLabel" destination="bqE-A4-8JP" id="ITK-do-fvV"/>
+                        <outlet property="featureDishButton" destination="LHU-cb-fNN" id="g6G-vg-Ljl"/>
                         <outlet property="imageView" destination="dW6-c5-eWb" id="8qa-WG-lEh"/>
                     </connections>
                 </viewController>
@@ -1592,6 +1579,11 @@
         <segue reference="p3W-a1-UZW"/>
         <segue reference="qXC-cC-bdi"/>
         <segue reference="218-qX-u7v"/>
+        <segue reference="3dj-aI-oAl"/>
+        <segue reference="wIr-me-k4C"/>
+        <segue reference="nFV-tO-kgR"/>
+        <segue reference="Gf1-nK-jxY"/>
+        <segue reference="nut-44-e2c"/>
         <segue reference="E3o-aQ-dmJ"/>
         <segue reference="beZ-VQ-lUb"/>
     </inferredMetricsTieBreakers>

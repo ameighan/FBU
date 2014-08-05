@@ -12,6 +12,7 @@
 #import "FBUGroceryList.h"
 
 @class FBUGroup;
+@class FBURecipe;
 
 @interface FBUEvent : PFObject <PFSubclassing>
 
@@ -25,7 +26,8 @@
 @property (strong, nonatomic) FBUGroup *eventParentGroup;
 @property (nonatomic) PFGeoPoint *eventGeoPoint;
 @property (strong, nonatomic) PFUser *eventOwner;
-@property (strong, nonatomic) NSTimeZone *timeZoneOfEvent;
+@property (strong, nonatomic) FBURecipe *eventFeatureDish;
+
 @property (nonatomic) int mealsLeftCounter;
 @property (strong, nonatomic) NSMutableArray *recipesInEvent;
 @property (strong, nonatomic) NSMutableArray *membersOfEvent;

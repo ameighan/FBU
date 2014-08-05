@@ -27,6 +27,13 @@
 
 }
 
+- (IBAction)userDidFeatureDish:(id)sender
+{
+    self.event.eventFeatureDish = self.recipe;
+    [self.event saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        NSLog(@"Saving featured recipe to %@", self.event);
+    }];
+}
 
 
 @end

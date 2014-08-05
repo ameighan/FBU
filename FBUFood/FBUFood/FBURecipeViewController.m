@@ -28,6 +28,11 @@
     [super viewWillAppear:animated];
     
     self.title = self.recipe.title;
+    if ([self.eventRecipe isEqualToString:@"event"]) {
+        self.container.eventRecipe = @"event";
+        self.container.event = self.event;
+        NSLog(@"%@", self.container.eventRecipe);
+    }
     
     
     
