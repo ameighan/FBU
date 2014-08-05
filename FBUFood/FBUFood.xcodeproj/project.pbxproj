@@ -26,6 +26,7 @@
 		966554D9197443B200DDBED0 /* FBUBucketListDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 966554D8197443B200DDBED0 /* FBUBucketListDetailViewController.m */; };
 		966554DF197450B500DDBED0 /* FBUBucketListItemsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 966554DE197450B500DDBED0 /* FBUBucketListItemsViewController.m */; };
 		969C8E6D1983060400D0E7B3 /* FBUMembersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 969C8E6C1983060400D0E7B3 /* FBUMembersViewController.m */; };
+		969C8EAB199157E000D0E7B3 /* FBUGroupCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 969C8EAA199157E000D0E7B3 /* FBUGroupCollectionViewCell.m */; };
 		96C1E241197D825300266DB8 /* FBUBucketListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96C1E240197D825300266DB8 /* FBUBucketListViewController.m */; };
 		96C1E245197F01DF00266DB8 /* FBUExploreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96C1E244197F01DF00266DB8 /* FBUExploreViewController.m */; };
 		96EBDE8F1970AF1300DE0033 /* FBUGroupsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96EBDE8E1970AF1300DE0033 /* FBUGroupsListViewController.m */; };
@@ -116,6 +117,8 @@
 		966554DE197450B500DDBED0 /* FBUBucketListItemsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBUBucketListItemsViewController.m; sourceTree = "<group>"; };
 		969C8E6B1983060400D0E7B3 /* FBUMembersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBUMembersViewController.h; sourceTree = "<group>"; };
 		969C8E6C1983060400D0E7B3 /* FBUMembersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBUMembersViewController.m; sourceTree = "<group>"; };
+		969C8EA9199157E000D0E7B3 /* FBUGroupCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBUGroupCollectionViewCell.h; sourceTree = "<group>"; };
+		969C8EAA199157E000D0E7B3 /* FBUGroupCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBUGroupCollectionViewCell.m; sourceTree = "<group>"; };
 		96C1E23F197D825300266DB8 /* FBUBucketListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBUBucketListViewController.h; sourceTree = "<group>"; };
 		96C1E240197D825300266DB8 /* FBUBucketListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBUBucketListViewController.m; sourceTree = "<group>"; };
 		96C1E243197F01DF00266DB8 /* FBUExploreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBUExploreViewController.h; sourceTree = "<group>"; };
@@ -280,6 +283,8 @@
 				D28632C919772779007BBD28 /* FBUGroupsDetailViewController.m */,
 				D2D378071980D1AA00CB0EC2 /* FBUGroupSubscribersViewController.h */,
 				D2D378081980D1AA00CB0EC2 /* FBUGroupSubscribersViewController.m */,
+				969C8EA9199157E000D0E7B3 /* FBUGroupCollectionViewCell.h */,
+				969C8EAA199157E000D0E7B3 /* FBUGroupCollectionViewCell.m */,
 			);
 			name = Groups;
 			sourceTree = "<group>";
@@ -586,6 +591,7 @@
 				93F248C61981AEC400FC82BD /* FBUSignUpViewController.m in Sources */,
 				D2AF54D319705B4B00F0A0F2 /* FBUProfileViewController.m in Sources */,
 				966554DF197450B500DDBED0 /* FBUBucketListItemsViewController.m in Sources */,
+				969C8EAB199157E000D0E7B3 /* FBUGroupCollectionViewCell.m in Sources */,
 				D2AF54DC1970607A00F0A0F2 /* FBURecipesListViewController.m in Sources */,
 				96EBDE8F1970AF1300DE0033 /* FBUGroupsListViewController.m in Sources */,
 				D28632CB19772779007BBD28 /* FBUGroupsDetailViewController.m in Sources */,

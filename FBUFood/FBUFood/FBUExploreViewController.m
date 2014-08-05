@@ -10,13 +10,16 @@
 #import <Parse/Parse.h>
 #import "FBUGroupsViewController.h"
 #import "FBUExploreViewController.h"
+#import "FBUGroupCollectionViewCell.h"
 
 @implementation FBUExploreViewController
 
 - (IBAction)userSeesAllGroups:(id)sender
 {
     self.displayedGroups = self.exploratoryGroups;
-    [self.groupsTable reloadData];
+    
+    [self.groupsCollection reloadData];
+    //[self.groupsTable reloadData];
 }
 
 - (IBAction)userDidEnterCravings:(id)sender
@@ -52,7 +55,10 @@
     }
     self.displayedGroups = nil;
     self.displayedGroups = self.specificGroups;
-    [self.groupsTable reloadData];
+    
+    [self.groupsCollection reloadData];
+    //[self.groupsTable reloadData];
+    
     self.cravingTextField.text = @"";
 }
 
@@ -68,11 +74,14 @@
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         blockSelf.exploratoryGroups = objects;
         blockSelf.displayedGroups = objects;
-        [blockSelf.groupsTable reloadData];
+        
+        [blockSelf.groupsCollection reloadData];
+       // [blockSelf.groupsTable reloadData];
+        
     }];
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+/*- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"groupCell"
                                                             forIndexPath:indexPath];
@@ -87,6 +96,22 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
         return [self.displayedGroups count];
+}*/
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    FBUGroupCollectionViewCell *cell = [self.groupsCollection dequeueReusableCellWithReuseIdentifier:@"GroupCell" forIndexPath:indexPath];
+    FBUGroup *group = self.displayedGroups[indexPath.row];
+    cell.backgroundColor = [UIColor greenColor];
+    cell.groupLabel.backgroundColor = [UIColor brownColor];
+    cell.groupLabel.text = @"Helooooo";
+    NSLog(cell.groupLabel.text);
+    return cell;
+}
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+{
+    return [self.displayedGroups count];
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
@@ -114,10 +139,14 @@
 {
     [super viewDidLoad];
     
-    [self.groupsTable registerClass:[UITableViewCell class] forCellReuseIdentifier:@"groupCell"];
+    //[self.groupsTable registerClass:[UITableViewCell class] forCellReuseIdentifier:@"groupCell"];
+    [self.groupsCollection registerClass:[FBUGroupCollectionViewCell class] forCellWithReuseIdentifier:@"GroupCell"];
     
-    self.groupsTable.delegate = self;
-    self.groupsTable.dataSource = self;
+    //self.groupsTable.delegate = self;
+    //self.groupsTable.dataSource = self;
+    self.groupsCollection.delegate = self;
+    self.groupsCollection.dataSource = self;
+    
     self.cravingTextField.delegate = self;
     
     [self queryingForGroupsCurrentUserIsNotIn];
@@ -126,28 +155,26 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    
-    //[self queryingForGroupsCurrentUserIsNotIn];
 }
 
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+/*- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
     [self performSegueWithIdentifier:@"groupCell" sender:self];
     
-}
+}*/
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([segue.identifier isEqualToString:@"groupCell"]) {
-        NSIndexPath *indexPath = [self.groupsTable indexPathForSelectedRow];
+       // NSIndexPath *indexPath = [self.groupsTable indexPathForSelectedRow];
         
-        FBUGroup *selectedGroup = self.exploratoryGroups[indexPath.row];
+       // FBUGroup *selectedGroup = self.exploratoryGroups[indexPath.row];
         
-        FBUGroupsViewController *groupViewController = segue.destinationViewController;
+       // FBUGroupsViewController *groupViewController = segue.destinationViewController;
         
-        groupViewController.group = selectedGroup;
+       // groupViewController.group = selectedGroup;
         
     }
 }

@@ -53,23 +53,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="ufM-VY-or4">
-                                <rect key="frame" x="37" y="233" width="237" height="284"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" restorationIdentifier="groupCell" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="groupCell" id="B4r-Ub-uf4">
-                                        <rect key="frame" x="0.0" y="22" width="237" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="B4r-Ub-uf4" id="bjh-HZ-2WQ">
-                                            <rect key="frame" x="0.0" y="0.0" width="204" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="H9r-p1-AHy" kind="push" identifier="groupCell" id="wIr-me-k4C"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rZz-Py-DeJ">
                                 <rect key="frame" x="237" y="168" width="37" height="30"/>
                                 <state key="normal" title="Enter">
@@ -102,6 +85,39 @@
                                     <action selector="userSeesAllGroups:" destination="IKZ-S5-mvs" eventType="touchDown" id="CKW-7h-HUP"/>
                                 </connections>
                             </button>
+                            <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="5st-9e-fdQ">
+                                <rect key="frame" x="29" y="233" width="263" height="284"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ztL-Pf-wy4">
+                                    <size key="itemSize" width="117" height="142"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="GroupCell" id="NB8-Ax-VFd" customClass="FBUGroupCollectionViewCell">
+                                        <rect key="frame" x="0.0" y="0.0" width="117" height="142"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="117" height="142"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SH9-yP-Rtw">
+                                                    <rect key="frame" x="7" y="105" width="126" height="29"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <connections>
+                                            <outlet property="groupLabel" destination="SH9-yP-Rtw" id="L7V-sf-C16"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -111,7 +127,7 @@
                         <outlet property="cravingTextField" destination="7nV-pW-Sqc" id="vG5-Fj-iCB"/>
                         <outlet property="enterCravingsButton" destination="rZz-Py-DeJ" id="q2Q-a9-dmR"/>
                         <outlet property="groupInterestLabel" destination="QEu-Sk-jJE" id="LjE-al-Web"/>
-                        <outlet property="groupsTable" destination="ufM-VY-or4" id="ji0-Q2-lXw"/>
+                        <outlet property="groupsCollection" destination="5st-9e-fdQ" id="0s8-ww-uIj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BXb-QD-ljQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1690,11 +1706,10 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="wIr-me-k4C"/>
         <segue reference="nFV-tO-kgR"/>
-        <segue reference="qXC-cC-bdi"/>
         <segue reference="Rz1-mo-Aa8"/>
         <segue reference="p3W-a1-UZW"/>
+        <segue reference="qXC-cC-bdi"/>
         <segue reference="218-qX-u7v"/>
         <segue reference="E3o-aQ-dmJ"/>
     </inferredMetricsTieBreakers>

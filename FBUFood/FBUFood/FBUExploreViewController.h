@@ -8,12 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
-@interface FBUExploreViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface FBUExploreViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *cravingLabel;
 @property (weak, nonatomic) IBOutlet UITextField *cravingTextField;
 @property (weak, nonatomic) IBOutlet UILabel *groupInterestLabel;
-@property (weak, nonatomic) IBOutlet UITableView *groupsTable;
+//@property (weak, nonatomic) IBOutlet UITableView *groupsTable;
+@property (weak, nonatomic) IBOutlet UICollectionView *groupsCollection;
 @property (weak, nonatomic) IBOutlet UIButton *enterCravingsButton;
 
 @property (strong, nonatomic) NSArray *exploratoryGroups;
