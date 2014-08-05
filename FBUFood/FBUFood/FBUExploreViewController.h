@@ -17,5 +17,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *enterCravingsButton;
 
 @property (strong, nonatomic) NSArray *exploratoryGroups;
+@property (strong, nonatomic) NSArray *displayedGroups;
+@property (strong, nonatomic) NSMutableArray *specificGroups;
 
 @end

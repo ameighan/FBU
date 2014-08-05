@@ -13,10 +13,47 @@
 
 @implementation FBUExploreViewController
 
+- (IBAction)userSeesAllGroups:(id)sender
+{
+    self.displayedGroups = self.exploratoryGroups;
+    [self.groupsTable reloadData];
+}
+
 - (IBAction)userDidEnterCravings:(id)sender
 {
     // Extracted input from textfield to implement search later
     NSString *craving = self.cravingTextField.text;
+    craving = [craving stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    NSUInteger numberOfGroups = [self.exploratoryGroups count];
+    self.specificGroups = [[NSMutableArray alloc] init];
+    NSArray *listOfCravings = [craving componentsSeparatedByString:@" #"];
+    NSMutableArray *cravingList = [(NSArray*)listOfCravings mutableCopy];
+    if ([cravingList count] >= 1) {
+        if ([cravingList[0] length] > 1) {
+            cravingList[0] = [cravingList[0] substringFromIndex:1];
+        }
+    }
+    NSUInteger numberOfCravings = [cravingList count];
+    for (int i = 0; i < numberOfGroups; i++) {
+        FBUGroup *group = self.exploratoryGroups[i];
+        for (int j = 0; j < numberOfCravings; j++) {
+            NSRange name = [group.groupName rangeOfString:cravingList[j] options:NSCaseInsensitiveSearch];
+            NSRange description = [group.groupDescription rangeOfString:cravingList[j] options:NSCaseInsensitiveSearch];
+            if (name.location != NSNotFound) {
+                if (![self.specificGroups containsObject:group]) {
+                    [self.specificGroups addObject:group];
+                }
+            } else if (description.location != NSNotFound) {
+                if (![self.specificGroups containsObject:group]) {
+                    [self.specificGroups addObject:group];
+                }
+            }
+        }
+    }
+    self.displayedGroups = nil;
+    self.displayedGroups = self.specificGroups;
+    [self.groupsTable reloadData];
+    self.cravingTextField.text = @"";
 }
 
 - (void)queryingForGroupsCurrentUserIsNotIn
@@ -30,6 +67,7 @@
     [query includeKey:@"cooksInGroup"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         blockSelf.exploratoryGroups = objects;
+        blockSelf.displayedGroups = objects;
         [blockSelf.groupsTable reloadData];
     }];
 }
@@ -39,7 +77,7 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"groupCell"
                                                             forIndexPath:indexPath];
     
-    FBUGroup *group = self.exploratoryGroups[indexPath.row];
+    FBUGroup *group = self.displayedGroups[indexPath.row];
     
     cell.textLabel.text = [group groupName];
     
@@ -48,7 +86,28 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [self.exploratoryGroups count];
+        return [self.displayedGroups count];
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    return YES;
+}
+
+- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
+{
+    if([text isEqualToString:@"\n"]) {
+        [textView resignFirstResponder];
+        return NO;
+    }
+    
+    return YES;
+}
+
+- (IBAction)backgroundTapped:(id)sender
+{
+    [self.view endEditing:YES];
 }
 
 - (void)viewDidLoad
@@ -59,13 +118,16 @@
     
     self.groupsTable.delegate = self;
     self.groupsTable.dataSource = self;
+    self.cravingTextField.delegate = self;
+    
+    [self queryingForGroupsCurrentUserIsNotIn];
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
     
-    [self queryingForGroupsCurrentUserIsNotIn];
+    //[self queryingForGroupsCurrentUserIsNotIn];
 }
 
 
@@ -86,7 +148,6 @@
         FBUGroupsViewController *groupViewController = segue.destinationViewController;
         
         groupViewController.group = selectedGroup;
-        NSLog(@"%@", selectedGroup.groupName);
         
     }
 }
