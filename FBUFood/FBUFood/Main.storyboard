@@ -85,41 +85,29 @@
                                     <action selector="userSeesAllGroups:" destination="IKZ-S5-mvs" eventType="touchDown" id="CKW-7h-HUP"/>
                                 </connections>
                             </button>
-                            <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="5st-9e-fdQ">
-                                <rect key="frame" x="29" y="233" width="263" height="284"/>
+                            <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="3O1-yD-POh">
+                                <rect key="frame" x="20" y="233" width="280" height="284"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ztL-Pf-wy4">
-                                    <size key="itemSize" width="117" height="142"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="kmN-Ac-Lrh">
+                                    <size key="itemSize" width="139" height="139"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="GroupCell" id="NB8-Ax-VFd" customClass="FBUGroupCollectionViewCell">
-                                        <rect key="frame" x="0.0" y="0.0" width="117" height="142"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="GroupCell" id="LVT-4c-0mU">
+                                        <rect key="frame" x="71" y="0.0" width="139" height="139"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="117" height="142"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="139" height="139"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SH9-yP-Rtw">
-                                                    <rect key="frame" x="7" y="105" width="126" height="29"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                </label>
-                                            </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
-                                        <connections>
-                                            <outlet property="groupLabel" destination="SH9-yP-Rtw" id="L7V-sf-C16"/>
-                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
-                                    <outlet property="dataSource" destination="OgG-K6-OOU" id="4iY-CK-2n1"/>
-                                    <outlet property="delegate" destination="OgG-K6-OOU" id="PGX-2a-13i"/>
+                                    <outlet property="dataSource" destination="OgG-K6-OOU" id="gdi-s1-FJh"/>
+                                    <outlet property="delegate" destination="OgG-K6-OOU" id="KcA-IJ-QHS"/>
                                 </connections>
                             </collectionView>
                         </subviews>
@@ -131,7 +119,7 @@
                         <outlet property="cravingTextField" destination="7nV-pW-Sqc" id="vG5-Fj-iCB"/>
                         <outlet property="enterCravingsButton" destination="rZz-Py-DeJ" id="q2Q-a9-dmR"/>
                         <outlet property="groupInterestLabel" destination="QEu-Sk-jJE" id="LjE-al-Web"/>
-                        <outlet property="groupsCollection" destination="5st-9e-fdQ" id="0s8-ww-uIj"/>
+                        <outlet property="groupsCollection" destination="3O1-yD-POh" id="Lrz-hs-jg2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BXb-QD-ljQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1594,16 +1582,11 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="XIi-Rl-PXj"/>
-        <segue reference="Rz1-mo-Aa8"/>
-        <segue reference="p3W-a1-UZW"/>
-        <segue reference="qXC-cC-bdi"/>
-        <segue reference="218-qX-u7v"/>
-        <segue reference="3dj-aI-oAl"/>
-        <segue reference="wIr-me-k4C"/>
-        <segue reference="nFV-tO-kgR"/>
         <segue reference="Gf1-nK-jxY"/>
+        <segue reference="nFV-tO-kgR"/>
         <segue reference="nut-44-e2c"/>
+        <segue reference="3dj-aI-oAl"/>
+        <segue reference="218-qX-u7v"/>
         <segue reference="E3o-aQ-dmJ"/>
     </inferredMetricsTieBreakers>
 </document>
