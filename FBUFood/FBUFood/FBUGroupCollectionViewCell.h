@@ -6,9 +6,7 @@
 //  Copyright (c) 2014 FacebookU. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-
-@class FBUGroup;
+#import <UIKit/UIKit.h>
 
 @interface FBUGroupCollectionViewCell : UICollectionViewCell
 

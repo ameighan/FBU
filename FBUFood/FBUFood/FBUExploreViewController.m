@@ -26,40 +26,51 @@
 {
     // Extracted input from textfield to implement search later
     NSString *craving = self.cravingTextField.text;
-    craving = [craving stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-    NSUInteger numberOfGroups = [self.exploratoryGroups count];
-    self.specificGroups = [[NSMutableArray alloc] init];
-    NSArray *listOfCravings = [craving componentsSeparatedByString:@" #"];
-    NSMutableArray *cravingList = [(NSArray*)listOfCravings mutableCopy];
-    if ([cravingList count] >= 1) {
-        if ([cravingList[0] length] > 1) {
-            cravingList[0] = [cravingList[0] substringFromIndex:1];
-        }
-    }
-    NSUInteger numberOfCravings = [cravingList count];
-    for (int i = 0; i < numberOfGroups; i++) {
-        FBUGroup *group = self.exploratoryGroups[i];
-        for (int j = 0; j < numberOfCravings; j++) {
-            NSRange name = [group.groupName rangeOfString:cravingList[j] options:NSCaseInsensitiveSearch];
-            NSRange description = [group.groupDescription rangeOfString:cravingList[j] options:NSCaseInsensitiveSearch];
-            if (name.location != NSNotFound) {
-                if (![self.specificGroups containsObject:group]) {
-                    [self.specificGroups addObject:group];
-                }
-            } else if (description.location != NSNotFound) {
-                if (![self.specificGroups containsObject:group]) {
-                    [self.specificGroups addObject:group];
+    if (craving != nil || ![craving isEqualToString:@""]) {
+        craving = [craving stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+        NSUInteger numberOfGroups = [self.exploratoryGroups count];
+        self.specificGroups = [[NSMutableArray alloc] init];
+        NSArray *listOfCravings = [craving componentsSeparatedByString:@" "];
+        NSMutableArray *cravingList = [[NSMutableArray alloc] init];
+        if ([listOfCravings count] >= 1) {
+            NSInteger num = [listOfCravings count];
+            for (int i = 0; i < num; i++) {
+                if([listOfCravings[i] length] > 0 && [[listOfCravings[i] substringToIndex:1] isEqualToString:@"#"])
+                {
+                    if ([listOfCravings[i] length] > 1) {
+                        NSString *toBeAdded = [listOfCravings[i] substringFromIndex:1];
+                        [cravingList addObject:toBeAdded];
+                    }
                 }
             }
         }
+        NSUInteger numberOfCravings = [cravingList count];
+        for (int i = 0; i < numberOfGroups; i++) {
+            FBUGroup *group = self.exploratoryGroups[i];
+            for (int j = 0; j < numberOfCravings; j++) {
+                NSRange name = [group.groupName rangeOfString:cravingList[j] options:NSCaseInsensitiveSearch];
+                NSRange description = [group.groupDescription rangeOfString:cravingList[j] options:NSCaseInsensitiveSearch];
+                if (name.location != NSNotFound) {
+                    if (![self.specificGroups containsObject:group]) {
+                        [self.specificGroups addObject:group];
+                        NSLog([group groupName]);
+                    }
+                } else if (description.location != NSNotFound) {
+                    if (![self.specificGroups containsObject:group]) {
+                        [self.specificGroups addObject:group];
+                        NSLog([group groupName]);
+                    }
+                }
+            }
+        }
+        self.displayedGroups = nil;
+        self.displayedGroups = self.specificGroups;
+        
+        [self.groupsCollection reloadData];
+        //[self.groupsTable reloadData];
+        
+        self.cravingTextField.text = @"";
     }
-    self.displayedGroups = nil;
-    self.displayedGroups = self.specificGroups;
-    
-    [self.groupsCollection reloadData];
-    //[self.groupsTable reloadData];
-    
-    self.cravingTextField.text = @"";
 }
 
 - (void)queryingForGroupsCurrentUserIsNotIn

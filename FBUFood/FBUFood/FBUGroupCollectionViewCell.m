@@ -7,8 +7,16 @@
 //
 
 #import "FBUGroupCollectionViewCell.h"
-#import "FBUGroup.h"
 
 @implementation FBUGroupCollectionViewCell
+
+- (id)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    if (self) {
+        // Initialization code
+    }
+    return self;
+}
 
 @end
