@@ -11,6 +11,9 @@
 		931404C9197F03F9004D4447 /* FBUBucketListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 931404C8197F03F9004D4447 /* FBUBucketListItem.m */; };
 		93B8D2741982BE96009F2D16 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93B8D2731982BE96009F2D16 /* MapKit.framework */; };
 		93D9D359199160D400ABCC5B /* FBUCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D9D358199160D400ABCC5B /* FBUCollectionViewCell.m */; };
+		93D9D35C19916B9600ABCC5B /* FBUCollectionCellBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D9D35B19916B9600ABCC5B /* FBUCollectionCellBackgroundView.m */; };
+		93D9D35F19916BEB00ABCC5B /* FBUCollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D9D35E19916BEB00ABCC5B /* FBUCollectionViewLayout.m */; };
+		93D9D36119916D5500ABCC5B /* fb_icon_325x325.png in Resources */ = {isa = PBXBuildFile; fileRef = 93D9D36019916D5500ABCC5B /* fb_icon_325x325.png */; };
 		93E4BC2F1979C89800074647 /* FBURecipeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E4BC2E1979C89800074647 /* FBURecipeViewController.m */; };
 		93ED1EE0198849F9000CF446 /* FBUMapAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 93ED1EDF198849F9000CF446 /* FBUMapAnnotation.m */; };
 		93ED1EE31989A5C6000CF446 /* FBURecipeDishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93ED1EE21989A5C6000CF446 /* FBURecipeDishViewController.m */; };
@@ -91,6 +94,11 @@
 		93B8D2731982BE96009F2D16 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		93D9D357199160D400ABCC5B /* FBUCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBUCollectionViewCell.h; sourceTree = "<group>"; };
 		93D9D358199160D400ABCC5B /* FBUCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBUCollectionViewCell.m; sourceTree = "<group>"; };
+		93D9D35A19916B9600ABCC5B /* FBUCollectionCellBackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBUCollectionCellBackgroundView.h; sourceTree = "<group>"; };
+		93D9D35B19916B9600ABCC5B /* FBUCollectionCellBackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBUCollectionCellBackgroundView.m; sourceTree = "<group>"; };
+		93D9D35D19916BEB00ABCC5B /* FBUCollectionViewLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBUCollectionViewLayout.h; sourceTree = "<group>"; };
+		93D9D35E19916BEB00ABCC5B /* FBUCollectionViewLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBUCollectionViewLayout.m; sourceTree = "<group>"; };
+		93D9D36019916D5500ABCC5B /* fb_icon_325x325.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fb_icon_325x325.png; path = ../../../../Desktop/fb_icon_325x325.png; sourceTree = "<group>"; };
 		93E4BC2D1979C89800074647 /* FBURecipeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBURecipeViewController.h; sourceTree = "<group>"; };
 		93E4BC2E1979C89800074647 /* FBURecipeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBURecipeViewController.m; sourceTree = "<group>"; };
 		93ED1EDE198849F9000CF446 /* FBUMapAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBUMapAnnotation.h; sourceTree = "<group>"; };
@@ -349,6 +357,19 @@
 			name = Login/Signup;
 			sourceTree = "<group>";
 		};
+		93FAA48E1991E705005B43AF /* Custom Collection View  */ = {
+			isa = PBXGroup;
+			children = (
+				93D9D357199160D400ABCC5B /* FBUCollectionViewCell.h */,
+				93D9D358199160D400ABCC5B /* FBUCollectionViewCell.m */,
+				93D9D35A19916B9600ABCC5B /* FBUCollectionCellBackgroundView.h */,
+				93D9D35B19916B9600ABCC5B /* FBUCollectionCellBackgroundView.m */,
+				93D9D35D19916BEB00ABCC5B /* FBUCollectionViewLayout.h */,
+				93D9D35E19916BEB00ABCC5B /* FBUCollectionViewLayout.m */,
+			);
+			name = "Custom Collection View ";
+			sourceTree = "<group>";
+		};
 		96C1E242197F019500266DB8 /* ExploreApp */ = {
 			isa = PBXGroup;
 			children = (
@@ -410,6 +431,7 @@
 		D2AF54A31970595E00F0A0F2 /* FBUFood */ = {
 			isa = PBXGroup;
 			children = (
+				93D9D36019916D5500ABCC5B /* fb_icon_325x325.png */,
 				D2AF54CC197059B000F0A0F2 /* Main.storyboard */,
 				969C8E6B1983060400D0E7B3 /* FBUMembersViewController.h */,
 				969C8E6C1983060400D0E7B3 /* FBUMembersViewController.m */,
@@ -423,14 +445,13 @@
 				930320D71976F41100629269 /* BucketList */,
 				930320D61976F38B00629269 /* Profile */,
 				93F248C71981AFEC00FC82BD /* Login/Signup */,
+				93FAA48E1991E705005B43AF /* Custom Collection View  */,
 				D2AF54D719705E0700F0A0F2 /* FBUSubscriptionsViewController.h */,
 				D2AF54D819705E0700F0A0F2 /* FBUSubscriptionsViewController.m */,
 				D260A3141991B57A006BBBDE /* FBUEventCollectionViewCell.h */,
 				D260A3151991B57A006BBBDE /* FBUEventCollectionViewCell.m */,
 				D2AF54D419705DF200F0A0F2 /* FBUDashboardViewController.h */,
 				D2AF54D519705DF200F0A0F2 /* FBUDashboardViewController.m */,
-				93D9D357199160D400ABCC5B /* FBUCollectionViewCell.h */,
-				93D9D358199160D400ABCC5B /* FBUCollectionViewCell.m */,
 				D295F99E19760D68000ED2C1 /* FBUGroceryList.h */,
 				D295F99F19760D68000ED2C1 /* FBUGroceryList.m */,
 				D2AF54AF1970595F00F0A0F2 /* Images.xcassets */,
@@ -555,6 +576,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93D9D36119916D5500ABCC5B /* fb_icon_325x325.png in Resources */,
 				93F1D0CD197488EB000A1E0E /* FBUserSettingsViewResources.bundle in Resources */,
 				D2AF54CD197059B000F0A0F2 /* Main.storyboard in Resources */,
 				D2AF54A81970595F00F0A0F2 /* InfoPlist.strings in Resources */,
@@ -583,6 +605,7 @@
 				D295F99D1976029D000ED2C1 /* FBURecipe.m in Sources */,
 				969C8E6D1983060400D0E7B3 /* FBUMembersViewController.m in Sources */,
 				966554D61973B28700DDBED0 /* FBUEditProfileViewController.m in Sources */,
+				93D9D35F19916BEB00ABCC5B /* FBUCollectionViewLayout.m in Sources */,
 				D2AF54D619705DF200F0A0F2 /* FBUDashboardViewController.m in Sources */,
 				D2D378161989BB3B00CB0EC2 /* FBUGroupsRecipesViewController.m in Sources */,
 				D28632DB197F1E0B007BBD28 /* FBUEventDetailViewController.m in Sources */,
@@ -605,6 +628,7 @@
 				966554DF197450B500DDBED0 /* FBUBucketListItemsViewController.m in Sources */,
 				969C8EAB199157E000D0E7B3 /* FBUGroupCollectionViewCell.m in Sources */,
 				D2AF54DC1970607A00F0A0F2 /* FBURecipesListViewController.m in Sources */,
+				93D9D35C19916B9600ABCC5B /* FBUCollectionCellBackgroundView.m in Sources */,
 				96EBDE8F1970AF1300DE0033 /* FBUGroupsListViewController.m in Sources */,
 				D28632CB19772779007BBD28 /* FBUGroupsDetailViewController.m in Sources */,
 				93E4BC2F1979C89800074647 /* FBURecipeViewController.m in Sources */,

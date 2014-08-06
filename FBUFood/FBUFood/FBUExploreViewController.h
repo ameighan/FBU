@@ -7,13 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "FBUCollectionViewLayout.h"
+#import "FBUCollectionCellBackgroundView.h"
 
-@interface FBUExploreViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate>
+@interface FBUExploreViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegateJSPintLayout>
 
 @property (weak, nonatomic) IBOutlet UILabel *cravingLabel;
 @property (weak, nonatomic) IBOutlet UITextField *cravingTextField;
 @property (weak, nonatomic) IBOutlet UILabel *groupInterestLabel;
-//@property (weak, nonatomic) IBOutlet UITableView *groupsTable;
 @property (weak, nonatomic) IBOutlet UICollectionView *groupsCollection;
 @property (weak, nonatomic) IBOutlet UIButton *enterCravingsButton;
 

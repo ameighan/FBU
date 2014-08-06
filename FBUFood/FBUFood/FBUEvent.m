@@ -32,6 +32,7 @@
 @dynamic membersOfEvent;
 @dynamic groceryList;
 @dynamic creator;
+@dynamic featureImage;
 
 
 - (BOOL)checkIfUserIsInEventArray:(NSMutableArray *)eventArray

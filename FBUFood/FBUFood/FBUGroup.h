@@ -20,6 +20,8 @@
 @property (strong, nonatomic) NSString *groupDescription;
 @property (strong, nonatomic) NSString *generalMeetingTimes;
 @property (strong, nonatomic) PFUser *owner;
+@property (strong, nonatomic) PFFile *groupImage;
+
 
 //NSArrays of Parse Objects (FBURecipe and FBUEvent respectively)
 @property (strong, nonatomic) NSMutableArray *recipesInGroup;

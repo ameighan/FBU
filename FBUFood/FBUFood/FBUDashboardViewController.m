@@ -17,16 +17,20 @@
 #import "FBUEventViewController.h"
 #import "FBUCollectionViewCell.h"
 
+#define kCollectionCellBorderTop 10.0
+#define kCollectionCellBorderBottom 17.0
+#define kCollectionCellBorderLeft 17.0
+#define kCollectionCellBorderRight 17.0
+
 @interface FBUDashboardViewController () <PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate>
 
 @property (strong, nonatomic) CLLocationManager *locationManager;
-
 -(void)showAlertWithTitle:(NSString *)title message:(NSString *)message;
 
 @end
 
-@implementation FBUDashboardViewController
 
+@implementation FBUDashboardViewController
 
 -(void)makeLoginAppear
 {
@@ -77,6 +81,7 @@
 {
     [super viewWillAppear:animated];
     [self queryForEvents];
+    
 }
 
 
@@ -95,12 +100,39 @@
     if (![PFUser currentUser]) { // No user logged in
         [self makeLoginAppear];
     }
+}
+
+#pragma mark - UICollectionViewDelegateJSPintLayout
+- (CGFloat)columnWidthForCollectionView:(UICollectionView*)collectionView layout:(UICollectionViewLayout*)collectionViewLayout
+{
+    return 155.0;
+}
+
+- (NSUInteger)maximumNumberOfColumnsForCollectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout
+{
+    return 2;
+}
+
+- (CGFloat)collectionView:(UICollectionView*)collectionView layout:(UICollectionViewLayout*)collectionViewLayout heightForItemAtIndexPath:(NSIndexPath*)indexPath
+{
+    FBUEvent *event = self.eventsArray[indexPath.row];
+    if (!event.featureImage) {
+        return 200;
+    }
     
+    UIImageView* imageView = [[UIImageView alloc] initWithImage:[UIImage imageWithData:[event.featureImage getData]]];
+    CGSize rctSizeOriginal = imageView.bounds.size;
+    double scale = (222  - (kCollectionCellBorderLeft + kCollectionCellBorderRight)) / rctSizeOriginal.width;
+    CGSize rctSizeFinal = CGSizeMake(rctSizeOriginal.width * scale,rctSizeOriginal.height * scale);
+    imageView.frame = CGRectMake(kCollectionCellBorderLeft,kCollectionCellBorderTop,rctSizeFinal.width,rctSizeFinal.height);
+    
+    CGFloat height = imageView.bounds.size.height + 50;
+    
+    return height;
 }
 
 
-# pragma mark - Collection View
-
+# pragma mark - Collection View Data Source
 - (void)queryForEvents
 {
     __weak FBUDashboardViewController *blockSelf = self;
@@ -110,7 +142,7 @@
         blockSelf.eventsArray = objects;
         [blockSelf.dashboardCollectionView reloadData];
     }];
-    
+
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -123,15 +155,47 @@
 }
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    
-    FBUCollectionViewCell *cell = [self.dashboardCollectionView dequeueReusableCellWithReuseIdentifier:@"eventCell" forIndexPath:indexPath];
-    
     FBUEvent *event = self.eventsArray[indexPath.row];
     
-    cell.nameLabel.text = [event eventName];
-    cell.descriptionLabel.text = [event eventDescription];
-
+    UICollectionViewCell *cell = [self.dashboardCollectionView dequeueReusableCellWithReuseIdentifier:@"eventCell" forIndexPath:indexPath];
     
+    CGRect rectReference = cell.bounds;
+    FBUCollectionCellBackgroundView* backgroundView = [[FBUCollectionCellBackgroundView alloc] initWithFrame:rectReference];
+    cell.backgroundView = backgroundView;
+    
+    UIView* selectedBackgroundView = [[UIView alloc] initWithFrame:rectReference];
+    selectedBackgroundView.backgroundColor = [UIColor clearColor];   // no indication of selection
+    cell.selectedBackgroundView = selectedBackgroundView;
+    
+    // remove subviews from previous usage of this cell
+    [[cell.contentView subviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
+    
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageWithData:[event.featureImage getData]]];
+    
+    CGSize rctSizeOriginal = imageView.bounds.size;
+    double scale = (cell.bounds.size.width  - (kCollectionCellBorderLeft + kCollectionCellBorderRight)) / rctSizeOriginal.width;
+    CGSize rctSizeFinal = CGSizeMake(rctSizeOriginal.width * scale,rctSizeOriginal.height * scale);
+    imageView.frame = CGRectMake(kCollectionCellBorderLeft,kCollectionCellBorderTop + 20,rctSizeFinal.width,rctSizeFinal.height);
+    
+    [cell.contentView addSubview:imageView];
+    
+    CGRect descriptionLabel = CGRectMake(kCollectionCellBorderLeft,kCollectionCellBorderTop + rctSizeFinal.height + 10,rctSizeFinal.width,65);
+    CGRect nameLabel = CGRectMake(kCollectionCellBorderLeft,kCollectionCellBorderTop, rctSizeFinal.width,15);
+
+    UILabel* name = [[UILabel alloc] initWithFrame:nameLabel];
+    name.numberOfLines = 0;
+    name.font = [UIFont systemFontOfSize:12];
+    
+    UILabel* description = [[UILabel alloc] initWithFrame:descriptionLabel];
+    description.numberOfLines = 2;
+    description.font = [UIFont systemFontOfSize:12];
+    
+    name.text = [event eventName];
+    description.text = [event eventDescription];
+    
+    [cell.contentView addSubview:name];
+    [cell.contentView addSubview:description];
+
     return cell;
 }
 
@@ -145,7 +209,6 @@
 {
     return [self.eventsArray count];
 }
-
 
 #pragma mark - PFLogInViewControllerDelegate
 

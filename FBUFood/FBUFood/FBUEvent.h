@@ -34,6 +34,8 @@
 @property (strong, nonatomic) FBUGroceryList *groceryList;
 @property (strong, nonatomic) PFUser *creator;
 
+@property(strong, nonatomic) PFFile *featureImage;
+
 - (BOOL)checkIfUserIsInEventArray:(NSMutableArray *)eventArray;
 
 @end
