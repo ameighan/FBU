@@ -24,5 +24,6 @@
 
 @property (strong, nonatomic) NSArray *myGroupsArray;
 
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
 @end

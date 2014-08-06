@@ -30,10 +30,14 @@
 //    self.allergiesTextView.text = user[@"allergies"];
     if(!user[@"fbImage"]) {
         UIImage *image = [UIImage imageWithData:[user[@"profileImage"] getData]];
-        self.imageView.image = image;
+        self.imageView.image = [self getRoundedRectImageFromImage:image onReferenceView:self.imageView withCornerRadius: self.imageView.frame.size.width/2];
+
+//        self.imageView.image = image;
     } else {
         UIImage *img = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:user[@"fbImage"]]]];
-        self.imageView.image = img;
+        self.imageView.image = [self getRoundedRectImageFromImage:img onReferenceView:self.imageView withCornerRadius: self.imageView.frame.size.width/2];
+
+//        self.imageView.image = img;
     }
     
 }
@@ -57,6 +61,17 @@
     }];
 }
 
+- (UIImage *)getRoundedRectImageFromImage :(UIImage *)image onReferenceView :(UIImageView*)imageView withCornerRadius :(float)cornerRadius
+{
+    UIGraphicsBeginImageContextWithOptions(imageView.bounds.size, NO, 1.0);
+    [[UIBezierPath bezierPathWithRoundedRect:imageView.bounds
+                                cornerRadius:cornerRadius] addClip];
+    [image drawInRect:imageView.bounds];
+    UIImage *finalImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return finalImage;
+}
 
 - (IBAction)takePicture:(id)sender
 {

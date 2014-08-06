@@ -35,21 +35,36 @@
         PFUser *user = [PFUser currentUser];
         
         self.nameLabel.text = user[@"name"];
-        self.emailLabel.text = user[@"email"];
-        self.phoneLabel.text = user[@"additional"];
         if(user[@"fbImage"]) {
             UIImage *img = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:user[@"fbImage"]]]];
-            self.profileImage.image = img;
+            self.profileImage.image = [self getRoundedRectImageFromImage:img onReferenceView:self.profileImage withCornerRadius: self.profileImage.frame.size.width/2];
 
         } else {
             UIImage *image = [UIImage imageWithData:[user[@"profileImage"] getData]];
-            self.profileImage.image = image;
+            self.profileImage.image = [self getRoundedRectImageFromImage:image onReferenceView:self.profileImage withCornerRadius: self.profileImage.frame.size.width/2];
+
         }
     }
 }
 
+- (UIImage *)getRoundedRectImageFromImage :(UIImage *)image onReferenceView :(UIImageView*)imageView withCornerRadius :(float)cornerRadius
+{
+    UIGraphicsBeginImageContextWithOptions(imageView.bounds.size, NO, 1.0);
+    [[UIBezierPath bezierPathWithRoundedRect:imageView.bounds
+                                cornerRadius:cornerRadius] addClip];
+    [image drawInRect:imageView.bounds];
+    UIImage *finalImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return finalImage;
+}
+
 -(void)viewDidLoad
 {
+    [super viewDidLoad];
+    
+    [self.scrollView setScrollEnabled:YES];
+    [self.scrollView setContentSize:CGSizeMake(320, 586)];
     FBUCollectionViewLayout *layout = [[FBUCollectionViewLayout alloc] init];
     layout.interitemSpacing = 10.0;
     layout.lineSpacing = 10.0;
@@ -123,7 +138,7 @@
     CGSize rctSizeFinal = CGSizeMake(rctSizeOriginal.width * scale,rctSizeOriginal.height * scale);
     imageView.frame = CGRectMake(kCollectionCellBorderLeft,kCollectionCellBorderTop,rctSizeFinal.width,rctSizeFinal.height);
     
-    CGFloat height = imageView.bounds.size.height + 50.0;
+    CGFloat height = imageView.bounds.size.height + 15.0;
     
     return height;
 }

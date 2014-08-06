@@ -13,7 +13,6 @@
 		93D9D359199160D400ABCC5B /* FBUCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D9D358199160D400ABCC5B /* FBUCollectionViewCell.m */; };
 		93D9D35C19916B9600ABCC5B /* FBUCollectionCellBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D9D35B19916B9600ABCC5B /* FBUCollectionCellBackgroundView.m */; };
 		93D9D35F19916BEB00ABCC5B /* FBUCollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D9D35E19916BEB00ABCC5B /* FBUCollectionViewLayout.m */; };
-		93D9D36119916D5500ABCC5B /* fb_icon_325x325.png in Resources */ = {isa = PBXBuildFile; fileRef = 93D9D36019916D5500ABCC5B /* fb_icon_325x325.png */; };
 		93E4BC2F1979C89800074647 /* FBURecipeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E4BC2E1979C89800074647 /* FBURecipeViewController.m */; };
 		93ED1EE0198849F9000CF446 /* FBUMapAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 93ED1EDF198849F9000CF446 /* FBUMapAnnotation.m */; };
 		93ED1EE31989A5C6000CF446 /* FBURecipeDishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93ED1EE21989A5C6000CF446 /* FBURecipeDishViewController.m */; };
@@ -98,7 +97,6 @@
 		93D9D35B19916B9600ABCC5B /* FBUCollectionCellBackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBUCollectionCellBackgroundView.m; sourceTree = "<group>"; };
 		93D9D35D19916BEB00ABCC5B /* FBUCollectionViewLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBUCollectionViewLayout.h; sourceTree = "<group>"; };
 		93D9D35E19916BEB00ABCC5B /* FBUCollectionViewLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBUCollectionViewLayout.m; sourceTree = "<group>"; };
-		93D9D36019916D5500ABCC5B /* fb_icon_325x325.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fb_icon_325x325.png; path = ../../../../Desktop/fb_icon_325x325.png; sourceTree = "<group>"; };
 		93E4BC2D1979C89800074647 /* FBURecipeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBURecipeViewController.h; sourceTree = "<group>"; };
 		93E4BC2E1979C89800074647 /* FBURecipeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBURecipeViewController.m; sourceTree = "<group>"; };
 		93ED1EDE198849F9000CF446 /* FBUMapAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBUMapAnnotation.h; sourceTree = "<group>"; };
@@ -431,7 +429,6 @@
 		D2AF54A31970595E00F0A0F2 /* FBUFood */ = {
 			isa = PBXGroup;
 			children = (
-				93D9D36019916D5500ABCC5B /* fb_icon_325x325.png */,
 				D2AF54CC197059B000F0A0F2 /* Main.storyboard */,
 				969C8E6B1983060400D0E7B3 /* FBUMembersViewController.h */,
 				969C8E6C1983060400D0E7B3 /* FBUMembersViewController.m */,
@@ -576,7 +573,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				93D9D36119916D5500ABCC5B /* fb_icon_325x325.png in Resources */,
 				93F1D0CD197488EB000A1E0E /* FBUserSettingsViewResources.bundle in Resources */,
 				D2AF54CD197059B000F0A0F2 /* Main.storyboard in Resources */,
 				D2AF54A81970595F00F0A0F2 /* InfoPlist.strings in Resources */,
