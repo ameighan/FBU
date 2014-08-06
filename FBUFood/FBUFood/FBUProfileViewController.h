@@ -8,8 +8,10 @@
 
 #import <Foundation/Foundation.h>
 #import <Parse/Parse.h>
+#import "FBUCollectionViewLayout.h"
+#import "FBUCollectionCellBackgroundView.h"
 
-@interface FBUProfileViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface FBUProfileViewController : UIViewController <UICollectionViewDelegateJSPintLayout, UICollectionViewDataSource>
 
 // Properties for profile data
 @property (weak, nonatomic) IBOutlet UIImageView *profileImage;
@@ -18,7 +20,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *phoneLabel;
 
 // Properties for the group table view
-@property (weak, nonatomic) IBOutlet UITableView *myGroupsTableView;
+@property (weak, nonatomic) IBOutlet UICollectionView *myGroupsCollectionView;
 
 @property (strong, nonatomic) NSArray *myGroupsArray;
 
