@@ -16,33 +16,17 @@
 #import "FBUMembersViewController.h"
 #import "FBUEventViewController.h"
 #import "FBUGroupsRecipesViewController.h"
+#import "FBUEventCollectionViewCell.h"
 
 @implementation FBUGroupsViewController
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"eventCell"
-                                                            forIndexPath:indexPath];
-    FBUEvent *myEvent = self.group.eventsInGroup[indexPath.row];
-    
-    cell.textLabel.text = [myEvent eventName];
-    return cell;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    return [self.group.eventsInGroup count];
-}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self.eventsInGroupTableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"groupCell"];
     
-    self.eventsInGroupTableView.delegate = self;
-    self.eventsInGroupTableView.dataSource = self;
+    self.eventsCollectionView.backgroundColor = [UIColor clearColor];
     
-    [[NSNotificationCenter defaultCenter]addObserver:self.eventsInGroupTableView selector:@selector(reloadData) name:@"savedEvent" object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self.eventsCollectionView selector:@selector(reloadData) name:@"savedEvent" object:nil];
 
 }
 
@@ -70,18 +54,8 @@
     self.title = self.group.groupName;
     self.groupDescriptionTextView.text = self.group.groupDescription;
     
-    CGFloat eventWidth = 320;
-    NSUInteger numberOfEvents = [self.group.eventsInGroup count];
-    for (NSUInteger i = 0; i < numberOfEvents; i++) {
-        UIImageView *eventFeatureDish = [[UIImageView alloc] initWithFrame: CGRectMake(eventWidth * i, 0, eventWidth, self.eventsScrollView.bounds.size.height)];
-//        eventFeatureDish.image = ;
-        [self.eventsScrollView addSubview:eventFeatureDish];
-    }
     
-    CGSize contentSize = CGSizeMake(eventWidth * numberOfEvents, self.eventsScrollView.bounds.size.height);
-    self.eventsScrollView.contentSize = contentSize;
-    
-    [self.eventsInGroupTableView reloadData];
+    [self.eventsCollectionView reloadData];
     
 }
 
@@ -107,6 +81,39 @@
     self.subscribeGroupButton.hidden = YES;
     self.subscribeGroupButton.enabled = NO;
 }
+
+
+-(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+    FBUEventCollectionViewCell *cell = [self.eventsCollectionView dequeueReusableCellWithReuseIdentifier:@"event" forIndexPath:indexPath];
+    
+    FBUEvent *event = self.group.eventsInGroup[indexPath.row];
+    
+    [event.eventFeatureDish fetchIfNeeded];
+    
+    UIImage *eventFeatureDishImage = [UIImage imageWithData:[event.eventFeatureDish.image getData]];
+    cell.eventImageView.image = eventFeatureDishImage;
+   
+    cell.eventNameLabel.text = event.eventName;
+    cell.eventTimeDateLabel.text = event.eventTimeDate;
+    cell.eventLocationLabel.text = event.eventAddress;
+    
+    
+    return cell;
+}
+
+- (NSInteger) numberOfSectionsInCollectionView:(UICollectionView *)collectionView
+{
+    return 1;
+}
+
+
+-(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+{
+    return [self.group.eventsInGroup count];
+}
+
+
 
 
 - (IBAction)addUserToGroupAsCook:(id)sender
@@ -165,16 +172,15 @@
         
         FBUEventViewController *eventViewController = segue.destinationViewController;
         
-        NSIndexPath *indexPath = [self.eventsInGroupTableView indexPathForSelectedRow];
+        NSIndexPath *indexPath = [self.eventsCollectionView indexPathForCell:sender];
         
         FBUEvent *selectedEvent= self.group.eventsInGroup[indexPath.row];
-        //NSLog(@"Events in Group: %@", self.group.eventsInGroup);
         
         eventViewController.event = selectedEvent;
-        
-        //NSLog(@"%@ was selected.", selectedEvent.eventName);
+    
     }
 }
+
 
 -(void)showAlertWithTitle:(NSString *)title message:(NSString *)message
 {

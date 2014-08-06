@@ -10,16 +10,15 @@
 
 @class FBUGroup;
 
-@interface FBUGroupsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface FBUGroupsViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate>
 
 @property (strong, nonatomic) FBUGroup *group;
 
 @property (weak, nonatomic) IBOutlet UITextView *groupDescriptionTextView;
 @property (weak, nonatomic) IBOutlet UIButton *recipesInGroupButton;
-@property (weak, nonatomic) IBOutlet UITableView *eventsInGroupTableView;
 @property (weak, nonatomic) IBOutlet UIButton *joinGroupButton;
 @property (weak, nonatomic) IBOutlet UIButton *subscribeGroupButton;
-@property (weak, nonatomic) IBOutlet UIScrollView *eventsScrollView;
+@property (weak, nonatomic) IBOutlet UICollectionView *eventsCollectionView;
 
 //Buttons shown if you have joined the group
 @property (weak, nonatomic) IBOutlet UIButton *createEventInGroupButton;
