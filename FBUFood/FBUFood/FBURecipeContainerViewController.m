@@ -31,6 +31,17 @@
     [self performSegueWithIdentifier:@"dish" sender:nil];
 }
 
+- (void) viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    if ([self.eventRecipe isEqualToString:@"event"]) {
+        self.dishViewController.featureDishButton.hidden = NO;
+        self.dishViewController.featureDishButton.enabled = YES;
+        self.dishViewController.event = self.event;
+    }
+}
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     NSLog(@"%s", __PRETTY_FUNCTION__);
@@ -40,9 +51,7 @@
     // two if statements to get new VC instances instead.
     if ([segue.identifier isEqualToString:@"dish"]) {
         self.dishViewController = segue.destinationViewController;
-        self.dishViewController.recipe= self.recipe;
-
-        
+        self.dishViewController.recipe = self.recipe;
         // If this is not the first time we're loading this.
         if (self.childViewControllers.count > 0) {
             [self swapFromViewController:[self.childViewControllers objectAtIndex:0] toViewController:self.dishViewController];

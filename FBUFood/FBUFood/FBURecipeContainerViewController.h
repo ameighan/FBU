@@ -9,10 +9,14 @@
 #import <UIKit/UIKit.h>
 #import "FBURecipe.h"
 
+@class FBUEvent;
+
 @interface FBURecipeContainerViewController : UIViewController
 
 @property (strong, nonatomic) NSString *toViewSegueIdentifier;
+@property (nonatomic) NSMutableString *eventRecipe;
 @property (nonatomic) FBURecipe *recipe;
+@property (nonatomic) FBUEvent *event;
 
 
 @end

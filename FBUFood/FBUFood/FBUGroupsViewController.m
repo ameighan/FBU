@@ -69,7 +69,18 @@
     
     self.title = self.group.groupName;
     self.groupDescriptionTextView.text = self.group.groupDescription;
-    self.generalMeetingTimesLabel.text = self.group.generalMeetingTimes;
+    
+    CGFloat eventWidth = 320;
+    NSUInteger numberOfEvents = [self.group.eventsInGroup count];
+    for (NSUInteger i = 0; i < numberOfEvents; i++) {
+        UIImageView *eventFeatureDish = [[UIImageView alloc] initWithFrame: CGRectMake(eventWidth * i, 0, eventWidth, self.eventsScrollView.bounds.size.height)];
+//        eventFeatureDish.image = ;
+        [self.eventsScrollView addSubview:eventFeatureDish];
+    }
+    
+    CGSize contentSize = CGSizeMake(eventWidth * numberOfEvents, self.eventsScrollView.bounds.size.height);
+    self.eventsScrollView.contentSize = contentSize;
+    
     [self.eventsInGroupTableView reloadData];
     
 }

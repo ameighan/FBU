@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FBUEvent.h"
 @class FBURecipe;
 
 
@@ -15,5 +16,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UILabel *dishTitleLabel;
 @property (nonatomic) FBURecipe *recipe;
+@property (nonatomic) FBUEvent *event;
+@property (weak, nonatomic) IBOutlet UIButton *featureDishButton;
 
 @end

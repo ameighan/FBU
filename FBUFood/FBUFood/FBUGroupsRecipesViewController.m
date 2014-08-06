@@ -80,6 +80,11 @@
         FBURecipe *selectedRecipe = self.recipesArray[ip.row];
         
         controller.recipe = selectedRecipe;
+        
+        if ([self.sourceVC isEqualToString:@"event"]) {
+            controller.eventRecipe = @"event";
+            controller.event = self.event;
+        }
         NSLog(@"Seguing to the recipe view controller.");
         
     } else if ([segue.identifier isEqualToString:@"addRecipes"]){
