@@ -26,10 +26,43 @@
     [self.groupsCollection reloadData];
 }
 
-- (IBAction)userDidEnterCravings:(id)sender
+
+- (void)queryingForGroupsCurrentUserIsNotIn
 {
+    __weak FBUExploreViewController *blockSelf = self;
+    PFQuery *query = [FBUGroup query];
+    [query whereKey:@"subscribersOfGroup" notEqualTo:[PFUser currentUser]];
+    [query whereKey:@"cooksInGroup" notEqualTo:[PFUser currentUser]];
+    [query includeKey:@"eventsInGroup"];
+    [query includeKey:@"recipesInGroup"];
+    [query includeKey:@"cooksInGroup"];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        blockSelf.exploratoryGroups = objects;
+        blockSelf.displayedGroups = objects;
+        
+        [blockSelf.groupsCollection reloadData];
+    }];
+}
+
+
+- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar
+{
+    [searchBar setShowsCancelButton:NO animated:YES];
+    [self.groupsCollection reloadData];
+    [searchBar resignFirstResponder];
+}
+
+-(void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar {
+    [searchBar setShowsCancelButton:YES animated:YES];
+}
+
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
+{
+    [searchBar resignFirstResponder];
+    [searchBar setShowsCancelButton:NO animated:YES];
+    UITextField *cravingTextField = [searchBar valueForKey:@"_searchField"];
     // Extracted input from textfield to implement search later
-    NSString *craving = self.cravingTextField.text;
+    NSString *craving = cravingTextField.text;
     if (craving != nil || ![craving isEqualToString:@""]) {
         craving = [craving stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
         NSUInteger numberOfGroups = [self.exploratoryGroups count];
@@ -71,34 +104,9 @@
         self.displayedGroups = self.specificGroups;
         
         [self.groupsCollection reloadData];
-        //[self.groupsTable reloadData];
         
-        self.cravingTextField.text = @"";
+        cravingTextField.text = @"";
     }
-}
-
-- (void)queryingForGroupsCurrentUserIsNotIn
-{
-    __weak FBUExploreViewController *blockSelf = self;
-    PFQuery *query = [FBUGroup query];
-    [query whereKey:@"subscribersOfGroup" notEqualTo:[PFUser currentUser]];
-    [query whereKey:@"cooksInGroup" notEqualTo:[PFUser currentUser]];
-    [query includeKey:@"eventsInGroup"];
-    [query includeKey:@"recipesInGroup"];
-    [query includeKey:@"cooksInGroup"];
-    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        blockSelf.exploratoryGroups = objects;
-        blockSelf.displayedGroups = objects;
-        
-        [blockSelf.groupsCollection reloadData];
-    }];
-}
-
-
-- (BOOL)textFieldShouldReturn:(UITextField *)textField
-{
-    [textField resignFirstResponder];
-    return YES;
 }
 
 - (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
@@ -111,16 +119,9 @@
     return YES;
 }
 
-- (IBAction)backgroundTapped:(id)sender
-{
-    [self.view endEditing:YES];
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    self.cravingTextField.delegate = self;
     
     [self queryingForGroupsCurrentUserIsNotIn];
     
@@ -147,7 +148,7 @@
 #pragma mark - UICollectionViewDelegateJSPintLayout
 - (CGFloat)columnWidthForCollectionView:(UICollectionView*)collectionView layout:(UICollectionViewLayout*)collectionViewLayout
 {
-    return 135.0;
+    return 155.0;
 }
 
 - (NSUInteger)maximumNumberOfColumnsForCollectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout
@@ -167,7 +168,7 @@
     CGSize rctSizeFinal = CGSizeMake(rctSizeOriginal.width * scale,rctSizeOriginal.height * scale);
     imageView.frame = CGRectMake(kCollectionCellBorderLeft,kCollectionCellBorderTop,rctSizeFinal.width,rctSizeFinal.height);
     
-    CGFloat height = imageView.bounds.size.height;
+    CGFloat height = imageView.bounds.size.height + 15;
     
     return height;
 }

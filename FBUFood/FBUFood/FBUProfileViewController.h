@@ -16,8 +16,6 @@
 // Properties for profile data
 @property (weak, nonatomic) IBOutlet UIImageView *profileImage;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
-@property (weak, nonatomic) IBOutlet UILabel *emailLabel;
-@property (weak, nonatomic) IBOutlet UILabel *phoneLabel;
 
 // Properties for the group table view
 @property (weak, nonatomic) IBOutlet UICollectionView *myGroupsCollectionView;

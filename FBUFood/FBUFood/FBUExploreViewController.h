@@ -10,16 +10,14 @@
 #import "FBUCollectionViewLayout.h"
 #import "FBUCollectionCellBackgroundView.h"
 
-@interface FBUExploreViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegateJSPintLayout>
+@interface FBUExploreViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegateJSPintLayout, UISearchBarDelegate>
 
-@property (weak, nonatomic) IBOutlet UILabel *cravingLabel;
-@property (weak, nonatomic) IBOutlet UITextField *cravingTextField;
-@property (weak, nonatomic) IBOutlet UILabel *groupInterestLabel;
 @property (weak, nonatomic) IBOutlet UICollectionView *groupsCollection;
-@property (weak, nonatomic) IBOutlet UIButton *enterCravingsButton;
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 
 @property (strong, nonatomic) NSArray *exploratoryGroups;
 @property (strong, nonatomic) NSArray *displayedGroups;
 @property (strong, nonatomic) NSMutableArray *specificGroups;
+
 
 @end

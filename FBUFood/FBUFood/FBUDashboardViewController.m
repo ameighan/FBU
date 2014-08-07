@@ -15,7 +15,6 @@
 #import "FBULogInViewController.h"
 #import "FBUSignUpViewController.h"
 #import "FBUEventViewController.h"
-#import "FBUCollectionViewCell.h"
 
 #define kCollectionCellBorderTop 10.0
 #define kCollectionCellBorderBottom 17.0

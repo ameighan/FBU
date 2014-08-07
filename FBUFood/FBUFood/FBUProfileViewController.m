@@ -85,6 +85,10 @@
     
     
 }
+- (IBAction)addGroupButtonPressed:(id)sender
+{
+    [self performSegueWithIdentifier:@"addGroup" sender:sender];
+}
 
 - (void)viewDidAppear:(BOOL)animated
 {
