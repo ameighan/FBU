@@ -7,9 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <MapKit/MapKit.h>
 #import "FBUEvent.h"
 
-@interface FBUEventViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface FBUEventViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, MKMapViewDelegate>
 
 @property (strong, nonatomic) FBUEvent *event;
 
@@ -19,6 +20,7 @@
 @property (weak, nonatomic) IBOutlet UITableView *eventRecipesTableView;
 @property (weak, nonatomic) IBOutlet UIButton *eventJoinButton;
 @property (weak, nonatomic) IBOutlet UILabel *eventMealsLabel;
+@property (weak, nonatomic) IBOutlet MKMapView *eventMapView;
 
 @property (weak, nonatomic) NSArray *peopleGoing;
 

@@ -12,7 +12,8 @@
 #import "FBUEventDetailViewController.h"
 #import "FBUGroupsRecipesViewController.h"
 
-@interface FBUEventViewController ()
+@interface FBUEventViewController () <CLLocationManagerDelegate>
+
 @property (strong, nonatomic) CLGeocoder *geocoder;
 
 @end
@@ -38,6 +39,10 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
+
+    [self locateEventOnMap];
+    [self zoomToLocation];
+    
     self.title = self.event.eventName;
     self.eventLocationLabel.text = self.event.eventAddress;
     self.eventTimeDateLabel.text = self.event.eventTimeDate;
@@ -55,11 +60,6 @@
         self.eventJoinButton.hidden = YES;
         self.eventJoinButton.enabled = NO;
     }
-}
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
 }
 
 
@@ -105,6 +105,25 @@
         recipesViewController.title = @"Event Recipes";
         
     }
+}
+
+# pragma mark - Event Map
+
+- (void)locateEventOnMap
+{
+    self.eventMapView.centerCoordinate = CLLocationCoordinate2DMake(self.event.eventGeoPoint.latitude, self.event.eventGeoPoint.longitude);
+    
+    MKPointAnnotation *point = [[MKPointAnnotation alloc] init];
+    point.coordinate = self.eventMapView.centerCoordinate;
+    point.title = self.event.eventName;
+    
+    [self.eventMapView addAnnotation:point];
+}
+
+-(void)zoomToLocation
+{
+    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance (CLLocationCoordinate2DMake(self.event.eventGeoPoint.latitude, self.event.eventGeoPoint.longitude), 1000, 1000);
+    [self.eventMapView setRegion:region animated:NO];
 }
 
 @end
