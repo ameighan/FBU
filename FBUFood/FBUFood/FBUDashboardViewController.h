@@ -14,7 +14,7 @@
 @interface FBUDashboardViewController : UIViewController <CLLocationManagerDelegate, UICollectionViewDelegateJSPintLayout, UICollectionViewDataSource>
 
 @property (strong, nonatomic) NSArray *eventsArray;
-@property (weak, nonatomic) IBOutlet UICollectionView *dashboardCollectionView;
+
 
 
 @end

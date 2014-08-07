@@ -25,6 +25,8 @@
 
 @property (strong, nonatomic) CLLocationManager *locationManager;
 -(void)showAlertWithTitle:(NSString *)title message:(NSString *)message;
+@property (weak, nonatomic) IBOutlet UIView *blankView;
+@property (weak, nonatomic) IBOutlet UICollectionView *dashboardCollectionView;
 
 @end
 
@@ -67,6 +69,11 @@
     [self makeLoginAppear];
 }
 
+- (IBAction)exploreButtonPressed:(id)sender
+{
+    self.tabBarController.selectedViewController = [self.tabBarController.viewControllers objectAtIndex:1];
+}
+
 
 - (void)viewDidAppear:(BOOL)animated
 {
@@ -80,7 +87,6 @@
 {
     [super viewWillAppear:animated];
     [self queryForEvents];
-    
 }
 
 
@@ -99,6 +105,7 @@
     if (![PFUser currentUser]) { // No user logged in
         [self makeLoginAppear];
     }
+    self.blankView.hidden = YES;
 }
 
 #pragma mark - UICollectionViewDelegateJSPintLayout
@@ -130,7 +137,6 @@
     return height;
 }
 
-
 # pragma mark - Collection View Data Source
 - (void)queryForEvents
 {
@@ -139,7 +145,12 @@
     [eventQuery whereKey:@"membersOfEvent" equalTo:[PFUser currentUser]];
     [eventQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         blockSelf.eventsArray = objects;
-        [blockSelf.dashboardCollectionView reloadData];
+        if (blockSelf.eventsArray.count == 0){
+            blockSelf.dashboardCollectionView.hidden = YES;
+            blockSelf.blankView.hidden = NO;
+        } else {
+            [blockSelf.dashboardCollectionView reloadData];
+        }
     }];
 
 }
@@ -169,6 +180,10 @@
     // remove subviews from previous usage of this cell
     [[cell.contentView subviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
     
+    if (!event.featureImage) {
+        return cell;
+    } else {
+    
     UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageWithData:[event.featureImage getData]]];
     
     CGSize rctSizeOriginal = imageView.bounds.size;
@@ -196,6 +211,7 @@
     [cell.contentView addSubview:description];
 
     return cell;
+    }
 }
 
 - (NSInteger) numberOfSectionsInCollectionView:(UICollectionView *)collectionView
