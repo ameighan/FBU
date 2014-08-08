@@ -1204,7 +1204,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="32" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Hfx-mc-Fjw">
-                                <rect key="frame" x="44" y="139" width="239" height="205"/>
+                                <rect key="frame" x="44" y="174" width="239" height="184"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="32" id="YA3-MJ-KTU" customClass="BucketListCell">
@@ -1233,7 +1233,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="My Bucket List" id="hpf-Fi-kdA"/>
+                    <navigationItem key="navigationItem" title="My Bucket List" id="hpf-Fi-kdA">
+                        <barButtonItem key="rightBarButtonItem" title="Edit" id="89h-TO-2hU">
+                            <connections>
+                                <action selector="toggleEditingMode:" destination="gLc-zp-E8s" id="QED-Lr-FhH"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="imageView" destination="UBK-XJ-dfW" id="vbP-3l-r5E"/>
                         <outlet property="myImageView" destination="QiJ-Xm-QLs" id="QSb-qt-2Ke"/>
@@ -1409,11 +1415,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vn2-YW-pXF">
-                                <rect key="frame" x="0.0" y="66" width="320" height="396"/>
+                                <rect key="frame" x="0.0" y="66" width="320" height="477"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="What have you" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MHf-T5-w3a">
-                                <rect key="frame" x="78" y="72" width="156" height="38"/>
+                                <rect key="frame" x="82" y="97" width="156" height="38"/>
                                 <fontDescription key="fontDescription" type="italicSystem" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1424,21 +1430,21 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bs4-Yb-P03">
-                                <rect key="frame" x="36" y="151" width="252" height="30"/>
+                                <rect key="frame" x="36" y="184" width="252" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="blk-AM-GPt">
-                                <rect key="frame" x="42" y="231" width="240" height="208"/>
+                                <rect key="frame" x="48" y="288" width="240" height="208"/>
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Upload Image" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mNB-kF-uqk">
-                                <rect key="frame" x="106" y="195" width="108" height="21"/>
+                                <rect key="frame" x="106" y="241" width="108" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Wa-x2-5wf">
-                                <rect key="frame" x="-4" y="462" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="543" width="320" height="44"/>
                                 <items>
                                     <barButtonItem title="Item" systemItem="camera" id="ZbN-vX-Zy1">
                                         <connections>
@@ -1448,7 +1454,7 @@
                                 </items>
                             </toolbar>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="dreamed of doing?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8kh-Qh-OHM">
-                                <rect key="frame" x="72" y="113" width="180" height="30"/>
+                                <rect key="frame" x="72" y="120" width="180" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="italicSystem" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1608,15 +1614,15 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="218-qX-u7v"/>
         <segue reference="p3W-a1-UZW"/>
         <segue reference="XIi-Rl-PXj"/>
-        <segue reference="y2B-5h-yd3"/>
         <segue reference="kNa-85-gPt"/>
+        <segue reference="Rz1-mo-Aa8"/>
+        <segue reference="218-qX-u7v"/>
+        <segue reference="y2B-5h-yd3"/>
         <segue reference="5nV-DU-bJ8"/>
         <segue reference="vUP-9j-jWm"/>
         <segue reference="qXC-cC-bdi"/>
-        <segue reference="Rz1-mo-Aa8"/>
         <segue reference="E3o-aQ-dmJ"/>
     </inferredMetricsTieBreakers>
 </document>

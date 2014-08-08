@@ -14,6 +14,28 @@
 
 @implementation FBUBucketListItemsViewController
 
+- (IBAction)toggleEditingMode:(id)sender
+{
+    if (self.isEditing) {
+        [sender setTitle:@"Edit"];
+        [self.tableView setEditing:NO animated:NO];
+    } else {
+        [sender setTitle:@"Done"];
+        [self.tableView setEditing:YES animated:YES];
+    }
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        NSMutableArray *myItems = [[NSMutableArray alloc]initWithArray:self.items];
+        [myItems removeObject:self.items[indexPath.row]];
+        [self.items[indexPath.row] deleteInBackground];
+        self.items = myItems;
+        [self.tableView reloadData];
+    }
+}
+
 - (NSArray *)queryingForBucketListItems
 {
     PFQuery *query = [FBUBucketListItem query];
