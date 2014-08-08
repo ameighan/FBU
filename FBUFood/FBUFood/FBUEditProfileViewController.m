@@ -12,8 +12,6 @@
 
 @interface FBUEditProfileViewController() 
 
-
-
 @end
 
 @implementation FBUEditProfileViewController

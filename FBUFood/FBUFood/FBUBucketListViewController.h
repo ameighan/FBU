@@ -15,5 +15,6 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *itemNameLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *imageOfBucketListItem;
+@property (weak, nonatomic) IBOutlet UIImageView *backgroundImageView;
 
 @end

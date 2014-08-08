@@ -29,12 +29,15 @@
 {
     [super viewWillAppear:animated];
     
-    [self queryForRecipes];
+    [self queryForUserData];
     
     if ([PFUser currentUser]){
         PFUser *user = [PFUser currentUser];
-        
+        NSLog(@"I was here");
         self.nameLabel.text = user[@"name"];
+        NSLog(@"The %@", [user username]);
+        //self.emailLabel.text = user[@"email"];
+        //self.phoneLabel.text = user[@"additional"];
         if(user[@"fbImage"]) {
             UIImage *img = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:user[@"fbImage"]]]];
             self.profileImage.image = [self getRoundedRectImageFromImage:img onReferenceView:self.profileImage withCornerRadius: self.profileImage.frame.size.width/2];
@@ -70,7 +73,7 @@
     layout.lineSpacing = 10.0;
 }
 
--(void)queryForRecipes
+-(void)queryForUserData
 {
     __weak FBUProfileViewController *blockSelf = self;
     PFQuery *getGroups = [FBUGroup query];
@@ -93,7 +96,7 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    [self queryForRecipes];
+    [self queryForUserData];
 }
 
 

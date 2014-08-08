@@ -34,6 +34,15 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.addTextfield.delegate = self;
+    if(self.item){
+        NSLog(@"I was here ");
+        UIImage *image = [UIImage imageWithData:[self.item.picture getData]];
+        self.imageView.image = image;
+        self.addTextfield.text = self.item.itemName;
+    }
+    UIImage *backImage = [UIImage imageNamed:@"BucketListBackground.jpg"];
+    [self.backgroundImageView setImage:backImage];
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
@@ -42,10 +51,10 @@
     return YES;
 }
 
-- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
+- (BOOL)textView:(UITextView *)textField shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
 {
     if([text isEqualToString:@"\n"]) {
-        [textView resignFirstResponder];
+        [textField resignFirstResponder];
         return YES;
     }
     
@@ -64,14 +73,28 @@
 
 - (IBAction)userDidSave:(id)sender
 {
-    
-    [self showAlertWithTitle: [NSString stringWithFormat:@"%@", self.addTextfield.text]
-                     message: [NSString stringWithFormat:@"%@ was saved!", self.addTextfield.text]];
-    FBUBucketListItem *newBucketItem = [FBUBucketListItem object];
-    newBucketItem.itemName = self.addTextfield.text;
-    newBucketItem.owner = [PFUser currentUser];
-    [newBucketItem saveInBackground];
-    
+    if (self.item){
+        self.item.itemName = self.addTextfield.text;
+        if(self.imageView.image){
+            NSData *imageData = UIImageJPEGRepresentation(self.imageView.image, 0.8);
+            NSString *filename = [NSString stringWithFormat:@"%@.png", self.addTextfield.text];
+            PFFile *imageFile = [PFFile fileWithName:filename data:imageData];
+            self.item.picture = imageFile;
+        }
+        [self.item saveInBackground];
+    } else {
+        FBUBucketListItem *newBucketItem = [FBUBucketListItem object];
+        newBucketItem.itemName = self.addTextfield.text;
+        newBucketItem.owner = [PFUser currentUser];
+        if(self.imageView.image){
+            NSData *imageData = UIImageJPEGRepresentation(self.imageView.image, 0.8);
+            NSString *filename = [NSString stringWithFormat:@"%@.png", self.addTextfield.text];
+            PFFile *imageFile = [PFFile fileWithName:filename data:imageData];
+            self.item.picture = imageFile;
+        }
+        newBucketItem.owner = [PFUser currentUser];
+        [newBucketItem saveInBackground];
+    }
 }
 
 -(void)showAlertWithTitle:(NSString *)title message:(NSString *)message

@@ -1052,7 +1052,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JmF-w6-EvT" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Pqh-cX-cmn" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-2378" y="-2828"/>
+            <point key="canvasLocation" x="-2051" y="-3685"/>
         </scene>
         <!--Profile View Controller - My Profile-->
         <scene sceneID="jiH-e9-1BY">
@@ -1175,15 +1175,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="650"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Hfx-mc-Fjw">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="521"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UBK-XJ-dfW">
+                                <rect key="frame" x="0.0" y="63" width="320" height="455"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QiJ-Xm-QLs">
+                                <rect key="frame" x="59" y="361" width="121" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="32" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Hfx-mc-Fjw">
+                                <rect key="frame" x="44" y="139" width="239" height="205"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="YA3-MJ-KTU" customClass="BucketListCell">
-                                        <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="32" id="YA3-MJ-KTU" customClass="BucketListCell">
+                                        <rect key="frame" x="0.0" y="22" width="239" height="32"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YA3-MJ-KTU" id="Qqq-jS-gpx">
-                                            <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="206" height="31"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <connections>
@@ -1192,24 +1200,29 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zXm-l6-ySr">
+                                <rect key="frame" x="59" y="361" width="121" height="122"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="W7W-PL-w08" kind="push" id="kNa-85-gPt"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="My Bucket List" id="hpf-Fi-kdA">
-                        <barButtonItem key="rightBarButtonItem" title="New" id="VjN-yi-ped">
-                            <connections>
-                                <segue destination="W7W-PL-w08" kind="push" id="Hzb-Ac-dyk"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="My Bucket List" id="hpf-Fi-kdA"/>
                     <connections>
-                        <outlet property="createButton" destination="VjN-yi-ped" id="wzP-oH-k6H"/>
+                        <outlet property="imageView" destination="UBK-XJ-dfW" id="vbP-3l-r5E"/>
+                        <outlet property="myImageView" destination="QiJ-Xm-QLs" id="QSb-qt-2Ke"/>
                         <outlet property="tableView" destination="Hfx-mc-Fjw" id="a0a-Wj-6ex"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CgF-o3-7Ed" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2758" y="-1187"/>
+            <point key="canvasLocation" x="-2608" y="-1533"/>
         </scene>
         <!--Bucket List View Controller-->
         <scene sceneID="IXt-6m-Tgg">
@@ -1219,9 +1232,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="650"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0NT-su-FXn">
-                                <rect key="frame" x="20" y="129" width="280" height="33"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sDI-5K-qZZ">
+                                <rect key="frame" x="0.0" y="65" width="320" height="455"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0NT-su-FXn">
+                                <rect key="frame" x="20" y="112" width="280" height="33"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="33"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="nJi-Wx-HoM">
@@ -1231,9 +1249,14 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="vvG-8F-5dE">
-                        <barButtonItem key="rightBarButtonItem" title="Edit" id="Xnh-PG-jzE"/>
+                        <barButtonItem key="rightBarButtonItem" title="Edit" id="Xnh-PG-jzE">
+                            <connections>
+                                <segue destination="W7W-PL-w08" kind="push" identifier="detailToEditViewController" id="C4m-6h-1FD"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="backgroundImageView" destination="sDI-5K-qZZ" id="HRF-fj-stR"/>
                         <outlet property="imageOfBucketListItem" destination="nJi-Wx-HoM" id="Ldn-bs-Tjm"/>
                         <outlet property="itemNameLabel" destination="0NT-su-FXn" id="sX4-cx-XhK"/>
                     </connections>
@@ -1359,33 +1382,37 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="650"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add to Bucket List:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="MHf-T5-w3a">
-                                <rect key="frame" x="82" y="118" width="148" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vn2-YW-pXF">
+                                <rect key="frame" x="0.0" y="66" width="320" height="396"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="What have you" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MHf-T5-w3a">
+                                <rect key="frame" x="78" y="72" width="156" height="38"/>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="RDE-v8-9f0">
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="bs4-Yb-P03">
-                                <rect key="frame" x="36" y="162" width="252" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bs4-Yb-P03">
+                                <rect key="frame" x="36" y="151" width="252" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="blk-AM-GPt">
-                                <rect key="frame" x="36" y="312" width="240" height="208"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="blk-AM-GPt">
+                                <rect key="frame" x="42" y="231" width="240" height="208"/>
                             </imageView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Upload Image" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="mNB-kF-uqk">
-                                <rect key="frame" x="106" y="244" width="108" height="21"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Upload Image" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mNB-kF-uqk">
+                                <rect key="frame" x="106" y="195" width="108" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="5Wa-x2-5wf">
-                                <rect key="frame" x="2" y="574" width="320" height="44"/>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Wa-x2-5wf">
+                                <rect key="frame" x="-4" y="462" width="320" height="44"/>
                                 <items>
                                     <barButtonItem title="Item" systemItem="camera" id="ZbN-vX-Zy1">
                                         <connections>
@@ -1394,19 +1421,27 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="dreamed of doing?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8kh-Qh-OHM">
+                                <rect key="frame" x="72" y="113" width="180" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="New Bucket List Item" id="YhX-2x-EXU">
                         <barButtonItem key="rightBarButtonItem" title="Done" id="m4T-dD-Qhj">
                             <connections>
-                                <action selector="userDidSave:" destination="W7W-PL-w08" id="VAb-Wr-0gx"/>
+                                <action selector="userDidSave:" destination="W7W-PL-w08" id="w9n-Kq-ejh"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="addLabel" destination="MHf-T5-w3a" id="WHm-Dv-RZa"/>
                         <outlet property="addTextfield" destination="bs4-Yb-P03" id="XOQ-xF-rtm"/>
+                        <outlet property="backgroundImageView" destination="Vn2-YW-pXF" id="H6V-zU-Nbr"/>
                         <outlet property="imageView" destination="blk-AM-GPt" id="xKt-sI-OnD"/>
                         <outlet property="toolbar" destination="5Wa-x2-5wf" id="pZ8-q3-a8e"/>
                         <outlet property="uploadImageLabel" destination="mNB-kF-uqk" id="56b-cl-2hC"/>
@@ -1547,7 +1582,12 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="kNa-85-gPt"/>
         <segue reference="XIi-Rl-PXj"/>
+        <segue reference="d4X-3F-d10"/>
+        <segue reference="Gf1-nK-jxY"/>
+        <segue reference="3dj-aI-oAl"/>
+        <segue reference="nut-44-e2c"/>
         <segue reference="Rz1-mo-Aa8"/>
         <segue reference="p3W-a1-UZW"/>
         <segue reference="qXC-cC-bdi"/>

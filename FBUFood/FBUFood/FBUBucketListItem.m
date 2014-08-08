@@ -17,6 +17,7 @@
 }
 
 @dynamic itemName;
+@dynamic picture;
 @dynamic owner;
 
 @end

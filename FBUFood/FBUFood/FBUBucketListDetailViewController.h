@@ -19,5 +19,6 @@
 @property (weak, nonatomic) IBOutlet UITextField *addTextfield;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UIToolbar *toolbar;
+@property (weak, nonatomic) IBOutlet UIImageView *backgroundImageView;
 
 @end

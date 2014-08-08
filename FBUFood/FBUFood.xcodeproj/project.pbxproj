@@ -27,8 +27,12 @@
 		966554D61973B28700DDBED0 /* FBUEditProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 966554D51973B28700DDBED0 /* FBUEditProfileViewController.m */; };
 		966554D9197443B200DDBED0 /* FBUBucketListDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 966554D8197443B200DDBED0 /* FBUBucketListDetailViewController.m */; };
 		966554DF197450B500DDBED0 /* FBUBucketListItemsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 966554DE197450B500DDBED0 /* FBUBucketListItemsViewController.m */; };
+		968134311994B8EC00F48BD0 /* Imagination.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 968134301994B8EC00F48BD0 /* Imagination.jpg */; };
 		969C8E6D1983060400D0E7B3 /* FBUMembersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 969C8E6C1983060400D0E7B3 /* FBUMembersViewController.m */; };
 		969C8EAB199157E000D0E7B3 /* FBUGroupCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 969C8EAA199157E000D0E7B3 /* FBUGroupCollectionViewCell.m */; };
+		969C8EAD1992B8C600D0E7B3 /* BucketList.png in Resources */ = {isa = PBXBuildFile; fileRef = 969C8EAC1992B8C600D0E7B3 /* BucketList.png */; };
+		96BC1E821992D95F009953A4 /* New.png in Resources */ = {isa = PBXBuildFile; fileRef = 96BC1E811992D95F009953A4 /* New.png */; };
+		96BC1E841992F6DB009953A4 /* BucketListBackground.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 96BC1E831992F6DB009953A4 /* BucketListBackground.jpg */; };
 		96C1E241197D825300266DB8 /* FBUBucketListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96C1E240197D825300266DB8 /* FBUBucketListViewController.m */; };
 		96C1E245197F01DF00266DB8 /* FBUExploreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96C1E244197F01DF00266DB8 /* FBUExploreViewController.m */; };
 		96EBDE8F1970AF1300DE0033 /* FBUGroupsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96EBDE8E1970AF1300DE0033 /* FBUGroupsListViewController.m */; };
@@ -122,10 +126,14 @@
 		966554D8197443B200DDBED0 /* FBUBucketListDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBUBucketListDetailViewController.m; sourceTree = "<group>"; };
 		966554DD197450B500DDBED0 /* FBUBucketListItemsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBUBucketListItemsViewController.h; sourceTree = "<group>"; };
 		966554DE197450B500DDBED0 /* FBUBucketListItemsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBUBucketListItemsViewController.m; sourceTree = "<group>"; };
+		968134301994B8EC00F48BD0 /* Imagination.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Imagination.jpg; sourceTree = "<group>"; };
 		969C8E6B1983060400D0E7B3 /* FBUMembersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBUMembersViewController.h; sourceTree = "<group>"; };
 		969C8E6C1983060400D0E7B3 /* FBUMembersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBUMembersViewController.m; sourceTree = "<group>"; };
 		969C8EA9199157E000D0E7B3 /* FBUGroupCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBUGroupCollectionViewCell.h; sourceTree = "<group>"; };
 		969C8EAA199157E000D0E7B3 /* FBUGroupCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBUGroupCollectionViewCell.m; sourceTree = "<group>"; };
+		969C8EAC1992B8C600D0E7B3 /* BucketList.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BucketList.png; sourceTree = "<group>"; };
+		96BC1E811992D95F009953A4 /* New.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = New.png; sourceTree = "<group>"; };
+		96BC1E831992F6DB009953A4 /* BucketListBackground.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = BucketListBackground.jpg; sourceTree = "<group>"; };
 		96C1E23F197D825300266DB8 /* FBUBucketListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBUBucketListViewController.h; sourceTree = "<group>"; };
 		96C1E240197D825300266DB8 /* FBUBucketListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBUBucketListViewController.m; sourceTree = "<group>"; };
 		96C1E243197F01DF00266DB8 /* FBUExploreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBUExploreViewController.h; sourceTree = "<group>"; };
@@ -424,6 +432,10 @@
 		D2AF54A31970595E00F0A0F2 /* FBUFood */ = {
 			isa = PBXGroup;
 			children = (
+				969C8EAC1992B8C600D0E7B3 /* BucketList.png */,
+				96BC1E811992D95F009953A4 /* New.png */,
+				96BC1E831992F6DB009953A4 /* BucketListBackground.jpg */,
+				968134301994B8EC00F48BD0 /* Imagination.jpg */,
 				D2AF54CC197059B000F0A0F2 /* Main.storyboard */,
 				969C8E6B1983060400D0E7B3 /* FBUMembersViewController.h */,
 				969C8E6C1983060400D0E7B3 /* FBUMembersViewController.m */,
@@ -569,8 +581,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				93F1D0CD197488EB000A1E0E /* FBUserSettingsViewResources.bundle in Resources */,
+				969C8EAD1992B8C600D0E7B3 /* BucketList.png in Resources */,
+				96BC1E821992D95F009953A4 /* New.png in Resources */,
 				D2AF54CD197059B000F0A0F2 /* Main.storyboard in Resources */,
 				D2AF54A81970595F00F0A0F2 /* InfoPlist.strings in Resources */,
+				96BC1E841992F6DB009953A4 /* BucketListBackground.jpg in Resources */,
+				968134311994B8EC00F48BD0 /* Imagination.jpg in Resources */,
 				D2AF54B01970595F00F0A0F2 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

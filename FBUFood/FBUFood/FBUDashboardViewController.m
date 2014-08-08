@@ -258,6 +258,7 @@
                 NSString *name = userData[@"name"];
                 //NSString *location = userData[@"location"][@"name"];
                 NSString *email = userData[@"email"];
+                NSLog(@" my email %@", email);
                 
                 NSString *pictureURL = [NSString stringWithFormat:@"https://graph.facebook.com/%@/picture?type=large&return_ssl_resources=1", facebookID];
                 

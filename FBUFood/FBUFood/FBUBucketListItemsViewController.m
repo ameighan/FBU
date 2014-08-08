@@ -52,7 +52,6 @@
         FBUBucketListViewController *itemsViewController = segue.destinationViewController;
         
         itemsViewController.item = myItem;
-        //NSLog(@"%@", myItem.itemName);
     }
 }
 
@@ -62,6 +61,10 @@
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"BucketListCell"];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    UIImage *myImage = [UIImage imageNamed:@"BucketList.png"];
+    [self.imageView setImage:myImage];
+    UIImage *newButtonImage = [UIImage imageNamed:@"New.png"];
+    [self.myImageView setImage:newButtonImage];
 }
 
 - (void)viewDidAppear:(BOOL)animated
