@@ -434,7 +434,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="HYR-8U-EhU">
-                                <rect key="frame" x="88" y="101.5" width="212" height="30"/>
+                                <rect key="frame" x="88" y="101" width="212" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
@@ -448,7 +448,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="7BH-4U-Uxe">
-                                <rect key="frame" x="116" y="150.5" width="88" height="21"/>
+                                <rect key="frame" x="116" y="150" width="88" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -463,13 +463,13 @@
                                 </connections>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="DBs-ST-M7O">
-                                <rect key="frame" x="20" y="480.5" width="88" height="30"/>
+                                <rect key="frame" x="20" y="480" width="88" height="30"/>
                                 <state key="normal" title="Add Recipes">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="qHc-NI-8Jl">
-                                <rect key="frame" x="217" y="480.5" width="77" height="30"/>
+                                <rect key="frame" x="217" y="480" width="77" height="30"/>
                                 <state key="normal" title="Add Cooks">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -1587,19 +1587,13 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="kNa-85-gPt"/>
-        <segue reference="XIi-Rl-PXj"/>
-        <segue reference="d4X-3F-d10"/>
-        <segue reference="Gf1-nK-jxY"/>
-        <segue reference="3dj-aI-oAl"/>
-        <segue reference="nut-44-e2c"/>
-        <segue reference="Rz1-mo-Aa8"/>
-        <segue reference="218-qX-u7v"/>
-        <segue reference="p3W-a1-UZW"/>
-        <segue reference="XIi-Rl-PXj"/>
-        <segue reference="vUP-9j-jWm"/>
         <segue reference="qXC-cC-bdi"/>
+        <segue reference="XIi-Rl-PXj"/>
+        <segue reference="kNa-85-gPt"/>
+        <segue reference="vUP-9j-jWm"/>
         <segue reference="Rz1-mo-Aa8"/>
+        <segue reference="p3W-a1-UZW"/>
+        <segue reference="218-qX-u7v"/>
         <segue reference="E3o-aQ-dmJ"/>
     </inferredMetricsTieBreakers>
 </document>
