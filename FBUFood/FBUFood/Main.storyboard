@@ -234,11 +234,11 @@
             <objects>
                 <viewController id="o3u-ux-cak" customClass="FBUGroupSubscribersViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mUF-9r-iOX">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="650"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="s7N-Yf-BVi">
-                                <rect key="frame" x="0.0" y="16" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="41" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="userCell" id="QLm-bg-Xi6">
@@ -272,11 +272,11 @@
             <objects>
                 <viewController storyboardIdentifier="FBUGroupsViewController" title="FBUGroupsViewController" id="H9r-p1-AHy" customClass="FBUGroupsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aLs-Ca-guA">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="650"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="2OB-zq-6CX">
-                                <rect key="frame" x="18" y="478" width="280" height="30"/>
+                                <rect key="frame" x="18" y="520" width="280" height="30"/>
                                 <color key="backgroundColor" red="1" green="0.9674096096" blue="0.80084603929999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Create Event">
@@ -287,7 +287,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="7rf-70-uKN">
-                                <rect key="frame" x="18" y="504" width="280" height="30"/>
+                                <rect key="frame" x="18" y="548" width="280" height="30"/>
                                 <color key="backgroundColor" red="1" green="0.9674096096" blue="0.80084603929999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Subscribe">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -297,7 +297,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="YdQ-7w-44u">
-                                <rect key="frame" x="18" y="478" width="280" height="30"/>
+                                <rect key="frame" x="18" y="520" width="280" height="30"/>
                                 <color key="backgroundColor" red="1" green="0.9674096096" blue="0.80084603929999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Join">
@@ -308,7 +308,7 @@
                                 </connections>
                             </button>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ElD-HE-pv5">
-                                <rect key="frame" x="18" y="511" width="280" height="30"/>
+                                <rect key="frame" x="18" y="556" width="280" height="30"/>
                                 <color key="backgroundColor" red="1" green="0.9674096096" blue="0.80084603929999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="View Subscribers">
@@ -319,7 +319,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ysM-N3-UvA">
-                                <rect key="frame" x="18" y="409" width="280" height="30"/>
+                                <rect key="frame" x="18" y="445" width="280" height="30"/>
                                 <color key="backgroundColor" red="1" green="0.9674096096" blue="0.80084603929999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Recipes">
@@ -342,14 +342,14 @@
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" id="qSV-Vu-IoO">
-                                <rect key="frame" x="18" y="272" width="280" height="126"/>
+                                <rect key="frame" x="18" y="301" width="280" height="126"/>
                                 <color key="backgroundColor" red="1" green="0.8827720185247091" blue="0.58900952166569998" alpha="1" colorSpace="calibratedRGB"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="YcL-8e-Pd7">
-                                <rect key="frame" x="18" y="78" width="280" height="204"/>
+                                <rect key="frame" x="18" y="78" width="280" height="254"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="2KN-3r-LB2">
                                     <size key="itemSize" width="281" height="170"/>
@@ -359,7 +359,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="event" id="kaq-eQ-pLJ" customClass="FBUEventCollectionViewCell">
-                                        <rect key="frame" x="0.0" y="17" width="281" height="170"/>
+                                        <rect key="frame" x="0.0" y="42" width="281" height="170"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="281" height="170"/>
@@ -1137,6 +1137,9 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 </view>
+                                                <connections>
+                                                    <segue destination="H9r-p1-AHy" kind="push" identifier="groupCell" id="y2B-5h-yd3"/>
+                                                </connections>
                                             </collectionViewCell>
                                         </cells>
                                         <connections>
@@ -1587,13 +1590,14 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="qXC-cC-bdi"/>
+        <segue reference="218-qX-u7v"/>
+        <segue reference="p3W-a1-UZW"/>
         <segue reference="XIi-Rl-PXj"/>
+        <segue reference="y2B-5h-yd3"/>
         <segue reference="kNa-85-gPt"/>
         <segue reference="vUP-9j-jWm"/>
+        <segue reference="qXC-cC-bdi"/>
         <segue reference="Rz1-mo-Aa8"/>
-        <segue reference="p3W-a1-UZW"/>
-        <segue reference="218-qX-u7v"/>
         <segue reference="E3o-aQ-dmJ"/>
     </inferredMetricsTieBreakers>
 </document>
