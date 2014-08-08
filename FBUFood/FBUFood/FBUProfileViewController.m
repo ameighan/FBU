@@ -15,6 +15,7 @@
 #import "FBUDashboardViewController.h"
 #import "FBUEditProfileViewController.h"
 #import "FBURecipesListViewController.h"
+#import <QuartzCore/QuartzCore.h>
 
 #define kCollectionCellBorderTop 10.0
 #define kCollectionCellBorderBottom 17.0
@@ -33,18 +34,24 @@
     
     if ([PFUser currentUser]){
         PFUser *user = [PFUser currentUser];
-        NSLog(@"I was here");
-        self.nameLabel.text = user[@"name"];
-        NSLog(@"The %@", [user username]);
-        //self.emailLabel.text = user[@"email"];
-        //self.phoneLabel.text = user[@"additional"];
+        if (!user[@"name"]) {
+            self.nameLabel.text = @"My Name";
+        } else {
+            self.nameLabel.text = user[@"name"];
+        }
         if(user[@"fbImage"]) {
             UIImage *img = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:user[@"fbImage"]]]];
             self.profileImage.image = [self getRoundedRectImageFromImage:img onReferenceView:self.profileImage withCornerRadius: self.profileImage.frame.size.width/2];
 
         } else {
-            UIImage *image = [UIImage imageWithData:[user[@"profileImage"] getData]];
-            self.profileImage.image = [self getRoundedRectImageFromImage:image onReferenceView:self.profileImage withCornerRadius: self.profileImage.frame.size.width/2];
+            if(user[@"profileImage"]) {
+                UIImage *image = [UIImage imageWithData:[user[@"profileImage"] getData]];
+                self.profileImage.image = [self getRoundedRectImageFromImage:image onReferenceView:self.profileImage withCornerRadius: self.profileImage.frame.size.width/2];
+            } else {
+                UIImage *image = [UIImage imageNamed:@"profile_default.png"];
+                self.profileImage.image = [self getRoundedRectImageFromImage:image onReferenceView:self.profileImage withCornerRadius: self.profileImage.frame.size.width/2];
+
+            }
 
         }
     }
@@ -83,7 +90,7 @@
     [getGroups includeKey:@"eventsInGroup"];
     [getGroups findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         blockSelf.myGroupsArray = objects;
-        [blockSelf.myGroupsCollectionView reloadData];
+            [blockSelf.myGroupsCollectionView reloadData];
     }];
     
     

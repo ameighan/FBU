@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		931404C5197D84F0004D4447 /* FBUEditRecipeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 931404C4197D84F0004D4447 /* FBUEditRecipeViewController.m */; };
 		931404C9197F03F9004D4447 /* FBUBucketListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 931404C8197F03F9004D4447 /* FBUBucketListItem.m */; };
+		9367F837199404B30099354D /* profile_default.png in Resources */ = {isa = PBXBuildFile; fileRef = 9367F836199404B30099354D /* profile_default.png */; };
 		93B8D2741982BE96009F2D16 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93B8D2731982BE96009F2D16 /* MapKit.framework */; };
 		93D9D35C19916B9600ABCC5B /* FBUCollectionCellBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D9D35B19916B9600ABCC5B /* FBUCollectionCellBackgroundView.m */; };
 		93D9D35F19916BEB00ABCC5B /* FBUCollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D9D35E19916BEB00ABCC5B /* FBUCollectionViewLayout.m */; };
@@ -93,6 +94,7 @@
 		931404C3197D84F0004D4447 /* FBUEditRecipeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBUEditRecipeViewController.h; sourceTree = "<group>"; };
 		931404C4197D84F0004D4447 /* FBUEditRecipeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBUEditRecipeViewController.m; sourceTree = "<group>"; };
 		931404C8197F03F9004D4447 /* FBUBucketListItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBUBucketListItem.m; sourceTree = "<group>"; };
+		9367F836199404B30099354D /* profile_default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profile_default.png; sourceTree = "<group>"; };
 		93B8D2731982BE96009F2D16 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		93D9D35A19916B9600ABCC5B /* FBUCollectionCellBackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBUCollectionCellBackgroundView.h; sourceTree = "<group>"; };
 		93D9D35B19916B9600ABCC5B /* FBUCollectionCellBackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBUCollectionCellBackgroundView.m; sourceTree = "<group>"; };
@@ -436,6 +438,7 @@
 				96BC1E811992D95F009953A4 /* New.png */,
 				96BC1E831992F6DB009953A4 /* BucketListBackground.jpg */,
 				968134301994B8EC00F48BD0 /* Imagination.jpg */,
+				9367F836199404B30099354D /* profile_default.png */,
 				D2AF54CC197059B000F0A0F2 /* Main.storyboard */,
 				969C8E6B1983060400D0E7B3 /* FBUMembersViewController.h */,
 				969C8E6C1983060400D0E7B3 /* FBUMembersViewController.m */,
@@ -588,6 +591,7 @@
 				96BC1E841992F6DB009953A4 /* BucketListBackground.jpg in Resources */,
 				968134311994B8EC00F48BD0 /* Imagination.jpg in Resources */,
 				D2AF54B01970595F00F0A0F2 /* Images.xcassets in Resources */,
+				9367F837199404B30099354D /* profile_default.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

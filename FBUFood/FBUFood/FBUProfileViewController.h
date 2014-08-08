@@ -11,7 +11,7 @@
 #import "FBUCollectionViewLayout.h"
 #import "FBUCollectionCellBackgroundView.h"
 
-@interface FBUProfileViewController : UIViewController <UICollectionViewDelegateJSPintLayout, UICollectionViewDataSource>
+@interface FBUProfileViewController : UIViewController <UICollectionViewDelegateJSPintLayout, UICollectionViewDataSource, UIPopoverControllerDelegate>
 
 // Properties for profile data
 @property (weak, nonatomic) IBOutlet UIImageView *profileImage;
@@ -23,5 +23,7 @@
 @property (strong, nonatomic) NSArray *myGroupsArray;
 
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *addGroup;
+
 
 @end

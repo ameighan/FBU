@@ -10,10 +10,6 @@
 #import <Parse/Parse.h>
 #import "FBUProfileViewController.h"
 
-@interface FBUEditProfileViewController() 
-
-@end
-
 @implementation FBUEditProfileViewController
 
 -(void)viewDidLoad
@@ -26,16 +22,20 @@
     self.emailTextField.text = user[@"email"];
     self.phoneNumberTextField.text = user[@"additional"];
 //    self.allergiesTextView.text = user[@"allergies"];
-    if(!user[@"fbImage"]) {
-        UIImage *image = [UIImage imageWithData:[user[@"profileImage"] getData]];
+    if(!user[@"fbImage"] && !user[@"profileImage"]) {
+        UIImage *image = [UIImage imageNamed:@"profile_default.png"];
         self.imageView.image = [self getRoundedRectImageFromImage:image onReferenceView:self.imageView withCornerRadius: self.imageView.frame.size.width/2];
-
-//        self.imageView.image = image;
-    } else {
+        
+    }else{
+        if(!user[@"fbImage"]) {
+            UIImage *image = [UIImage imageWithData:[user[@"profileImage"] getData]];
+            self.imageView.image = [self getRoundedRectImageFromImage:image onReferenceView:self.imageView withCornerRadius: self.imageView.frame.size.width/2];
+ 
+        } else {
         UIImage *img = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:user[@"fbImage"]]]];
         self.imageView.image = [self getRoundedRectImageFromImage:img onReferenceView:self.imageView withCornerRadius: self.imageView.frame.size.width/2];
+        }
 
-//        self.imageView.image = img;
     }
     
 }
