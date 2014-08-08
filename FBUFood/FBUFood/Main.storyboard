@@ -52,6 +52,11 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <collectionViewLayout key="collectionViewLayout" id="brj-ub-3Q9" customClass="FBUCollectionViewLayout"/>
+                                <activityIndicatorView key="backgroundView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" id="cOM-R3-2Oz">
+                                    <rect key="frame" x="142" y="203" width="37" height="37"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="color" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                </activityIndicatorView>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="groupCell" id="LVT-4c-0mU">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
@@ -96,6 +101,7 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="600"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="cOM-R3-2Oz" id="BpK-Jt-gOs"/>
                         <outlet property="groupsCollection" destination="3O1-yD-POh" id="Lrz-hs-jg2"/>
                         <outlet property="searchBar" destination="rg1-gC-3lu" id="dKL-J1-9yI"/>
                     </connections>
@@ -109,11 +115,11 @@
             <objects>
                 <viewController id="iV8-kv-3cG" customClass="FBUMapViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FEX-pa-WA1">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" pitchEnabled="NO" showsUserLocation="YES" id="cuT-Od-gGa">
-                                <rect key="frame" x="0.0" y="64" width="320" height="454"/>
+                                <rect key="frame" x="0.0" y="82" width="320" height="454"/>
                                 <connections>
                                     <outlet property="delegate" destination="iV8-kv-3cG" id="nzS-Tm-P59"/>
                                 </connections>
@@ -1070,6 +1076,11 @@
                                 <rect key="frame" x="0.0" y="64" width="320" height="586"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" id="EZc-Zf-2aW">
+                                        <rect key="frame" x="0.0" y="92" width="320" height="403"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="color" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    </activityIndicatorView>
                                     <view contentMode="scaleToFill" id="jhX-Mo-cYA">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="183"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1164,6 +1175,7 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="650"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="EZc-Zf-2aW" id="kWB-CR-o8V"/>
                         <outlet property="addGroup" destination="n9r-vf-jVi" id="aYF-Oe-0CE"/>
                         <outlet property="myGroupsCollectionView" destination="G1d-jR-2Uh" id="qd5-TP-s3Q"/>
                         <outlet property="nameLabel" destination="E1e-Al-Ji0" id="Xwm-tv-rsW"/>
@@ -1287,7 +1299,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ey0-dt-unS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3403" y="-2439"/>
+            <point key="canvasLocation" x="-3397" y="-2398"/>
         </scene>
         <!--Dashboard View Controller - Dashboard-->
         <scene sceneID="iCV-ti-dAi">
@@ -1302,6 +1314,11 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <collectionViewLayout key="collectionViewLayout" id="kI4-Hv-MvI" customClass="FBUCollectionViewLayout"/>
+                                <activityIndicatorView key="backgroundView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" id="cn1-2m-jMs">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="color" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                </activityIndicatorView>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="eventCell" id="9lh-su-GR1">
                                         <rect key="frame" x="0.0" y="64" width="50" height="50"/>
@@ -1322,7 +1339,7 @@
                                 </connections>
                             </collectionView>
                             <view contentMode="scaleToFill" id="6g6-zK-LQK">
-                                <rect key="frame" x="0.0" y="64" width="320" height="454"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="454"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Oh no! " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="eXk-af-V2C">
@@ -1374,13 +1391,14 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="activityIndicator" destination="cn1-2m-jMs" id="105-de-uth"/>
                         <outlet property="blankView" destination="6g6-zK-LQK" id="33p-yk-U8y"/>
                         <outlet property="dashboardCollectionView" destination="m02-56-hZm" id="0Ik-Bt-Ndh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FjY-Ny-Tq4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2401" y="79"/>
+            <point key="canvasLocation" x="-2344" y="79"/>
         </scene>
         <!--Bucket List Detail View Controller - New Bucket List Item-->
         <scene sceneID="Cbb-5u-fxf">
@@ -1595,6 +1613,7 @@
         <segue reference="XIi-Rl-PXj"/>
         <segue reference="y2B-5h-yd3"/>
         <segue reference="kNa-85-gPt"/>
+        <segue reference="5nV-DU-bJ8"/>
         <segue reference="vUP-9j-jWm"/>
         <segue reference="qXC-cC-bdi"/>
         <segue reference="Rz1-mo-Aa8"/>

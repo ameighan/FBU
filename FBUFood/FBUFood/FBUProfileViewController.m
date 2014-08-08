@@ -90,7 +90,8 @@
     [getGroups includeKey:@"eventsInGroup"];
     [getGroups findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         blockSelf.myGroupsArray = objects;
-            [blockSelf.myGroupsCollectionView reloadData];
+        [blockSelf.activityIndicator stopAnimating];
+        [blockSelf.myGroupsCollectionView reloadData];
     }];
     
     

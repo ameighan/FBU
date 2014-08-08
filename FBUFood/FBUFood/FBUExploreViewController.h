@@ -18,6 +18,7 @@
 @property (strong, nonatomic) NSArray *exploratoryGroups;
 @property (strong, nonatomic) NSArray *displayedGroups;
 @property (strong, nonatomic) NSMutableArray *specificGroups;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 
 
 @end

@@ -39,7 +39,7 @@
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         blockSelf.exploratoryGroups = objects;
         blockSelf.displayedGroups = objects;
-        
+        [blockSelf.activityIndicator stopAnimating];
         [blockSelf.groupsCollection reloadData];
     }];
 }

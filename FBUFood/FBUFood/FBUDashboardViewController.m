@@ -27,6 +27,7 @@
 -(void)showAlertWithTitle:(NSString *)title message:(NSString *)message;
 @property (weak, nonatomic) IBOutlet UIView *blankView;
 @property (weak, nonatomic) IBOutlet UICollectionView *dashboardCollectionView;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 
 @end
 
@@ -149,6 +150,8 @@
             blockSelf.dashboardCollectionView.hidden = YES;
             blockSelf.blankView.hidden = NO;
         } else {
+            blockSelf.blankView.hidden = YES;
+            [blockSelf.activityIndicator stopAnimating];
             [blockSelf.dashboardCollectionView reloadData];
         }
     }];
