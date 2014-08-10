@@ -18,6 +18,27 @@
 
 @synthesize recipeArray, tableView;
 
+- (IBAction)toggleEditingMode:(id)sender
+{
+    if (self.tableView.isEditing) {
+        [sender setTitle:@"Edit"];
+        [self.tableView setEditing:NO animated:YES];
+    } else {
+        [sender setTitle:@"Done"];
+        [self.tableView setEditing:YES animated:YES];
+    }
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        NSMutableArray *myItems = [[NSMutableArray alloc]initWithArray:self.recipeArray];
+        [myItems removeObject:self.recipeArray[indexPath.row]];
+        [self.recipeArray[indexPath.row] deleteInBackground];
+        self.recipeArray = myItems;
+        [self.tableView reloadData];
+    }
+}
 
 - (void)viewDidLoad
 {

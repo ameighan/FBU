@@ -18,6 +18,9 @@
     [super viewDidLoad];
     self.itemNameLabel.text = self.item.itemName;
     UIImage *image = [UIImage imageWithData:[self.item.picture getData]];
+    if (image == nil) {
+        NSLog(@"OMG UMA");
+    }
     self.imageOfBucketListItem.image = image;
     UIImage *backImage = [UIImage imageNamed:@"Imagination.jpg"];
     [self.backgroundImageView setImage:backImage];
@@ -28,11 +31,7 @@
     if([segue.identifier isEqualToString:@"detailToEditViewController"]){
         
         FBUBucketListDetailViewController *controller = (FBUBucketListDetailViewController *)segue.destinationViewController;
-        
         controller.title = @"Edit Bucket List Item";
-        
-        controller.item.itemName = self.item.itemName;
-        controller.item.picture = self.item.picture;
         controller.item = self.item;
         
     }

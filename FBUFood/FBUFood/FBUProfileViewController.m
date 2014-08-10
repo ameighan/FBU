@@ -25,7 +25,6 @@
 
 @implementation FBUProfileViewController
 
-
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];

@@ -16,7 +16,7 @@
 
 - (IBAction)toggleEditingMode:(id)sender
 {
-    if (self.isEditing) {
+    if (self.tableView.isEditing) {
         [sender setTitle:@"Edit"];
         [self.tableView setEditing:NO animated:NO];
     } else {
@@ -32,6 +32,7 @@
         [myItems removeObject:self.items[indexPath.row]];
         [self.items[indexPath.row] deleteInBackground];
         self.items = myItems;
+        [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
         [self.tableView reloadData];
     }
 }
@@ -68,11 +69,8 @@
 {
     if ([segue.identifier isEqualToString:@"BucketListCell"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        
         FBUBucketListItem *myItem = self.items[indexPath.row];
-        
         FBUBucketListViewController *itemsViewController = segue.destinationViewController;
-        
         itemsViewController.item = myItem;
     }
 }
