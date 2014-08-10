@@ -144,6 +144,8 @@
     __weak FBUDashboardViewController *blockSelf = self;
     PFQuery *eventQuery = [FBUEvent query];
     [eventQuery whereKey:@"membersOfEvent" equalTo:[PFUser currentUser]];
+    [eventQuery includeKey:@"eventGroceryList"];
+    [eventQuery includeKey:@"recipesInEvent"];
     [eventQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         blockSelf.eventsArray = objects;
         if (blockSelf.eventsArray.count == 0){

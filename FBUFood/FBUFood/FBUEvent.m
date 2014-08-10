@@ -30,7 +30,7 @@
 @dynamic mealsLeftCounter;
 @dynamic recipesInEvent;
 @dynamic membersOfEvent;
-@dynamic groceryList;
+@dynamic eventGroceryList;
 @dynamic creator;
 @dynamic featureImage;
 

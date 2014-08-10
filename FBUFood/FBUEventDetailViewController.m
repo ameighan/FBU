@@ -80,7 +80,7 @@
                               self.event.creator = [PFUser currentUser];
                               [self.event addObject:[PFUser currentUser] forKey:@"membersOfEvent"];
                               
-                              self.event.eventDescription =self.eventDescriptionTextView.text;
+                              self.event.eventDescription = self.eventDescriptionTextView.text;
                               self.event.eventAddress = self.eventAddressTextField.text;
                               self.event.eventMeals = self.eventMealsTextField.text;
                               

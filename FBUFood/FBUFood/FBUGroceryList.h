@@ -8,13 +8,15 @@
 
 #import <Foundation/Foundation.h>
 #import <Parse/Parse.h>
+#import "FBURecipe.h"
 
 @interface FBUGroceryList : PFObject <PFSubclassing>
 
 + (NSString *)parseClassName;
 
-@property (strong, nonatomic) NSArray *recipesToFollow;
-@property (strong, nonatomic) NSArray *ingredientsToBuy;
+@property (strong, nonatomic) NSMutableArray *recipesToFollow;
+@property (strong, nonatomic) NSMutableArray *ingredientsToBuy;
 
+- (void)fillInGroceryList;
 
 @end

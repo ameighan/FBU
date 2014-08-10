@@ -31,7 +31,7 @@
 @property (nonatomic) int mealsLeftCounter;
 @property (strong, nonatomic) NSMutableArray *recipesInEvent;
 @property (strong, nonatomic) NSMutableArray *membersOfEvent;
-@property (strong, nonatomic) FBUGroceryList *groceryList;
+@property (strong, nonatomic) FBUGroceryList *eventGroceryList;
 @property (strong, nonatomic) PFUser *creator;
 
 @property(strong, nonatomic) PFFile *featureImage;

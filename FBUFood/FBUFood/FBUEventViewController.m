@@ -11,6 +11,7 @@
 #import "FBUMembersViewController.h"
 #import "FBUEventDetailViewController.h"
 #import "FBUGroupsRecipesViewController.h"
+#import "FBUGroceryListViewController.h"
 
 @interface FBUEventViewController () <CLLocationManagerDelegate>
 
@@ -42,6 +43,8 @@
 
     [self locateEventOnMap];
     [self zoomToLocation];
+    [self importRecipesToGroceryList];
+    
     
     self.title = self.event.eventName;
     self.eventLocationLabel.text = self.event.eventAddress;
@@ -60,6 +63,17 @@
         self.eventJoinButton.hidden = YES;
         self.eventJoinButton.enabled = NO;
     }
+}
+
+- (void)importRecipesToGroceryList
+{
+    if (!self.event.eventGroceryList) {
+        self.event.eventGroceryList = [[FBUGroceryList alloc] init];
+    }
+    self.event.eventGroceryList.recipesToFollow = self.event.recipesInEvent;
+    [self.event saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        NSLog(@"Saving grocery list: %@", self.event.eventGroceryList.recipesToFollow);
+    }];
 }
 
 
@@ -104,6 +118,11 @@
         recipesViewController.recipesArray = self.event.recipesInEvent;
         recipesViewController.title = @"Event Recipes";
         
+    } else if ([segue.identifier isEqualToString:@"groceryList"]) {
+        FBUGroceryListViewController *groceryListViewController = segue.destinationViewController;
+        
+        groceryListViewController.groceryList = self.event.eventGroceryList;
+        groceryListViewController.title = @"Grocery List";
     }
 }
 

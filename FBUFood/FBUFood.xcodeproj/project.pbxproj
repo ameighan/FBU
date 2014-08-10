@@ -38,6 +38,7 @@
 		96C1E241197D825300266DB8 /* FBUBucketListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96C1E240197D825300266DB8 /* FBUBucketListViewController.m */; };
 		96C1E245197F01DF00266DB8 /* FBUExploreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96C1E244197F01DF00266DB8 /* FBUExploreViewController.m */; };
 		96EBDE8F1970AF1300DE0033 /* FBUGroupsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96EBDE8E1970AF1300DE0033 /* FBUGroupsListViewController.m */; };
+		D25A4C9C199581D400267D35 /* FBUGroceryListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D25A4C9B199581D400267D35 /* FBUGroceryListViewController.m */; };
 		D260A3161991B57A006BBBDE /* FBUEventCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D260A3151991B57A006BBBDE /* FBUEventCollectionViewCell.m */; };
 		D28632CB19772779007BBD28 /* FBUGroupsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D28632C919772779007BBD28 /* FBUGroupsDetailViewController.m */; };
 		D28632DB197F1E0B007BBD28 /* FBUEventDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D28632DA197F1E0B007BBD28 /* FBUEventDetailViewController.m */; };
@@ -61,7 +62,6 @@
 		D2AF54CD197059B000F0A0F2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2AF54CC197059B000F0A0F2 /* Main.storyboard */; };
 		D2AF54D319705B4B00F0A0F2 /* FBUProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2AF54D219705B4B00F0A0F2 /* FBUProfileViewController.m */; };
 		D2AF54D619705DF200F0A0F2 /* FBUDashboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2AF54D519705DF200F0A0F2 /* FBUDashboardViewController.m */; };
-		D2AF54D919705E0700F0A0F2 /* FBUSubscriptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2AF54D819705E0700F0A0F2 /* FBUSubscriptionsViewController.m */; };
 		D2AF54DC1970607A00F0A0F2 /* FBURecipesListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2AF54DB1970607A00F0A0F2 /* FBURecipesListViewController.m */; };
 		D2AF54E419706C0100F0A0F2 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2AF54E319706C0100F0A0F2 /* Parse.framework */; };
 		D2AF54F119706CC800F0A0F2 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2AF54E519706C7200F0A0F2 /* Accounts.framework */; };
@@ -145,6 +145,8 @@
 		96C1E244197F01DF00266DB8 /* FBUExploreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBUExploreViewController.m; sourceTree = "<group>"; };
 		96EBDE8D1970AF1300DE0033 /* FBUGroupsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBUGroupsListViewController.h; sourceTree = "<group>"; };
 		96EBDE8E1970AF1300DE0033 /* FBUGroupsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBUGroupsListViewController.m; sourceTree = "<group>"; };
+		D25A4C9A199581D400267D35 /* FBUGroceryListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBUGroceryListViewController.h; sourceTree = "<group>"; };
+		D25A4C9B199581D400267D35 /* FBUGroceryListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBUGroceryListViewController.m; sourceTree = "<group>"; };
 		D260A3141991B57A006BBBDE /* FBUEventCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBUEventCollectionViewCell.h; sourceTree = "<group>"; };
 		D260A3151991B57A006BBBDE /* FBUEventCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBUEventCollectionViewCell.m; sourceTree = "<group>"; };
 		D28632C819772779007BBD28 /* FBUGroupsDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBUGroupsDetailViewController.h; sourceTree = "<group>"; };
@@ -182,8 +184,6 @@
 		D2AF54D219705B4B00F0A0F2 /* FBUProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBUProfileViewController.m; sourceTree = "<group>"; };
 		D2AF54D419705DF200F0A0F2 /* FBUDashboardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBUDashboardViewController.h; sourceTree = "<group>"; };
 		D2AF54D519705DF200F0A0F2 /* FBUDashboardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBUDashboardViewController.m; sourceTree = "<group>"; };
-		D2AF54D719705E0700F0A0F2 /* FBUSubscriptionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBUSubscriptionsViewController.h; sourceTree = "<group>"; };
-		D2AF54D819705E0700F0A0F2 /* FBUSubscriptionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBUSubscriptionsViewController.m; sourceTree = "<group>"; };
 		D2AF54DA1970607A00F0A0F2 /* FBURecipesListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBURecipesListViewController.h; sourceTree = "<group>"; };
 		D2AF54DB1970607A00F0A0F2 /* FBURecipesListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBURecipesListViewController.m; sourceTree = "<group>"; };
 		D2AF54DD197062F100F0A0F2 /* FBUGroupsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBUGroupsViewController.h; sourceTree = "<group>"; };
@@ -387,6 +387,17 @@
 			name = ExploreApp;
 			sourceTree = "<group>";
 		};
+		D25A4C9919955FE100267D35 /* Grocery List */ = {
+			isa = PBXGroup;
+			children = (
+				D295F99E19760D68000ED2C1 /* FBUGroceryList.h */,
+				D295F99F19760D68000ED2C1 /* FBUGroceryList.m */,
+				D25A4C9A199581D400267D35 /* FBUGroceryListViewController.h */,
+				D25A4C9B199581D400267D35 /* FBUGroceryListViewController.m */,
+			);
+			name = "Grocery List";
+			sourceTree = "<group>";
+		};
 		D2AF54911970595E00F0A0F2 = {
 			isa = PBXGroup;
 			children = (
@@ -455,17 +466,14 @@
 				930320D91976F6E900629269 /* Groups */,
 				93ED1EE91989BBBD000CF446 /* Recipes */,
 				930320D71976F41100629269 /* BucketList */,
+				D25A4C9919955FE100267D35 /* Grocery List */,
 				930320D61976F38B00629269 /* Profile */,
 				93F248C71981AFEC00FC82BD /* Login/Signup */,
 				93FAA48E1991E705005B43AF /* Custom Collection View  */,
-				D2AF54D719705E0700F0A0F2 /* FBUSubscriptionsViewController.h */,
-				D2AF54D819705E0700F0A0F2 /* FBUSubscriptionsViewController.m */,
 				D260A3141991B57A006BBBDE /* FBUEventCollectionViewCell.h */,
 				D260A3151991B57A006BBBDE /* FBUEventCollectionViewCell.m */,
 				D2AF54D419705DF200F0A0F2 /* FBUDashboardViewController.h */,
 				D2AF54D519705DF200F0A0F2 /* FBUDashboardViewController.m */,
-				D295F99E19760D68000ED2C1 /* FBUGroceryList.h */,
-				D295F99F19760D68000ED2C1 /* FBUGroceryList.m */,
 				D2AF54AF1970595F00F0A0F2 /* Images.xcassets */,
 				D2AF54A41970595F00F0A0F2 /* Supporting Files */,
 			);
@@ -619,6 +627,7 @@
 				9607499D1978985C00853E97 /* FBUGroupsViewController.m in Sources */,
 				D28632DE197F1E4C007BBD28 /* FBUEventViewController.m in Sources */,
 				D295F99D1976029D000ED2C1 /* FBURecipe.m in Sources */,
+				D25A4C9C199581D400267D35 /* FBUGroceryListViewController.m in Sources */,
 				969C8E6D1983060400D0E7B3 /* FBUMembersViewController.m in Sources */,
 				966554D61973B28700DDBED0 /* FBUEditProfileViewController.m in Sources */,
 				93D9D35F19916BEB00ABCC5B /* FBUCollectionViewLayout.m in Sources */,
@@ -651,7 +660,6 @@
 				D295F9971975FBB3000ED2C1 /* FBUGroup.m in Sources */,
 				93ED1EEF1989BC36000CF446 /* FBURecipeDirectionsViewController.m in Sources */,
 				D295F9A019760D68000ED2C1 /* FBUGroceryList.m in Sources */,
-				D2AF54D919705E0700F0A0F2 /* FBUSubscriptionsViewController.m in Sources */,
 				9663F083199736FF00B69649 /* FBURecipesYummylyViewController.m in Sources */,
 				D2AF54AA1970595F00F0A0F2 /* main.m in Sources */,
 				96C1E241197D825300266DB8 /* FBUBucketListViewController.m in Sources */,
