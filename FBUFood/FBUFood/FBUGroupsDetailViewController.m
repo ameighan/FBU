@@ -10,6 +10,7 @@
 #import "FBUGroup.h"
 
 @interface FBUGroupsDetailViewController () <UITextViewDelegate>
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
 
 @end
 
@@ -45,47 +46,60 @@
 }
 
 
-- (IBAction)userDidSave:(id)sender
+-(void)saveGroup
 {
-    //Make an alert that says that the data is saved for UI purposes
-    
-    [self showAlertWithTitle: [NSString stringWithFormat:@"%@", self.nameOfGroupTextField.text]
-                     message: [NSString stringWithFormat:@"%@ was saved!", self.nameOfGroupTextField.text]];
-    
-    
     //Saves the data to Parse as a FBUGroup (subclass of PFObject)
     
     FBUGroup *newGroup = [FBUGroup object];
     newGroup.groupName = self.nameOfGroupTextField.text;
     newGroup.groupDescription = self.descriptionOfGroupTextView.text;
+    
+    if (!self.imageView.image) {
+        UIImage *image = [UIImage imageNamed:@"dining.png"];
+        NSData *imageData = UIImageJPEGRepresentation(image, 0.8);
+        NSString *filename = [NSString stringWithFormat:@"%@.png", @"group image"];
+        PFFile *imageFile = [PFFile fileWithName:filename data:imageData];
+        newGroup.groupImage = imageFile;
+        newGroup.groupImageHeight = image.size.height/10;
+    } else {
+        NSData *imageData = UIImageJPEGRepresentation(self.imageView.image, 0.8);
+        NSString *filename = [NSString stringWithFormat:@"%@.png", @"group image"];
+        PFFile *imageFile = [PFFile fileWithName:filename data:imageData];
+        newGroup.groupImage = imageFile;
+        newGroup.groupImageHeight = self.imageView.image.size.height;
+    }
     newGroup.owner = [PFUser currentUser];
     [newGroup addObject:[PFUser currentUser] forKey:@"cooksInGroup"];
     [newGroup addObject:[PFUser currentUser] forKey:@"subscribersOfGroup"];
     
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"h:mm a"];
-    NSString *meetingTime = [dateFormatter stringFromDate:self.generalMeetingTimesDatePicker.date];
-    
-    newGroup.generalMeetingTimes = [NSString stringWithFormat:@"%@ at %@", self.dayOfWeekTextField.text, meetingTime];
-    
-    [newGroup saveInBackground];
-    NSLog(@"%@", newGroup.cooksInGroup);
-    NSLog(@"%@", newGroup.subscribersOfGroup);
-    
+    [newGroup saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        NSLog(@"%@", newGroup.cooksInGroup);
+        NSLog(@"%@", newGroup.subscribersOfGroup);
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"savedGroup" object:self];
+    }];
+
+}
+
+
+
+- (IBAction)takePicture:(id)sender
+{
+    UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
+    imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    imagePicker.delegate = self;
+    [self presentViewController:imagePicker animated:YES completion:NULL];
     
 }
 
--(void)showAlertWithTitle:(NSString *)title message:(NSString *)message
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
-    
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title
-                                                    message:message
-                                                   delegate:nil
-                                          cancelButtonTitle:@"OK"
-                                          otherButtonTitles:nil];
-    
-    [alert show];
+    UIImage *image = info[UIImagePickerControllerOriginalImage];
+    self.imageView.image = image;
+    [self dismissViewControllerAnimated:YES completion:NULL];
 }
+
+
+
 
 
 

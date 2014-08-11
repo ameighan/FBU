@@ -162,15 +162,8 @@
     if (!group.groupImage) {
         return 200;
     }
-    UIImageView* imageView = [[UIImageView alloc] initWithImage:[UIImage imageWithData:[group.groupImage getData]]];
-    CGSize rctSizeOriginal = imageView.bounds.size;
-    double scale = (222  - (kCollectionCellBorderLeft + kCollectionCellBorderRight)) / rctSizeOriginal.width;
-    CGSize rctSizeFinal = CGSizeMake(rctSizeOriginal.width * scale,rctSizeOriginal.height * scale);
-    imageView.frame = CGRectMake(kCollectionCellBorderLeft,kCollectionCellBorderTop,rctSizeFinal.width,rctSizeFinal.height);
     
-    CGFloat height = imageView.bounds.size.height + 15;
-    
-    return height;
+    return group.groupImageHeight + 80;
 }
 
 
@@ -192,9 +185,35 @@
     // remove subviews from previous usage of this cell
     [[cell.contentView subviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
     
-    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageWithData:[group.groupImage getData]]];
+    UIImageView *imageView = [[UIImageView alloc] init];
+    [group.groupImage getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+        imageView.image = [UIImage imageWithData:data];
+        CGSize rctSizeOriginal = imageView.bounds.size;
+        double scale = (cell.bounds.size.width  - (kCollectionCellBorderLeft + kCollectionCellBorderRight)) / rctSizeOriginal.width;
+        CGSize rctSizeFinal = CGSizeMake(rctSizeOriginal.width * scale,rctSizeOriginal.height * scale);
+        imageView.frame = CGRectMake(kCollectionCellBorderLeft,kCollectionCellBorderTop + 20,rctSizeFinal.width,rctSizeFinal.height);
+        
+        [cell.contentView addSubview:imageView];
+        
+        CGRect descriptionLabel = CGRectMake(kCollectionCellBorderLeft,kCollectionCellBorderTop + rctSizeFinal.height + 15,rctSizeFinal.width,40);
+        CGRect nameLabel = CGRectMake(kCollectionCellBorderLeft,kCollectionCellBorderTop, rctSizeFinal.width,15);
+        
+        UILabel* name = [[UILabel alloc] initWithFrame:nameLabel];
+        name.numberOfLines = 0;
+        name.font = [UIFont systemFontOfSize:12];
+        
+        UILabel* description = [[UILabel alloc] initWithFrame:descriptionLabel];
+        description.numberOfLines = 2;
+        description.font = [UIFont systemFontOfSize:12];
+        
+        name.text = [group groupName];
+        description.text = [group groupDescription];
+        
+        [cell.contentView addSubview:name];
+        [cell.contentView addSubview:description];
+    }];
     
-    CGSize rctSizeOriginal = imageView.bounds.size;
+    CGSize rctSizeOriginal = CGSizeMake(100,100);
     double scale = (cell.bounds.size.width  - (kCollectionCellBorderLeft + kCollectionCellBorderRight)) / rctSizeOriginal.width;
     CGSize rctSizeFinal = CGSizeMake(rctSizeOriginal.width * scale,rctSizeOriginal.height * scale);
     imageView.frame = CGRectMake(kCollectionCellBorderLeft,kCollectionCellBorderTop + 20,rctSizeFinal.width,rctSizeFinal.height);

@@ -89,10 +89,13 @@
     
     FBUEvent *event = self.group.eventsInGroup[indexPath.row];
     
-    [event.eventFeatureDish fetchIfNeeded];
     
-    UIImage *eventFeatureDishImage = [UIImage imageWithData:[event.eventFeatureDish.image getData]];
-    cell.eventImageView.image = eventFeatureDishImage;
+    [event.featureImage getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+        cell.eventImageView.image = [UIImage imageWithData:data];
+    }];
+    
+    
+//    cell.eventImageView.image = eventFeatureDishImage;
    
     cell.eventNameLabel.text = event.eventName;
     cell.eventTimeDateLabel.text = event.eventTimeDate;

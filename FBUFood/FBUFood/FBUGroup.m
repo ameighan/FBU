@@ -22,12 +22,13 @@
 
 @dynamic groupName;
 @dynamic groupDescription;
-@dynamic generalMeetingTimes;
 @dynamic owner;
 @dynamic recipesInGroup;
 @dynamic eventsInGroup;
 @dynamic cooksInGroup;
 @dynamic subscribersOfGroup;
+@dynamic groupImage;
+@dynamic groupImageHeight;
 
 
 - (BOOL)checkIfUserIsInGroupArray:(NSMutableArray *)groupArray

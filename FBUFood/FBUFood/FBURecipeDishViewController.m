@@ -21,15 +21,30 @@
 {
     [super viewDidLoad];
     
-    UIImage *image = [UIImage imageWithData:[self.recipe.image getData]];
-    self.imageView.image = image;
+    UIActivityIndicatorView *indicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    indicator.color = [UIColor darkGrayColor];
+    [indicator startAnimating];
+    [indicator hidesWhenStopped];
+    [self.imageView addSubview: indicator];
+    
+    [self.recipe.image getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+        self.imageView.image = [UIImage imageWithData:data];
+        [indicator startAnimating];
+    }];
+    
     self.dishTitleLabel.text = self.recipe.title;
 
 }
 
 - (IBAction)userDidFeatureDish:(id)sender
 {
-    self.event.eventFeatureDish = self.recipe;
+    NSData *imageData = UIImageJPEGRepresentation(self.imageView.image, 0.8);
+    NSString *filename = [NSString stringWithFormat:@"%@.png", self.recipe.title];
+    PFFile *imageFile = [PFFile fileWithName:filename data:imageData];
+    self.event.featureImage = imageFile;
+    
+    self.event.featureImageHeight = self.imageView.bounds.size.height;
+    
     [self.event saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         NSLog(@"Saving featured recipe to %@", self.event);
     }];

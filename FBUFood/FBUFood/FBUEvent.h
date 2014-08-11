@@ -26,7 +26,7 @@
 @property (strong, nonatomic) FBUGroup *eventParentGroup;
 @property (nonatomic) PFGeoPoint *eventGeoPoint;
 @property (strong, nonatomic) PFUser *eventOwner;
-@property (strong, nonatomic) FBURecipe *eventFeatureDish;
+//@property (strong, nonatomic) FBURecipe *eventFeatureDish;
 
 @property (nonatomic) int mealsLeftCounter;
 @property (strong, nonatomic) NSMutableArray *recipesInEvent;
@@ -35,6 +35,7 @@
 @property (strong, nonatomic) PFUser *creator;
 
 @property(strong, nonatomic) PFFile *featureImage;
+@property(nonatomic) CGFloat featureImageHeight;
 
 - (BOOL)checkIfUserIsInEventArray:(NSMutableArray *)eventArray;
 

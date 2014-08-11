@@ -101,7 +101,6 @@
     self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
     
     [self.locationManager startUpdatingLocation];
-    NSLog(@"Location manager is beginning to update location.");
     
     if (![PFUser currentUser]) { // No user logged in
         [self makeLoginAppear];
@@ -123,19 +122,22 @@
 - (CGFloat)collectionView:(UICollectionView*)collectionView layout:(UICollectionViewLayout*)collectionViewLayout heightForItemAtIndexPath:(NSIndexPath*)indexPath
 {
     FBUEvent *event = self.eventsArray[indexPath.row];
-    if (!event.featureImage) {
+    if (!event.featureImageHeight) {
         return 200;
     }
     
-    UIImageView* imageView = [[UIImageView alloc] initWithImage:[UIImage imageWithData:[event.featureImage getData]]];
-    CGSize rctSizeOriginal = imageView.bounds.size;
-    double scale = (222  - (kCollectionCellBorderLeft + kCollectionCellBorderRight)) / rctSizeOriginal.width;
-    CGSize rctSizeFinal = CGSizeMake(rctSizeOriginal.width * scale,rctSizeOriginal.height * scale);
-    imageView.frame = CGRectMake(kCollectionCellBorderLeft,kCollectionCellBorderTop,rctSizeFinal.width,rctSizeFinal.height);
     
-    CGFloat height = imageView.bounds.size.height + 50;
+//    UIImageView* imageView = [[UIImageView alloc] initWithImage:[UIImage imageWithData:[event.featureImage getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+//        code
+//    }]]];
+//    CGSize rctSizeOriginal = imageView.bounds.size;
+//    double scale = (222  - (kCollectionCellBorderLeft + kCollectionCellBorderRight)) / rctSizeOriginal.width;
+//    CGSize rctSizeFinal = CGSizeMake(rctSizeOriginal.width * scale,rctSizeOriginal.height * scale);
+//    imageView.frame = CGRectMake(kCollectionCellBorderLeft,kCollectionCellBorderTop,rctSizeFinal.width,rctSizeFinal.height);
+//    
+//    CGFloat height = imageView.bounds.size.height + 50;
     
-    return height;
+    return event.featureImageHeight;
 }
 
 # pragma mark - Collection View Data Source
@@ -186,36 +188,83 @@
     [[cell.contentView subviews] makeObjectsPerformSelector:@selector(removeFromSuperview)];
     
     if (!event.featureImage) {
+        UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"fork&knife.png"]];
+        
+        CGSize rctSizeOriginal = imageView.bounds.size;
+        double scale = (cell.bounds.size.width  - (kCollectionCellBorderLeft + kCollectionCellBorderRight)) / rctSizeOriginal.width;
+        CGSize rctSizeFinal = CGSizeMake(rctSizeOriginal.width * scale,rctSizeOriginal.height * scale);
+        imageView.frame = CGRectMake(kCollectionCellBorderLeft,kCollectionCellBorderTop + 20,rctSizeFinal.width,rctSizeFinal.height);
+        
+        [cell.contentView addSubview:imageView];
+        
+        CGRect descriptionLabel = CGRectMake(kCollectionCellBorderLeft,kCollectionCellBorderTop + rctSizeFinal.height + 10,rctSizeFinal.width,65);
+        CGRect nameLabel = CGRectMake(kCollectionCellBorderLeft,kCollectionCellBorderTop, rctSizeFinal.width,15);
+        
+        UILabel* name = [[UILabel alloc] initWithFrame:nameLabel];
+        name.numberOfLines = 0;
+        name.font = [UIFont systemFontOfSize:12];
+        
+        UILabel* description = [[UILabel alloc] initWithFrame:descriptionLabel];
+        description.numberOfLines = 2;
+        description.font = [UIFont systemFontOfSize:12];
+        
+        name.text = [event eventName];
+        description.text = [event eventDescription];
+        
+        [cell.contentView addSubview:name];
+        [cell.contentView addSubview:description];
+        
         return cell;
     } else {
-    
-    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageWithData:[event.featureImage getData]]];
-    
-    CGSize rctSizeOriginal = imageView.bounds.size;
-    double scale = (cell.bounds.size.width  - (kCollectionCellBorderLeft + kCollectionCellBorderRight)) / rctSizeOriginal.width;
-    CGSize rctSizeFinal = CGSizeMake(rctSizeOriginal.width * scale,rctSizeOriginal.height * scale);
-    imageView.frame = CGRectMake(kCollectionCellBorderLeft,kCollectionCellBorderTop + 20,rctSizeFinal.width,rctSizeFinal.height);
-    
-    [cell.contentView addSubview:imageView];
-    
-    CGRect descriptionLabel = CGRectMake(kCollectionCellBorderLeft,kCollectionCellBorderTop + rctSizeFinal.height + 10,rctSizeFinal.width,65);
-    CGRect nameLabel = CGRectMake(kCollectionCellBorderLeft,kCollectionCellBorderTop, rctSizeFinal.width,15);
+        UIImageView *imageView = [[UIImageView alloc] init];
+        
+        UIActivityIndicatorView *indicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+        indicator.color = [UIColor darkGrayColor];
+        [indicator startAnimating];
+        [indicator hidesWhenStopped];
+        
+        [imageView addSubview:indicator];
+        
+        [event.featureImage getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+            [imageView removeFromSuperview];
+            imageView.image = [UIImage imageWithData:data];
+            [indicator stopAnimating];
+            
+            CGSize rctSizeOriginal = imageView.bounds.size;
+            double scale = (cell.bounds.size.width  - (kCollectionCellBorderLeft + kCollectionCellBorderRight)) / rctSizeOriginal.width;
+            CGSize rctSizeFinal = CGSizeMake(rctSizeOriginal.width * scale,rctSizeOriginal.height * scale);
+            imageView.frame = CGRectMake(kCollectionCellBorderLeft,kCollectionCellBorderTop + 20,rctSizeFinal.width,rctSizeFinal.height);
+            
+            [cell.contentView addSubview:imageView];
+            
+        }];
+        
+        CGSize rctSizeOriginal = CGSizeMake(80,event.featureImageHeight-100);
+        double scale = (cell.bounds.size.width  - (kCollectionCellBorderLeft + kCollectionCellBorderRight)) / rctSizeOriginal.width;
+        CGSize rctSizeFinal = CGSizeMake(rctSizeOriginal.width * scale,rctSizeOriginal.height * scale);
+        imageView.frame = CGRectMake(kCollectionCellBorderLeft,kCollectionCellBorderTop + 20,rctSizeFinal.width,rctSizeFinal.height);
+        
+        [cell.contentView addSubview:imageView];
+        
+        CGRect descriptionLabel = CGRectMake(kCollectionCellBorderLeft,kCollectionCellBorderTop + rctSizeFinal.height + 10,rctSizeFinal.width,65);
+        CGRect nameLabel = CGRectMake(kCollectionCellBorderLeft,kCollectionCellBorderTop, rctSizeFinal.width,15);
+        
+        UILabel* name = [[UILabel alloc] initWithFrame:nameLabel];
+        name.numberOfLines = 0;
+        name.font = [UIFont systemFontOfSize:12];
+        
+        UILabel* description = [[UILabel alloc] initWithFrame:descriptionLabel];
+        description.numberOfLines = 2;
+        description.font = [UIFont systemFontOfSize:12];
+        
+        name.text = [event eventName];
+        description.text = [event eventDescription];
+        
+        [cell.contentView addSubview:name];
+        [cell.contentView addSubview:description];
+        
+        return cell;
 
-    UILabel* name = [[UILabel alloc] initWithFrame:nameLabel];
-    name.numberOfLines = 0;
-    name.font = [UIFont systemFontOfSize:12];
-    
-    UILabel* description = [[UILabel alloc] initWithFrame:descriptionLabel];
-    description.numberOfLines = 2;
-    description.font = [UIFont systemFontOfSize:12];
-    
-    name.text = [event eventName];
-    description.text = [event eventDescription];
-    
-    [cell.contentView addSubview:name];
-    [cell.contentView addSubview:description];
-
-    return cell;
     }
 }
 

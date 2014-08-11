@@ -25,7 +25,7 @@
 @dynamic eventMeals;
 @dynamic eventParentGroup;
 @dynamic eventOwner;
-@dynamic eventFeatureDish;
+//@dynamic eventFeatureDish;
 @dynamic eventGeoPoint;
 @dynamic mealsLeftCounter;
 @dynamic recipesInEvent;
@@ -33,6 +33,7 @@
 @dynamic eventGroceryList;
 @dynamic creator;
 @dynamic featureImage;
+@dynamic featureImageHeight;
 
 
 - (BOOL)checkIfUserIsInEventArray:(NSMutableArray *)eventArray

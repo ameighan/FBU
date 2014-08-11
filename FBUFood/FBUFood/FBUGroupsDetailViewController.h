@@ -12,11 +12,9 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *nameOfGroupTextField;
 @property (weak, nonatomic) IBOutlet UITextView *descriptionOfGroupTextView;
-@property (weak, nonatomic) IBOutlet UITextField *dayOfWeekTextField;
-@property (weak, nonatomic) IBOutlet UIDatePicker *generalMeetingTimesDatePicker;
 @property (weak, nonatomic) IBOutlet UIButton *addRecipesToGroupButton;
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *saveGroupButton;
 @property (weak, nonatomic) IBOutlet UIButton *addCooksToGroupButton;
 
+-(void)saveGroup;
 
 @end
