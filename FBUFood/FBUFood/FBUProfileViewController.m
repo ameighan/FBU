@@ -103,6 +103,8 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+    //UIImage *myImage = [UIImage imageNamed:@"RecipeButton.png"];
+    //[self.imageView setImage:myImage];
     [self queryForUserData];
 }
 

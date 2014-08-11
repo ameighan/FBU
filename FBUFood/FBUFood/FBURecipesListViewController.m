@@ -43,6 +43,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    UIImage *myImage = [UIImage imageNamed:@"RecipeList.jpg"];
+    [self.imageView setImage:myImage];
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(queryForRecipes) name:@"savedToParse" object:nil];
     if (self.recipeArray == nil) {
         [self queryForRecipes];

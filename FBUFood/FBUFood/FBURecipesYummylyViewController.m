@@ -140,7 +140,7 @@
     if([segue.identifier isEqualToString:@"seeInsideView"]){
         
         FBURecipeViewController *controller = (FBURecipeViewController *)segue.destinationViewController;
-        NSIndexPath *ip = [self.recipesTableView indexPathForCell:sender];
+        NSIndexPath *ip = [self.recipesTableView indexPathForSelectedRow];
         controller.recipe = self.yummlyRecipes[ip.row];
         
     }

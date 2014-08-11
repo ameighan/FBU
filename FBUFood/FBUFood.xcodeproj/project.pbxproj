@@ -26,6 +26,7 @@
 		93F248D31981D86300FC82BD /* FBULogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F248D21981D86300FC82BD /* FBULogInViewController.m */; };
 		9607499D1978985C00853E97 /* FBUGroupsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9607499C1978985C00853E97 /* FBUGroupsViewController.m */; };
 		9663F083199736FF00B69649 /* FBURecipesYummylyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9663F082199736FF00B69649 /* FBURecipesYummylyViewController.m */; };
+		9663F089199840F900B69649 /* RecipeList.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9663F088199840F900B69649 /* RecipeList.jpg */; };
 		966554D61973B28700DDBED0 /* FBUEditProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 966554D51973B28700DDBED0 /* FBUEditProfileViewController.m */; };
 		966554D9197443B200DDBED0 /* FBUBucketListDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 966554D8197443B200DDBED0 /* FBUBucketListDetailViewController.m */; };
 		966554DF197450B500DDBED0 /* FBUBucketListItemsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 966554DE197450B500DDBED0 /* FBUBucketListItemsViewController.m */; };
@@ -129,6 +130,7 @@
 		9607499E1979D25200853E97 /* FBUBucketListItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FBUBucketListItem.h; sourceTree = "<group>"; };
 		9663F081199736FF00B69649 /* FBURecipesYummylyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBURecipesYummylyViewController.h; sourceTree = "<group>"; };
 		9663F082199736FF00B69649 /* FBURecipesYummylyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBURecipesYummylyViewController.m; sourceTree = "<group>"; };
+		9663F088199840F900B69649 /* RecipeList.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = RecipeList.jpg; sourceTree = "<group>"; };
 		966554D41973B28700DDBED0 /* FBUEditProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBUEditProfileViewController.h; sourceTree = "<group>"; };
 		966554D51973B28700DDBED0 /* FBUEditProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBUEditProfileViewController.m; sourceTree = "<group>"; };
 		966554D7197443B200DDBED0 /* FBUBucketListDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBUBucketListDetailViewController.h; sourceTree = "<group>"; };
@@ -467,6 +469,7 @@
 				96BC1E811992D95F009953A4 /* New.png */,
 				96BC1E831992F6DB009953A4 /* BucketListBackground.jpg */,
 				968134301994B8EC00F48BD0 /* Imagination.jpg */,
+				9663F088199840F900B69649 /* RecipeList.jpg */,
 				9367F836199404B30099354D /* profile_default.png */,
 				D2AF54CC197059B000F0A0F2 /* Main.storyboard */,
 				969C8E6B1983060400D0E7B3 /* FBUMembersViewController.h */,
@@ -615,6 +618,7 @@
 				D2AF54CD197059B000F0A0F2 /* Main.storyboard in Resources */,
 				D2AF54A81970595F00F0A0F2 /* InfoPlist.strings in Resources */,
 				96BC1E841992F6DB009953A4 /* BucketListBackground.jpg in Resources */,
+				9663F089199840F900B69649 /* RecipeList.jpg in Resources */,
 				968134311994B8EC00F48BD0 /* Imagination.jpg in Resources */,
 				D2AF54B01970595F00F0A0F2 /* Images.xcassets in Resources */,
 				9367F837199404B30099354D /* profile_default.png in Resources */,

@@ -17,6 +17,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    UIImage *myImage = [UIImage imageNamed:@"RecipeList.jpg"];
+    [self.imageView setImage:myImage];
     // populated array from wherever the source was -> rename to unfetchedRecipesArray
     // fetchAll
       // in the callback -- set self.recipesArray =

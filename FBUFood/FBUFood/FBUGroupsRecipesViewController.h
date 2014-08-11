@@ -14,6 +14,7 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *recipesTableView;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *addRecipesButton;
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
 
 @property (strong, nonatomic) NSString *sourceVC;
 
