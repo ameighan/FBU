@@ -99,6 +99,7 @@
                               newEvent.eventAddress = self.eventAddressTextField.text;
                               newEvent.eventMeals = self.eventMealsTextField.text;
                               newEvent.creator = [PFUser currentUser];
+                              [newEvent addObject:[PFUser currentUser] forKey:@"membersOfEvent"];
                               
                               PFGeoPoint *geoPoint = [PFGeoPoint geoPointWithLocation:eventLocation];
                               newEvent.eventGeoPoint = geoPoint;
@@ -111,7 +112,7 @@
 
                               [newEvent saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
                                   NSLog(@"Saving new event");
-                                  [[NSNotificationCenter defaultCenter] postNotificationName:@"savedEvent" object:self];
+//                                  [[NSNotificationCenter defaultCenter] postNotificationName:@"savedEvent" object:self];
 
                               }];
                               [self.group saveInBackground];

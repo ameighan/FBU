@@ -12,6 +12,7 @@
 #import "FBUGroupsRecipesViewController.h"
 #import "FBUGroceryListViewController.h"
 #import "FBURecipeCollectionViewCell.h"
+#import "FBUUserCollectionViewCell.h"
 #import "FBURecipeViewController.h"
 #import "FBURecipe.h"
 
@@ -29,27 +30,20 @@
 
     [self locateEventOnMap];
     [self zoomToLocation];
-    [self importRecipesToGroceryList];
+//    [self importRecipesToGroceryList];
     self.eventRecipesCollectionView.backgroundColor = [UIColor clearColor];
-
+    NSLog(@"Members of Event: %@", self.event.membersOfEvent);
     
     
     self.title = self.event.eventName;
     self.eventLocationLabel.text = self.event.eventAddress;
     self.eventTimeDateLabel.text = self.event.eventTimeDate;
     self.eventMealsLabel.text = [@"Meals: " stringByAppendingString:self.event.eventMeals];
+    
     if (![self.event checkIfUserIsInEventArray:self.event.membersOfEvent]) {
         self.navigationItem.rightBarButtonItem = nil;
-    }
-    
-    if (self.event.membersOfEvent == NULL) {
-        NSLog(@"%@", self.event.membersOfEvent);
         self.eventJoinButton.hidden = NO;
         self.eventJoinButton.enabled = YES;
-    } else if ([self.event checkIfUserIsInEventArray:self.event.membersOfEvent]) {
-        NSLog(@"%@", self.event.membersOfEvent);
-        self.eventJoinButton.hidden = YES;
-        self.eventJoinButton.enabled = NO;
     }
 }
 
@@ -95,14 +89,33 @@
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     
-    FBURecipeCollectionViewCell *cell = [self.eventRecipesCollectionView dequeueReusableCellWithReuseIdentifier:@"recipe" forIndexPath:indexPath];
-    
-    FBURecipe *recipe = self.event.recipesInEvent[indexPath.row];
-    
-    UIImage *recipeImage = [UIImage imageWithData:[recipe.image getData]];
-    cell.recipeImage.image = recipeImage;
-
-    return cell;
+    if ([collectionView isEqual:self.eventRecipesCollectionView]) {
+        FBURecipeCollectionViewCell *cell = [self.eventRecipesCollectionView dequeueReusableCellWithReuseIdentifier:@"recipe" forIndexPath:indexPath];
+        
+        FBURecipe *recipe = self.event.recipesInEvent[indexPath.row];
+        [recipe fetchIfNeeded];
+        
+        UIImage *recipeImage = [UIImage imageWithData:[recipe.image getData]];
+        cell.recipeImage.image = recipeImage;
+        
+        return cell;
+        
+    }
+    if ([collectionView isEqual:self.eventMembersCollectionView]) {
+        
+        NSLog(@"Displaying members of event...");
+        
+        FBUUserCollectionViewCell *cell = [self.eventMembersCollectionView dequeueReusableCellWithReuseIdentifier:@"user" forIndexPath:indexPath];
+        
+        PFUser *member = self.event.membersOfEvent[indexPath.row];
+        [member fetchIfNeeded];
+        
+        UIImage *profilePicture = [UIImage imageWithData:[member[@"profileImage"] getData]];
+        cell.userProfileImage.image = profilePicture;
+        
+        return cell;
+    }
+    return false;
 }
 
 - (NSInteger) numberOfSectionsInCollectionView:(UICollectionView *)collectionView
@@ -113,7 +126,7 @@
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return [self.event.recipesInEvent count];
+        return [self.event.recipesInEvent count];
 }
 
 

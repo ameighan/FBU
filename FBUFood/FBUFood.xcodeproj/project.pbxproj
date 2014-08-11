@@ -51,6 +51,7 @@
 		D295F99A1976028F000ED2C1 /* FBUEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = D295F9991976028F000ED2C1 /* FBUEvent.m */; };
 		D295F99D1976029D000ED2C1 /* FBURecipe.m in Sources */ = {isa = PBXBuildFile; fileRef = D295F99C1976029D000ED2C1 /* FBURecipe.m */; };
 		D295F9A019760D68000ED2C1 /* FBUGroceryList.m in Sources */ = {isa = PBXBuildFile; fileRef = D295F99F19760D68000ED2C1 /* FBUGroceryList.m */; };
+		D2A2CC091999656600D25005 /* FBUUserCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A2CC081999656600D25005 /* FBUUserCollectionViewCell.m */; };
 		D2AF549E1970595E00F0A0F2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2AF549D1970595E00F0A0F2 /* Foundation.framework */; };
 		D2AF54A01970595E00F0A0F2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2AF549F1970595E00F0A0F2 /* CoreGraphics.framework */; };
 		D2AF54A21970595E00F0A0F2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2AF54A11970595E00F0A0F2 /* UIKit.framework */; };
@@ -175,6 +176,8 @@
 		D295F99C1976029D000ED2C1 /* FBURecipe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBURecipe.m; sourceTree = "<group>"; };
 		D295F99E19760D68000ED2C1 /* FBUGroceryList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBUGroceryList.h; sourceTree = "<group>"; };
 		D295F99F19760D68000ED2C1 /* FBUGroceryList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBUGroceryList.m; sourceTree = "<group>"; };
+		D2A2CC071999656600D25005 /* FBUUserCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBUUserCollectionViewCell.h; sourceTree = "<group>"; };
+		D2A2CC081999656600D25005 /* FBUUserCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBUUserCollectionViewCell.m; sourceTree = "<group>"; };
 		D2AF549A1970595E00F0A0F2 /* FBUFood.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FBUFood.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2AF549D1970595E00F0A0F2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D2AF549F1970595E00F0A0F2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -383,6 +386,8 @@
 		93FAA48E1991E705005B43AF /* Custom Collection View  */ = {
 			isa = PBXGroup;
 			children = (
+				D2A2CC071999656600D25005 /* FBUUserCollectionViewCell.h */,
+				D2A2CC081999656600D25005 /* FBUUserCollectionViewCell.m */,
 				D25A4CD9199845FD00267D35 /* FBURecipeCollectionViewCell.h */,
 				D25A4CDA199845FD00267D35 /* FBURecipeCollectionViewCell.m */,
 				D260A3141991B57A006BBBDE /* FBUEventCollectionViewCell.h */,
@@ -682,6 +687,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				931404C9197F03F9004D4447 /* FBUBucketListItem.m in Sources */,
+				D2A2CC091999656600D25005 /* FBUUserCollectionViewCell.m in Sources */,
 				9607499D1978985C00853E97 /* FBUGroupsViewController.m in Sources */,
 				D28632DE197F1E4C007BBD28 /* FBUEventViewController.m in Sources */,
 				D295F99D1976029D000ED2C1 /* FBURecipe.m in Sources */,
