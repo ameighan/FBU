@@ -1248,6 +1248,30 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="color" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                     </activityIndicatorView>
+                                    <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="G1d-jR-2Uh">
+                                        <rect key="frame" x="0.0" y="183" width="320" height="403"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                        <collectionViewLayout key="collectionViewLayout" id="xd0-Rf-W5M" customClass="FBUCollectionViewLayout"/>
+                                        <cells>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="groupCell" id="obd-5q-h2R">
+                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                </view>
+                                                <connections>
+                                                    <segue destination="H9r-p1-AHy" kind="push" identifier="groupCell" id="y2B-5h-yd3"/>
+                                                </connections>
+                                            </collectionViewCell>
+                                        </cells>
+                                        <connections>
+                                            <outlet property="dataSource" destination="ePa-N9-Sum" id="c0o-cd-Jel"/>
+                                            <outlet property="delegate" destination="ePa-N9-Sum" id="Gcg-Ri-a9X"/>
+                                        </connections>
+                                    </collectionView>
                                     <view contentMode="scaleToFill" id="jhX-Mo-cYA">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="183"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1301,30 +1325,6 @@
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                     </view>
-                                    <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="G1d-jR-2Uh">
-                                        <rect key="frame" x="0.0" y="183" width="320" height="403"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                        <collectionViewLayout key="collectionViewLayout" id="xd0-Rf-W5M" customClass="FBUCollectionViewLayout"/>
-                                        <cells>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="groupCell" id="obd-5q-h2R">
-                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                                <autoresizingMask key="autoresizingMask"/>
-                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                </view>
-                                                <connections>
-                                                    <segue destination="H9r-p1-AHy" kind="push" identifier="groupCell" id="y2B-5h-yd3"/>
-                                                </connections>
-                                            </collectionViewCell>
-                                        </cells>
-                                        <connections>
-                                            <outlet property="dataSource" destination="ePa-N9-Sum" id="c0o-cd-Jel"/>
-                                            <outlet property="delegate" destination="ePa-N9-Sum" id="Gcg-Ri-a9X"/>
-                                        </connections>
-                                    </collectionView>
                                 </subviews>
                             </scrollView>
                         </subviews>
@@ -1695,7 +1695,7 @@
                                 <color key="backgroundColor" red="0.68600369930000005" green="0.2527399977" blue="0.75" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dish" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="bqE-A4-8JP">
-                                <rect key="frame" x="20" y="20" width="137" height="39"/>
+                                <rect key="frame" x="20" y="20" width="292" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -1768,13 +1768,14 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="vUP-9j-jWm"/>
-        <segue reference="y2B-5h-yd3"/>
-        <segue reference="kNa-85-gPt"/>
         <segue reference="xlT-pm-NoS"/>
-        <segue reference="cfB-gW-Pi3"/>
-        <segue reference="vBe-2g-paS"/>
+        <segue reference="y2B-5h-yd3"/>
+        <segue reference="vUP-9j-jWm"/>
+        <segue reference="BDX-Yd-wDn"/>
+        <segue reference="kNa-85-gPt"/>
         <segue reference="Rz1-mo-Aa8"/>
+        <segue reference="vBe-2g-paS"/>
+        <segue reference="cfB-gW-Pi3"/>
         <segue reference="lfT-lW-nr9"/>
         <segue reference="E3o-aQ-dmJ"/>
     </inferredMetricsTieBreakers>

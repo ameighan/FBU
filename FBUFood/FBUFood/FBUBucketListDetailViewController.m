@@ -36,7 +36,6 @@
     [super viewDidLoad];
     self.addTextfield.delegate = self;
     if(self.item){
-        NSLog(@"I was here ");
         UIImage *image = [UIImage imageWithData:[self.item.picture getData]];
         self.imageView.image = image;
         self.addTextfield.text = self.item.itemName;
@@ -90,7 +89,7 @@
             NSData *imageData = UIImageJPEGRepresentation(self.imageView.image, 0.8);
             NSString *filename = [NSString stringWithFormat:@"%@.png", self.addTextfield.text];
             PFFile *imageFile = [PFFile fileWithName:filename data:imageData];
-            self.item.picture = imageFile;
+            newBucketItem.picture = imageFile;
         }
         newBucketItem.owner = [PFUser currentUser];
         [newBucketItem saveInBackground];

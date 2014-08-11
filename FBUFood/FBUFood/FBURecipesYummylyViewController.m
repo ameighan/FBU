@@ -92,15 +92,23 @@
         FBURecipe *myRecipe = [FBURecipe object];
         myRecipe.title = recipeDict[@"recipeName"];
         myRecipe.ingredientsList = [recipeDict[@"ingredients"] description];
-        NSString *urlImage = [recipeDict[@"smallImageUrls"] description];
-        //if (urlImage != nil) {
-        //    NSData *receivedData = [NSData dataWithContentsOfURL:[NSURL URLWithString:urlImage]];
-            //UIImage *img = [[UIImage alloc] initWithData:receivedData];
-            //NSData *imageData = UIImageJPEGRepresentation(img, 0.8);
-         //   NSString *filename = [NSString stringWithFormat:@"%@.png", myRecipe.title];
-         //   PFFile *imageFile = [PFFile fileWithName:filename data:receivedData];
-        //    myRecipe.image = imageFile;
-        //}
+        NSMutableString *urlImage = [[NSMutableString alloc] initWithString:[recipeDict[@"smallImageUrls"] description]];
+        [urlImage replaceOccurrencesOfString:@"\"" withString:@"" options:NSCaseInsensitiveSearch range:(NSRange){0,[urlImage length]}];
+        [urlImage replaceOccurrencesOfString:@"(" withString:@"" options:NSCaseInsensitiveSearch range:(NSRange){0,[urlImage length]}];
+        [urlImage replaceOccurrencesOfString:@")" withString:@"" options:NSCaseInsensitiveSearch range:(NSRange){0,[urlImage length]}];
+        [urlImage replaceOccurrencesOfString:@" " withString:@"" options:NSCaseInsensitiveSearch range:(NSRange){0,[urlImage length]}];
+        [urlImage replaceOccurrencesOfString:@"\n" withString:@"" options:NSCaseInsensitiveSearch range:(NSRange){0,[urlImage length]}];
+        if (urlImage != nil) {
+            NSData *receivedData = [[NSData alloc] init];
+            urlImage = [[NSMutableString alloc] initWithString:[urlImage stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+            receivedData = [receivedData initWithContentsOfURL: [NSURL URLWithString:urlImage]];
+            UIImage *img = [[UIImage alloc] initWithData:receivedData];
+            NSData *imageData = UIImageJPEGRepresentation(img, 1.0);
+            NSString *filename = [NSString stringWithFormat:@"%@.png", myRecipe.title];
+            PFFile *imageFile = [PFFile fileWithName:filename data:imageData];
+            myRecipe.image = imageFile;
+        }
+       // NSLog(@"The %@", [recipeDict[@"]])
         [self.yummlyRecipes addObject:myRecipe];
         [self.recipesTableView reloadData];
         // Save the new post
@@ -109,7 +117,6 @@
                 [[NSNotificationCenter defaultCenter] postNotificationName:@"savedToParse" object:self];
             }
         }];
-        //NSLog(recipeDict[@"recipeName"]);
     }
     
     
@@ -121,8 +128,8 @@
         NSString *keyAsString = (NSString *)key;
         NSString *valueAsString = (NSString *)value;
         
-        NSLog(@"key: %@", keyAsString);
-        NSLog(@"value: %@", valueAsString);
+        //NSLog(@"key: %@", keyAsString);
+        //NSLog(@"value: %@", valueAsString);
     }
     
     // extract specific value...
