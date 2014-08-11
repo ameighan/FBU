@@ -1,3094 +1,936 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-	<key>archiveVersion</key>
-	<string>1</string>
-	<key>classes</key>
-	<dict/>
-	<key>objectVersion</key>
-	<string>46</string>
-	<key>objects</key>
-	<dict>
-		<key>02908DA418054F36AE9F91D9</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>name</key>
-			<string>Pods.xcconfig</string>
-			<key>path</key>
-			<string>Pods/Pods.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>2B9C0B9FF3B444C296667F8A</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>Check Pods Manifest.lock</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>diff "${PODS_ROOT}/../Podfile.lock" "${PODS_ROOT}/Manifest.lock" &gt; /dev/null
-if [[ $? != 0 ]] ; then
-    cat &lt;&lt; EOM
-error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.
-EOM
-    exit 1
-fi
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>66DAC9D30A254033A9A255E9</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>archive.ar</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>libPods.a</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>711BCB592B2B4F4EBE19FCCF</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>Copy Pods Resources</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>"${SRCROOT}/Pods/Pods-resources.sh"
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>930320D61976F38B00629269</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>D2AF54D119705B4B00F0A0F2</string>
-				<string>D2AF54D219705B4B00F0A0F2</string>
-				<string>966554D41973B28700DDBED0</string>
-				<string>966554D51973B28700DDBED0</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Profile</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>930320D71976F41100629269</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>9607499E1979D25200853E97</string>
-				<string>931404C8197F03F9004D4447</string>
-				<string>96C1E23F197D825300266DB8</string>
-				<string>96C1E240197D825300266DB8</string>
-				<string>966554DD197450B500DDBED0</string>
-				<string>966554DE197450B500DDBED0</string>
-				<string>966554D7197443B200DDBED0</string>
-				<string>966554D8197443B200DDBED0</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>BucketList</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>930320D81976F42000629269</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>93ED1EE11989A5C6000CF446</string>
-				<string>93ED1EE21989A5C6000CF446</string>
-				<string>93ED1EEA1989BC17000CF446</string>
-				<string>93ED1EEB1989BC17000CF446</string>
-				<string>93ED1EED1989BC36000CF446</string>
-				<string>93ED1EEE1989BC36000CF446</string>
-				<string>93ED1EF11989BC90000CF446</string>
-				<string>93ED1EF21989BC90000CF446</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Container Views</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>930320D91976F6E900629269</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>D295F9951975FBB3000ED2C1</string>
-				<string>D295F9961975FBB3000ED2C1</string>
-				<string>D2AF54DD197062F100F0A0F2</string>
-				<string>9607499C1978985C00853E97</string>
-				<string>96EBDE8D1970AF1300DE0033</string>
-				<string>96EBDE8E1970AF1300DE0033</string>
-				<string>D28632C819772779007BBD28</string>
-				<string>D28632C919772779007BBD28</string>
-				<string>D2D378071980D1AA00CB0EC2</string>
-				<string>D2D378081980D1AA00CB0EC2</string>
-				<string>969C8EA9199157E000D0E7B3</string>
-				<string>969C8EAA199157E000D0E7B3</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Groups</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>931404C3197D84F0004D4447</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>FBUEditRecipeViewController.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>931404C4197D84F0004D4447</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>FBUEditRecipeViewController.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>931404C5197D84F0004D4447</key>
-		<dict>
-			<key>fileRef</key>
-			<string>931404C4197D84F0004D4447</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>931404C8197F03F9004D4447</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>FBUBucketListItem.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>931404C9197F03F9004D4447</key>
-		<dict>
-			<key>fileRef</key>
-			<string>931404C8197F03F9004D4447</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>9367F836199404B30099354D</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>image.png</string>
-			<key>path</key>
-			<string>profile_default.png</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>9367F837199404B30099354D</key>
-		<dict>
-			<key>fileRef</key>
-			<string>9367F836199404B30099354D</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>93B8D2731982BE96009F2D16</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>MapKit.framework</string>
-			<key>path</key>
-			<string>System/Library/Frameworks/MapKit.framework</string>
-			<key>sourceTree</key>
-			<string>SDKROOT</string>
-		</dict>
-		<key>93B8D2741982BE96009F2D16</key>
-		<dict>
-			<key>fileRef</key>
-			<string>93B8D2731982BE96009F2D16</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>93D9D35A19916B9600ABCC5B</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>FBUCollectionCellBackgroundView.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>93D9D35B19916B9600ABCC5B</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>FBUCollectionCellBackgroundView.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>93D9D35C19916B9600ABCC5B</key>
-		<dict>
-			<key>fileRef</key>
-			<string>93D9D35B19916B9600ABCC5B</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>93D9D35D19916BEB00ABCC5B</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>FBUCollectionViewLayout.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>93D9D35E19916BEB00ABCC5B</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>FBUCollectionViewLayout.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>93D9D35F19916BEB00ABCC5B</key>
-		<dict>
-			<key>fileRef</key>
-			<string>93D9D35E19916BEB00ABCC5B</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>93E4BC2C1979C2C500074647</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>D295F9981976028F000ED2C1</string>
-				<string>D295F9991976028F000ED2C1</string>
-				<string>D28632D9197F1E0B007BBD28</string>
-				<string>D28632DA197F1E0B007BBD28</string>
-				<string>D28632DC197F1E4C007BBD28</string>
-				<string>D28632DD197F1E4C007BBD28</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Events</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>93E4BC2D1979C89800074647</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>FBURecipeViewController.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>93E4BC2E1979C89800074647</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>FBURecipeViewController.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>93E4BC2F1979C89800074647</key>
-		<dict>
-			<key>fileRef</key>
-			<string>93E4BC2E1979C89800074647</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>93ED1EDE198849F9000CF446</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>FBUMapAnnotation.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>93ED1EDF198849F9000CF446</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>FBUMapAnnotation.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>93ED1EE0198849F9000CF446</key>
-		<dict>
-			<key>fileRef</key>
-			<string>93ED1EDF198849F9000CF446</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>93ED1EE11989A5C6000CF446</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>FBURecipeDishViewController.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>93ED1EE21989A5C6000CF446</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>FBURecipeDishViewController.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>93ED1EE31989A5C6000CF446</key>
-		<dict>
-			<key>fileRef</key>
-			<string>93ED1EE21989A5C6000CF446</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>93ED1EE61989B675000CF446</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>FBURecipeSegue.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>93ED1EE71989B675000CF446</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>FBURecipeSegue.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>93ED1EE81989B675000CF446</key>
-		<dict>
-			<key>fileRef</key>
-			<string>93ED1EE71989B675000CF446</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>93ED1EE91989BBBD000CF446</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>930320D81976F42000629269</string>
-				<string>93ED1EF01989BC59000CF446</string>
-				<string>D295F99B1976029D000ED2C1</string>
-				<string>D295F99C1976029D000ED2C1</string>
-				<string>931404C3197D84F0004D4447</string>
-				<string>931404C4197D84F0004D4447</string>
-				<string>D2AF54DA1970607A00F0A0F2</string>
-				<string>D2AF54DB1970607A00F0A0F2</string>
-				<string>93E4BC2D1979C89800074647</string>
-				<string>93E4BC2E1979C89800074647</string>
-				<string>93ED1EE61989B675000CF446</string>
-				<string>93ED1EE71989B675000CF446</string>
-				<string>D2D378141989BB3B00CB0EC2</string>
-				<string>D2D378151989BB3B00CB0EC2</string>
-				<string>9663F081199736FF00B69649</string>
-				<string>9663F082199736FF00B69649</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Recipes</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>93ED1EEA1989BC17000CF446</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>FBURecipeIngredientViewController.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>93ED1EEB1989BC17000CF446</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>FBURecipeIngredientViewController.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>93ED1EEC1989BC17000CF446</key>
-		<dict>
-			<key>fileRef</key>
-			<string>93ED1EEB1989BC17000CF446</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>93ED1EED1989BC36000CF446</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>FBURecipeDirectionsViewController.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>93ED1EEE1989BC36000CF446</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>FBURecipeDirectionsViewController.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>93ED1EEF1989BC36000CF446</key>
-		<dict>
-			<key>fileRef</key>
-			<string>93ED1EEE1989BC36000CF446</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>93ED1EF01989BC59000CF446</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>D2D378111986C3AF00CB0EC2</string>
-				<string>D2D378121986C3AF00CB0EC2</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Group View of Recipes</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>93ED1EF11989BC90000CF446</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>FBURecipeContainerViewController.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>93ED1EF21989BC90000CF446</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>FBURecipeContainerViewController.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>93ED1EF31989BC90000CF446</key>
-		<dict>
-			<key>fileRef</key>
-			<string>93ED1EF21989BC90000CF446</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>93F1D0CA197488C2000A1E0E</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>path</key>
-			<string>FacebookSDK.framework</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>93F1D0CB197488C2000A1E0E</key>
-		<dict>
-			<key>fileRef</key>
-			<string>93F1D0CA197488C2000A1E0E</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>93F1D0CC197488EB000A1E0E</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.plug-in</string>
-			<key>path</key>
-			<string>FBUserSettingsViewResources.bundle</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>93F1D0CD197488EB000A1E0E</key>
-		<dict>
-			<key>fileRef</key>
-			<string>93F1D0CC197488EB000A1E0E</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>93F248C41981AEC400FC82BD</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>FBUSignUpViewController.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>93F248C51981AEC400FC82BD</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>FBUSignUpViewController.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>93F248C61981AEC400FC82BD</key>
-		<dict>
-			<key>fileRef</key>
-			<string>93F248C51981AEC400FC82BD</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>93F248C71981AFEC00FC82BD</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>93F248D11981D86300FC82BD</string>
-				<string>93F248D21981D86300FC82BD</string>
-				<string>93F248C41981AEC400FC82BD</string>
-				<string>93F248C51981AEC400FC82BD</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Login/Signup</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>93F248D11981D86300FC82BD</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>FBULogInViewController.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>93F248D21981D86300FC82BD</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>FBULogInViewController.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>93F248D31981D86300FC82BD</key>
-		<dict>
-			<key>fileRef</key>
-			<string>93F248D21981D86300FC82BD</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>93FAA48E1991E705005B43AF</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>93D9D35A19916B9600ABCC5B</string>
-				<string>93D9D35B19916B9600ABCC5B</string>
-				<string>93D9D35D19916BEB00ABCC5B</string>
-				<string>93D9D35E19916BEB00ABCC5B</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Custom Collection View </string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>9607499C1978985C00853E97</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>FBUGroupsViewController.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>9607499D1978985C00853E97</key>
-		<dict>
-			<key>fileRef</key>
-			<string>9607499C1978985C00853E97</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>9607499E1979D25200853E97</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>FBUBucketListItem.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>9663F081199736FF00B69649</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>FBURecipesYummylyViewController.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>9663F082199736FF00B69649</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>FBURecipesYummylyViewController.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>9663F083199736FF00B69649</key>
-		<dict>
-			<key>fileRef</key>
-			<string>9663F082199736FF00B69649</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>966554D41973B28700DDBED0</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>FBUEditProfileViewController.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>966554D51973B28700DDBED0</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>FBUEditProfileViewController.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>966554D61973B28700DDBED0</key>
-		<dict>
-			<key>fileRef</key>
-			<string>966554D51973B28700DDBED0</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>966554D7197443B200DDBED0</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>FBUBucketListDetailViewController.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>966554D8197443B200DDBED0</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>FBUBucketListDetailViewController.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>966554D9197443B200DDBED0</key>
-		<dict>
-			<key>fileRef</key>
-			<string>966554D8197443B200DDBED0</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>966554DD197450B500DDBED0</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>FBUBucketListItemsViewController.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>966554DE197450B500DDBED0</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>FBUBucketListItemsViewController.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>966554DF197450B500DDBED0</key>
-		<dict>
-			<key>fileRef</key>
-			<string>966554DE197450B500DDBED0</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>968134301994B8EC00F48BD0</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>image.jpeg</string>
-			<key>path</key>
-			<string>Imagination.jpg</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>968134311994B8EC00F48BD0</key>
-		<dict>
-			<key>fileRef</key>
-			<string>968134301994B8EC00F48BD0</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>969C8E6B1983060400D0E7B3</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>FBUMembersViewController.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>969C8E6C1983060400D0E7B3</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>FBUMembersViewController.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>969C8E6D1983060400D0E7B3</key>
-		<dict>
-			<key>fileRef</key>
-			<string>969C8E6C1983060400D0E7B3</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>969C8EA9199157E000D0E7B3</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>FBUGroupCollectionViewCell.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>969C8EAA199157E000D0E7B3</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>FBUGroupCollectionViewCell.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>969C8EAB199157E000D0E7B3</key>
-		<dict>
-			<key>fileRef</key>
-			<string>969C8EAA199157E000D0E7B3</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>969C8EAC1992B8C600D0E7B3</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>image.png</string>
-			<key>path</key>
-			<string>BucketList.png</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>969C8EAD1992B8C600D0E7B3</key>
-		<dict>
-			<key>fileRef</key>
-			<string>969C8EAC1992B8C600D0E7B3</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>96BC1E811992D95F009953A4</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>image.png</string>
-			<key>path</key>
-			<string>New.png</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>96BC1E821992D95F009953A4</key>
-		<dict>
-			<key>fileRef</key>
-			<string>96BC1E811992D95F009953A4</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>96BC1E831992F6DB009953A4</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>image.jpeg</string>
-			<key>path</key>
-			<string>BucketListBackground.jpg</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>96BC1E841992F6DB009953A4</key>
-		<dict>
-			<key>fileRef</key>
-			<string>96BC1E831992F6DB009953A4</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>96C1E23F197D825300266DB8</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>FBUBucketListViewController.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>96C1E240197D825300266DB8</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>FBUBucketListViewController.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>96C1E241197D825300266DB8</key>
-		<dict>
-			<key>fileRef</key>
-			<string>96C1E240197D825300266DB8</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>96C1E242197F019500266DB8</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>96C1E243197F01DF00266DB8</string>
-				<string>96C1E244197F01DF00266DB8</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>ExploreApp</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>96C1E243197F01DF00266DB8</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>FBUExploreViewController.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>96C1E244197F01DF00266DB8</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>FBUExploreViewController.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>96C1E245197F01DF00266DB8</key>
-		<dict>
-			<key>fileRef</key>
-			<string>96C1E244197F01DF00266DB8</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>96EBDE8D1970AF1300DE0033</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>FBUGroupsListViewController.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>96EBDE8E1970AF1300DE0033</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>FBUGroupsListViewController.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>96EBDE8F1970AF1300DE0033</key>
-		<dict>
-			<key>fileRef</key>
-			<string>96EBDE8E1970AF1300DE0033</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>D25A4C9919955FE100267D35</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>D295F99E19760D68000ED2C1</string>
-				<string>D295F99F19760D68000ED2C1</string>
-				<string>D25A4C9A199581D400267D35</string>
-				<string>D25A4C9B199581D400267D35</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Grocery List</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>D25A4C9A199581D400267D35</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>FBUGroceryListViewController.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>D25A4C9B199581D400267D35</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>FBUGroceryListViewController.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>D25A4C9C199581D400267D35</key>
-		<dict>
-			<key>fileRef</key>
-			<string>D25A4C9B199581D400267D35</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>D260A3141991B57A006BBBDE</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>FBUEventCollectionViewCell.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>D260A3151991B57A006BBBDE</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>FBUEventCollectionViewCell.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>D260A3161991B57A006BBBDE</key>
-		<dict>
-			<key>fileRef</key>
-			<string>D260A3151991B57A006BBBDE</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>D28632C819772779007BBD28</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>FBUGroupsDetailViewController.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>D28632C919772779007BBD28</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>FBUGroupsDetailViewController.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>D28632CB19772779007BBD28</key>
-		<dict>
-			<key>fileRef</key>
-			<string>D28632C919772779007BBD28</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>D28632D9197F1E0B007BBD28</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>name</key>
-			<string>FBUEventDetailViewController.h</string>
-			<key>path</key>
-			<string>../FBUEventDetailViewController.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>D28632DA197F1E0B007BBD28</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>name</key>
-			<string>FBUEventDetailViewController.m</string>
-			<key>path</key>
-			<string>../FBUEventDetailViewController.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>D28632DB197F1E0B007BBD28</key>
-		<dict>
-			<key>fileRef</key>
-			<string>D28632DA197F1E0B007BBD28</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>D28632DC197F1E4C007BBD28</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>FBUEventViewController.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>D28632DD197F1E4C007BBD28</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>FBUEventViewController.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>D28632DE197F1E4C007BBD28</key>
-		<dict>
-			<key>fileRef</key>
-			<string>D28632DD197F1E4C007BBD28</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>D295F9951975FBB3000ED2C1</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>FBUGroup.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>D295F9961975FBB3000ED2C1</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>FBUGroup.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>D295F9971975FBB3000ED2C1</key>
-		<dict>
-			<key>fileRef</key>
-			<string>D295F9961975FBB3000ED2C1</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>D295F9981976028F000ED2C1</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>FBUEvent.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>D295F9991976028F000ED2C1</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>FBUEvent.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>D295F99A1976028F000ED2C1</key>
-		<dict>
-			<key>fileRef</key>
-			<string>D295F9991976028F000ED2C1</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>D295F99B1976029D000ED2C1</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>FBURecipe.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>D295F99C1976029D000ED2C1</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>FBURecipe.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>D295F99D1976029D000ED2C1</key>
-		<dict>
-			<key>fileRef</key>
-			<string>D295F99C1976029D000ED2C1</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>D295F99E19760D68000ED2C1</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>FBUGroceryList.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>D295F99F19760D68000ED2C1</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>FBUGroceryList.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>D295F9A019760D68000ED2C1</key>
-		<dict>
-			<key>fileRef</key>
-			<string>D295F99F19760D68000ED2C1</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>D2AF54911970595E00F0A0F2</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>D2AF54A31970595E00F0A0F2</string>
-				<string>D2AF54BC1970595F00F0A0F2</string>
-				<string>D2AF549C1970595E00F0A0F2</string>
-				<string>D2AF549B1970595E00F0A0F2</string>
-				<string>02908DA418054F36AE9F91D9</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>D2AF54921970595E00F0A0F2</key>
-		<dict>
-			<key>attributes</key>
-			<dict>
-				<key>CLASSPREFIX</key>
-				<string>FBU</string>
-				<key>LastUpgradeCheck</key>
-				<string>0510</string>
-				<key>ORGANIZATIONNAME</key>
-				<string>FacebookU</string>
-				<key>TargetAttributes</key>
-				<dict>
-					<key>D2AF54B41970595F00F0A0F2</key>
-					<dict>
-						<key>TestTargetID</key>
-						<string>D2AF54991970595E00F0A0F2</string>
-					</dict>
-				</dict>
-			</dict>
-			<key>buildConfigurationList</key>
-			<string>D2AF54951970595E00F0A0F2</string>
-			<key>compatibilityVersion</key>
-			<string>Xcode 3.2</string>
-			<key>developmentRegion</key>
-			<string>English</string>
-			<key>hasScannedForEncodings</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXProject</string>
-			<key>knownRegions</key>
-			<array>
-				<string>en</string>
-			</array>
-			<key>mainGroup</key>
-			<string>D2AF54911970595E00F0A0F2</string>
-			<key>productRefGroup</key>
-			<string>D2AF549B1970595E00F0A0F2</string>
-			<key>projectDirPath</key>
-			<string></string>
-			<key>projectReferences</key>
-			<array/>
-			<key>projectRoot</key>
-			<string></string>
-			<key>targets</key>
-			<array>
-				<string>D2AF54991970595E00F0A0F2</string>
-				<string>D2AF54B41970595F00F0A0F2</string>
-			</array>
-		</dict>
-		<key>D2AF54951970595E00F0A0F2</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>D2AF54C41970595F00F0A0F2</string>
-				<string>D2AF54C51970595F00F0A0F2</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>D2AF54961970595E00F0A0F2</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>931404C9197F03F9004D4447</string>
-				<string>9607499D1978985C00853E97</string>
-				<string>D28632DE197F1E4C007BBD28</string>
-				<string>D295F99D1976029D000ED2C1</string>
-				<string>D25A4C9C199581D400267D35</string>
-				<string>969C8E6D1983060400D0E7B3</string>
-				<string>966554D61973B28700DDBED0</string>
-				<string>93D9D35F19916BEB00ABCC5B</string>
-				<string>D2AF54D619705DF200F0A0F2</string>
-				<string>D2D378161989BB3B00CB0EC2</string>
-				<string>D28632DB197F1E0B007BBD28</string>
-				<string>966554D9197443B200DDBED0</string>
-				<string>D2D3780C1981A4AD00CB0EC2</string>
-				<string>931404C5197D84F0004D4447</string>
-				<string>93F248D31981D86300FC82BD</string>
-				<string>D260A3161991B57A006BBBDE</string>
-				<string>D295F99A1976028F000ED2C1</string>
-				<string>93ED1EEC1989BC17000CF446</string>
-				<string>D2D378131986C3AF00CB0EC2</string>
-				<string>93ED1EF31989BC90000CF446</string>
-				<string>96C1E245197F01DF00266DB8</string>
-				<string>D2D378091980D1AA00CB0EC2</string>
-				<string>D2AF54AE1970595F00F0A0F2</string>
-				<string>93ED1EE0198849F9000CF446</string>
-				<string>93F248C61981AEC400FC82BD</string>
-				<string>D2AF54D319705B4B00F0A0F2</string>
-				<string>966554DF197450B500DDBED0</string>
-				<string>969C8EAB199157E000D0E7B3</string>
-				<string>D2AF54DC1970607A00F0A0F2</string>
-				<string>93D9D35C19916B9600ABCC5B</string>
-				<string>96EBDE8F1970AF1300DE0033</string>
-				<string>D28632CB19772779007BBD28</string>
-				<string>93E4BC2F1979C89800074647</string>
-				<string>93ED1EE81989B675000CF446</string>
-				<string>D295F9971975FBB3000ED2C1</string>
-				<string>93ED1EEF1989BC36000CF446</string>
-				<string>D295F9A019760D68000ED2C1</string>
-				<string>9663F083199736FF00B69649</string>
-				<string>D2AF54AA1970595F00F0A0F2</string>
-				<string>96C1E241197D825300266DB8</string>
-				<string>93ED1EE31989A5C6000CF446</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>D2AF54971970595E00F0A0F2</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>93B8D2741982BE96009F2D16</string>
-				<string>D2AF54FC19706CC800F0A0F2</string>
-				<string>D2AF54FD19706CC800F0A0F2</string>
-				<string>D2AF54FE19706CC800F0A0F2</string>
-				<string>D2AF54FF19706CC800F0A0F2</string>
-				<string>D2AF550019706CC800F0A0F2</string>
-				<string>D2AF550119706CC800F0A0F2</string>
-				<string>D2AF550219706CC800F0A0F2</string>
-				<string>D2AF550319706CC800F0A0F2</string>
-				<string>D2AF550419706CC800F0A0F2</string>
-				<string>D2AF54F119706CC800F0A0F2</string>
-				<string>D2AF54F219706CC800F0A0F2</string>
-				<string>D2AF54A01970595E00F0A0F2</string>
-				<string>D2AF54A21970595E00F0A0F2</string>
-				<string>93F1D0CB197488C2000A1E0E</string>
-				<string>D2AF54E419706C0100F0A0F2</string>
-				<string>D2AF549E1970595E00F0A0F2</string>
-				<string>DE74DF31A7804903B5C662C5</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>D2AF54981970595E00F0A0F2</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>93F1D0CD197488EB000A1E0E</string>
-				<string>969C8EAD1992B8C600D0E7B3</string>
-				<string>96BC1E821992D95F009953A4</string>
-				<string>D2AF54CD197059B000F0A0F2</string>
-				<string>D2AF54A81970595F00F0A0F2</string>
-				<string>96BC1E841992F6DB009953A4</string>
-				<string>968134311994B8EC00F48BD0</string>
-				<string>D2AF54B01970595F00F0A0F2</string>
-				<string>9367F837199404B30099354D</string>
-			</array>
-			<key>isa</key>
-			<string>PBXResourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>D2AF54991970595E00F0A0F2</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>D2AF54C61970595F00F0A0F2</string>
-			<key>buildPhases</key>
-			<array>
-				<string>2B9C0B9FF3B444C296667F8A</string>
-				<string>D2AF54961970595E00F0A0F2</string>
-				<string>D2AF54971970595E00F0A0F2</string>
-				<string>D2AF54981970595E00F0A0F2</string>
-				<string>711BCB592B2B4F4EBE19FCCF</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>FBUFood</string>
-			<key>productName</key>
-			<string>FBUFood</string>
-			<key>productReference</key>
-			<string>D2AF549A1970595E00F0A0F2</string>
-			<key>productType</key>
-			<string>com.apple.product-type.application</string>
-		</dict>
-		<key>D2AF549A1970595E00F0A0F2</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.application</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>FBUFood.app</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>D2AF549B1970595E00F0A0F2</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>D2AF549A1970595E00F0A0F2</string>
-				<string>D2AF54B51970595F00F0A0F2</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Products</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>D2AF549C1970595E00F0A0F2</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>93B8D2731982BE96009F2D16</string>
-				<string>93F1D0CC197488EB000A1E0E</string>
-				<string>93F1D0CA197488C2000A1E0E</string>
-				<string>D2AF54F319706CC800F0A0F2</string>
-				<string>D2AF54F419706CC800F0A0F2</string>
-				<string>D2AF54F519706CC800F0A0F2</string>
-				<string>D2AF54F619706CC800F0A0F2</string>
-				<string>D2AF54F719706CC800F0A0F2</string>
-				<string>D2AF54F819706CC800F0A0F2</string>
-				<string>D2AF54F919706CC800F0A0F2</string>
-				<string>D2AF54FA19706CC800F0A0F2</string>
-				<string>D2AF54FB19706CC800F0A0F2</string>
-				<string>D2AF54E519706C7200F0A0F2</string>
-				<string>D2AF54E619706C7200F0A0F2</string>
-				<string>D2AF54E719706C7200F0A0F2</string>
-				<string>D2AF54E819706C7200F0A0F2</string>
-				<string>D2AF54E919706C7200F0A0F2</string>
-				<string>D2AF54EA19706C7200F0A0F2</string>
-				<string>D2AF54E319706C0100F0A0F2</string>
-				<string>D2AF549D1970595E00F0A0F2</string>
-				<string>D2AF549F1970595E00F0A0F2</string>
-				<string>D2AF54A11970595E00F0A0F2</string>
-				<string>D2AF54B61970595F00F0A0F2</string>
-				<string>66DAC9D30A254033A9A255E9</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Frameworks</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>D2AF549D1970595E00F0A0F2</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>Foundation.framework</string>
-			<key>path</key>
-			<string>System/Library/Frameworks/Foundation.framework</string>
-			<key>sourceTree</key>
-			<string>SDKROOT</string>
-		</dict>
-		<key>D2AF549E1970595E00F0A0F2</key>
-		<dict>
-			<key>fileRef</key>
-			<string>D2AF549D1970595E00F0A0F2</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>D2AF549F1970595E00F0A0F2</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>CoreGraphics.framework</string>
-			<key>path</key>
-			<string>System/Library/Frameworks/CoreGraphics.framework</string>
-			<key>sourceTree</key>
-			<string>SDKROOT</string>
-		</dict>
-		<key>D2AF54A01970595E00F0A0F2</key>
-		<dict>
-			<key>fileRef</key>
-			<string>D2AF549F1970595E00F0A0F2</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>D2AF54A11970595E00F0A0F2</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>UIKit.framework</string>
-			<key>path</key>
-			<string>System/Library/Frameworks/UIKit.framework</string>
-			<key>sourceTree</key>
-			<string>SDKROOT</string>
-		</dict>
-		<key>D2AF54A21970595E00F0A0F2</key>
-		<dict>
-			<key>fileRef</key>
-			<string>D2AF54A11970595E00F0A0F2</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>D2AF54A31970595E00F0A0F2</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>969C8EAC1992B8C600D0E7B3</string>
-				<string>96BC1E811992D95F009953A4</string>
-				<string>96BC1E831992F6DB009953A4</string>
-				<string>968134301994B8EC00F48BD0</string>
-				<string>9367F836199404B30099354D</string>
-				<string>D2AF54CC197059B000F0A0F2</string>
-				<string>969C8E6B1983060400D0E7B3</string>
-				<string>969C8E6C1983060400D0E7B3</string>
-				<string>D2AF54AC1970595F00F0A0F2</string>
-				<string>D2AF54AD1970595F00F0A0F2</string>
-				<string>D2D3780D1981A4C700CB0EC2</string>
-				<string>96C1E242197F019500266DB8</string>
-				<string>93E4BC2C1979C2C500074647</string>
-				<string>930320D91976F6E900629269</string>
-				<string>93ED1EE91989BBBD000CF446</string>
-				<string>930320D71976F41100629269</string>
-				<string>D25A4C9919955FE100267D35</string>
-				<string>930320D61976F38B00629269</string>
-				<string>93F248C71981AFEC00FC82BD</string>
-				<string>93FAA48E1991E705005B43AF</string>
-				<string>D260A3141991B57A006BBBDE</string>
-				<string>D260A3151991B57A006BBBDE</string>
-				<string>D2AF54D419705DF200F0A0F2</string>
-				<string>D2AF54D519705DF200F0A0F2</string>
-				<string>D2AF54AF1970595F00F0A0F2</string>
-				<string>D2AF54A41970595F00F0A0F2</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>FBUFood</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>D2AF54A41970595F00F0A0F2</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>D2AF54A51970595F00F0A0F2</string>
-				<string>D2AF54A61970595F00F0A0F2</string>
-				<string>D2AF54A91970595F00F0A0F2</string>
-				<string>D2AF54AB1970595F00F0A0F2</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Supporting Files</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>D2AF54A51970595F00F0A0F2</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>FBUFood-Info.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>D2AF54A61970595F00F0A0F2</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>D2AF54A71970595F00F0A0F2</string>
-			</array>
-			<key>isa</key>
-			<string>PBXVariantGroup</string>
-			<key>name</key>
-			<string>InfoPlist.strings</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>D2AF54A71970595F00F0A0F2</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.strings</string>
-			<key>name</key>
-			<string>en</string>
-			<key>path</key>
-			<string>en.lproj/InfoPlist.strings</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>D2AF54A81970595F00F0A0F2</key>
-		<dict>
-			<key>fileRef</key>
-			<string>D2AF54A61970595F00F0A0F2</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>D2AF54A91970595F00F0A0F2</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>main.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>D2AF54AA1970595F00F0A0F2</key>
-		<dict>
-			<key>fileRef</key>
-			<string>D2AF54A91970595F00F0A0F2</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>D2AF54AB1970595F00F0A0F2</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>FBUFood-Prefix.pch</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>D2AF54AC1970595F00F0A0F2</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>FBUAppDelegate.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>D2AF54AD1970595F00F0A0F2</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>FBUAppDelegate.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>D2AF54AE1970595F00F0A0F2</key>
-		<dict>
-			<key>fileRef</key>
-			<string>D2AF54AD1970595F00F0A0F2</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>D2AF54AF1970595F00F0A0F2</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>folder.assetcatalog</string>
-			<key>path</key>
-			<string>Images.xcassets</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>D2AF54B01970595F00F0A0F2</key>
-		<dict>
-			<key>fileRef</key>
-			<string>D2AF54AF1970595F00F0A0F2</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>D2AF54B11970595F00F0A0F2</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>D2AF54C31970595F00F0A0F2</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>D2AF54B21970595F00F0A0F2</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>D2AF54B71970595F00F0A0F2</string>
-				<string>D2AF54B91970595F00F0A0F2</string>
-				<string>D2AF54B81970595F00F0A0F2</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>D2AF54B31970595F00F0A0F2</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>D2AF54C11970595F00F0A0F2</string>
-			</array>
-			<key>isa</key>
-			<string>PBXResourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>D2AF54B41970595F00F0A0F2</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>D2AF54C91970595F00F0A0F2</string>
-			<key>buildPhases</key>
-			<array>
-				<string>D2AF54B11970595F00F0A0F2</string>
-				<string>D2AF54B21970595F00F0A0F2</string>
-				<string>D2AF54B31970595F00F0A0F2</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array>
-				<string>D2AF54BB1970595F00F0A0F2</string>
-			</array>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>FBUFoodTests</string>
-			<key>productName</key>
-			<string>FBUFoodTests</string>
-			<key>productReference</key>
-			<string>D2AF54B51970595F00F0A0F2</string>
-			<key>productType</key>
-			<string>com.apple.product-type.bundle.unit-test</string>
-		</dict>
-		<key>D2AF54B51970595F00F0A0F2</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.cfbundle</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>FBUFoodTests.xctest</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>D2AF54B61970595F00F0A0F2</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>XCTest.framework</string>
-			<key>path</key>
-			<string>Library/Frameworks/XCTest.framework</string>
-			<key>sourceTree</key>
-			<string>DEVELOPER_DIR</string>
-		</dict>
-		<key>D2AF54B71970595F00F0A0F2</key>
-		<dict>
-			<key>fileRef</key>
-			<string>D2AF54B61970595F00F0A0F2</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>D2AF54B81970595F00F0A0F2</key>
-		<dict>
-			<key>fileRef</key>
-			<string>D2AF549D1970595E00F0A0F2</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>D2AF54B91970595F00F0A0F2</key>
-		<dict>
-			<key>fileRef</key>
-			<string>D2AF54A11970595E00F0A0F2</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>D2AF54BA1970595F00F0A0F2</key>
-		<dict>
-			<key>containerPortal</key>
-			<string>D2AF54921970595E00F0A0F2</string>
-			<key>isa</key>
-			<string>PBXContainerItemProxy</string>
-			<key>proxyType</key>
-			<string>1</string>
-			<key>remoteGlobalIDString</key>
-			<string>D2AF54991970595E00F0A0F2</string>
-			<key>remoteInfo</key>
-			<string>FBUFood</string>
-		</dict>
-		<key>D2AF54BB1970595F00F0A0F2</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXTargetDependency</string>
-			<key>target</key>
-			<string>D2AF54991970595E00F0A0F2</string>
-			<key>targetProxy</key>
-			<string>D2AF54BA1970595F00F0A0F2</string>
-		</dict>
-		<key>D2AF54BC1970595F00F0A0F2</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>D2AF54C21970595F00F0A0F2</string>
-				<string>D2AF54BD1970595F00F0A0F2</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>FBUFoodTests</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>D2AF54BD1970595F00F0A0F2</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>D2AF54BE1970595F00F0A0F2</string>
-				<string>D2AF54BF1970595F00F0A0F2</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Supporting Files</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>D2AF54BE1970595F00F0A0F2</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>FBUFoodTests-Info.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>D2AF54BF1970595F00F0A0F2</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>D2AF54C01970595F00F0A0F2</string>
-			</array>
-			<key>isa</key>
-			<string>PBXVariantGroup</string>
-			<key>name</key>
-			<string>InfoPlist.strings</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>D2AF54C01970595F00F0A0F2</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.strings</string>
-			<key>name</key>
-			<string>en</string>
-			<key>path</key>
-			<string>en.lproj/InfoPlist.strings</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>D2AF54C11970595F00F0A0F2</key>
-		<dict>
-			<key>fileRef</key>
-			<string>D2AF54BF1970595F00F0A0F2</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>D2AF54C21970595F00F0A0F2</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>FBUFoodTests.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>D2AF54C31970595F00F0A0F2</key>
-		<dict>
-			<key>fileRef</key>
-			<string>D2AF54C21970595F00F0A0F2</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>D2AF54C41970595F00F0A0F2</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
-				<string>gnu++0x</string>
-				<key>CLANG_CXX_LIBRARY</key>
-				<string>libc++</string>
-				<key>CLANG_ENABLE_MODULES</key>
-				<string>YES</string>
-				<key>CLANG_ENABLE_OBJC_ARC</key>
-				<string>YES</string>
-				<key>CLANG_WARN_BOOL_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN_EMPTY_BODY</key>
-				<string>YES</string>
-				<key>CLANG_WARN_ENUM_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_INT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
-				<string>YES</string>
-				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
-				<string>iPhone Developer</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>NO</string>
-				<key>GCC_C_LANGUAGE_STANDARD</key>
-				<string>gnu99</string>
-				<key>GCC_DYNAMIC_NO_PIC</key>
-				<string>NO</string>
-				<key>GCC_OPTIMIZATION_LEVEL</key>
-				<string>0</string>
-				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
-				<array>
-					<string>DEBUG=1</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>GCC_SYMBOLS_PRIVATE_EXTERN</key>
-				<string>NO</string>
-				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
-				<string>YES</string>
-				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
-				<string>YES_ERROR</string>
-				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
-				<string>YES_AGGRESSIVE</string>
-				<key>GCC_WARN_UNUSED_FUNCTION</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_VARIABLE</key>
-				<string>YES</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>7.1</string>
-				<key>ONLY_ACTIVE_ARCH</key>
-				<string>YES</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>D2AF54C51970595F00F0A0F2</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
-				<string>gnu++0x</string>
-				<key>CLANG_CXX_LIBRARY</key>
-				<string>libc++</string>
-				<key>CLANG_ENABLE_MODULES</key>
-				<string>YES</string>
-				<key>CLANG_ENABLE_OBJC_ARC</key>
-				<string>YES</string>
-				<key>CLANG_WARN_BOOL_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN_EMPTY_BODY</key>
-				<string>YES</string>
-				<key>CLANG_WARN_ENUM_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_INT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
-				<string>YES</string>
-				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
-				<string>iPhone Developer</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>YES</string>
-				<key>ENABLE_NS_ASSERTIONS</key>
-				<string>NO</string>
-				<key>GCC_C_LANGUAGE_STANDARD</key>
-				<string>gnu99</string>
-				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
-				<string>YES</string>
-				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
-				<string>YES_ERROR</string>
-				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
-				<string>YES_AGGRESSIVE</string>
-				<key>GCC_WARN_UNUSED_FUNCTION</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_VARIABLE</key>
-				<string>YES</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>7.1</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>VALIDATE_PRODUCT</key>
-				<string>YES</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>D2AF54C61970595F00F0A0F2</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>D2AF54C71970595F00F0A0F2</string>
-				<string>D2AF54C81970595F00F0A0F2</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>D2AF54C71970595F00F0A0F2</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>02908DA418054F36AE9F91D9</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
-				<string>AppIcon</string>
-				<key>ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME</key>
-				<string>LaunchImage</string>
-				<key>FRAMEWORK_SEARCH_PATHS</key>
-				<array>
-					<string>$(inherited)</string>
-					<string>$(PROJECT_DIR)/FBUFood</string>
-					<string>$(PROJECT_DIR)</string>
-				</array>
-				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
-				<string>YES</string>
-				<key>GCC_PREFIX_HEADER</key>
-				<string>FBUFood/FBUFood-Prefix.pch</string>
-				<key>INFOPLIST_FILE</key>
-				<string>FBUFood/FBUFood-Info.plist</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>WRAPPER_EXTENSION</key>
-				<string>app</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>D2AF54C81970595F00F0A0F2</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>02908DA418054F36AE9F91D9</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
-				<string>AppIcon</string>
-				<key>ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME</key>
-				<string>LaunchImage</string>
-				<key>FRAMEWORK_SEARCH_PATHS</key>
-				<array>
-					<string>$(inherited)</string>
-					<string>$(PROJECT_DIR)/FBUFood</string>
-					<string>$(PROJECT_DIR)</string>
-				</array>
-				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
-				<string>YES</string>
-				<key>GCC_PREFIX_HEADER</key>
-				<string>FBUFood/FBUFood-Prefix.pch</string>
-				<key>INFOPLIST_FILE</key>
-				<string>FBUFood/FBUFood-Info.plist</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>WRAPPER_EXTENSION</key>
-				<string>app</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>D2AF54C91970595F00F0A0F2</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>D2AF54CA1970595F00F0A0F2</string>
-				<string>D2AF54CB1970595F00F0A0F2</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>D2AF54CA1970595F00F0A0F2</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>BUNDLE_LOADER</key>
-				<string>$(BUILT_PRODUCTS_DIR)/FBUFood.app/FBUFood</string>
-				<key>FRAMEWORK_SEARCH_PATHS</key>
-				<array>
-					<string>$(SDKROOT)/Developer/Library/Frameworks</string>
-					<string>$(inherited)</string>
-					<string>$(DEVELOPER_FRAMEWORKS_DIR)</string>
-				</array>
-				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
-				<string>YES</string>
-				<key>GCC_PREFIX_HEADER</key>
-				<string>FBUFood/FBUFood-Prefix.pch</string>
-				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
-				<array>
-					<string>DEBUG=1</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>INFOPLIST_FILE</key>
-				<string>FBUFoodTests/FBUFoodTests-Info.plist</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>TEST_HOST</key>
-				<string>$(BUNDLE_LOADER)</string>
-				<key>WRAPPER_EXTENSION</key>
-				<string>xctest</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>D2AF54CB1970595F00F0A0F2</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>BUNDLE_LOADER</key>
-				<string>$(BUILT_PRODUCTS_DIR)/FBUFood.app/FBUFood</string>
-				<key>FRAMEWORK_SEARCH_PATHS</key>
-				<array>
-					<string>$(SDKROOT)/Developer/Library/Frameworks</string>
-					<string>$(inherited)</string>
-					<string>$(DEVELOPER_FRAMEWORKS_DIR)</string>
-				</array>
-				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
-				<string>YES</string>
-				<key>GCC_PREFIX_HEADER</key>
-				<string>FBUFood/FBUFood-Prefix.pch</string>
-				<key>INFOPLIST_FILE</key>
-				<string>FBUFoodTests/FBUFoodTests-Info.plist</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>TEST_HOST</key>
-				<string>$(BUNDLE_LOADER)</string>
-				<key>WRAPPER_EXTENSION</key>
-				<string>xctest</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>D2AF54CC197059B000F0A0F2</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>file.storyboard</string>
-			<key>path</key>
-			<string>Main.storyboard</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>D2AF54CD197059B000F0A0F2</key>
-		<dict>
-			<key>fileRef</key>
-			<string>D2AF54CC197059B000F0A0F2</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>D2AF54D119705B4B00F0A0F2</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>FBUProfileViewController.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>D2AF54D219705B4B00F0A0F2</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>FBUProfileViewController.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>D2AF54D319705B4B00F0A0F2</key>
-		<dict>
-			<key>fileRef</key>
-			<string>D2AF54D219705B4B00F0A0F2</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>D2AF54D419705DF200F0A0F2</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>FBUDashboardViewController.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>D2AF54D519705DF200F0A0F2</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>FBUDashboardViewController.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>D2AF54D619705DF200F0A0F2</key>
-		<dict>
-			<key>fileRef</key>
-			<string>D2AF54D519705DF200F0A0F2</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>D2AF54DA1970607A00F0A0F2</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>FBURecipesListViewController.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>D2AF54DB1970607A00F0A0F2</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>FBURecipesListViewController.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>D2AF54DC1970607A00F0A0F2</key>
-		<dict>
-			<key>fileRef</key>
-			<string>D2AF54DB1970607A00F0A0F2</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>D2AF54DD197062F100F0A0F2</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>FBUGroupsViewController.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>D2AF54E319706C0100F0A0F2</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>Parse.framework</string>
-			<key>path</key>
-			<string>FBUFood/Parse.framework</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>D2AF54E419706C0100F0A0F2</key>
-		<dict>
-			<key>fileRef</key>
-			<string>D2AF54E319706C0100F0A0F2</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>D2AF54E519706C7200F0A0F2</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>Accounts.framework</string>
-			<key>path</key>
-			<string>System/Library/Frameworks/Accounts.framework</string>
-			<key>sourceTree</key>
-			<string>SDKROOT</string>
-		</dict>
-		<key>D2AF54E619706C7200F0A0F2</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>AddressBook.framework</string>
-			<key>path</key>
-			<string>System/Library/Frameworks/AddressBook.framework</string>
-			<key>sourceTree</key>
-			<string>SDKROOT</string>
-		</dict>
-		<key>D2AF54E719706C7200F0A0F2</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>AddressBookUI.framework</string>
-			<key>path</key>
-			<string>System/Library/Frameworks/AddressBookUI.framework</string>
-			<key>sourceTree</key>
-			<string>SDKROOT</string>
-		</dict>
-		<key>D2AF54E819706C7200F0A0F2</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>AdSupport.framework</string>
-			<key>path</key>
-			<string>System/Library/Frameworks/AdSupport.framework</string>
-			<key>sourceTree</key>
-			<string>SDKROOT</string>
-		</dict>
-		<key>D2AF54E919706C7200F0A0F2</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>AssetsLibrary.framework</string>
-			<key>path</key>
-			<string>System/Library/Frameworks/AssetsLibrary.framework</string>
-			<key>sourceTree</key>
-			<string>SDKROOT</string>
-		</dict>
-		<key>D2AF54EA19706C7200F0A0F2</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>AudioToolbox.framework</string>
-			<key>path</key>
-			<string>System/Library/Frameworks/AudioToolbox.framework</string>
-			<key>sourceTree</key>
-			<string>SDKROOT</string>
-		</dict>
-		<key>D2AF54F119706CC800F0A0F2</key>
-		<dict>
-			<key>fileRef</key>
-			<string>D2AF54E519706C7200F0A0F2</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>D2AF54F219706CC800F0A0F2</key>
-		<dict>
-			<key>fileRef</key>
-			<string>D2AF54EA19706C7200F0A0F2</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>D2AF54F319706CC800F0A0F2</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>CFNetwork.framework</string>
-			<key>path</key>
-			<string>System/Library/Frameworks/CFNetwork.framework</string>
-			<key>sourceTree</key>
-			<string>SDKROOT</string>
-		</dict>
-		<key>D2AF54F419706CC800F0A0F2</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>CoreLocation.framework</string>
-			<key>path</key>
-			<string>System/Library/Frameworks/CoreLocation.framework</string>
-			<key>sourceTree</key>
-			<string>SDKROOT</string>
-		</dict>
-		<key>D2AF54F519706CC800F0A0F2</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>compiled.mach-o.dylib</string>
-			<key>name</key>
-			<string>libz.dylib</string>
-			<key>path</key>
-			<string>usr/lib/libz.dylib</string>
-			<key>sourceTree</key>
-			<string>SDKROOT</string>
-		</dict>
-		<key>D2AF54F619706CC800F0A0F2</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>MobileCoreServices.framework</string>
-			<key>path</key>
-			<string>System/Library/Frameworks/MobileCoreServices.framework</string>
-			<key>sourceTree</key>
-			<string>SDKROOT</string>
-		</dict>
-		<key>D2AF54F719706CC800F0A0F2</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>QuartzCore.framework</string>
-			<key>path</key>
-			<string>System/Library/Frameworks/QuartzCore.framework</string>
-			<key>sourceTree</key>
-			<string>SDKROOT</string>
-		</dict>
-		<key>D2AF54F819706CC800F0A0F2</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>Security.framework</string>
-			<key>path</key>
-			<string>System/Library/Frameworks/Security.framework</string>
-			<key>sourceTree</key>
-			<string>SDKROOT</string>
-		</dict>
-		<key>D2AF54F919706CC800F0A0F2</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>Social.framework</string>
-			<key>path</key>
-			<string>System/Library/Frameworks/Social.framework</string>
-			<key>sourceTree</key>
-			<string>SDKROOT</string>
-		</dict>
-		<key>D2AF54FA19706CC800F0A0F2</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>StoreKit.framework</string>
-			<key>path</key>
-			<string>System/Library/Frameworks/StoreKit.framework</string>
-			<key>sourceTree</key>
-			<string>SDKROOT</string>
-		</dict>
-		<key>D2AF54FB19706CC800F0A0F2</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>SystemConfiguration.framework</string>
-			<key>path</key>
-			<string>System/Library/Frameworks/SystemConfiguration.framework</string>
-			<key>sourceTree</key>
-			<string>SDKROOT</string>
-		</dict>
-		<key>D2AF54FC19706CC800F0A0F2</key>
-		<dict>
-			<key>fileRef</key>
-			<string>D2AF54F319706CC800F0A0F2</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>D2AF54FD19706CC800F0A0F2</key>
-		<dict>
-			<key>fileRef</key>
-			<string>D2AF54F419706CC800F0A0F2</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>D2AF54FE19706CC800F0A0F2</key>
-		<dict>
-			<key>fileRef</key>
-			<string>D2AF54F519706CC800F0A0F2</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>D2AF54FF19706CC800F0A0F2</key>
-		<dict>
-			<key>fileRef</key>
-			<string>D2AF54F619706CC800F0A0F2</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>D2AF550019706CC800F0A0F2</key>
-		<dict>
-			<key>fileRef</key>
-			<string>D2AF54F719706CC800F0A0F2</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>D2AF550119706CC800F0A0F2</key>
-		<dict>
-			<key>fileRef</key>
-			<string>D2AF54F819706CC800F0A0F2</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>D2AF550219706CC800F0A0F2</key>
-		<dict>
-			<key>fileRef</key>
-			<string>D2AF54F919706CC800F0A0F2</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>D2AF550319706CC800F0A0F2</key>
-		<dict>
-			<key>fileRef</key>
-			<string>D2AF54FA19706CC800F0A0F2</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>D2AF550419706CC800F0A0F2</key>
-		<dict>
-			<key>fileRef</key>
-			<string>D2AF54FB19706CC800F0A0F2</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>D2D378071980D1AA00CB0EC2</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>FBUGroupSubscribersViewController.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>D2D378081980D1AA00CB0EC2</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>FBUGroupSubscribersViewController.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>D2D378091980D1AA00CB0EC2</key>
-		<dict>
-			<key>fileRef</key>
-			<string>D2D378081980D1AA00CB0EC2</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>D2D3780A1981A4AD00CB0EC2</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>FBUMapViewController.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>D2D3780B1981A4AD00CB0EC2</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>FBUMapViewController.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>D2D3780C1981A4AD00CB0EC2</key>
-		<dict>
-			<key>fileRef</key>
-			<string>D2D3780B1981A4AD00CB0EC2</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>D2D3780D1981A4C700CB0EC2</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>D2D3780A1981A4AD00CB0EC2</string>
-				<string>D2D3780B1981A4AD00CB0EC2</string>
-				<string>93ED1EDE198849F9000CF446</string>
-				<string>93ED1EDF198849F9000CF446</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Map</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>D2D378111986C3AF00CB0EC2</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>FBUAddRecipesViewController.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>D2D378121986C3AF00CB0EC2</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>FBUAddRecipesViewController.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>D2D378131986C3AF00CB0EC2</key>
-		<dict>
-			<key>fileRef</key>
-			<string>D2D378121986C3AF00CB0EC2</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>D2D378141989BB3B00CB0EC2</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>FBUGroupsRecipesViewController.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>D2D378151989BB3B00CB0EC2</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>FBUGroupsRecipesViewController.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>D2D378161989BB3B00CB0EC2</key>
-		<dict>
-			<key>fileRef</key>
-			<string>D2D378151989BB3B00CB0EC2</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>DE74DF31A7804903B5C662C5</key>
-		<dict>
-			<key>fileRef</key>
-			<string>66DAC9D30A254033A9A255E9</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-	</dict>
-	<key>rootObject</key>
-	<string>D2AF54921970595E00F0A0F2</string>
-</dict>
-</plist>
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		931404C5197D84F0004D4447 /* FBUEditRecipeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 931404C4197D84F0004D4447 /* FBUEditRecipeViewController.m */; };
+		931404C9197F03F9004D4447 /* FBUBucketListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 931404C8197F03F9004D4447 /* FBUBucketListItem.m */; };
+		9367F837199404B30099354D /* profile_default.png in Resources */ = {isa = PBXBuildFile; fileRef = 9367F836199404B30099354D /* profile_default.png */; };
+		93B8D2741982BE96009F2D16 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93B8D2731982BE96009F2D16 /* MapKit.framework */; };
+		93D9D35C19916B9600ABCC5B /* FBUCollectionCellBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D9D35B19916B9600ABCC5B /* FBUCollectionCellBackgroundView.m */; };
+		93D9D35F19916BEB00ABCC5B /* FBUCollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D9D35E19916BEB00ABCC5B /* FBUCollectionViewLayout.m */; };
+		93E4BC2F1979C89800074647 /* FBURecipeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E4BC2E1979C89800074647 /* FBURecipeViewController.m */; };
+		93ED1EE0198849F9000CF446 /* FBUMapAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 93ED1EDF198849F9000CF446 /* FBUMapAnnotation.m */; };
+		93ED1EE31989A5C6000CF446 /* FBURecipeDishViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93ED1EE21989A5C6000CF446 /* FBURecipeDishViewController.m */; };
+		93ED1EE81989B675000CF446 /* FBURecipeSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 93ED1EE71989B675000CF446 /* FBURecipeSegue.m */; };
+		93ED1EEC1989BC17000CF446 /* FBURecipeIngredientViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93ED1EEB1989BC17000CF446 /* FBURecipeIngredientViewController.m */; };
+		93ED1EEF1989BC36000CF446 /* FBURecipeDirectionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93ED1EEE1989BC36000CF446 /* FBURecipeDirectionsViewController.m */; };
+		93ED1EF31989BC90000CF446 /* FBURecipeContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93ED1EF21989BC90000CF446 /* FBURecipeContainerViewController.m */; };
+		93F1D0CB197488C2000A1E0E /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93F1D0CA197488C2000A1E0E /* FacebookSDK.framework */; };
+		93F1D0CD197488EB000A1E0E /* FBUserSettingsViewResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 93F1D0CC197488EB000A1E0E /* FBUserSettingsViewResources.bundle */; };
+		93F248C61981AEC400FC82BD /* FBUSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F248C51981AEC400FC82BD /* FBUSignUpViewController.m */; };
+		93F248D31981D86300FC82BD /* FBULogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93F248D21981D86300FC82BD /* FBULogInViewController.m */; };
+		9607499D1978985C00853E97 /* FBUGroupsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9607499C1978985C00853E97 /* FBUGroupsViewController.m */; };
+		9663F083199736FF00B69649 /* FBURecipesYummylyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9663F082199736FF00B69649 /* FBURecipesYummylyViewController.m */; };
+		966554D61973B28700DDBED0 /* FBUEditProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 966554D51973B28700DDBED0 /* FBUEditProfileViewController.m */; };
+		966554D9197443B200DDBED0 /* FBUBucketListDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 966554D8197443B200DDBED0 /* FBUBucketListDetailViewController.m */; };
+		966554DF197450B500DDBED0 /* FBUBucketListItemsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 966554DE197450B500DDBED0 /* FBUBucketListItemsViewController.m */; };
+		968134311994B8EC00F48BD0 /* Imagination.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 968134301994B8EC00F48BD0 /* Imagination.jpg */; };
+		969C8E6D1983060400D0E7B3 /* FBUMembersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 969C8E6C1983060400D0E7B3 /* FBUMembersViewController.m */; };
+		969C8EAB199157E000D0E7B3 /* FBUGroupCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 969C8EAA199157E000D0E7B3 /* FBUGroupCollectionViewCell.m */; };
+		969C8EAD1992B8C600D0E7B3 /* BucketList.png in Resources */ = {isa = PBXBuildFile; fileRef = 969C8EAC1992B8C600D0E7B3 /* BucketList.png */; };
+		96BC1E821992D95F009953A4 /* New.png in Resources */ = {isa = PBXBuildFile; fileRef = 96BC1E811992D95F009953A4 /* New.png */; };
+		96BC1E841992F6DB009953A4 /* BucketListBackground.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 96BC1E831992F6DB009953A4 /* BucketListBackground.jpg */; };
+		96C1E241197D825300266DB8 /* FBUBucketListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96C1E240197D825300266DB8 /* FBUBucketListViewController.m */; };
+		96C1E245197F01DF00266DB8 /* FBUExploreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96C1E244197F01DF00266DB8 /* FBUExploreViewController.m */; };
+		96EBDE8F1970AF1300DE0033 /* FBUGroupsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96EBDE8E1970AF1300DE0033 /* FBUGroupsListViewController.m */; };
+		D25A4C9C199581D400267D35 /* FBUGroceryListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D25A4C9B199581D400267D35 /* FBUGroceryListViewController.m */; };
+		D25A4CDB199845FD00267D35 /* FBURecipeCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D25A4CDA199845FD00267D35 /* FBURecipeCollectionViewCell.m */; };
+		D260A3161991B57A006BBBDE /* FBUEventCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D260A3151991B57A006BBBDE /* FBUEventCollectionViewCell.m */; };
+		D28632CB19772779007BBD28 /* FBUGroupsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D28632C919772779007BBD28 /* FBUGroupsDetailViewController.m */; };
+		D28632DB197F1E0B007BBD28 /* FBUEventDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D28632DA197F1E0B007BBD28 /* FBUEventDetailViewController.m */; };
+		D28632DE197F1E4C007BBD28 /* FBUEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D28632DD197F1E4C007BBD28 /* FBUEventViewController.m */; };
+		D295F9971975FBB3000ED2C1 /* FBUGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = D295F9961975FBB3000ED2C1 /* FBUGroup.m */; };
+		D295F99A1976028F000ED2C1 /* FBUEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = D295F9991976028F000ED2C1 /* FBUEvent.m */; };
+		D295F99D1976029D000ED2C1 /* FBURecipe.m in Sources */ = {isa = PBXBuildFile; fileRef = D295F99C1976029D000ED2C1 /* FBURecipe.m */; };
+		D295F9A019760D68000ED2C1 /* FBUGroceryList.m in Sources */ = {isa = PBXBuildFile; fileRef = D295F99F19760D68000ED2C1 /* FBUGroceryList.m */; };
+		D2AF549E1970595E00F0A0F2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2AF549D1970595E00F0A0F2 /* Foundation.framework */; };
+		D2AF54A01970595E00F0A0F2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2AF549F1970595E00F0A0F2 /* CoreGraphics.framework */; };
+		D2AF54A21970595E00F0A0F2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2AF54A11970595E00F0A0F2 /* UIKit.framework */; };
+		D2AF54A81970595F00F0A0F2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D2AF54A61970595F00F0A0F2 /* InfoPlist.strings */; };
+		D2AF54AA1970595F00F0A0F2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D2AF54A91970595F00F0A0F2 /* main.m */; };
+		D2AF54AE1970595F00F0A0F2 /* FBUAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D2AF54AD1970595F00F0A0F2 /* FBUAppDelegate.m */; };
+		D2AF54B01970595F00F0A0F2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2AF54AF1970595F00F0A0F2 /* Images.xcassets */; };
+		D2AF54B71970595F00F0A0F2 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2AF54B61970595F00F0A0F2 /* XCTest.framework */; };
+		D2AF54B81970595F00F0A0F2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2AF549D1970595E00F0A0F2 /* Foundation.framework */; };
+		D2AF54B91970595F00F0A0F2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2AF54A11970595E00F0A0F2 /* UIKit.framework */; };
+		D2AF54C11970595F00F0A0F2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D2AF54BF1970595F00F0A0F2 /* InfoPlist.strings */; };
+		D2AF54C31970595F00F0A0F2 /* FBUFoodTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D2AF54C21970595F00F0A0F2 /* FBUFoodTests.m */; };
+		D2AF54CD197059B000F0A0F2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2AF54CC197059B000F0A0F2 /* Main.storyboard */; };
+		D2AF54D319705B4B00F0A0F2 /* FBUProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2AF54D219705B4B00F0A0F2 /* FBUProfileViewController.m */; };
+		D2AF54D619705DF200F0A0F2 /* FBUDashboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2AF54D519705DF200F0A0F2 /* FBUDashboardViewController.m */; };
+		D2AF54DC1970607A00F0A0F2 /* FBURecipesListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2AF54DB1970607A00F0A0F2 /* FBURecipesListViewController.m */; };
+		D2AF54E419706C0100F0A0F2 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2AF54E319706C0100F0A0F2 /* Parse.framework */; };
+		D2AF54F119706CC800F0A0F2 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2AF54E519706C7200F0A0F2 /* Accounts.framework */; };
+		D2AF54F219706CC800F0A0F2 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2AF54EA19706C7200F0A0F2 /* AudioToolbox.framework */; };
+		D2AF54FC19706CC800F0A0F2 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2AF54F319706CC800F0A0F2 /* CFNetwork.framework */; };
+		D2AF54FD19706CC800F0A0F2 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2AF54F419706CC800F0A0F2 /* CoreLocation.framework */; };
+		D2AF54FE19706CC800F0A0F2 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D2AF54F519706CC800F0A0F2 /* libz.dylib */; };
+		D2AF54FF19706CC800F0A0F2 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2AF54F619706CC800F0A0F2 /* MobileCoreServices.framework */; };
+		D2AF550019706CC800F0A0F2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2AF54F719706CC800F0A0F2 /* QuartzCore.framework */; };
+		D2AF550119706CC800F0A0F2 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2AF54F819706CC800F0A0F2 /* Security.framework */; };
+		D2AF550219706CC800F0A0F2 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2AF54F919706CC800F0A0F2 /* Social.framework */; };
+		D2AF550319706CC800F0A0F2 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2AF54FA19706CC800F0A0F2 /* StoreKit.framework */; };
+		D2AF550419706CC800F0A0F2 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2AF54FB19706CC800F0A0F2 /* SystemConfiguration.framework */; };
+		D2D378091980D1AA00CB0EC2 /* FBUGroupSubscribersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D378081980D1AA00CB0EC2 /* FBUGroupSubscribersViewController.m */; };
+		D2D3780C1981A4AD00CB0EC2 /* FBUMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D3780B1981A4AD00CB0EC2 /* FBUMapViewController.m */; };
+		D2D378131986C3AF00CB0EC2 /* FBUAddRecipesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D378121986C3AF00CB0EC2 /* FBUAddRecipesViewController.m */; };
+		D2D378161989BB3B00CB0EC2 /* FBUGroupsRecipesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D378151989BB3B00CB0EC2 /* FBUGroupsRecipesViewController.m */; };
+		DE74DF31A7804903B5C662C5 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 66DAC9D30A254033A9A255E9 /* libPods.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D2AF54BA1970595F00F0A0F2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D2AF54921970595E00F0A0F2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D2AF54991970595E00F0A0F2;
+			remoteInfo = FBUFood;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		02908DA418054F36AE9F91D9 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		66DAC9D30A254033A9A255E9 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		931404C3197D84F0004D4447 /* FBUEditRecipeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBUEditRecipeViewController.h; sourceTree = "<group>"; };
+		931404C4197D84F0004D4447 /* FBUEditRecipeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBUEditRecipeViewController.m; sourceTree = "<group>"; };
+		931404C8197F03F9004D4447 /* FBUBucketListItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBUBucketListItem.m; sourceTree = "<group>"; };
+		9367F836199404B30099354D /* profile_default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profile_default.png; sourceTree = "<group>"; };
+		93B8D2731982BE96009F2D16 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		93D9D35A19916B9600ABCC5B /* FBUCollectionCellBackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBUCollectionCellBackgroundView.h; sourceTree = "<group>"; };
+		93D9D35B19916B9600ABCC5B /* FBUCollectionCellBackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBUCollectionCellBackgroundView.m; sourceTree = "<group>"; };
+		93D9D35D19916BEB00ABCC5B /* FBUCollectionViewLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBUCollectionViewLayout.h; sourceTree = "<group>"; };
+		93D9D35E19916BEB00ABCC5B /* FBUCollectionViewLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBUCollectionViewLayout.m; sourceTree = "<group>"; };
+		93E4BC2D1979C89800074647 /* FBURecipeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBURecipeViewController.h; sourceTree = "<group>"; };
+		93E4BC2E1979C89800074647 /* FBURecipeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBURecipeViewController.m; sourceTree = "<group>"; };
+		93ED1EDE198849F9000CF446 /* FBUMapAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBUMapAnnotation.h; sourceTree = "<group>"; };
+		93ED1EDF198849F9000CF446 /* FBUMapAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBUMapAnnotation.m; sourceTree = "<group>"; };
+		93ED1EE11989A5C6000CF446 /* FBURecipeDishViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBURecipeDishViewController.h; sourceTree = "<group>"; };
+		93ED1EE21989A5C6000CF446 /* FBURecipeDishViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBURecipeDishViewController.m; sourceTree = "<group>"; };
+		93ED1EE61989B675000CF446 /* FBURecipeSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBURecipeSegue.h; sourceTree = "<group>"; };
+		93ED1EE71989B675000CF446 /* FBURecipeSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBURecipeSegue.m; sourceTree = "<group>"; };
+		93ED1EEA1989BC17000CF446 /* FBURecipeIngredientViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBURecipeIngredientViewController.h; sourceTree = "<group>"; };
+		93ED1EEB1989BC17000CF446 /* FBURecipeIngredientViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBURecipeIngredientViewController.m; sourceTree = "<group>"; };
+		93ED1EED1989BC36000CF446 /* FBURecipeDirectionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBURecipeDirectionsViewController.h; sourceTree = "<group>"; };
+		93ED1EEE1989BC36000CF446 /* FBURecipeDirectionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBURecipeDirectionsViewController.m; sourceTree = "<group>"; };
+		93ED1EF11989BC90000CF446 /* FBURecipeContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBURecipeContainerViewController.h; sourceTree = "<group>"; };
+		93ED1EF21989BC90000CF446 /* FBURecipeContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBURecipeContainerViewController.m; sourceTree = "<group>"; };
+		93F1D0CA197488C2000A1E0E /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
+		93F1D0CC197488EB000A1E0E /* FBUserSettingsViewResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = FBUserSettingsViewResources.bundle; sourceTree = "<group>"; };
+		93F248C41981AEC400FC82BD /* FBUSignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBUSignUpViewController.h; sourceTree = "<group>"; };
+		93F248C51981AEC400FC82BD /* FBUSignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBUSignUpViewController.m; sourceTree = "<group>"; };
+		93F248D11981D86300FC82BD /* FBULogInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBULogInViewController.h; sourceTree = "<group>"; };
+		93F248D21981D86300FC82BD /* FBULogInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBULogInViewController.m; sourceTree = "<group>"; };
+		9607499C1978985C00853E97 /* FBUGroupsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBUGroupsViewController.m; sourceTree = "<group>"; };
+		9607499E1979D25200853E97 /* FBUBucketListItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FBUBucketListItem.h; sourceTree = "<group>"; };
+		9663F081199736FF00B69649 /* FBURecipesYummylyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBURecipesYummylyViewController.h; sourceTree = "<group>"; };
+		9663F082199736FF00B69649 /* FBURecipesYummylyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBURecipesYummylyViewController.m; sourceTree = "<group>"; };
+		966554D41973B28700DDBED0 /* FBUEditProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBUEditProfileViewController.h; sourceTree = "<group>"; };
+		966554D51973B28700DDBED0 /* FBUEditProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBUEditProfileViewController.m; sourceTree = "<group>"; };
+		966554D7197443B200DDBED0 /* FBUBucketListDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBUBucketListDetailViewController.h; sourceTree = "<group>"; };
+		966554D8197443B200DDBED0 /* FBUBucketListDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBUBucketListDetailViewController.m; sourceTree = "<group>"; };
+		966554DD197450B500DDBED0 /* FBUBucketListItemsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBUBucketListItemsViewController.h; sourceTree = "<group>"; };
+		966554DE197450B500DDBED0 /* FBUBucketListItemsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBUBucketListItemsViewController.m; sourceTree = "<group>"; };
+		968134301994B8EC00F48BD0 /* Imagination.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Imagination.jpg; sourceTree = "<group>"; };
+		969C8E6B1983060400D0E7B3 /* FBUMembersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBUMembersViewController.h; sourceTree = "<group>"; };
+		969C8E6C1983060400D0E7B3 /* FBUMembersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBUMembersViewController.m; sourceTree = "<group>"; };
+		969C8EA9199157E000D0E7B3 /* FBUGroupCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBUGroupCollectionViewCell.h; sourceTree = "<group>"; };
+		969C8EAA199157E000D0E7B3 /* FBUGroupCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBUGroupCollectionViewCell.m; sourceTree = "<group>"; };
+		969C8EAC1992B8C600D0E7B3 /* BucketList.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BucketList.png; sourceTree = "<group>"; };
+		96BC1E811992D95F009953A4 /* New.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = New.png; sourceTree = "<group>"; };
+		96BC1E831992F6DB009953A4 /* BucketListBackground.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = BucketListBackground.jpg; sourceTree = "<group>"; };
+		96C1E23F197D825300266DB8 /* FBUBucketListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBUBucketListViewController.h; sourceTree = "<group>"; };
+		96C1E240197D825300266DB8 /* FBUBucketListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBUBucketListViewController.m; sourceTree = "<group>"; };
+		96C1E243197F01DF00266DB8 /* FBUExploreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBUExploreViewController.h; sourceTree = "<group>"; };
+		96C1E244197F01DF00266DB8 /* FBUExploreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBUExploreViewController.m; sourceTree = "<group>"; };
+		96EBDE8D1970AF1300DE0033 /* FBUGroupsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBUGroupsListViewController.h; sourceTree = "<group>"; };
+		96EBDE8E1970AF1300DE0033 /* FBUGroupsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBUGroupsListViewController.m; sourceTree = "<group>"; };
+		D25A4C9A199581D400267D35 /* FBUGroceryListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBUGroceryListViewController.h; sourceTree = "<group>"; };
+		D25A4C9B199581D400267D35 /* FBUGroceryListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBUGroceryListViewController.m; sourceTree = "<group>"; };
+		D25A4CD9199845FD00267D35 /* FBURecipeCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBURecipeCollectionViewCell.h; sourceTree = "<group>"; };
+		D25A4CDA199845FD00267D35 /* FBURecipeCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBURecipeCollectionViewCell.m; sourceTree = "<group>"; };
+		D260A3141991B57A006BBBDE /* FBUEventCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBUEventCollectionViewCell.h; sourceTree = "<group>"; };
+		D260A3151991B57A006BBBDE /* FBUEventCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBUEventCollectionViewCell.m; sourceTree = "<group>"; };
+		D28632C819772779007BBD28 /* FBUGroupsDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBUGroupsDetailViewController.h; sourceTree = "<group>"; };
+		D28632C919772779007BBD28 /* FBUGroupsDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBUGroupsDetailViewController.m; sourceTree = "<group>"; };
+		D28632D9197F1E0B007BBD28 /* FBUEventDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FBUEventDetailViewController.h; path = ../FBUEventDetailViewController.h; sourceTree = "<group>"; };
+		D28632DA197F1E0B007BBD28 /* FBUEventDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FBUEventDetailViewController.m; path = ../FBUEventDetailViewController.m; sourceTree = "<group>"; };
+		D28632DC197F1E4C007BBD28 /* FBUEventViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBUEventViewController.h; sourceTree = "<group>"; };
+		D28632DD197F1E4C007BBD28 /* FBUEventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBUEventViewController.m; sourceTree = "<group>"; };
+		D295F9951975FBB3000ED2C1 /* FBUGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBUGroup.h; sourceTree = "<group>"; };
+		D295F9961975FBB3000ED2C1 /* FBUGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBUGroup.m; sourceTree = "<group>"; };
+		D295F9981976028F000ED2C1 /* FBUEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBUEvent.h; sourceTree = "<group>"; };
+		D295F9991976028F000ED2C1 /* FBUEvent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBUEvent.m; sourceTree = "<group>"; };
+		D295F99B1976029D000ED2C1 /* FBURecipe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBURecipe.h; sourceTree = "<group>"; };
+		D295F99C1976029D000ED2C1 /* FBURecipe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBURecipe.m; sourceTree = "<group>"; };
+		D295F99E19760D68000ED2C1 /* FBUGroceryList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBUGroceryList.h; sourceTree = "<group>"; };
+		D295F99F19760D68000ED2C1 /* FBUGroceryList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBUGroceryList.m; sourceTree = "<group>"; };
+		D2AF549A1970595E00F0A0F2 /* FBUFood.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FBUFood.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D2AF549D1970595E00F0A0F2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		D2AF549F1970595E00F0A0F2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		D2AF54A11970595E00F0A0F2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		D2AF54A51970595F00F0A0F2 /* FBUFood-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FBUFood-Info.plist"; sourceTree = "<group>"; };
+		D2AF54A71970595F00F0A0F2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D2AF54A91970595F00F0A0F2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D2AF54AB1970595F00F0A0F2 /* FBUFood-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FBUFood-Prefix.pch"; sourceTree = "<group>"; };
+		D2AF54AC1970595F00F0A0F2 /* FBUAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FBUAppDelegate.h; sourceTree = "<group>"; };
+		D2AF54AD1970595F00F0A0F2 /* FBUAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FBUAppDelegate.m; sourceTree = "<group>"; };
+		D2AF54AF1970595F00F0A0F2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		D2AF54B51970595F00F0A0F2 /* FBUFoodTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FBUFoodTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D2AF54B61970595F00F0A0F2 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		D2AF54BE1970595F00F0A0F2 /* FBUFoodTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FBUFoodTests-Info.plist"; sourceTree = "<group>"; };
+		D2AF54C01970595F00F0A0F2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D2AF54C21970595F00F0A0F2 /* FBUFoodTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FBUFoodTests.m; sourceTree = "<group>"; };
+		D2AF54CC197059B000F0A0F2 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		D2AF54D119705B4B00F0A0F2 /* FBUProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBUProfileViewController.h; sourceTree = "<group>"; };
+		D2AF54D219705B4B00F0A0F2 /* FBUProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBUProfileViewController.m; sourceTree = "<group>"; };
+		D2AF54D419705DF200F0A0F2 /* FBUDashboardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBUDashboardViewController.h; sourceTree = "<group>"; };
+		D2AF54D519705DF200F0A0F2 /* FBUDashboardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBUDashboardViewController.m; sourceTree = "<group>"; };
+		D2AF54DA1970607A00F0A0F2 /* FBURecipesListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBURecipesListViewController.h; sourceTree = "<group>"; };
+		D2AF54DB1970607A00F0A0F2 /* FBURecipesListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBURecipesListViewController.m; sourceTree = "<group>"; };
+		D2AF54DD197062F100F0A0F2 /* FBUGroupsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBUGroupsViewController.h; sourceTree = "<group>"; };
+		D2AF54E319706C0100F0A0F2 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = FBUFood/Parse.framework; sourceTree = "<group>"; };
+		D2AF54E519706C7200F0A0F2 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		D2AF54E619706C7200F0A0F2 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		D2AF54E719706C7200F0A0F2 /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
+		D2AF54E819706C7200F0A0F2 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		D2AF54E919706C7200F0A0F2 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		D2AF54EA19706C7200F0A0F2 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		D2AF54F319706CC800F0A0F2 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		D2AF54F419706CC800F0A0F2 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		D2AF54F519706CC800F0A0F2 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		D2AF54F619706CC800F0A0F2 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		D2AF54F719706CC800F0A0F2 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		D2AF54F819706CC800F0A0F2 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		D2AF54F919706CC800F0A0F2 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		D2AF54FA19706CC800F0A0F2 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		D2AF54FB19706CC800F0A0F2 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		D2D378071980D1AA00CB0EC2 /* FBUGroupSubscribersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBUGroupSubscribersViewController.h; sourceTree = "<group>"; };
+		D2D378081980D1AA00CB0EC2 /* FBUGroupSubscribersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBUGroupSubscribersViewController.m; sourceTree = "<group>"; };
+		D2D3780A1981A4AD00CB0EC2 /* FBUMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBUMapViewController.h; sourceTree = "<group>"; };
+		D2D3780B1981A4AD00CB0EC2 /* FBUMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBUMapViewController.m; sourceTree = "<group>"; };
+		D2D378111986C3AF00CB0EC2 /* FBUAddRecipesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBUAddRecipesViewController.h; sourceTree = "<group>"; };
+		D2D378121986C3AF00CB0EC2 /* FBUAddRecipesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBUAddRecipesViewController.m; sourceTree = "<group>"; };
+		D2D378141989BB3B00CB0EC2 /* FBUGroupsRecipesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBUGroupsRecipesViewController.h; sourceTree = "<group>"; };
+		D2D378151989BB3B00CB0EC2 /* FBUGroupsRecipesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBUGroupsRecipesViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D2AF54971970595E00F0A0F2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				93B8D2741982BE96009F2D16 /* MapKit.framework in Frameworks */,
+				D2AF54FC19706CC800F0A0F2 /* CFNetwork.framework in Frameworks */,
+				D2AF54FD19706CC800F0A0F2 /* CoreLocation.framework in Frameworks */,
+				D2AF54FE19706CC800F0A0F2 /* libz.dylib in Frameworks */,
+				D2AF54FF19706CC800F0A0F2 /* MobileCoreServices.framework in Frameworks */,
+				D2AF550019706CC800F0A0F2 /* QuartzCore.framework in Frameworks */,
+				D2AF550119706CC800F0A0F2 /* Security.framework in Frameworks */,
+				D2AF550219706CC800F0A0F2 /* Social.framework in Frameworks */,
+				D2AF550319706CC800F0A0F2 /* StoreKit.framework in Frameworks */,
+				D2AF550419706CC800F0A0F2 /* SystemConfiguration.framework in Frameworks */,
+				D2AF54F119706CC800F0A0F2 /* Accounts.framework in Frameworks */,
+				D2AF54F219706CC800F0A0F2 /* AudioToolbox.framework in Frameworks */,
+				D2AF54A01970595E00F0A0F2 /* CoreGraphics.framework in Frameworks */,
+				D2AF54A21970595E00F0A0F2 /* UIKit.framework in Frameworks */,
+				93F1D0CB197488C2000A1E0E /* FacebookSDK.framework in Frameworks */,
+				D2AF54E419706C0100F0A0F2 /* Parse.framework in Frameworks */,
+				D2AF549E1970595E00F0A0F2 /* Foundation.framework in Frameworks */,
+				DE74DF31A7804903B5C662C5 /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D2AF54B21970595F00F0A0F2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D2AF54B71970595F00F0A0F2 /* XCTest.framework in Frameworks */,
+				D2AF54B91970595F00F0A0F2 /* UIKit.framework in Frameworks */,
+				D2AF54B81970595F00F0A0F2 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		930320D61976F38B00629269 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				D2AF54D119705B4B00F0A0F2 /* FBUProfileViewController.h */,
+				D2AF54D219705B4B00F0A0F2 /* FBUProfileViewController.m */,
+				966554D41973B28700DDBED0 /* FBUEditProfileViewController.h */,
+				966554D51973B28700DDBED0 /* FBUEditProfileViewController.m */,
+			);
+			name = Profile;
+			sourceTree = "<group>";
+		};
+		930320D71976F41100629269 /* BucketList */ = {
+			isa = PBXGroup;
+			children = (
+				9607499E1979D25200853E97 /* FBUBucketListItem.h */,
+				931404C8197F03F9004D4447 /* FBUBucketListItem.m */,
+				96C1E23F197D825300266DB8 /* FBUBucketListViewController.h */,
+				96C1E240197D825300266DB8 /* FBUBucketListViewController.m */,
+				966554DD197450B500DDBED0 /* FBUBucketListItemsViewController.h */,
+				966554DE197450B500DDBED0 /* FBUBucketListItemsViewController.m */,
+				966554D7197443B200DDBED0 /* FBUBucketListDetailViewController.h */,
+				966554D8197443B200DDBED0 /* FBUBucketListDetailViewController.m */,
+			);
+			name = BucketList;
+			sourceTree = "<group>";
+		};
+		930320D81976F42000629269 /* Container Views */ = {
+			isa = PBXGroup;
+			children = (
+				93ED1EE11989A5C6000CF446 /* FBURecipeDishViewController.h */,
+				93ED1EE21989A5C6000CF446 /* FBURecipeDishViewController.m */,
+				93ED1EEA1989BC17000CF446 /* FBURecipeIngredientViewController.h */,
+				93ED1EEB1989BC17000CF446 /* FBURecipeIngredientViewController.m */,
+				93ED1EED1989BC36000CF446 /* FBURecipeDirectionsViewController.h */,
+				93ED1EEE1989BC36000CF446 /* FBURecipeDirectionsViewController.m */,
+				93ED1EF11989BC90000CF446 /* FBURecipeContainerViewController.h */,
+				93ED1EF21989BC90000CF446 /* FBURecipeContainerViewController.m */,
+			);
+			name = "Container Views";
+			sourceTree = "<group>";
+		};
+		930320D91976F6E900629269 /* Groups */ = {
+			isa = PBXGroup;
+			children = (
+				D295F9951975FBB3000ED2C1 /* FBUGroup.h */,
+				D295F9961975FBB3000ED2C1 /* FBUGroup.m */,
+				D2AF54DD197062F100F0A0F2 /* FBUGroupsViewController.h */,
+				9607499C1978985C00853E97 /* FBUGroupsViewController.m */,
+				96EBDE8D1970AF1300DE0033 /* FBUGroupsListViewController.h */,
+				96EBDE8E1970AF1300DE0033 /* FBUGroupsListViewController.m */,
+				D28632C819772779007BBD28 /* FBUGroupsDetailViewController.h */,
+				D28632C919772779007BBD28 /* FBUGroupsDetailViewController.m */,
+				D2D378071980D1AA00CB0EC2 /* FBUGroupSubscribersViewController.h */,
+				D2D378081980D1AA00CB0EC2 /* FBUGroupSubscribersViewController.m */,
+				969C8EA9199157E000D0E7B3 /* FBUGroupCollectionViewCell.h */,
+				969C8EAA199157E000D0E7B3 /* FBUGroupCollectionViewCell.m */,
+			);
+			name = Groups;
+			sourceTree = "<group>";
+		};
+		93E4BC2C1979C2C500074647 /* Events */ = {
+			isa = PBXGroup;
+			children = (
+				D295F9981976028F000ED2C1 /* FBUEvent.h */,
+				D295F9991976028F000ED2C1 /* FBUEvent.m */,
+				D28632D9197F1E0B007BBD28 /* FBUEventDetailViewController.h */,
+				D28632DA197F1E0B007BBD28 /* FBUEventDetailViewController.m */,
+				D28632DC197F1E4C007BBD28 /* FBUEventViewController.h */,
+				D28632DD197F1E4C007BBD28 /* FBUEventViewController.m */,
+			);
+			name = Events;
+			sourceTree = "<group>";
+		};
+		93ED1EE91989BBBD000CF446 /* Recipes */ = {
+			isa = PBXGroup;
+			children = (
+				930320D81976F42000629269 /* Container Views */,
+				93ED1EF01989BC59000CF446 /* Group View of Recipes */,
+				D295F99B1976029D000ED2C1 /* FBURecipe.h */,
+				D295F99C1976029D000ED2C1 /* FBURecipe.m */,
+				931404C3197D84F0004D4447 /* FBUEditRecipeViewController.h */,
+				931404C4197D84F0004D4447 /* FBUEditRecipeViewController.m */,
+				D2AF54DA1970607A00F0A0F2 /* FBURecipesListViewController.h */,
+				D2AF54DB1970607A00F0A0F2 /* FBURecipesListViewController.m */,
+				93E4BC2D1979C89800074647 /* FBURecipeViewController.h */,
+				93E4BC2E1979C89800074647 /* FBURecipeViewController.m */,
+				93ED1EE61989B675000CF446 /* FBURecipeSegue.h */,
+				93ED1EE71989B675000CF446 /* FBURecipeSegue.m */,
+				D2D378141989BB3B00CB0EC2 /* FBUGroupsRecipesViewController.h */,
+				D2D378151989BB3B00CB0EC2 /* FBUGroupsRecipesViewController.m */,
+				9663F081199736FF00B69649 /* FBURecipesYummylyViewController.h */,
+				9663F082199736FF00B69649 /* FBURecipesYummylyViewController.m */,
+			);
+			name = Recipes;
+			sourceTree = "<group>";
+		};
+		93ED1EF01989BC59000CF446 /* Group View of Recipes */ = {
+			isa = PBXGroup;
+			children = (
+				D2D378111986C3AF00CB0EC2 /* FBUAddRecipesViewController.h */,
+				D2D378121986C3AF00CB0EC2 /* FBUAddRecipesViewController.m */,
+			);
+			name = "Group View of Recipes";
+			sourceTree = "<group>";
+		};
+		93F248C71981AFEC00FC82BD /* Login/Signup */ = {
+			isa = PBXGroup;
+			children = (
+				93F248D11981D86300FC82BD /* FBULogInViewController.h */,
+				93F248D21981D86300FC82BD /* FBULogInViewController.m */,
+				93F248C41981AEC400FC82BD /* FBUSignUpViewController.h */,
+				93F248C51981AEC400FC82BD /* FBUSignUpViewController.m */,
+			);
+			name = Login/Signup;
+			sourceTree = "<group>";
+		};
+		93FAA48E1991E705005B43AF /* Custom Collection View  */ = {
+			isa = PBXGroup;
+			children = (
+				D25A4CD9199845FD00267D35 /* FBURecipeCollectionViewCell.h */,
+				D25A4CDA199845FD00267D35 /* FBURecipeCollectionViewCell.m */,
+				D260A3141991B57A006BBBDE /* FBUEventCollectionViewCell.h */,
+				D260A3151991B57A006BBBDE /* FBUEventCollectionViewCell.m */,
+				93D9D35A19916B9600ABCC5B /* FBUCollectionCellBackgroundView.h */,
+				93D9D35B19916B9600ABCC5B /* FBUCollectionCellBackgroundView.m */,
+				93D9D35D19916BEB00ABCC5B /* FBUCollectionViewLayout.h */,
+				93D9D35E19916BEB00ABCC5B /* FBUCollectionViewLayout.m */,
+			);
+			name = "Custom Collection View ";
+			sourceTree = "<group>";
+		};
+		96C1E242197F019500266DB8 /* ExploreApp */ = {
+			isa = PBXGroup;
+			children = (
+				96C1E243197F01DF00266DB8 /* FBUExploreViewController.h */,
+				96C1E244197F01DF00266DB8 /* FBUExploreViewController.m */,
+			);
+			name = ExploreApp;
+			sourceTree = "<group>";
+		};
+		D25A4C9919955FE100267D35 /* Grocery List */ = {
+			isa = PBXGroup;
+			children = (
+				D295F99E19760D68000ED2C1 /* FBUGroceryList.h */,
+				D295F99F19760D68000ED2C1 /* FBUGroceryList.m */,
+				D25A4C9A199581D400267D35 /* FBUGroceryListViewController.h */,
+				D25A4C9B199581D400267D35 /* FBUGroceryListViewController.m */,
+			);
+			name = "Grocery List";
+			sourceTree = "<group>";
+		};
+		D2AF54911970595E00F0A0F2 = {
+			isa = PBXGroup;
+			children = (
+				D2AF54A31970595E00F0A0F2 /* FBUFood */,
+				D2AF54BC1970595F00F0A0F2 /* FBUFoodTests */,
+				D2AF549C1970595E00F0A0F2 /* Frameworks */,
+				D2AF549B1970595E00F0A0F2 /* Products */,
+				02908DA418054F36AE9F91D9 /* Pods.xcconfig */,
+			);
+			sourceTree = "<group>";
+		};
+		D2AF549B1970595E00F0A0F2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D2AF549A1970595E00F0A0F2 /* FBUFood.app */,
+				D2AF54B51970595F00F0A0F2 /* FBUFoodTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D2AF549C1970595E00F0A0F2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				93B8D2731982BE96009F2D16 /* MapKit.framework */,
+				93F1D0CC197488EB000A1E0E /* FBUserSettingsViewResources.bundle */,
+				93F1D0CA197488C2000A1E0E /* FacebookSDK.framework */,
+				D2AF54F319706CC800F0A0F2 /* CFNetwork.framework */,
+				D2AF54F419706CC800F0A0F2 /* CoreLocation.framework */,
+				D2AF54F519706CC800F0A0F2 /* libz.dylib */,
+				D2AF54F619706CC800F0A0F2 /* MobileCoreServices.framework */,
+				D2AF54F719706CC800F0A0F2 /* QuartzCore.framework */,
+				D2AF54F819706CC800F0A0F2 /* Security.framework */,
+				D2AF54F919706CC800F0A0F2 /* Social.framework */,
+				D2AF54FA19706CC800F0A0F2 /* StoreKit.framework */,
+				D2AF54FB19706CC800F0A0F2 /* SystemConfiguration.framework */,
+				D2AF54E519706C7200F0A0F2 /* Accounts.framework */,
+				D2AF54E619706C7200F0A0F2 /* AddressBook.framework */,
+				D2AF54E719706C7200F0A0F2 /* AddressBookUI.framework */,
+				D2AF54E819706C7200F0A0F2 /* AdSupport.framework */,
+				D2AF54E919706C7200F0A0F2 /* AssetsLibrary.framework */,
+				D2AF54EA19706C7200F0A0F2 /* AudioToolbox.framework */,
+				D2AF54E319706C0100F0A0F2 /* Parse.framework */,
+				D2AF549D1970595E00F0A0F2 /* Foundation.framework */,
+				D2AF549F1970595E00F0A0F2 /* CoreGraphics.framework */,
+				D2AF54A11970595E00F0A0F2 /* UIKit.framework */,
+				D2AF54B61970595F00F0A0F2 /* XCTest.framework */,
+				66DAC9D30A254033A9A255E9 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D2AF54A31970595E00F0A0F2 /* FBUFood */ = {
+			isa = PBXGroup;
+			children = (
+				969C8EAC1992B8C600D0E7B3 /* BucketList.png */,
+				96BC1E811992D95F009953A4 /* New.png */,
+				96BC1E831992F6DB009953A4 /* BucketListBackground.jpg */,
+				968134301994B8EC00F48BD0 /* Imagination.jpg */,
+				9367F836199404B30099354D /* profile_default.png */,
+				D2AF54CC197059B000F0A0F2 /* Main.storyboard */,
+				969C8E6B1983060400D0E7B3 /* FBUMembersViewController.h */,
+				969C8E6C1983060400D0E7B3 /* FBUMembersViewController.m */,
+				D2AF54AC1970595F00F0A0F2 /* FBUAppDelegate.h */,
+				D2AF54AD1970595F00F0A0F2 /* FBUAppDelegate.m */,
+				D2D3780D1981A4C700CB0EC2 /* Map */,
+				96C1E242197F019500266DB8 /* ExploreApp */,
+				93E4BC2C1979C2C500074647 /* Events */,
+				930320D91976F6E900629269 /* Groups */,
+				93ED1EE91989BBBD000CF446 /* Recipes */,
+				930320D71976F41100629269 /* BucketList */,
+				D25A4C9919955FE100267D35 /* Grocery List */,
+				930320D61976F38B00629269 /* Profile */,
+				93F248C71981AFEC00FC82BD /* Login/Signup */,
+				93FAA48E1991E705005B43AF /* Custom Collection View  */,
+				D2AF54D419705DF200F0A0F2 /* FBUDashboardViewController.h */,
+				D2AF54D519705DF200F0A0F2 /* FBUDashboardViewController.m */,
+				D2AF54AF1970595F00F0A0F2 /* Images.xcassets */,
+				D2AF54A41970595F00F0A0F2 /* Supporting Files */,
+			);
+			path = FBUFood;
+			sourceTree = "<group>";
+		};
+		D2AF54A41970595F00F0A0F2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D2AF54A51970595F00F0A0F2 /* FBUFood-Info.plist */,
+				D2AF54A61970595F00F0A0F2 /* InfoPlist.strings */,
+				D2AF54A91970595F00F0A0F2 /* main.m */,
+				D2AF54AB1970595F00F0A0F2 /* FBUFood-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D2AF54BC1970595F00F0A0F2 /* FBUFoodTests */ = {
+			isa = PBXGroup;
+			children = (
+				D2AF54C21970595F00F0A0F2 /* FBUFoodTests.m */,
+				D2AF54BD1970595F00F0A0F2 /* Supporting Files */,
+			);
+			path = FBUFoodTests;
+			sourceTree = "<group>";
+		};
+		D2AF54BD1970595F00F0A0F2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D2AF54BE1970595F00F0A0F2 /* FBUFoodTests-Info.plist */,
+				D2AF54BF1970595F00F0A0F2 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D2D3780D1981A4C700CB0EC2 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				D2D3780A1981A4AD00CB0EC2 /* FBUMapViewController.h */,
+				D2D3780B1981A4AD00CB0EC2 /* FBUMapViewController.m */,
+				93ED1EDE198849F9000CF446 /* FBUMapAnnotation.h */,
+				93ED1EDF198849F9000CF446 /* FBUMapAnnotation.m */,
+			);
+			name = Map;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D2AF54991970595E00F0A0F2 /* FBUFood */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D2AF54C61970595F00F0A0F2 /* Build configuration list for PBXNativeTarget "FBUFood" */;
+			buildPhases = (
+				2B9C0B9FF3B444C296667F8A /* Check Pods Manifest.lock */,
+				D2AF54961970595E00F0A0F2 /* Sources */,
+				D2AF54971970595E00F0A0F2 /* Frameworks */,
+				D2AF54981970595E00F0A0F2 /* Resources */,
+				711BCB592B2B4F4EBE19FCCF /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FBUFood;
+			productName = FBUFood;
+			productReference = D2AF549A1970595E00F0A0F2 /* FBUFood.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D2AF54B41970595F00F0A0F2 /* FBUFoodTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D2AF54C91970595F00F0A0F2 /* Build configuration list for PBXNativeTarget "FBUFoodTests" */;
+			buildPhases = (
+				D2AF54B11970595F00F0A0F2 /* Sources */,
+				D2AF54B21970595F00F0A0F2 /* Frameworks */,
+				D2AF54B31970595F00F0A0F2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D2AF54BB1970595F00F0A0F2 /* PBXTargetDependency */,
+			);
+			name = FBUFoodTests;
+			productName = FBUFoodTests;
+			productReference = D2AF54B51970595F00F0A0F2 /* FBUFoodTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D2AF54921970595E00F0A0F2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = FBU;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = FacebookU;
+				TargetAttributes = {
+					D2AF54B41970595F00F0A0F2 = {
+						TestTargetID = D2AF54991970595E00F0A0F2;
+					};
+				};
+			};
+			buildConfigurationList = D2AF54951970595E00F0A0F2 /* Build configuration list for PBXProject "FBUFood" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = D2AF54911970595E00F0A0F2;
+			productRefGroup = D2AF549B1970595E00F0A0F2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D2AF54991970595E00F0A0F2 /* FBUFood */,
+				D2AF54B41970595F00F0A0F2 /* FBUFoodTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D2AF54981970595E00F0A0F2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				93F1D0CD197488EB000A1E0E /* FBUserSettingsViewResources.bundle in Resources */,
+				969C8EAD1992B8C600D0E7B3 /* BucketList.png in Resources */,
+				96BC1E821992D95F009953A4 /* New.png in Resources */,
+				D2AF54CD197059B000F0A0F2 /* Main.storyboard in Resources */,
+				D2AF54A81970595F00F0A0F2 /* InfoPlist.strings in Resources */,
+				96BC1E841992F6DB009953A4 /* BucketListBackground.jpg in Resources */,
+				968134311994B8EC00F48BD0 /* Imagination.jpg in Resources */,
+				D2AF54B01970595F00F0A0F2 /* Images.xcassets in Resources */,
+				9367F837199404B30099354D /* profile_default.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D2AF54B31970595F00F0A0F2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D2AF54C11970595F00F0A0F2 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2B9C0B9FF3B444C296667F8A /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		711BCB592B2B4F4EBE19FCCF /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D2AF54961970595E00F0A0F2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				931404C9197F03F9004D4447 /* FBUBucketListItem.m in Sources */,
+				9607499D1978985C00853E97 /* FBUGroupsViewController.m in Sources */,
+				D28632DE197F1E4C007BBD28 /* FBUEventViewController.m in Sources */,
+				D295F99D1976029D000ED2C1 /* FBURecipe.m in Sources */,
+				D25A4C9C199581D400267D35 /* FBUGroceryListViewController.m in Sources */,
+				969C8E6D1983060400D0E7B3 /* FBUMembersViewController.m in Sources */,
+				966554D61973B28700DDBED0 /* FBUEditProfileViewController.m in Sources */,
+				93D9D35F19916BEB00ABCC5B /* FBUCollectionViewLayout.m in Sources */,
+				D2AF54D619705DF200F0A0F2 /* FBUDashboardViewController.m in Sources */,
+				D2D378161989BB3B00CB0EC2 /* FBUGroupsRecipesViewController.m in Sources */,
+				D28632DB197F1E0B007BBD28 /* FBUEventDetailViewController.m in Sources */,
+				966554D9197443B200DDBED0 /* FBUBucketListDetailViewController.m in Sources */,
+				D2D3780C1981A4AD00CB0EC2 /* FBUMapViewController.m in Sources */,
+				931404C5197D84F0004D4447 /* FBUEditRecipeViewController.m in Sources */,
+				93F248D31981D86300FC82BD /* FBULogInViewController.m in Sources */,
+				D260A3161991B57A006BBBDE /* FBUEventCollectionViewCell.m in Sources */,
+				D295F99A1976028F000ED2C1 /* FBUEvent.m in Sources */,
+				93ED1EEC1989BC17000CF446 /* FBURecipeIngredientViewController.m in Sources */,
+				D2D378131986C3AF00CB0EC2 /* FBUAddRecipesViewController.m in Sources */,
+				93ED1EF31989BC90000CF446 /* FBURecipeContainerViewController.m in Sources */,
+				D25A4CDB199845FD00267D35 /* FBURecipeCollectionViewCell.m in Sources */,
+				96C1E245197F01DF00266DB8 /* FBUExploreViewController.m in Sources */,
+				D2D378091980D1AA00CB0EC2 /* FBUGroupSubscribersViewController.m in Sources */,
+				D2AF54AE1970595F00F0A0F2 /* FBUAppDelegate.m in Sources */,
+				93ED1EE0198849F9000CF446 /* FBUMapAnnotation.m in Sources */,
+				93F248C61981AEC400FC82BD /* FBUSignUpViewController.m in Sources */,
+				D2AF54D319705B4B00F0A0F2 /* FBUProfileViewController.m in Sources */,
+				966554DF197450B500DDBED0 /* FBUBucketListItemsViewController.m in Sources */,
+				969C8EAB199157E000D0E7B3 /* FBUGroupCollectionViewCell.m in Sources */,
+				D2AF54DC1970607A00F0A0F2 /* FBURecipesListViewController.m in Sources */,
+				93D9D35C19916B9600ABCC5B /* FBUCollectionCellBackgroundView.m in Sources */,
+				96EBDE8F1970AF1300DE0033 /* FBUGroupsListViewController.m in Sources */,
+				D28632CB19772779007BBD28 /* FBUGroupsDetailViewController.m in Sources */,
+				93E4BC2F1979C89800074647 /* FBURecipeViewController.m in Sources */,
+				93ED1EE81989B675000CF446 /* FBURecipeSegue.m in Sources */,
+				D295F9971975FBB3000ED2C1 /* FBUGroup.m in Sources */,
+				93ED1EEF1989BC36000CF446 /* FBURecipeDirectionsViewController.m in Sources */,
+				D295F9A019760D68000ED2C1 /* FBUGroceryList.m in Sources */,
+				9663F083199736FF00B69649 /* FBURecipesYummylyViewController.m in Sources */,
+				D2AF54AA1970595F00F0A0F2 /* main.m in Sources */,
+				96C1E241197D825300266DB8 /* FBUBucketListViewController.m in Sources */,
+				93ED1EE31989A5C6000CF446 /* FBURecipeDishViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D2AF54B11970595F00F0A0F2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D2AF54C31970595F00F0A0F2 /* FBUFoodTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D2AF54BB1970595F00F0A0F2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D2AF54991970595E00F0A0F2 /* FBUFood */;
+			targetProxy = D2AF54BA1970595F00F0A0F2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D2AF54A61970595F00F0A0F2 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D2AF54A71970595F00F0A0F2 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		D2AF54BF1970595F00F0A0F2 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D2AF54C01970595F00F0A0F2 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D2AF54C41970595F00F0A0F2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		D2AF54C51970595F00F0A0F2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D2AF54C71970595F00F0A0F2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 02908DA418054F36AE9F91D9 /* Pods.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/FBUFood",
+					"$(PROJECT_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FBUFood/FBUFood-Prefix.pch";
+				INFOPLIST_FILE = "FBUFood/FBUFood-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		D2AF54C81970595F00F0A0F2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 02908DA418054F36AE9F91D9 /* Pods.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/FBUFood",
+					"$(PROJECT_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FBUFood/FBUFood-Prefix.pch";
+				INFOPLIST_FILE = "FBUFood/FBUFood-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		D2AF54CA1970595F00F0A0F2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/FBUFood.app/FBUFood";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FBUFood/FBUFood-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "FBUFoodTests/FBUFoodTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		D2AF54CB1970595F00F0A0F2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/FBUFood.app/FBUFood";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FBUFood/FBUFood-Prefix.pch";
+				INFOPLIST_FILE = "FBUFoodTests/FBUFoodTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D2AF54951970595E00F0A0F2 /* Build configuration list for PBXProject "FBUFood" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D2AF54C41970595F00F0A0F2 /* Debug */,
+				D2AF54C51970595F00F0A0F2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D2AF54C61970595F00F0A0F2 /* Build configuration list for PBXNativeTarget "FBUFood" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D2AF54C71970595F00F0A0F2 /* Debug */,
+				D2AF54C81970595F00F0A0F2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D2AF54C91970595F00F0A0F2 /* Build configuration list for PBXNativeTarget "FBUFoodTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D2AF54CA1970595F00F0A0F2 /* Debug */,
+				D2AF54CB1970595F00F0A0F2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D2AF54921970595E00F0A0F2 /* Project object */;
+}

@@ -7,11 +7,13 @@
 //
 
 #import "FBUEventViewController.h"
-#import "FBUEvent.h"
 #import "FBUMembersViewController.h"
 #import "FBUEventDetailViewController.h"
 #import "FBUGroupsRecipesViewController.h"
 #import "FBUGroceryListViewController.h"
+#import "FBURecipeCollectionViewCell.h"
+#import "FBURecipeViewController.h"
+#import "FBURecipe.h"
 
 @interface FBUEventViewController () <CLLocationManagerDelegate>
 
@@ -21,22 +23,6 @@
 
 @implementation FBUEventViewController
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"oneMemberCell"
-                                                            forIndexPath:indexPath];
-    PFUser *personGoing = self.event.membersOfEvent[indexPath.row];
-    [personGoing fetchIfNeeded];
-    cell.textLabel.text = [personGoing username];
-    
-    return cell;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    return [self.event.membersOfEvent count];
-}
-
 
 - (void)viewWillAppear:(BOOL)animated
 {
@@ -44,6 +30,8 @@
     [self locateEventOnMap];
     [self zoomToLocation];
     [self importRecipesToGroceryList];
+    self.eventRecipesCollectionView.backgroundColor = [UIColor clearColor];
+
     
     
     self.title = self.event.eventName;
@@ -123,8 +111,45 @@
         
         groceryListViewController.groceryList = self.event.eventGroceryList;
         groceryListViewController.title = @"Grocery List";
+    } else if ([segue.identifier isEqualToString:@"recipeCell"]) {
+        
+        FBURecipeViewController *recipeViewController = segue.destinationViewController;
+        
+        NSIndexPath *indexPath = [self.eventRecipesCollectionView indexPathForCell:sender];
+        
+        FBURecipe *selectedRecipe= self.event.recipesInEvent[indexPath.row];
+        
+        recipeViewController.recipe = selectedRecipe;
+        recipeViewController.event = self.event;
+        recipeViewController.eventRecipe = @"event";
     }
 }
+
+# pragma mark - Collection View
+
+-(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+    FBURecipeCollectionViewCell *cell = [self.eventRecipesCollectionView dequeueReusableCellWithReuseIdentifier:@"recipe" forIndexPath:indexPath];
+    
+    FBURecipe *recipe = self.event.recipesInEvent[indexPath.row];
+    
+    UIImage *recipeImage = [UIImage imageWithData:[recipe.image getData]];
+    cell.recipeImage.image = recipeImage;
+
+    return cell;
+}
+
+- (NSInteger) numberOfSectionsInCollectionView:(UICollectionView *)collectionView
+{
+    return 1;
+}
+
+
+-(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+{
+    return [self.event.recipesInEvent count];
+}
+
 
 # pragma mark - Event Map
 
