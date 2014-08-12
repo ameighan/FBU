@@ -29,7 +29,9 @@
     self.cooksCollectionView.backgroundColor = [UIColor clearColor];
     
     [[NSNotificationCenter defaultCenter]addObserver:self.eventsCollectionView selector:@selector(reloadData) name:@"savedEvent" object:nil];
-
+    
+    [self.scrollView setScrollEnabled:YES];
+    [self.scrollView setContentSize:CGSizeMake(320, 586)];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -90,6 +92,18 @@
     self.subscribeGroupButton.enabled = NO;
 }
 
+- (UIImage *)getRoundedRectImageFromImage :(UIImage *)image onReferenceView :(UIImageView*)imageView withCornerRadius :(float)cornerRadius
+{
+    UIGraphicsBeginImageContextWithOptions(imageView.bounds.size, NO, 1.0);
+    [[UIBezierPath bezierPathWithRoundedRect:imageView.bounds
+                                cornerRadius:cornerRadius] addClip];
+    [image drawInRect:imageView.bounds];
+    UIImage *finalImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return finalImage;
+}
+
 # pragma mark - Collection View
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -121,8 +135,10 @@
         PFUser *member = self.group.cooksInGroup[indexPath.row];
         [member fetchIfNeeded];
         
-        UIImage *profilePicture = [UIImage imageWithData:[member[@"profileImage"] getData]];
-        cell.userProfileImage.image = profilePicture;
+        [member[@"profileImage"] getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+            UIImage *image = [UIImage imageWithData:data scale:0.8];
+            cell.userProfileImage.image = [self getRoundedRectImageFromImage:image onReferenceView:cell.userProfileImage withCornerRadius: cell.userProfileImage.frame.size.width/2];
+        }];
         
         return cell;
     }

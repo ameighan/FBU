@@ -28,6 +28,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *viewSubscribersInGroupButton;
 
 @property (weak, nonatomic) NSArray *eventsByGroup;
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
 @end
 

@@ -11,7 +11,7 @@
 #import "FBUCollectionViewLayout.h"
 #import "FBUCollectionCellBackgroundView.h"
 
-@interface FBUProfileViewController : UIViewController <UICollectionViewDelegateJSPintLayout, UICollectionViewDataSource, UIPopoverControllerDelegate>
+@interface FBUProfileViewController : UIViewController <UICollectionViewDelegateJSPintLayout, UICollectionViewDataSource>
 
 // Properties for profile data
 @property (weak, nonatomic) IBOutlet UIImageView *profileImage;
