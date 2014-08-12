@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		93122064199A7A1000633A93 /* pin.png in Resources */ = {isa = PBXBuildFile; fileRef = 93122063199A7A1000633A93 /* pin.png */; };
+		9312206B199A86E900633A93 /* map.png in Resources */ = {isa = PBXBuildFile; fileRef = 9312206A199A86E900633A93 /* map.png */; };
 		931404C5197D84F0004D4447 /* FBUEditRecipeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 931404C4197D84F0004D4447 /* FBUEditRecipeViewController.m */; };
 		931404C9197F03F9004D4447 /* FBUBucketListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 931404C8197F03F9004D4447 /* FBUBucketListItem.m */; };
 		9367F837199404B30099354D /* profile_default.png in Resources */ = {isa = PBXBuildFile; fileRef = 9367F836199404B30099354D /* profile_default.png */; };
@@ -100,6 +102,8 @@
 /* Begin PBXFileReference section */
 		02908DA418054F36AE9F91D9 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		66DAC9D30A254033A9A255E9 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		93122063199A7A1000633A93 /* pin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pin.png; sourceTree = "<group>"; };
+		9312206A199A86E900633A93 /* map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map.png; sourceTree = "<group>"; };
 		931404C3197D84F0004D4447 /* FBUEditRecipeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBUEditRecipeViewController.h; sourceTree = "<group>"; };
 		931404C4197D84F0004D4447 /* FBUEditRecipeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBUEditRecipeViewController.m; sourceTree = "<group>"; };
 		931404C8197F03F9004D4447 /* FBUBucketListItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBUBucketListItem.m; sourceTree = "<group>"; };
@@ -474,6 +478,8 @@
 		D2AF54A31970595E00F0A0F2 /* FBUFood */ = {
 			isa = PBXGroup;
 			children = (
+				9312206A199A86E900633A93 /* map.png */,
+				93122063199A7A1000633A93 /* pin.png */,
 				9384F8D419992C460035DFEC /* dining.png */,
 				9367F83B1995BF100099354D /* fork&knife.png */,
 				969C8EAC1992B8C600D0E7B3 /* BucketList.png */,
@@ -630,6 +636,7 @@
 				969C8EAD1992B8C600D0E7B3 /* BucketList.png in Resources */,
 				96BC1E821992D95F009953A4 /* New.png in Resources */,
 				D2AF54CD197059B000F0A0F2 /* Main.storyboard in Resources */,
+				9312206B199A86E900633A93 /* map.png in Resources */,
 				9384F8D519992C460035DFEC /* dining.png in Resources */,
 				D2AF54A81970595F00F0A0F2 /* InfoPlist.strings in Resources */,
 				96BC1E841992F6DB009953A4 /* BucketListBackground.jpg in Resources */,
@@ -638,6 +645,7 @@
 				968134311994B8EC00F48BD0 /* Imagination.jpg in Resources */,
 				D2AF54B01970595F00F0A0F2 /* Images.xcassets in Resources */,
 				9367F837199404B30099354D /* profile_default.png in Resources */,
+				93122064199A7A1000633A93 /* pin.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

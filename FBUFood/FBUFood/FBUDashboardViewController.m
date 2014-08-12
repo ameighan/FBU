@@ -15,6 +15,7 @@
 #import "FBULogInViewController.h"
 #import "FBUSignUpViewController.h"
 #import "FBUEventViewController.h"
+#import "FBUMapViewController.h"
 
 #define kCollectionCellBorderTop 10.0
 #define kCollectionCellBorderBottom 17.0
@@ -168,7 +169,7 @@
         FBUEventViewController *controller = (FBUEventViewController *)segue.destinationViewController;
         NSIndexPath *ip = [self.dashboardCollectionView indexPathForCell:sender];
         controller.event = self.eventsArray[ip.row];
-    }
+    } 
 }
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {

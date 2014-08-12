@@ -10,6 +10,7 @@
 #import <Parse/Parse.h>
 #import "FBUEvent.h"
 #import "FBUMapAnnotation.h"
+#import "FBUEventViewController.h"
 
 @interface FBUMapViewController () <CLLocationManagerDelegate>
 
@@ -87,13 +88,14 @@
                     [self.annotations addObject:annotationPoint];
                     
                     [self.mapView addAnnotation:annotationPoint];
-
+                    
                 }
             }
         }
     }];
     
 }
+
 
 
 
@@ -126,6 +128,7 @@
                 annotationView.canShowCallout = YES;
                 annotationView.draggable = YES;
                 annotationView.animatesDrop = YES;
+                annotationView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
             }
             
             return annotationView;
@@ -139,6 +142,7 @@
                 annotationView.canShowCallout = YES;
                 annotationView.draggable = YES;
                 annotationView.animatesDrop = YES;
+                annotationView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
             }
             
             return annotationView;
@@ -146,6 +150,19 @@
     }
 
     return nil;
+}
+
+- (void)mapView:(MKMapView *)map annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
+{
+    PFQuery *eventQuery = [FBUEvent query];
+    // Interested in locations near user.
+    [eventQuery whereKey:@"eventName" matchesRegex:view.annotation.title];
+    [eventQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        FBUEventViewController *controller = [self.storyboard instantiateViewControllerWithIdentifier:@"event"];
+        controller.event = [objects objectAtIndex:0];
+        [self.navigationController pushViewController:controller animated:YES];
+
+    }];
 }
 
 @end

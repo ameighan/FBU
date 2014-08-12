@@ -10,10 +10,12 @@
 #import <MapKit/MapKit.h>
 
 @class FBUEvent;
+@class FBUGroup;
 
 @interface FBUMapViewController : UIViewController <MKMapViewDelegate>
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 
+-(void)queryForEvents;
 
 @end
