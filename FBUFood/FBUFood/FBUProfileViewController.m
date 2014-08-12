@@ -29,6 +29,11 @@
 {
     [super viewWillAppear:animated];
     
+    [self.nameLabel setTintColor:[UIColor colorWithRed:196.0/255.0 green:49.0/255.0 blue:56.0/255.0 alpha:1.00]];
+    [self.addGroup setTintColor:[UIColor colorWithRed:196.0/255.0 green:49.0/255.0 blue:56.0/255.0 alpha:1.00]];
+    [self.recipesButton setTintColor:[UIColor colorWithRed:196.0/255.0 green:49.0/255.0 blue:56.0/255.0 alpha:1.00]];
+    [self.bucketListButton setTintColor:[UIColor colorWithRed:196.0/255.0 green:49.0/255.0 blue:56.0/255.0 alpha:1.00]];
+    
     [self queryForUserData];
     
     if ([PFUser currentUser]){

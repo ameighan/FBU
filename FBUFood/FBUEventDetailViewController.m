@@ -32,14 +32,16 @@
         self.eventDescriptionTextView.text = self.event.eventDescription;
         self.eventMealsTextField.text = self.event.eventMeals;
         self.eventNameTextField.text = self.event.eventName;
-        
         NSString *dateStr = self.event.eventTimeDate;
         
         // Convert string to date object
         NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
-        [dateFormat setDateFormat:@"MM-dd-yyy 'at' h:mm a"];
+        [dateFormat setDateStyle:NSDateFormatterMediumStyle];
         NSDate *date = [dateFormat dateFromString:dateStr];
         [self.eventDatePicker setDate:date animated:YES];
+        
+        
+        
     }
     
     self.eventDatePicker.minimumDate = [NSDate date];
@@ -148,7 +150,7 @@
                               [self.group addObject:newEvent forKey:@"eventsInGroup"];
                               
                               NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-                              [dateFormatter setDateFormat:@"MM-dd-yyyy 'at' h:mm a"];
+                              [dateFormatter setDateStyle:NSDateFormatterMediumStyle];
                               newEvent.eventTimeDate = [dateFormatter stringFromDate:self.eventDatePicker.date];
                               
                               [newEvent saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {

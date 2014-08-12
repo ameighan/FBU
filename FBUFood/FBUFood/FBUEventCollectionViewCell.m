@@ -14,7 +14,7 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        // Initialization code
+        [_calendarImage setTintColor:[UIColor whiteColor]];
     }
     return self;
 }

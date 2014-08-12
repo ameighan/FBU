@@ -27,6 +27,10 @@
     
     self.eventsCollectionView.backgroundColor = [UIColor clearColor];
     self.cooksCollectionView.backgroundColor = [UIColor clearColor];
+    [self.joinGroupButton setTintColor:[UIColor colorWithRed:196.0/255.0 green:49.0/255.0 blue:56.0/255.0 alpha:1.00]];
+    [self.subscribeGroupButton setTintColor:[UIColor colorWithRed:196.0/255.0 green:49.0/255.0 blue:56.0/255.0 alpha:1.00]];
+    [self.createEventInGroupButton setTintColor:[UIColor colorWithRed:196.0/255.0 green:49.0/255.0 blue:56.0/255.0 alpha:1.00]];
+    [self.viewSubscribersInGroupButton setTintColor:[UIColor colorWithRed:196.0/255.0 green:49.0/255.0 blue:56.0/255.0 alpha:1.00]];
     
     [[NSNotificationCenter defaultCenter]addObserver:self.eventsCollectionView selector:@selector(reloadData) name:@"savedEvent" object:nil];
     
@@ -122,8 +126,13 @@
     //    cell.eventImageView.image = eventFeatureDishImage;
        
         cell.eventNameLabel.text = event.eventName;
-        cell.eventTimeDateLabel.text = event.eventTimeDate;
+//        cell.eventTimeDateLabel.text = event.eventTimeDate;
         cell.eventLocationLabel.text = event.eventAddress;
+        
+        [cell.eventNameLabel setFont:[UIFont fontWithName:@"Avenir" size:19.0]];
+        [cell.eventLocationLabel setFont:[UIFont fontWithName:@"Avenir" size:13.0]];
+        [cell.monthLabel setTextColor:[UIColor colorWithRed:196.0/255.0 green:49.0/255.0 blue:56.0/255.0 alpha:1.00]];
+        [cell.dayLabel setTextColor:[UIColor colorWithRed:196.0/255.0 green:49.0/255.0 blue:56.0/255.0 alpha:1.00]];
         
         
         return cell;
@@ -135,10 +144,21 @@
         PFUser *member = self.group.cooksInGroup[indexPath.row];
         [member fetchIfNeeded];
         
-        [member[@"profileImage"] getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
-            UIImage *image = [UIImage imageWithData:data scale:0.8];
-            cell.userProfileImage.image = [self getRoundedRectImageFromImage:image onReferenceView:cell.userProfileImage withCornerRadius: cell.userProfileImage.frame.size.width/2];
-        }];
+        if(member[@"fbImage"]) {
+            UIImage *img = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:member[@"fbImage"]]]];
+            cell.userProfileImage.image = [self getRoundedRectImageFromImage:img onReferenceView:cell.userProfileImage withCornerRadius: cell.userProfileImage.frame.size.width/2];
+        } else {
+            if (member[@"profileImage"]) {
+                [member[@"profileImage"] getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+                    UIImage *image = [UIImage imageWithData:data scale:0.8];
+                    cell.userProfileImage.image = [self getRoundedRectImageFromImage:image onReferenceView:cell.userProfileImage withCornerRadius: cell.userProfileImage.frame.size.width/2];
+                }];
+            } else {
+                UIImage *image = [UIImage imageNamed:@"profile_default.png"];
+                cell.userProfileImage.image = [self getRoundedRectImageFromImage:image onReferenceView:cell.userProfileImage withCornerRadius: cell.userProfileImage.frame.size.width/2];
+            }
+        }
+
         
         return cell;
     }

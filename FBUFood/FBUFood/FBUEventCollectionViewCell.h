@@ -12,7 +12,9 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *eventImageView;
 @property (weak, nonatomic) IBOutlet UILabel *eventNameLabel;
-@property (weak, nonatomic) IBOutlet UILabel *eventTimeDateLabel;
 @property (weak, nonatomic) IBOutlet UILabel *eventLocationLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *calendarImage;
+@property (weak, nonatomic) IBOutlet UILabel *monthLabel;
+@property (weak, nonatomic) IBOutlet UILabel *dayLabel;
 
 @end

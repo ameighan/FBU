@@ -42,7 +42,6 @@
     
     [[UILabel appearance] setFont:[UIFont fontWithName:@"Avenir" size:15.0]];
     [[UIButton appearance] setTintColor:[UIColor whiteColor]];
-    [[UIButton appearance] setTintColor:[UIColor colorWithRed:196.0/255.0 green:49.0/255.0 blue:56.0/255.0 alpha:0.75]];
     [[[UIButton appearance] titleLabel] setFont:[UIFont fontWithName:@"Avenir" size:15.0]];
 //    [[UIButton appearance] setBackgroundColor:[UIColor colorWithRed:248.0/255.0 green:194.0/255.0 blue:96.0/255.0 alpha:0.75]];
     
