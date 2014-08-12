@@ -13,7 +13,7 @@
 @class  FBUGroup;
 @class FBUEvent;
 
-@interface FBUEventDetailViewController : UIViewController <UITextFieldDelegate, CLLocationManagerDelegate>
+@interface FBUEventDetailViewController : UIViewController <UITextFieldDelegate, CLLocationManagerDelegate, NSURLConnectionDelegate, NSURLConnectionDataDelegate>
 
 @property (strong, nonatomic) FBUGroup *group;
 

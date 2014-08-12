@@ -56,7 +56,7 @@
     
     if (!self.imageView.image) {
         UIImage *image = [UIImage imageNamed:@"dining.png"];
-        NSData *imageData = UIImageJPEGRepresentation(image, 0.8);
+        NSData *imageData = UIImageJPEGRepresentation(image, 0.5);
         NSString *filename = [NSString stringWithFormat:@"%@.png", @"group image"];
         PFFile *imageFile = [PFFile fileWithName:filename data:imageData];
         newGroup.groupImage = imageFile;
@@ -66,15 +66,14 @@
         NSString *filename = [NSString stringWithFormat:@"%@.png", @"group image"];
         PFFile *imageFile = [PFFile fileWithName:filename data:imageData];
         newGroup.groupImage = imageFile;
-        newGroup.groupImageHeight = self.imageView.image.size.height;
+        newGroup.groupImageHeight = self.imageView.image.size.height/(self.imageView.image.size.height*0.005);
     }
     newGroup.owner = [PFUser currentUser];
     [newGroup addObject:[PFUser currentUser] forKey:@"cooksInGroup"];
     [newGroup addObject:[PFUser currentUser] forKey:@"subscribersOfGroup"];
     
     [newGroup saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-        NSLog(@"%@", newGroup.cooksInGroup);
-        NSLog(@"%@", newGroup.subscribersOfGroup);
+        NSLog(@"Saving group");
         [[NSNotificationCenter defaultCenter] postNotificationName:@"savedGroup" object:self];
     }];
 

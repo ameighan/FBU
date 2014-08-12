@@ -25,6 +25,8 @@
     [FBUGroceryList registerSubclass];
     [FBUBucketListItem registerSubclass];
     
+    [application registerForRemoteNotificationTypes: UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeSound];
+    
     [Parse setApplicationId:@"1MLHKB8J5A4HP8jUG0NbtlNxslsQmYUDsuIf5luJ"
                   clientKey:@"t51Gjc5rnNTNlX4npEHowiYolcGc6h755Xjbbsil"];
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
@@ -66,6 +68,19 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     [FBAppCall handleDidBecomeActiveWithSession:[PFFacebookUtils session]];
+}
+
+- (void)application:(UIApplication *)application
+didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+    // Store the deviceToken in the current installation and save it to Parse.
+    PFInstallation *currentInstallation = [PFInstallation currentInstallation];
+    [currentInstallation setDeviceTokenFromData:deviceToken];
+    [currentInstallation saveInBackground];
+}
+
+- (void)application:(UIApplication *)application
+didReceiveRemoteNotification:(NSDictionary *)userInfo {
+    [PFPush handlePush:userInfo];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

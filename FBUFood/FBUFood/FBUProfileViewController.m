@@ -72,7 +72,7 @@
 {
     [super viewDidLoad];
     
-    [[NSNotificationCenter defaultCenter]addObserver:self.myGroupsCollectionView selector:@selector(reloadData) name:@"savedGroup" object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(queryForUserData) name:@"savedGroup" object:nil];
     
     [self.scrollView setScrollEnabled:YES];
     [self.scrollView setContentSize:CGSizeMake(320, 586)];
@@ -110,6 +110,11 @@
     [self queryForUserData];
 }
 
+-(void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
@@ -133,7 +138,6 @@
     } else if ([segue.identifier isEqualToString:@"saveGroup"]) {
         FBUGroupsDetailViewController *controller = segue.sourceViewController;
         [controller saveGroup];
-        [self.myGroupsCollectionView reloadData];
     }
 }
 
@@ -151,11 +155,11 @@
 - (CGFloat)collectionView:(UICollectionView*)collectionView layout:(UICollectionViewLayout*)collectionViewLayout heightForItemAtIndexPath:(NSIndexPath*)indexPath
 {
     FBUGroup *group = self.myGroupsArray[indexPath.row];
-    if (!group.groupImage) {
-        return 200;
+    if (!group.groupImageHeight) {
+        return 150;
     }
 
-    return group.groupImageHeight + 80;
+    return group.groupImageHeight;
 }
 
 

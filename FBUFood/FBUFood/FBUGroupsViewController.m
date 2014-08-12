@@ -59,6 +59,10 @@
     
 }
 
+-(void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self.eventsCollectionView];
+}
 
 - (void)toggleCookView
 {

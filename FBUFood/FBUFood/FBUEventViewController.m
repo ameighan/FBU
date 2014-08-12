@@ -67,6 +67,11 @@
     [self.event addObject:[PFUser currentUser] forKey:@"membersOfEvent"];
     [self.event saveInBackground];
     
+    PFInstallation *currentInstallation = [PFInstallation currentInstallation];
+    [currentInstallation addUniqueObject:[self.event.eventName stringByReplacingOccurrencesOfString:@" " withString:@""] forKey:@"channels"];
+    [currentInstallation saveInBackground];
+
+    
     //Disable join button once user has joined.
     self.eventJoinButton.hidden = YES;
     self.eventJoinButton.enabled = NO;
