@@ -30,7 +30,29 @@
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     [PFFacebookUtils initializeFacebook];
     
+    [self createUI];
     return YES;
+}
+
+- (void)createUI
+{
+    self.window.backgroundColor = [UIColor colorWithRed:245.0/255.0 green:215.0/255.0 blue:213.0/255.0 alpha:1.0];
+    
+    [[UILabel appearance] setFont:[UIFont fontWithName:@"Avenir" size:15.0]];
+    [[UIButton appearance] setTintColor:[UIColor whiteColor]];
+    [[[UIButton appearance] titleLabel] setFont:[UIFont fontWithName:@"Avenir" size:15.0]];
+    [[UIButton appearance] setBackgroundColor:[UIColor colorWithRed:248.0/255.0 green:194.0/255.0 blue:96.0/255.0 alpha:1.0]];
+    
+    [[UITabBar appearance] setBarTintColor:[UIColor colorWithRed:249.0/255.0 green:118.0/255.0 blue:87.0/255.0 alpha:1.0]];
+    [[UITabBar appearance] setTintColor:[UIColor whiteColor]];
+    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:249.0/255.0 green:118.0/255.0 blue:87.0/255.0 alpha:1.0]];
+    [[UINavigationBar appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
+                                   [UIFont fontWithName:@"Avenir" size:17.0], NSFontAttributeName,
+                                    [UIColor whiteColor], NSForegroundColorAttributeName,
+                                                          nil]];
+    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+    
+
 }
 
 - (BOOL)application:(UIApplication *)application

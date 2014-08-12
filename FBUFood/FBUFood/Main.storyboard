@@ -681,17 +681,17 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Location" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Du0-4P-zg2">
-                                <rect key="frame" x="20" y="248" width="280" height="21"/>
-                                <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="17"/>
+                                <rect key="frame" x="20" y="259" width="280" height="21"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Time/Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f7w-Es-ggb">
-                                <rect key="frame" x="20" y="279" width="280" height="21"/>
+                                <rect key="frame" x="20" y="284" width="280" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U0j-rQ-m9B">
-                                <rect key="frame" x="251" y="244" width="30" height="30"/>
+                                <rect key="frame" x="251" y="255" width="30" height="30"/>
                                 <state key="normal" title="Join">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -751,7 +751,7 @@
                                 </connections>
                             </collectionView>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="Nd9-gL-2IW">
-                                <rect key="frame" x="20" y="64" width="280" height="165"/>
+                                <rect key="frame" x="0.0" y="66" width="320" height="170"/>
                                 <connections>
                                     <outlet property="delegate" destination="Oc1-VQ-Dbf" id="aFu-bq-0Zg"/>
                                 </connections>
@@ -1331,7 +1331,7 @@
                                                     <segue destination="gLc-zp-E8s" kind="push" id="qBJ-X6-BAK"/>
                                                 </connections>
                                             </button>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="ZFX-A6-aF7">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="ZFX-A6-aF7">
                                                 <rect key="frame" x="15" y="30" width="90" height="90"/>
                                             </imageView>
                                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="RFo-6W-r7Z">
@@ -1494,7 +1494,7 @@
         <scene sceneID="Sqy-bO-xwA">
             <objects>
                 <navigationController title="Profile" definesPresentationContext="YES" id="F8w-D9-YE1" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Profile" id="NRy-ub-7A0"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="profile" id="NRy-ub-7A0"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="nps-JJ-Hox">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1686,7 +1686,7 @@
         <scene sceneID="UhC-fH-cJI">
             <objects>
                 <navigationController definesPresentationContext="YES" id="BC0-by-ePe" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Dashboard" id="V6P-gY-sa3"/>
+                    <tabBarItem key="tabBarItem" title="Dashboard" image="dashboard" id="V6P-gY-sa3"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="SGv-7j-YCZ">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1702,7 +1702,7 @@
         <scene sceneID="gim-aA-yDa">
             <objects>
                 <navigationController definesPresentationContext="YES" id="d7L-bS-pfO" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Explore" id="zh1-Gb-UvG"/>
+                    <tabBarItem key="tabBarItem" title="Explore" image="explore" id="zh1-Gb-UvG"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="gmR-VF-UxP">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1794,21 +1794,25 @@
             <point key="canvasLocation" x="693" y="-3760"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="dashboard" width="30" height="30"/>
+        <image name="explore" width="30" height="30"/>
+        <image name="profile" width="30" height="30"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="xlT-pm-NoS"/>
-        <segue reference="y2B-5h-yd3"/>
         <segue reference="vUP-9j-jWm"/>
-        <segue reference="BDX-Yd-wDn"/>
-        <segue reference="kNa-85-gPt"/>
-        <segue reference="Rz1-mo-Aa8"/>
+        <segue reference="y2B-5h-yd3"/>
+        <segue reference="xlT-pm-NoS"/>
+        <segue reference="3dj-aI-oAl"/>
+        <segue reference="Gf1-nK-jxY"/>
+        <segue reference="nut-44-e2c"/>
         <segue reference="vBe-2g-paS"/>
-        <segue reference="cfB-gW-Pi3"/>
-        <segue reference="lfT-lW-nr9"/>
         <segue reference="E3o-aQ-dmJ"/>
+        <segue reference="kNa-85-gPt"/>
     </inferredMetricsTieBreakers>
 </document>
