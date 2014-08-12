@@ -49,6 +49,7 @@
     [recipe fetchIfNeeded];
     
     cell.textLabel.text = recipe[@"title"];
+    cell.imageView.image = [UIImage imageWithData:[recipe.image getData]];
     
     return cell;
 }

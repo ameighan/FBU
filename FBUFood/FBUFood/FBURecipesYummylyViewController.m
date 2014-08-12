@@ -9,6 +9,7 @@
 #import "FBURecipesYummylyViewController.h"
 #import "FBURecipeViewController.h"
 #import "FBURecipe.h"
+#import "FBUYummlyRecipeCell.h"
 
 @interface FBURecipesYummylyViewController()
 
@@ -24,13 +25,15 @@
 {
     self.recipesTableView.delegate = self;
     self.recipesTableView.dataSource = self;
+    self.recipesTableView.allowsMultipleSelection = YES;
+   // [self.recipesTableView registerClass:[FBUYummlyRecipeCell class] forCellReuseIdentifier:@"FBUYummlyRecipeCell"];
     
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [self.recipesTableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"UITableViewCell"];
+    [self.recipesTableView registerClass:[FBUYummlyRecipeCell class] forCellReuseIdentifier:@"FBUYummlyRecipeCell"];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -108,7 +111,18 @@
             PFFile *imageFile = [PFFile fileWithName:filename data:imageData];
             myRecipe.image = imageFile;
         }
-       // NSLog(@"The %@", [recipeDict[@"]])
+        
+        NSMutableString *myURLString = [[NSMutableString alloc] initWithString:@"http://api.yummly.com/v1/api/recipe/"];
+        NSString *recipeId = recipeDict[@"id"];
+        NSString *endString = @"?_app_id=f07aaa47&_app_key=6d7ecf41b1791b1d9a05b31dd8b62f39";
+        [myURLString appendString:recipeId];
+        [myURLString appendString:endString];
+        NSData *recipeData = [[NSData alloc] init];
+        recipeData = [recipeData initWithContentsOfURL: [NSURL URLWithString:myURLString]];
+        NSDictionary *res2 = [NSJSONSerialization JSONObjectWithData:recipeData options:NSJSONReadingMutableLeaves error:&myError];
+        NSDictionary *subDict = (NSDictionary *)res2[@"source"];
+        myRecipe.directions = [subDict[@"sourceRecipeUrl"] description];
+        
         [self.yummlyRecipes addObject:myRecipe];
         [self.recipesTableView reloadData];
         // Save the new post
@@ -155,17 +169,36 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    if([tableView cellForRowAtIndexPath:indexPath].accessoryType == UITableViewCellAccessoryCheckmark){
+        [tableView cellForRowAtIndexPath:indexPath].accessoryType = UITableViewCellAccessoryNone;
+    } else {
+        [tableView cellForRowAtIndexPath:indexPath].accessoryType = UITableViewCellAccessoryCheckmark;
+    }
     
-    [self performSegueWithIdentifier:@"seeInsideView" sender:self];
+    // [self performSegueWithIdentifier:@"seeInsideView" sender:self];
+}
+
+- (IBAction)addRecipesToMyRecipes:(id)sender
+{
+    NSArray *selectedCells = [self.recipesTableView indexPathsForSelectedRows];
     
+    for (NSIndexPath *selectedCell in selectedCells){
+        NSIndexPath *indexPath = selectedCell;
+        
+        FBURecipe *selectedRecipe = self.yummlyRecipes[indexPath.row];
+        selectedRecipe.publisher = [PFUser currentUser];
+        [selectedRecipe saveInBackground];
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *cellIdentifier = @"UITableViewCell";
-    UITableViewCell *cell = [self.recipesTableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
+    //static NSString *cellIdentifier = @"UITableViewCell";
+    FBUYummlyRecipeCell *cell = (FBUYummlyRecipeCell *)[self.recipesTableView dequeueReusableCellWithIdentifier:@"FBUYummlyRecipeCell" forIndexPath:indexPath];
     FBURecipe *recipe = [self.yummlyRecipes objectAtIndex:indexPath.row];
+    //cell.recipeTitle.text = recipe[@"title"];
     cell.textLabel.text = recipe[@"title"];
+    cell.imageView.image = [UIImage imageWithData:[recipe.image getData]];
     return cell;
 }
 

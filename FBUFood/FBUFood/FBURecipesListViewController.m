@@ -79,6 +79,7 @@
     FBURecipe *recipe = [self.recipeArray objectAtIndex:indexPath.row];
     
     cell.textLabel.text = recipe[@"title"];
+    cell.imageView.image = [UIImage imageWithData:[recipe.image getData]];
     
     return cell;
 }
@@ -106,7 +107,6 @@
     } else if ([segue.identifier isEqualToString:@"listViewToEditView"]){
         
         FBUEditRecipeViewController *controller = (FBUEditRecipeViewController *)segue.destinationViewController;
-
         controller.title = @"New Recipe";
 
         

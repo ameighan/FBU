@@ -13,6 +13,7 @@
 
 @property (weak, nonatomic) IBOutlet UISearchBar *recipeSearchBar;
 @property (weak, nonatomic) IBOutlet UITableView *recipesTableView;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *importRecipes;
 @property (nonatomic, strong) NSURLSession *session;
 @property (strong, nonatomic) NSMutableArray *yummlyRecipes;
 

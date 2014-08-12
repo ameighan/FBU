@@ -34,6 +34,7 @@
 		966554D61973B28700DDBED0 /* FBUEditProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 966554D51973B28700DDBED0 /* FBUEditProfileViewController.m */; };
 		966554D9197443B200DDBED0 /* FBUBucketListDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 966554D8197443B200DDBED0 /* FBUBucketListDetailViewController.m */; };
 		966554DF197450B500DDBED0 /* FBUBucketListItemsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 966554DE197450B500DDBED0 /* FBUBucketListItemsViewController.m */; };
+		9681146F199A8F4200039BAB /* FBUYummlyRecipeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9681146E199A8F4200039BAB /* FBUYummlyRecipeCell.m */; };
 		968134311994B8EC00F48BD0 /* Imagination.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 968134301994B8EC00F48BD0 /* Imagination.jpg */; };
 		969C8E6D1983060400D0E7B3 /* FBUMembersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 969C8E6C1983060400D0E7B3 /* FBUMembersViewController.m */; };
 		969C8EAB199157E000D0E7B3 /* FBUGroupCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 969C8EAA199157E000D0E7B3 /* FBUGroupCollectionViewCell.m */; };
@@ -146,6 +147,8 @@
 		966554D8197443B200DDBED0 /* FBUBucketListDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBUBucketListDetailViewController.m; sourceTree = "<group>"; };
 		966554DD197450B500DDBED0 /* FBUBucketListItemsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBUBucketListItemsViewController.h; sourceTree = "<group>"; };
 		966554DE197450B500DDBED0 /* FBUBucketListItemsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBUBucketListItemsViewController.m; sourceTree = "<group>"; };
+		9681146D199A8F4200039BAB /* FBUYummlyRecipeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBUYummlyRecipeCell.h; sourceTree = "<group>"; };
+		9681146E199A8F4200039BAB /* FBUYummlyRecipeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBUYummlyRecipeCell.m; sourceTree = "<group>"; };
 		968134301994B8EC00F48BD0 /* Imagination.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Imagination.jpg; sourceTree = "<group>"; };
 		969C8E6B1983060400D0E7B3 /* FBUMembersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBUMembersViewController.h; sourceTree = "<group>"; };
 		969C8E6C1983060400D0E7B3 /* FBUMembersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBUMembersViewController.m; sourceTree = "<group>"; };
@@ -363,6 +366,8 @@
 				D2D378151989BB3B00CB0EC2 /* FBUGroupsRecipesViewController.m */,
 				9663F081199736FF00B69649 /* FBURecipesYummylyViewController.h */,
 				9663F082199736FF00B69649 /* FBURecipesYummylyViewController.m */,
+				9681146D199A8F4200039BAB /* FBUYummlyRecipeCell.h */,
+				9681146E199A8F4200039BAB /* FBUYummlyRecipeCell.m */,
 			);
 			name = Recipes;
 			sourceTree = "<group>";
@@ -734,6 +739,7 @@
 				93E4BC2F1979C89800074647 /* FBURecipeViewController.m in Sources */,
 				93ED1EE81989B675000CF446 /* FBURecipeSegue.m in Sources */,
 				D295F9971975FBB3000ED2C1 /* FBUGroup.m in Sources */,
+				9681146F199A8F4200039BAB /* FBUYummlyRecipeCell.m in Sources */,
 				93ED1EEF1989BC36000CF446 /* FBURecipeDirectionsViewController.m in Sources */,
 				D295F9A019760D68000ED2C1 /* FBUGroceryList.m in Sources */,
 				9663F083199736FF00B69649 /* FBURecipesYummylyViewController.m in Sources */,
