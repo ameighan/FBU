@@ -42,17 +42,25 @@
     
     [[UILabel appearance] setFont:[UIFont fontWithName:@"Avenir" size:15.0]];
     [[UIButton appearance] setTintColor:[UIColor whiteColor]];
+    [[UIButton appearance] setTintColor:[UIColor colorWithRed:196.0/255.0 green:49.0/255.0 blue:56.0/255.0 alpha:0.75]];
     [[[UIButton appearance] titleLabel] setFont:[UIFont fontWithName:@"Avenir" size:15.0]];
-    [[UIButton appearance] setBackgroundColor:[UIColor colorWithRed:248.0/255.0 green:194.0/255.0 blue:96.0/255.0 alpha:1.0]];
+//    [[UIButton appearance] setBackgroundColor:[UIColor colorWithRed:248.0/255.0 green:194.0/255.0 blue:96.0/255.0 alpha:0.75]];
     
-    [[UITabBar appearance] setBarTintColor:[UIColor colorWithRed:249.0/255.0 green:118.0/255.0 blue:87.0/255.0 alpha:1.0]];
+    [[UITabBar appearance] setBarTintColor:[UIColor colorWithRed:249.0/255.0 green:118.0/255.0 blue:87.0/255.0 alpha:0.75]];
     [[UITabBar appearance] setTintColor:[UIColor whiteColor]];
-    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:249.0/255.0 green:118.0/255.0 blue:87.0/255.0 alpha:1.0]];
+    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:249.0/255.0 green:118.0/255.0 blue:87.0/255.0 alpha:0.75]];
     [[UINavigationBar appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
                                    [UIFont fontWithName:@"Avenir" size:17.0], NSFontAttributeName,
                                     [UIColor whiteColor], NSForegroundColorAttributeName,
                                                           nil]];
     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+    
+    [[UIBarButtonItem appearanceWhenContainedIn:[UINavigationBar class], nil]
+     setTitleTextAttributes:
+     @{NSForegroundColorAttributeName:[UIColor whiteColor],
+       NSFontAttributeName:[UIFont fontWithName:@"Avenir" size:15.0]
+       }
+     forState:UIControlStateNormal];
     
 
 }

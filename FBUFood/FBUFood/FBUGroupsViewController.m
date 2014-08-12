@@ -17,6 +17,7 @@
 #import "FBUEventViewController.h"
 #import "FBUGroupsRecipesViewController.h"
 #import "FBUEventCollectionViewCell.h"
+#import "FBUUserCollectionViewCell.h"
 
 @implementation FBUGroupsViewController
 
@@ -25,6 +26,7 @@
     [super viewDidLoad];
     
     self.eventsCollectionView.backgroundColor = [UIColor clearColor];
+    self.cooksCollectionView.backgroundColor = [UIColor clearColor];
     
     [[NSNotificationCenter defaultCenter]addObserver:self.eventsCollectionView selector:@selector(reloadData) name:@"savedEvent" object:nil];
 
@@ -52,6 +54,9 @@
     }
     
     self.title = self.group.groupName;
+    self.groupNameLabel.text = self.group.groupName;
+    UIImage *groupImage = [UIImage imageWithData:[self.group.groupImage getData]];
+    self.groupImageView.image = groupImage;
     self.groupDescriptionTextView.text = self.group.groupDescription;
     
     
@@ -67,7 +72,6 @@
 - (void)toggleCookView
 {
     self.createEventInGroupButton.hidden = NO;
-    self.addRecipeInGroupButton.hidden = NO;
     self.viewSubscribersInGroupButton.hidden = NO;
     
     
@@ -86,30 +90,47 @@
     self.subscribeGroupButton.enabled = NO;
 }
 
+# pragma mark - Collection View
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     
-    FBUEventCollectionViewCell *cell = [self.eventsCollectionView dequeueReusableCellWithReuseIdentifier:@"event" forIndexPath:indexPath];
+    if (collectionView == self.eventsCollectionView) {
+        FBUEventCollectionViewCell *cell = [self.eventsCollectionView dequeueReusableCellWithReuseIdentifier:@"event" forIndexPath:indexPath];
+        
+        FBUEvent *event = self.group.eventsInGroup[indexPath.row];
+        
+        
+        [event.featureImage getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+            cell.eventImageView.image = [UIImage imageWithData:data];
+        }];
+        
+        
+    //    cell.eventImageView.image = eventFeatureDishImage;
+       
+        cell.eventNameLabel.text = event.eventName;
+        cell.eventTimeDateLabel.text = event.eventTimeDate;
+        cell.eventLocationLabel.text = event.eventAddress;
+        
+        
+        return cell;
+    }
+    if (collectionView == self.cooksCollectionView) {
+        
+        FBUUserCollectionViewCell *cell = [self.cooksCollectionView dequeueReusableCellWithReuseIdentifier:@"user" forIndexPath:indexPath];
+        
+        PFUser *member = self.group.cooksInGroup[indexPath.row];
+        [member fetchIfNeeded];
+        
+        UIImage *profilePicture = [UIImage imageWithData:[member[@"profileImage"] getData]];
+        cell.userProfileImage.image = profilePicture;
+        
+        return cell;
+    }
+    return false;
     
-    FBUEvent *event = self.group.eventsInGroup[indexPath.row];
-    
-    
-    [event.featureImage getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
-        cell.eventImageView.image = [UIImage imageWithData:data];
-    }];
-    
-    
-//    cell.eventImageView.image = eventFeatureDishImage;
-   
-    cell.eventNameLabel.text = event.eventName;
-    cell.eventTimeDateLabel.text = event.eventTimeDate;
-    cell.eventLocationLabel.text = event.eventAddress;
-    
-    
-    return cell;
 }
 
-- (NSInteger) numberOfSectionsInCollectionView:(UICollectionView *)collectionView
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
 {
     return 1;
 }
@@ -117,11 +138,17 @@
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return [self.group.eventsInGroup count];
+    if (collectionView == self.eventsCollectionView) {
+        return [self.group.eventsInGroup count];
+    }
+    if (collectionView == self.cooksCollectionView) {
+        return [self.group.cooksInGroup count];
+    }
+    return false;
 }
 
 
-
+# pragma mark - Actions
 
 - (IBAction)addUserToGroupAsCook:(id)sender
 {

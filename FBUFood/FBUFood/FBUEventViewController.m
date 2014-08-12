@@ -30,8 +30,9 @@
 
     [self locateEventOnMap];
     [self zoomToLocation];
-//    [self importRecipesToGroceryList];
+    [self importRecipesToGroceryList];
     self.eventRecipesCollectionView.backgroundColor = [UIColor clearColor];
+    self.eventMembersCollectionView.backgroundColor = [UIColor clearColor];
     NSLog(@"Members of Event: %@", self.event.membersOfEvent);
     
     
@@ -94,7 +95,10 @@
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     
-    if ([collectionView isEqual:self.eventRecipesCollectionView]) {
+    if (collectionView == self.eventRecipesCollectionView) {
+        
+        NSLog(@"Displaying recipes in event");
+        
         FBURecipeCollectionViewCell *cell = [self.eventRecipesCollectionView dequeueReusableCellWithReuseIdentifier:@"recipe" forIndexPath:indexPath];
         
         FBURecipe *recipe = self.event.recipesInEvent[indexPath.row];
@@ -106,7 +110,7 @@
         return cell;
         
     }
-    if ([collectionView isEqual:self.eventMembersCollectionView]) {
+    if (collectionView == self.eventMembersCollectionView) {
         
         NSLog(@"Displaying members of event...");
         
@@ -131,9 +135,14 @@
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
+    if (collectionView == self.eventRecipesCollectionView) {
         return [self.event.recipesInEvent count];
+    }
+    if (collectionView == self.eventMembersCollectionView) {
+        return [self.event.membersOfEvent count];
+    }
+    return false;
 }
-
 
 # pragma mark - Event Map
 

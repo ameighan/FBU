@@ -36,11 +36,12 @@
     // Dispose of any resources that can be recreated.
 }
 
+# pragma mark - Table View
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"groceryCell"
                                                             forIndexPath:indexPath];
-    
     
     NSString *ingredient = self.groceryList.ingredientsToBuy[indexPath.row];
     
@@ -55,16 +56,5 @@
     return [self.groceryList.ingredientsToBuy count];
 }
 
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
