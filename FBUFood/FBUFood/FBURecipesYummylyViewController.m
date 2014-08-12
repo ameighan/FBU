@@ -91,11 +91,34 @@
     self.yummlyRecipes = [[NSMutableArray alloc] init];
     for (id recipe in res[@"matches"]) {
         NSDictionary *recipeDict = (NSDictionary *)recipe;
-        //NSLog([recipeDict description]);
         FBURecipe *myRecipe = [FBURecipe object];
         myRecipe.title = recipeDict[@"recipeName"];
         myRecipe.ingredientsList = [recipeDict[@"ingredients"] description];
-        NSMutableString *urlImage = [[NSMutableString alloc] initWithString:[recipeDict[@"smallImageUrls"] description]];
+        
+        NSMutableString *myURLString = [[NSMutableString alloc] initWithString:@"http://api.yummly.com/v1/api/recipe/"];
+        NSString *recipeId = recipeDict[@"id"];
+        NSString *endString = @"?_app_id=f07aaa47&_app_key=6d7ecf41b1791b1d9a05b31dd8b62f39";
+        [myURLString appendString:recipeId];
+        [myURLString appendString:endString];
+        NSData *recipeData = [[NSData alloc] init];
+        recipeData = [recipeData initWithContentsOfURL: [NSURL URLWithString:myURLString]];
+        NSDictionary *res2 = [NSJSONSerialization JSONObjectWithData:recipeData options:NSJSONReadingMutableLeaves error:&myError];
+        
+        NSDictionary *subDict = (NSDictionary *)res2[@"source"];
+        myRecipe.directions = [subDict[@"sourceRecipeUrl"] description];
+        
+        NSString *myString = [res2[@"images"] description];
+        NSMutableString *urlImage1 = [[NSMutableString alloc] initWithString:myString];
+        [urlImage1 replaceOccurrencesOfString:@"(" withString:@"" options:NSCaseInsensitiveSearch range:(NSRange){0,[urlImage1 length]}];
+        [urlImage1 replaceOccurrencesOfString:@")" withString:@"" options:NSCaseInsensitiveSearch range:(NSRange){0,[urlImage1 length]}];
+        NSDictionary *dict = [NSPropertyListSerialization
+                              propertyListWithData:[urlImage1 dataUsingEncoding:NSUTF8StringEncoding]
+                              options:kNilOptions
+                              format:NULL
+                              error:NULL];
+        NSString *largeUrlImage = [dict[@"hostedLargeUrl"] description];
+        
+        NSMutableString *urlImage = [[NSMutableString alloc] initWithString:largeUrlImage];
         [urlImage replaceOccurrencesOfString:@"\"" withString:@"" options:NSCaseInsensitiveSearch range:(NSRange){0,[urlImage length]}];
         [urlImage replaceOccurrencesOfString:@"(" withString:@"" options:NSCaseInsensitiveSearch range:(NSRange){0,[urlImage length]}];
         [urlImage replaceOccurrencesOfString:@")" withString:@"" options:NSCaseInsensitiveSearch range:(NSRange){0,[urlImage length]}];
@@ -111,17 +134,6 @@
             PFFile *imageFile = [PFFile fileWithName:filename data:imageData];
             myRecipe.image = imageFile;
         }
-        
-        NSMutableString *myURLString = [[NSMutableString alloc] initWithString:@"http://api.yummly.com/v1/api/recipe/"];
-        NSString *recipeId = recipeDict[@"id"];
-        NSString *endString = @"?_app_id=f07aaa47&_app_key=6d7ecf41b1791b1d9a05b31dd8b62f39";
-        [myURLString appendString:recipeId];
-        [myURLString appendString:endString];
-        NSData *recipeData = [[NSData alloc] init];
-        recipeData = [recipeData initWithContentsOfURL: [NSURL URLWithString:myURLString]];
-        NSDictionary *res2 = [NSJSONSerialization JSONObjectWithData:recipeData options:NSJSONReadingMutableLeaves error:&myError];
-        NSDictionary *subDict = (NSDictionary *)res2[@"source"];
-        myRecipe.directions = [subDict[@"sourceRecipeUrl"] description];
         
         [self.yummlyRecipes addObject:myRecipe];
         [self.recipesTableView reloadData];
