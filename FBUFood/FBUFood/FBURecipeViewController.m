@@ -14,11 +14,9 @@
 
 @interface FBURecipeViewController ()
 
-
-
-
 @property (weak, nonatomic) IBOutlet UITabBar *tabBar;
 @property (strong, nonatomic) FBURecipeContainerViewController *container;
+
 @end
 
 @implementation FBURecipeViewController
@@ -44,8 +42,6 @@
         self.container.event = self.event;
         NSLog(@"%@", self.container.eventRecipe);
     }
-    
-    
     
 }
 

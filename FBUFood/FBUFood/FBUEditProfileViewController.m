@@ -24,6 +24,11 @@
     
     PFUser *user = [PFUser currentUser];
     
+    self.fullNameTextField.delegate = self;
+    self.emailTextField.delegate = self;
+    self.phoneNumberTextField.delegate = self;
+    self.allergiesTextView.delegate = self;
+    
     self.fullNameTextField.text = user[@"name"];
     self.emailTextField.text = user[@"email"];
     self.phoneNumberTextField.text = user[@"additional"];
@@ -44,6 +49,22 @@
 
     }
     
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    return YES;
+}
+
+- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
+    
+    if([text isEqualToString:@"\n"]) {
+        [textView resignFirstResponder];
+        return NO;
+    }
+    
+    return YES;
 }
 
 -(void)saveProfileData

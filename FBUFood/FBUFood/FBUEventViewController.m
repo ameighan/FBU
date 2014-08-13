@@ -24,6 +24,16 @@
 
 @implementation FBUEventViewController
 
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    self.eventUnjoinButton.hidden = YES;
+    self.eventUnjoinButton.enabled = NO;
+    
+   // self.eventJoinButton.hidden = YES;
+   // self.eventJoinButton.enabled = NO;
+}
+
 
 - (void)viewWillAppear:(BOOL)animated
 {
@@ -52,6 +62,13 @@
         self.navigationItem.rightBarButtonItem = nil;
         self.eventJoinButton.hidden = NO;
         self.eventJoinButton.enabled = YES;
+        self.eventUnjoinButton.hidden = YES;
+        self.eventUnjoinButton.enabled = NO;
+    } else {
+        self.eventJoinButton.hidden = YES;
+        self.eventJoinButton.enabled = NO;
+        self.eventUnjoinButton.hidden = NO;
+        self.eventUnjoinButton.enabled = YES;
     }
 }
 
@@ -83,8 +100,25 @@
     //Disable join button once user has joined.
     self.eventJoinButton.hidden = YES;
     self.eventJoinButton.enabled = NO;
+    
+    self.eventUnjoinButton.hidden = NO;
+    self.eventUnjoinButton.enabled = YES;
 }
 
+- (IBAction)userDidUnjoinEvent:(id)sender {
+    
+    [self showAlertWithTitle:self.title
+                     message:[NSString stringWithFormat:@"You are no longer going to %@ !", self.title]];
+    [self.event removeObject:[PFUser currentUser]  forKey:@"membersOfEvent"];
+    [self.event saveInBackground];
+    
+    self.eventJoinButton.hidden = NO;
+    self.eventJoinButton.enabled = YES;
+    
+    self.eventUnjoinButton.hidden = YES;
+    self.eventUnjoinButton.enabled = NO;
+    
+}
 
 -(void)showAlertWithTitle:(NSString *)title message:(NSString *)message
 {

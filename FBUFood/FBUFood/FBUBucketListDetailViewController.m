@@ -72,6 +72,7 @@
 
 - (IBAction)userDidSave:(id)sender
 {
+    [self showAlertWithTitle:@"Success!" message:@"You saved an item!"];
     if (self.item){
         self.item.itemName = self.addTextfield.text;
         if(self.imageView.image){
