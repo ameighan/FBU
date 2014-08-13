@@ -143,6 +143,7 @@
     [eventQuery whereKey:@"membersOfEvent" equalTo:[PFUser currentUser]];
     [eventQuery includeKey:@"eventGroceryList"];
     [eventQuery includeKey:@"recipesInEvent"];
+    [eventQuery orderByAscending:@"eventTimeDate"];
     [eventQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         blockSelf.eventsArray = objects;
         if (blockSelf.eventsArray.count == 0){
@@ -154,7 +155,7 @@
             [blockSelf.dashboardCollectionView reloadData];
         }
     }];
-    [eventQuery orderByAscending:@"eventTimeDate"];
+
 
 }
 
