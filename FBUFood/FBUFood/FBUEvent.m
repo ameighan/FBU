@@ -25,7 +25,7 @@
 @dynamic eventMeals;
 @dynamic eventParentGroup;
 @dynamic eventOwner;
-//@dynamic eventFeatureDish;
+
 @dynamic eventGeoPoint;
 @dynamic mealsLeftCounter;
 @dynamic recipesInEvent;

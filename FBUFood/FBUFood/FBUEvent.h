@@ -20,13 +20,12 @@
 
 @property (strong, nonatomic) NSString *eventName;
 @property (strong, nonatomic) NSString *eventDescription;
-@property (strong, nonatomic) NSString *eventTimeDate;
+@property (strong, nonatomic) NSDate *eventTimeDate;
 @property (strong, nonatomic) NSString *eventAddress;
 @property (strong, nonatomic) NSString *eventMeals;
 @property (strong, nonatomic) FBUGroup *eventParentGroup;
 @property (nonatomic) PFGeoPoint *eventGeoPoint;
 @property (strong, nonatomic) PFUser *eventOwner;
-//@property (strong, nonatomic) FBURecipe *eventFeatureDish;
 
 @property (nonatomic) int mealsLeftCounter;
 @property (strong, nonatomic) NSMutableArray *recipesInEvent;

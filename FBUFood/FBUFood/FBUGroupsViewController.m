@@ -155,7 +155,10 @@
         [cell.monthLabel setTextColor:[UIColor colorWithRed:196.0/255.0 green:49.0/255.0 blue:56.0/255.0 alpha:1.00]];
         [cell.dayLabel setTextColor:[UIColor colorWithRed:196.0/255.0 green:49.0/255.0 blue:56.0/255.0 alpha:1.00]];
         
-        NSArray *eventTimeDateArray = [event.eventTimeDate componentsSeparatedByString:@" "];
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        [dateFormatter setTimeStyle:NSDateFormatterMediumStyle];
+        NSString *date = [dateFormatter stringFromDate:event.eventTimeDate];
+        NSArray *eventTimeDateArray = [date componentsSeparatedByString:@" "];
         
         cell.monthLabel.text = eventTimeDateArray[0];
         NSMutableString *day = eventTimeDateArray[1];

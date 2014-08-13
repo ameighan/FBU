@@ -39,7 +39,11 @@
     
     self.title = self.event.eventName;
     self.eventLocationLabel.text = self.event.eventAddress;
-    self.eventTimeDateLabel.text = self.event.eventTimeDate;
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setTimeStyle:NSDateFormatterMediumStyle];
+    
+    self.eventTimeDateLabel.text = [dateFormatter stringFromDate:self.event.eventTimeDate];
     if (self.event.eventMeals) {
         self.eventMealsLabel.text = [@"Meals: " stringByAppendingString:self.event.eventMeals];
     }

@@ -26,6 +26,9 @@
         self.ingredientsTextView.text = self.recipe.ingredientsList;
         self.directionsTextView.text = self.recipe.directions;
     }
+    
+    [[UILabel appearance] setFont:[UIFont fontWithName:@"Avenir" size:15.0]];
+
 }
 
 -(void)saveRecipe

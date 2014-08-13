@@ -154,6 +154,7 @@
             [blockSelf.dashboardCollectionView reloadData];
         }
     }];
+    [eventQuery orderByAscending:@"eventTimeDate"];
 
 }
 
