@@ -28,25 +28,16 @@
     self.eventMealsTextField.delegate = self;
     self.eventAddressTextField.delegate = self;
     self.eventDescriptionTextView.delegate = self;
-    [self.eventDatePicker addTarget:self
-                   action:@selector(saveEventData)
-         forControlEvents:UIControlEventValueChanged];
     self.dateChanged = NO;
+    
     if (self.event) {
         self.eventAddressTextField.text = self.event.eventAddress;
         self.eventDescriptionTextView.text = self.event.eventDescription;
         self.eventMealsTextField.text = self.event.eventMeals;
         self.eventNameTextField.text = self.event.eventName;
-        NSString *dateStr = self.event.eventTimeDate;
         
-        // Convert string to date object
-        NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
-        [dateFormat setDateStyle:NSDateFormatterMediumStyle];
-        NSDate *date = [dateFormat dateFromString:dateStr];
-        [self.eventDatePicker setDate:date animated:YES];
-        
-        
-        
+        [self.eventDatePicker setDate:self.event.eventTimeDate animated:YES];
+       
     }
     
     self.eventDatePicker.minimumDate = [NSDate date];
@@ -167,7 +158,6 @@
                               
                               [self.group addObject:newEvent forKey:@"eventsInGroup"];
                               
-;
                               newEvent.eventTimeDate = self.eventDatePicker.date;
                               
                               [newEvent saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
