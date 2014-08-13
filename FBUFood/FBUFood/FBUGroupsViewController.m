@@ -167,7 +167,8 @@
         [cell.dayLabel setTextColor:[UIColor colorWithRed:196.0/255.0 green:49.0/255.0 blue:56.0/255.0 alpha:1.00]];
         
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-        [dateFormatter setTimeStyle:NSDateFormatterMediumStyle];
+        [dateFormatter setDateStyle:NSDateFormatterMediumStyle];
+        
         NSString *date = [dateFormatter stringFromDate:event.eventTimeDate];
         NSArray *eventTimeDateArray = [date componentsSeparatedByString:@" "];
         
