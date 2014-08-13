@@ -26,7 +26,6 @@
     self.recipesTableView.delegate = self;
     self.recipesTableView.dataSource = self;
     self.recipesTableView.allowsMultipleSelection = YES;
-   // [self.recipesTableView registerClass:[FBUYummlyRecipeCell class] forCellReuseIdentifier:@"FBUYummlyRecipeCell"];
     
 }
 
@@ -93,7 +92,11 @@
         NSDictionary *recipeDict = (NSDictionary *)recipe;
         FBURecipe *myRecipe = [FBURecipe object];
         myRecipe.title = recipeDict[@"recipeName"];
-        myRecipe.ingredientsList = [recipeDict[@"ingredients"] description];
+        NSMutableString *recipeIngredients = [[NSMutableString alloc] initWithString:[recipeDict[@"ingredients"] description]];
+        [recipeIngredients replaceOccurrencesOfString:@"(" withString:@"" options:NSCaseInsensitiveSearch range:(NSRange){0,[recipeIngredients length]}];
+        [recipeIngredients replaceOccurrencesOfString:@")" withString:@"" options:NSCaseInsensitiveSearch range:(NSRange){0,[recipeIngredients length]}];
+        [recipeIngredients replaceOccurrencesOfString:@"\"" withString:@"" options:NSCaseInsensitiveSearch range:(NSRange){0,[recipeIngredients length]}];
+        myRecipe.ingredientsList = recipeIngredients;
         
         NSMutableString *myURLString = [[NSMutableString alloc] initWithString:@"http://api.yummly.com/v1/api/recipe/"];
         NSString *recipeId = recipeDict[@"id"];
@@ -137,35 +140,13 @@
         
         [self.yummlyRecipes addObject:myRecipe];
         [self.recipesTableView reloadData];
-        // Save the new post
+        
         [myRecipe saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
             if (!error) {
                 [[NSNotificationCenter defaultCenter] postNotificationName:@"savedToParse" object:self];
             }
         }];
     }
-    
-    
-    // show all values
-    for(id key in res) {
-        
-        id value = [res objectForKey:key];
-        
-        NSString *keyAsString = (NSString *)key;
-        NSString *valueAsString = (NSString *)value;
-        
-        //NSLog(@"key: %@", keyAsString);
-        //NSLog(@"value: %@", valueAsString);
-    }
-    
-    // extract specific value...
-    NSArray *results = [res objectForKey:@"results"];
-    
-    for (NSDictionary *result in results) {
-        NSString *icon = [result objectForKey:@"icon"];
-        //NSLog(@"icon: %@", icon);
-    }
-    
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender

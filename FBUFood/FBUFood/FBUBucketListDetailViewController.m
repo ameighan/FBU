@@ -91,6 +91,7 @@
             PFFile *imageFile = [PFFile fileWithName:filename data:imageData];
             newBucketItem.picture = imageFile;
         }
+        newBucketItem.isCrossedOff = false;
         newBucketItem.owner = [PFUser currentUser];
         [newBucketItem saveInBackground];
     }

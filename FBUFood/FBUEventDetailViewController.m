@@ -23,7 +23,10 @@
 -(void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    self.eventNameTextField.delegate = self;
+    self.eventMealsTextField.delegate = self;
+    self.eventAddressTextField.delegate = self;
+    self.eventDescriptionTextView.delegate = self;
     [self.eventDatePicker addTarget:self
                    action:@selector(saveEventData)
          forControlEvents:UIControlEventValueChanged];
@@ -53,6 +56,15 @@
     return YES;
 }
 
+- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
+    
+    if([text isEqualToString:@"\n"]) {
+        [textView resignFirstResponder];
+        return NO;
+    }
+    
+    return YES;
+}
 
 - (IBAction)dateChanged:(id)sender
 {

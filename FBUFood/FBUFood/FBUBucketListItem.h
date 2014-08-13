@@ -14,6 +14,7 @@
 + (NSString *)parseClassName;
 
 @property (strong, nonatomic) NSString *itemName;
+@property (nonatomic) BOOL isCrossedOff;
 @property (strong, nonatomic) PFFile *picture;
 @property (strong, nonatomic) PFUser *owner;
 

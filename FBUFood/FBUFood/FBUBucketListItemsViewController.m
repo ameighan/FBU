@@ -17,10 +17,10 @@
 - (IBAction)toggleEditingMode:(id)sender
 {
     if (self.tableView.isEditing) {
-        [sender setTitle:@"Edit"];
+        [sender setTitle:@"Edit" forState:UIControlStateNormal];
         [self.tableView setEditing:NO animated:NO];
     } else {
-        [sender setTitle:@"Done"];
+        [sender setTitle:@"Done" forState:UIControlStateNormal];
         [self.tableView setEditing:YES animated:YES];
     }
 }
@@ -49,7 +49,18 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"BucketListCell"
                                                             forIndexPath:indexPath];
     FBUBucketListItem *bucketItem = self.items[indexPath.row];
-    cell.textLabel.text = [bucketItem itemName];
+    if (bucketItem.isCrossedOff) {
+        NSMutableAttributedString *titleString = [[NSMutableAttributedString alloc] initWithString:[bucketItem itemName]];
+        
+        // making text property to strike text- NSStrikethroughStyleAttributeName
+        [titleString addAttribute: NSStrikethroughStyleAttributeName value:[NSNumber numberWithInteger: NSUnderlineStyleSingle] range: NSMakeRange(0, [titleString length])];
+        
+        // using text on label
+        [cell.textLabel setAttributedText: titleString];
+    } else {
+        cell.textLabel.text = [bucketItem itemName];
+    }
+    cell.imageView.image = [UIImage imageWithData:[bucketItem.picture getData]];
     return cell;
 }
 
@@ -60,9 +71,37 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    if([tableView cellForRowAtIndexPath:indexPath].accessoryType == UITableViewCellAccessoryCheckmark){
+        [tableView cellForRowAtIndexPath:indexPath].accessoryType = UITableViewCellAccessoryNone;
+    } else {
+        [tableView cellForRowAtIndexPath:indexPath].accessoryType = UITableViewCellAccessoryCheckmark;
+    }
+    //[self performSegueWithIdentifier:@"BucketListCell" sender:self];
     
-    [self performSegueWithIdentifier:@"BucketListCell" sender:self];
+}
+
+- (IBAction)doneWithTask:(id)sender {
+    NSArray *selectedCells = [self.tableView indexPathsForSelectedRows];
     
+    for (NSIndexPath *selectedCell in selectedCells){
+        NSIndexPath *indexPath = selectedCell;
+        UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"BucketListCell"
+                                                                forIndexPath:indexPath];
+        FBUBucketListItem *selectedItem = self.items[indexPath.row];
+        NSString* textToBeCut = selectedItem.itemName;
+        
+        NSMutableAttributedString *titleString = [[NSMutableAttributedString alloc] initWithString:textToBeCut];
+        
+        // making text property to strike text- NSStrikethroughStyleAttributeName
+        [titleString addAttribute: NSStrikethroughStyleAttributeName value:[NSNumber numberWithInteger: NSUnderlineStyleSingle] range: NSMakeRange(0, [titleString length])];
+        
+        // using text on label
+        [cell.textLabel setAttributedText: titleString];
+        selectedItem.isCrossedOff = true;
+        [selectedItem saveInBackground];
+        
+        cell.imageView.image = [UIImage imageWithData:[selectedItem.picture getData]];
+    }
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -81,10 +120,7 @@
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"BucketListCell"];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-    UIImage *myImage = [UIImage imageNamed:@"BucketList.png"];
-    [self.imageView setImage:myImage];
-    UIImage *newButtonImage = [UIImage imageNamed:@"New.png"];
-    [self.myImageView setImage:newButtonImage];
+    self.tableView.allowsMultipleSelection = YES;
 }
 
 - (void)viewDidAppear:(BOOL)animated
