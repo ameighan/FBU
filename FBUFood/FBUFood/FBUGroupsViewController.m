@@ -84,13 +84,10 @@
     if ([self.group checkIfUserIsInGroupArray:self.group.cooksInGroup]) {
         [self toggleCookView];
         NSLog(@"Toggling cook view");
-//        NSLog(@"Cooks: %@", self.group.cooksInGroup);
-//        NSLog(@"Subscribers: %@", self.group.subscribersOfGroup);
         
     } else if ([self.group checkIfUserIsInGroupArray:self.group.subscribersOfGroup]) {
         [self toggleSubscriberView];
         NSLog(@"Toggling subscriber view");
-//        NSLog(@"Subscribers: %@", self.group.subscribersOfGroup);
     }
     
     self.title = self.group.groupName;
@@ -131,6 +128,20 @@
     
     self.unsubscribeButton.hidden = NO;
     self.unsubscribeButton.enabled = YES;
+}
+
+- (void)toggleNormalView
+{
+    self.joinGroupButton.hidden = NO;
+    self.joinGroupButton.enabled = YES;
+    self.subscribeGroupButton.hidden = NO;
+    self.subscribeGroupButton.enabled = YES;
+    
+    self.leaveGroupButton.hidden = YES;
+    self.leaveGroupButton.enabled = NO;
+    self.unsubscribeButton.hidden = YES;
+    self.unsubscribeButton.enabled = NO;
+    
 }
 
 
@@ -222,21 +233,35 @@
 # pragma mark - Action Sheet: More options
 - (IBAction)moreOptions:(id)sender
 {
-    UIActionSheet *popupMenu = [[UIActionSheet alloc] initWithTitle:@""
-                                                           delegate:self
-                                                  cancelButtonTitle:@"Cancel"
-                                             destructiveButtonTitle:nil
-                                                  otherButtonTitles:@"Edit Group",
-                                                                    @"Create Event",
-                                                                    @"View Subscribers",
-                                                                    nil];
-    popupMenu.tag = 1;
+    
+    if ([self.group checkIfUserIsInGroupArray:self.group.cooksInGroup]) {
+        UIActionSheet *popupMenu = [[UIActionSheet alloc] initWithTitle:@""
+                                                               delegate:self
+                                                      cancelButtonTitle:@"Cancel"
+                                                 destructiveButtonTitle:nil
+                                                      otherButtonTitles:@"Edit Group",
+                                                                        @"Create Event",
+                                                                        @"View Recipes",
+                                                                        @"View Subscribers",
+                                                                        nil];
+    popupMenu.tag = 0;
     [popupMenu showInView:self.view];
+    } else {
+        UIActionSheet *popupMenu = [[UIActionSheet alloc] initWithTitle:@""
+                                                               delegate:self
+                                                      cancelButtonTitle:@"Cancel"
+                                                 destructiveButtonTitle:nil
+                                                      otherButtonTitles:@"View Recipes",
+                                                                        @"View Subscribers",
+                                                                        nil];
+        popupMenu.tag = 1;
+        [popupMenu showInView:self.view];
+    }
 }
 
 - (void)actionSheet:(UIActionSheet *)popupMenu didDismissWithButtonIndex:(NSInteger)buttonIndex {
     switch (popupMenu.tag) {
-        case 1: {
+        case 0: {
             switch (buttonIndex) {
                 case 0:
                     break;
@@ -244,15 +269,47 @@
                     [self performSegueWithIdentifier:@"createEvent" sender:self];
                     break;
                 case 2:
+                    NSLog(@"Segue to group recipes");
+                    [self performSegueWithIdentifier:@"groupRecipe" sender:self];
+                    break;
+                case 3:
+                    NSLog(@"Segue to group's subscribers");
                     [self performSegueWithIdentifier:@"viewSubscribers" sender:self];
+                    break;
                 default:
                     break;
             }
             break;
+        case 1: {
+            switch (buttonIndex) {
+                case 0:
+                    [self performSegueWithIdentifier:@"groupRecipe" sender:self];
+                    break;
+                case 1:
+                    [self performSegueWithIdentifier:@"viewSubscribers" sender:self];
+                    break;
+                }
+            }
         }
         default:
             break;
     }
+}
+
+- (void)willPresentActionSheet:(UIActionSheet *)actionSheet
+{
+    [actionSheet.subviews enumerateObjectsUsingBlock:^(UIView *subview, NSUInteger idx, BOOL *stop) {
+        if ([subview isKindOfClass:[UIButton class]]) {
+            UIButton *button = (UIButton *)subview;
+            button.titleLabel.textColor = [UIColor colorWithRed:196.0/255.0 green:49.0/255.0 blue:56.0/255.0 alpha:1.00];
+//            if ([button.titleLabel.text isEqualToString:NSLocalizedString(@"Edit Group", nil)]) {
+//                [button setTitleColor:[UIColor colorWithRed:167.0/255.0 green:204.0/255.0 blue:144.0/255.0 alpha:1.0] forState:UIControlStateNormal];
+//            }
+//            if ([button.titleLabel.text isEqualToString:NSLocalizedString(@"Create Event", nil)]) {
+//                [button setTitleColor:[UIColor colorWithRed:167.0/255.0 green:204.0/255.0 blue:144.0/255.0 alpha:1.0] forState:UIControlStateNormal];
+//            }
+        }
+    }];
 }
 
 
@@ -261,11 +318,13 @@
 - (IBAction)addUserToGroupAsCook:(id)sender
 {
     
-    [self showAlertWithTitle:@"Success!" message:@"You have joined this group!"];
+    [self showAlertWithTitle:@"Success!" message:@"You have joined this group!" confirmButton:@"OK" cancelButton:nil andTag:0];
     
     [self.group addObject:[PFUser currentUser] forKey:@"cooksInGroup"];
     [self.group addObject:[PFUser currentUser] forKey:@"subscribersOfGroup"];
-    [self.group saveInBackground];
+    [self.group saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        NSLog(@"Saving in the background...");
+    }];
     
     [self toggleCookView];
     
@@ -275,35 +334,78 @@
 - (IBAction)addUserToGroupAsSubscriber:(id)sender
 {
     
-    [self showAlertWithTitle:@"Success!" message:@"You have subscribed to this group!"];
+    [self showAlertWithTitle:@"Success!" message:@"You have subscribed to this group!" confirmButton:@"OK" cancelButton:nil andTag:0];
     
     [self.group addObject:[PFUser currentUser] forKey:@"subscribersOfGroup"];
-    [self.group saveInBackground];
+    [self.group saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        NSLog(@"Saving in the background...");
+    }];
     
     [self toggleSubscriberView];
 }
 
+- (IBAction)userDidLeaveGroup:(id)sender
+{
+    [self showAlertWithTitle:@"Leaving Group" message:@"Are you sure you want to leave this group?" confirmButton:@"Yes" cancelButton:@"Cancel" andTag:1];
+}
 
+- (IBAction)userDidUnsubscribeToGroup:(id)sender
+{
+    [self showAlertWithTitle:@"Unsubscribing" message:@"Are you sure you want to unsubscribe?" confirmButton:@"Yes" cancelButton:@"Cancel" andTag:2];
+}
+
+-(void)showAlertWithTitle:(NSString *)title message:(NSString *)message confirmButton:(NSString *)confirmMessage cancelButton:(NSString *)cancelMessage andTag:(NSInteger)tag
+{
+    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title
+                                                    message:message
+                                                   delegate:self
+                                          cancelButtonTitle:confirmMessage
+                                          otherButtonTitles:cancelMessage, nil];
+    alert.tag = tag;
+    [alert show];
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+
+    if (alertView.tag == 1) {
+        if (buttonIndex == 0) {
+            [self.group removeObject:[PFUser currentUser] forKey:@"cooksInGroup"];
+            [self.group removeObject:[PFUser currentUser] forKey:@"subscribersOfGroup"];
+            [self.group saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                NSLog(@"Removing user from group and as a subscriber...");
+            }];
+            [self toggleNormalView];
+        }
+    } else if (alertView.tag == 2) {
+        if (buttonIndex == 0) {
+            [self.group removeObject:[PFUser currentUser] forKey:@"subscribersOfGroup"];
+            [self.group saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                NSLog(@"Removing user as a subscriber...");
+            }];
+            [self toggleNormalView];
+        }
+    }
+}
 
 # pragma mark - Segues
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([segue.identifier isEqualToString:@"viewSubscribers"]) {
-        
-        FBUGroupSubscribersViewController *groupSubscribersViewController = segue.destinationViewController;
-        
-        groupSubscribersViewController.group = self.group;
-        NSLog(@"Accessing subscribers of %@", groupSubscribersViewController.group.groupName);
-        
-    } else if ([segue.identifier isEqualToString:@"groupRecipe"]) {
+    if ([segue.identifier isEqualToString:@"groupRecipe"]) {
         
         FBUGroupsRecipesViewController *recipesViewController = segue.destinationViewController;
         recipesViewController.sourceVC = @"group";
         recipesViewController.group = self.group;
         recipesViewController.recipesArray = self.group.recipesInGroup;
         recipesViewController.title = @"Group Recipes";
-        NSLog(@"Recipes in Group: %@", self.group.recipesInGroup);
+        
+    } else if ([segue.identifier isEqualToString:@"viewSubscribers"]) {
+        
+        FBUGroupSubscribersViewController *groupSubscribersViewController = segue.destinationViewController;
+        
+        groupSubscribersViewController.group = self.group;
+        NSLog(@"Accessing subscribers of %@", groupSubscribersViewController.group.groupName);
         
     } else if ([segue.identifier isEqualToString:@"createEvent"]) {
         FBUEventDetailViewController *eventDetailViewController = segue.destinationViewController;
@@ -329,18 +431,6 @@
     }
 }
 
-
--(void)showAlertWithTitle:(NSString *)title message:(NSString *)message
-{
-    
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title
-                                                    message:message
-                                                   delegate:nil
-                                          cancelButtonTitle:@"OK"
-                                          otherButtonTitles:nil];
-    
-    [alert show];
-}
 
 - (IBAction)unwindToGroupViewController:(UIStoryboardSegue *)segue
 {

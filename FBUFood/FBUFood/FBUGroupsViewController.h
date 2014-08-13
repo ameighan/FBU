@@ -10,7 +10,7 @@
 
 @class FBUGroup;
 
-@interface FBUGroupsViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate, UIActionSheetDelegate>
+@interface FBUGroupsViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate, UIActionSheetDelegate, UIAlertViewDelegate>
 
 @property (strong, nonatomic) FBUGroup *group;
 

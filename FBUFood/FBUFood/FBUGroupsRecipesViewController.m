@@ -32,9 +32,9 @@
     [super viewWillAppear:animated];
     [self.recipesTableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"recipeCell"];
     
-//    if (![self.group checkIfUserIsInGroupArray:self.group.cooksInGroup]) {
-//        [self.navigationItem setRightBarButtonItem:nil animated:YES];
-//    }
+    if (![self.group checkIfUserIsInGroupArray:self.group.cooksInGroup]) {
+        [self.navigationItem setRightBarButtonItem:nil animated:YES];
+    }
 }
 
 
