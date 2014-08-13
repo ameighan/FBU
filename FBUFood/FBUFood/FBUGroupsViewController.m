@@ -27,15 +27,49 @@
     
     self.eventsCollectionView.backgroundColor = [UIColor clearColor];
     self.cooksCollectionView.backgroundColor = [UIColor clearColor];
-    [self.joinGroupButton setTintColor:[UIColor colorWithRed:196.0/255.0 green:49.0/255.0 blue:56.0/255.0 alpha:1.00]];
-    [self.subscribeGroupButton setTintColor:[UIColor colorWithRed:196.0/255.0 green:49.0/255.0 blue:56.0/255.0 alpha:1.00]];
-    [self.createEventInGroupButton setTintColor:[UIColor colorWithRed:196.0/255.0 green:49.0/255.0 blue:56.0/255.0 alpha:1.00]];
-    [self.viewSubscribersInGroupButton setTintColor:[UIColor colorWithRed:196.0/255.0 green:49.0/255.0 blue:56.0/255.0 alpha:1.00]];
     
-    [[NSNotificationCenter defaultCenter]addObserver:self.eventsCollectionView selector:@selector(reloadData) name:@"savedEvent" object:nil];
+    UIFont *defaultFont = [UIFont fontWithName:@"Avenir" size:14.0];
+    UIFont *headerFont = [UIFont fontWithName:@"Avenir" size:18.0];
+    
+    
+    [self.cooksLabel setFont:headerFont];
+    [self.eventsLabel setFont:headerFont];
+    
+    [self createButtonUI:self.joinGroupButton];
+    [self createButtonUI:self.subscribeGroupButton];
+    [self createButtonUI:self.unsubscribeButton];
+    [self createButtonUI:self.leaveGroupButton];
+    
+    [self.groupNameLabel setFont:[UIFont fontWithName:@"Avenir" size:24.0]];
+    self.groupDescriptionTextView.font = defaultFont;
+    
+    CGFloat height = 198.0 * [self.group.eventsInGroup count];
     
     [self.scrollView setScrollEnabled:YES];
-    [self.scrollView setContentSize:CGSizeMake(320, 586)];
+    [self.scrollView setContentSize:CGSizeMake(320, 375.0 + height)];
+    
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(elongateScrollView) name:@"savedEvent" object:nil];
+    
+}
+
+- (void)elongateScrollView {
+    [self.eventsCollectionView reloadData];
+    
+    CGFloat height = 198.0 * [self.group.eventsInGroup count];
+    
+    [self.scrollView setScrollEnabled:YES];
+    [self.scrollView setContentSize:CGSizeMake(320, 375.0 + height)];
+
+}
+
+- (void)createButtonUI:(UIButton *)button
+{
+    [button setTintColor:[UIColor colorWithRed:196.0/255.0 green:49.0/255.0 blue:56.0/255.0 alpha:1.00]];
+    [[button layer] setBorderWidth:1.5f];
+    [[button layer] setBorderColor:[UIColor colorWithRed:196.0/255.0 green:49.0/255.0 blue:56.0/255.0 alpha:1.00].CGColor];
+    button.layer.cornerRadius = 3;
+    button.clipsToBounds = YES;
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -61,13 +95,14 @@
     
     self.title = self.group.groupName;
     self.groupNameLabel.text = self.group.groupName;
-    UIImage *groupImage = [UIImage imageWithData:[self.group.groupImage getData]];
-    self.groupImageView.image = groupImage;
     self.groupDescriptionTextView.text = self.group.groupDescription;
-    
     
     [self.eventsCollectionView reloadData];
     
+    CGFloat width = 325.0;
+    CGFloat height = 198.0 * [self.group.eventsInGroup count];
+    
+    self.eventsCollectionView.frame = CGRectMake(0, 360.0, width, 360.0 + height);
 }
 
 -(void)dealloc
@@ -77,15 +112,14 @@
 
 - (void)toggleCookView
 {
-    self.createEventInGroupButton.hidden = NO;
-    self.viewSubscribersInGroupButton.hidden = NO;
-    
-    
     //Disable and hide the old buttons
     self.joinGroupButton.hidden = YES;
     self.joinGroupButton.enabled = NO;
     self.subscribeGroupButton.hidden = YES;
     self.subscribeGroupButton.enabled = NO;
+    
+    self.leaveGroupButton.hidden = NO;
+    self.leaveGroupButton.enabled = YES;
 }
 
 - (void)toggleSubscriberView
@@ -94,6 +128,9 @@
     self.joinGroupButton.enabled = NO;
     self.subscribeGroupButton.hidden = YES;
     self.subscribeGroupButton.enabled = NO;
+    
+    self.unsubscribeButton.hidden = NO;
+    self.unsubscribeButton.enabled = YES;
 }
 
 - (UIImage *)getRoundedRectImageFromImage :(UIImage *)image onReferenceView :(UIImageView*)imageView withCornerRadius :(float)cornerRadius
@@ -122,18 +159,19 @@
             cell.eventImageView.image = [UIImage imageWithData:data];
         }];
         
-        
-    //    cell.eventImageView.image = eventFeatureDishImage;
-       
         cell.eventNameLabel.text = event.eventName;
-//        cell.eventTimeDateLabel.text = event.eventTimeDate;
         cell.eventLocationLabel.text = event.eventAddress;
-        
         [cell.eventNameLabel setFont:[UIFont fontWithName:@"Avenir" size:19.0]];
-        [cell.eventLocationLabel setFont:[UIFont fontWithName:@"Avenir" size:13.0]];
+        [cell.eventLocationLabel setFont:[UIFont fontWithName:@"Avenir" size:13.5]];
         [cell.monthLabel setTextColor:[UIColor colorWithRed:196.0/255.0 green:49.0/255.0 blue:56.0/255.0 alpha:1.00]];
         [cell.dayLabel setTextColor:[UIColor colorWithRed:196.0/255.0 green:49.0/255.0 blue:56.0/255.0 alpha:1.00]];
         
+        NSArray *eventTimeDateArray = [event.eventTimeDate componentsSeparatedByString:@" "];
+        
+        cell.monthLabel.text = eventTimeDateArray[0];
+        NSMutableString *day = eventTimeDateArray[1];
+        NSString *dayParsed = [day substringToIndex:[day length] - 1];
+        cell.dayLabel.text = dayParsed;
         
         return cell;
     }
@@ -183,6 +221,42 @@
     return false;
 }
 
+# pragma mark - Action Sheet: More options
+- (IBAction)moreOptions:(id)sender
+{
+    UIActionSheet *popupMenu = [[UIActionSheet alloc] initWithTitle:@""
+                                                           delegate:self
+                                                  cancelButtonTitle:@"Cancel"
+                                             destructiveButtonTitle:nil
+                                                  otherButtonTitles:@"Edit Group",
+                                                                    @"Create Event",
+                                                                    @"View Subscribers",
+                                                                    nil];
+    popupMenu.tag = 1;
+    [popupMenu showInView:self.view];
+}
+
+- (void)actionSheet:(UIActionSheet *)popupMenu didDismissWithButtonIndex:(NSInteger)buttonIndex {
+    switch (popupMenu.tag) {
+        case 1: {
+            switch (buttonIndex) {
+                case 0:
+                    break;
+                case 1:
+                    [self performSegueWithIdentifier:@"createEvent" sender:self];
+                    break;
+                case 2:
+                    [self performSegueWithIdentifier:@"viewSubscribers" sender:self];
+                default:
+                    break;
+            }
+            break;
+        }
+        default:
+            break;
+    }
+}
+
 
 # pragma mark - Actions
 
@@ -207,7 +281,13 @@
     
     [self.group addObject:[PFUser currentUser] forKey:@"subscribersOfGroup"];
     [self.group saveInBackground];
+    
+    [self toggleSubscriberView];
 }
+
+
+
+# pragma mark - Segues
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {

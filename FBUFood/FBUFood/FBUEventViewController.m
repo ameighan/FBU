@@ -33,6 +33,7 @@
     [self importRecipesToGroceryList];
     self.eventRecipesCollectionView.backgroundColor = [UIColor clearColor];
     self.eventMembersCollectionView.backgroundColor = [UIColor clearColor];
+    [self.eventJoinButton setTintColor:[UIColor colorWithRed:196.0/255.0 green:49.0/255.0 blue:56.0/255.0 alpha:1.00]];
     NSLog(@"Members of Event: %@", self.event.membersOfEvent);
     
     
@@ -95,6 +96,18 @@
 
 # pragma mark - Collection View
 
+- (UIImage *)getRoundedRectImageFromImage :(UIImage *)image onReferenceView :(UIImageView*)imageView withCornerRadius :(float)cornerRadius
+{
+    UIGraphicsBeginImageContextWithOptions(imageView.bounds.size, NO, 1.0);
+    [[UIBezierPath bezierPathWithRoundedRect:imageView.bounds
+                                cornerRadius:cornerRadius] addClip];
+    [image drawInRect:imageView.bounds];
+    UIImage *finalImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return finalImage;
+}
+
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     
     if (collectionView == self.eventRecipesCollectionView) {
@@ -121,8 +134,10 @@
         PFUser *member = self.event.membersOfEvent[indexPath.row];
         [member fetchIfNeeded];
         
-        UIImage *profilePicture = [UIImage imageWithData:[member[@"profileImage"] getData]];
-        cell.userProfileImage.image = profilePicture;
+        [member[@"profileImage"] getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+            UIImage *image = [UIImage imageWithData:data scale:0.8];
+            cell.userProfileImage.image = [self getRoundedRectImageFromImage:image onReferenceView:cell.userProfileImage withCornerRadius: cell.userProfileImage.frame.size.width/2];
+        }];
         
         return cell;
     }
