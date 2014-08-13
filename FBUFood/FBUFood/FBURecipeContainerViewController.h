@@ -14,7 +14,7 @@
 @interface FBURecipeContainerViewController : UIViewController
 
 @property (strong, nonatomic) NSString *toViewSegueIdentifier;
-@property (nonatomic) NSMutableString *eventRecipe;
+@property (nonatomic) NSString *eventRecipe;
 @property (nonatomic) FBURecipe *recipe;
 @property (nonatomic) FBUEvent *event;
 

@@ -18,9 +18,9 @@
 #import <QuartzCore/QuartzCore.h>
 
 #define kCollectionCellBorderTop 10.0
-#define kCollectionCellBorderBottom 17.0
-#define kCollectionCellBorderLeft 17.0
-#define kCollectionCellBorderRight 17.0
+#define kCollectionCellBorderBottom 10.0
+#define kCollectionCellBorderLeft 10.0
+#define kCollectionCellBorderRight 10.0
 
 
 @implementation FBUProfileViewController
@@ -29,12 +29,7 @@
 {
     [super viewWillAppear:animated];
     
-    [self.nameLabel setTintColor:[UIColor colorWithRed:196.0/255.0 green:49.0/255.0 blue:56.0/255.0 alpha:1.00]];
-    [self.addGroup setTintColor:[UIColor colorWithRed:196.0/255.0 green:49.0/255.0 blue:56.0/255.0 alpha:1.00]];
-    [self.recipesButton setTintColor:[UIColor colorWithRed:196.0/255.0 green:49.0/255.0 blue:56.0/255.0 alpha:1.00]];
-    [self.bucketListButton setTintColor:[UIColor colorWithRed:196.0/255.0 green:49.0/255.0 blue:56.0/255.0 alpha:1.00]];
-    
-    [self queryForUserData];
+    [self queryForGroupData];
     
     if ([PFUser currentUser]){
         PFUser *user = [PFUser currentUser];
@@ -45,15 +40,16 @@
         }
         if(user[@"fbImage"]) {
             UIImage *img = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:user[@"fbImage"]]]];
-            self.profileImage.image = [self getRoundedRectImageFromImage:img onReferenceView:self.profileImage withCornerRadius: self.profileImage.frame.size.width/2];
+            self.profileImage.image = img;
 
         } else {
             if(user[@"profileImage"]) {
                 UIImage *image = [UIImage imageWithData:[user[@"profileImage"] getData]];
-                self.profileImage.image = [self getRoundedRectImageFromImage:image onReferenceView:self.profileImage withCornerRadius: self.profileImage.frame.size.width/2];
+                self.profileImage.image = image;
+                
             } else {
                 UIImage *image = [UIImage imageNamed:@"profile_default.png"];
-                self.profileImage.image = [self getRoundedRectImageFromImage:image onReferenceView:self.profileImage withCornerRadius: self.profileImage.frame.size.width/2];
+                self.profileImage.image = image;
 
             }
 
@@ -61,39 +57,41 @@
     }
 }
 
-- (UIImage *)getRoundedRectImageFromImage :(UIImage *)image onReferenceView :(UIImageView*)imageView withCornerRadius :(float)cornerRadius
-{
-    UIGraphicsBeginImageContextWithOptions(imageView.bounds.size, NO, 1.0);
-    [[UIBezierPath bezierPathWithRoundedRect:imageView.bounds
-                                cornerRadius:cornerRadius] addClip];
-    [image drawInRect:imageView.bounds];
-    UIImage *finalImage = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    
-    return finalImage;
-}
-
 -(void)viewDidLoad
 {
     [super viewDidLoad];
     
-    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(queryForUserData) name:@"savedGroup" object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(queryForGroupData) name:@"savedGroup" object:nil];
+    
+    [self.addGroup setTintColor:[UIColor colorWithRed:252.0/255.0 green:140.0/255.0 blue:106.0/255.0 alpha:1.00]];
+    [self.recipesButton setTintColor:[UIColor colorWithRed:196.0/255.0 green:49.0/255.0 blue:56.0/255.0 alpha:1.00]];
+    [self.bucketListButton setTintColor:[UIColor colorWithRed:196.0/255.0 green:49.0/255.0 blue:56.0/255.0 alpha:1.00]];
+    [self.nameLabel setFont:[UIFont fontWithName:@"Avenir" size:20.0]];
+    [[UIToolbar appearance] setBarTintColor:[UIColor colorWithRed:232.0/255.0 green:232.0/255.0 blue:235.0/255.0 alpha:1.0]];
     
     [self.scrollView setScrollEnabled:YES];
     [self.scrollView setContentSize:CGSizeMake(320, 586)];
+    
     FBUCollectionViewLayout *layout = [[FBUCollectionViewLayout alloc] init];
     layout.interitemSpacing = 10.0;
     layout.lineSpacing = 10.0;
+    layout.sectionInsets = UIEdgeInsetsMake(10, 15, 10, 15);
+    
+    self.profileImage.layer.cornerRadius = self.profileImage.frame.size.width / 2;
+    self.profileImage.clipsToBounds = YES;
+    
+    self.profileImage.layer.borderWidth = 0.5f;
+    self.profileImage.layer.borderColor = [UIColor blackColor].CGColor;
 }
 
--(void)queryForUserData
+-(void)queryForGroupData
 {
     __weak FBUProfileViewController *blockSelf = self;
     PFQuery *getGroups = [FBUGroup query];
     [getGroups whereKey:@"cooksInGroup" equalTo:[PFUser currentUser]];
     [getGroups includeKey:@"recipesInGroup"];
     [getGroups includeKey:@"cooksInGroup"];
-    [getGroups includeKey:@"eventsInGroup"];
+    [getGroups includeKey:@"eventsInGroup"]; 
     [getGroups findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         blockSelf.myGroupsArray = objects;
         [blockSelf.activityIndicator stopAnimating];
@@ -110,9 +108,7 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    //UIImage *myImage = [UIImage imageNamed:@"RecipeButton.png"];
-    //[self.imageView setImage:myImage];
-    [self queryForUserData];
+
 }
 
 -(void)dealloc
@@ -171,7 +167,9 @@
 # pragma mark - Collection View Data Source
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    FBUGroup *group = self.myGroupsArray[indexPath.row];
+
+    FBUGroup *group = self.myGroupsArray[indexPath.item];
+    NSLog(@"group name: %@", group.groupName);
     
     UICollectionViewCell *cell = [self.myGroupsCollectionView dequeueReusableCellWithReuseIdentifier:@"groupCell" forIndexPath:indexPath];
     
@@ -214,9 +212,10 @@
         [cell.contentView addSubview:name];
         [cell.contentView addSubview:description];
         
-
     }];
     
+    
+//    imageView.image = [UIImage imageWithData:[group.groupImage getData]];
     CGSize rctSizeOriginal = CGSizeMake(100,100);
     double scale = (cell.bounds.size.width  - (kCollectionCellBorderLeft + kCollectionCellBorderRight)) / rctSizeOriginal.width;
     CGSize rctSizeFinal = CGSizeMake(rctSizeOriginal.width * scale,rctSizeOriginal.height * scale);
@@ -252,6 +251,7 @@
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
+    NSLog(@"nubmer of items: %lu", [self.myGroupsArray count]);
     return [self.myGroupsArray count];
 }
 

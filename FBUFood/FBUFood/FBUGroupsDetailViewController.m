@@ -10,6 +10,7 @@
 #import "FBUGroup.h"
 
 @interface FBUGroupsDetailViewController () <UITextViewDelegate>
+
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 
 @end
@@ -60,7 +61,7 @@
         NSString *filename = [NSString stringWithFormat:@"%@.png", @"group image"];
         PFFile *imageFile = [PFFile fileWithName:filename data:imageData];
         newGroup.groupImage = imageFile;
-        newGroup.groupImageHeight = image.size.height/10;
+        newGroup.groupImageHeight = 200;
     } else {
         NSData *imageData = UIImageJPEGRepresentation(self.imageView.image, 0.8);
         NSString *filename = [NSString stringWithFormat:@"%@.png", @"group image"];
@@ -94,6 +95,7 @@
 {
     UIImage *image = info[UIImagePickerControllerOriginalImage];
     self.imageView.image = image;
+    self.imageView.contentMode = UIViewContentModeScaleAspectFit;
     [self dismissViewControllerAnimated:YES completion:NULL];
 }
 

@@ -84,13 +84,13 @@
     if ([self.group checkIfUserIsInGroupArray:self.group.cooksInGroup]) {
         [self toggleCookView];
         NSLog(@"Toggling cook view");
-        NSLog(@"Cooks: %@", self.group.cooksInGroup);
-        NSLog(@"Subscribers: %@", self.group.subscribersOfGroup);
+//        NSLog(@"Cooks: %@", self.group.cooksInGroup);
+//        NSLog(@"Subscribers: %@", self.group.subscribersOfGroup);
         
     } else if ([self.group checkIfUserIsInGroupArray:self.group.subscribersOfGroup]) {
         [self toggleSubscriberView];
         NSLog(@"Toggling subscriber view");
-        NSLog(@"Subscribers: %@", self.group.subscribersOfGroup);
+//        NSLog(@"Subscribers: %@", self.group.subscribersOfGroup);
     }
     
     self.title = self.group.groupName;
@@ -133,17 +133,6 @@
     self.unsubscribeButton.enabled = YES;
 }
 
-- (UIImage *)getRoundedRectImageFromImage :(UIImage *)image onReferenceView :(UIImageView*)imageView withCornerRadius :(float)cornerRadius
-{
-    UIGraphicsBeginImageContextWithOptions(imageView.bounds.size, NO, 1.0);
-    [[UIBezierPath bezierPathWithRoundedRect:imageView.bounds
-                                cornerRadius:cornerRadius] addClip];
-    [image drawInRect:imageView.bounds];
-    UIImage *finalImage = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    
-    return finalImage;
-}
 
 # pragma mark - Collection View
 
@@ -179,21 +168,27 @@
         
         FBUUserCollectionViewCell *cell = [self.cooksCollectionView dequeueReusableCellWithReuseIdentifier:@"user" forIndexPath:indexPath];
         
+        cell.userProfileImage.layer.cornerRadius = cell.userProfileImage.frame.size.width / 2;
+        cell.userProfileImage.clipsToBounds = YES;
+        
+        cell.userProfileImage.layer.borderWidth = 0.5f;
+        cell.userProfileImage.layer.borderColor = [UIColor blackColor].CGColor;
+        
         PFUser *member = self.group.cooksInGroup[indexPath.row];
         [member fetchIfNeeded];
         
         if(member[@"fbImage"]) {
             UIImage *img = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:member[@"fbImage"]]]];
-            cell.userProfileImage.image = [self getRoundedRectImageFromImage:img onReferenceView:cell.userProfileImage withCornerRadius: cell.userProfileImage.frame.size.width/2];
+            cell.userProfileImage.image = img;
         } else {
             if (member[@"profileImage"]) {
                 [member[@"profileImage"] getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
                     UIImage *image = [UIImage imageWithData:data scale:0.8];
-                    cell.userProfileImage.image = [self getRoundedRectImageFromImage:image onReferenceView:cell.userProfileImage withCornerRadius: cell.userProfileImage.frame.size.width/2];
+                    cell.userProfileImage.image = image;
                 }];
             } else {
                 UIImage *image = [UIImage imageNamed:@"profile_default.png"];
-                cell.userProfileImage.image = [self getRoundedRectImageFromImage:image onReferenceView:cell.userProfileImage withCornerRadius: cell.userProfileImage.frame.size.width/2];
+                cell.userProfileImage.image = image;
             }
         }
 

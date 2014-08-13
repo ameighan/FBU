@@ -16,6 +16,12 @@
 {
     [super viewDidLoad];
     
+    self.imageView.layer.cornerRadius = self.imageView.frame.size.width / 2;
+    self.imageView.clipsToBounds = YES;
+    
+    self.imageView.layer.borderWidth = 0.5f;
+    self.imageView.layer.borderColor = [UIColor blackColor].CGColor;
+    
     PFUser *user = [PFUser currentUser];
     
     self.fullNameTextField.text = user[@"name"];
@@ -24,16 +30,16 @@
 //    self.allergiesTextView.text = user[@"allergies"];
     if(!user[@"fbImage"] && !user[@"profileImage"]) {
         UIImage *image = [UIImage imageNamed:@"profile_default.png"];
-        self.imageView.image = [self getRoundedRectImageFromImage:image onReferenceView:self.imageView withCornerRadius: self.imageView.frame.size.width/2];
+        self.imageView.image = image;
         
     }else{
         if(!user[@"fbImage"]) {
             UIImage *image = [UIImage imageWithData:[user[@"profileImage"] getData]];
-            self.imageView.image = [self getRoundedRectImageFromImage:image onReferenceView:self.imageView withCornerRadius: self.imageView.frame.size.width/2];
- 
+            self.imageView.image = image;
+
         } else {
         UIImage *img = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:user[@"fbImage"]]]];
-        self.imageView.image = [self getRoundedRectImageFromImage:img onReferenceView:self.imageView withCornerRadius: self.imageView.frame.size.width/2];
+        self.imageView.image = img;
         }
 
     }

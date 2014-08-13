@@ -88,7 +88,7 @@
         NSDictionary *dataDict = @{@"alert": [self.eventNameTextField.text stringByAppendingString:@" is today!"]};
         
         [dateFormatter setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"UTC"]];
-        [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:00'Z'"];
+        [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss'Z'"];
         [dateFormatter stringFromDate:self.eventDatePicker.date];
         
         NSDictionary *dic2 = @{@"where": whereDict, @"push_time":[dateFormatter stringFromDate:self.eventDatePicker.date], @"data":dataDict};
@@ -168,38 +168,45 @@
                               [newEvent saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
                                   NSLog(@"Saving new event");
                                   [[NSNotificationCenter defaultCenter] postNotificationName:@"savedEvent" object:self];
-                        
+                                  
+                              }];
+                              
+                              PFInstallation *currentInstallation = [PFInstallation currentInstallation];
+                              [currentInstallation addUniqueObject:[self.eventNameTextField.text stringByReplacingOccurrencesOfString:@" " withString:@""] forKey:@"channels"];
+                              [currentInstallation saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                                  
+                                  AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+                                  
+                                  manager.requestSerializer = [AFJSONRequestSerializer serializer];
+                                  
+                                  [manager.requestSerializer setValue:@"1MLHKB8J5A4HP8jUG0NbtlNxslsQmYUDsuIf5luJ" forHTTPHeaderField:@"X-Parse-Application-Id"];
+                                  [manager.requestSerializer setValue:@"8GUVe3SYFhRbgGx0M4JH58iQWZtH8g4nOrzPfhb9" forHTTPHeaderField:@"X-Parse-REST-API-Key"];
+                                  [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+                                  manager.securityPolicy.allowInvalidCertificates = YES;
+                                  
+                                  NSDictionary *whereDict = @{@"channels": [self.eventNameTextField.text stringByReplacingOccurrencesOfString:@" " withString:@""]};
+                                  
+                                  NSDictionary *dataDict = @{@"alert": [self.eventNameTextField.text stringByAppendingString:@" is today!"]};
+                                  
+                                  [dateFormatter setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"UTC"]];
+                                  [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:00'Z'"];
+                                  [dateFormatter stringFromDate:self.eventDatePicker.date];
+                                  
+                                  NSDictionary *dic2 = @{@"where": whereDict, @"push_time":[dateFormatter stringFromDate:self.eventDatePicker.date], @"data":dataDict};
+                                  
+                                  [manager POST:@"https://api.parse.com/1/push" parameters: dic2
+                                        success:^(AFHTTPRequestOperation *operation, id responseObject) {
+                                            NSLog(@"POST data JSON returned: %@", responseObject);
+                                        }
+                                        failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                                            NSLog(@"Error: %@", error);
+                                        }
+                                   ];
+                                  
                               }];
                               
                               [self.group saveInBackground];
                               
-                              AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-                              
-                              manager.requestSerializer = [AFJSONRequestSerializer serializer];
-                              
-                              [manager.requestSerializer setValue:@"1MLHKB8J5A4HP8jUG0NbtlNxslsQmYUDsuIf5luJ" forHTTPHeaderField:@"X-Parse-Application-Id"];
-                              [manager.requestSerializer setValue:@"8GUVe3SYFhRbgGx0M4JH58iQWZtH8g4nOrzPfhb9" forHTTPHeaderField:@"X-Parse-REST-API-Key"];
-                              [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
-                              manager.securityPolicy.allowInvalidCertificates = YES;
-                              
-                              NSDictionary *whereDict = @{@"channels": [self.eventNameTextField.text stringByReplacingOccurrencesOfString:@" " withString:@""]};
-                              
-                              NSDictionary *dataDict = @{@"alert": [self.eventNameTextField.text stringByAppendingString:@" is today!"]};
-                              
-                              [dateFormatter setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"UTC"]];
-                              [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:00'Z'"];
-                              [dateFormatter stringFromDate:self.eventDatePicker.date];
-                              
-                              NSDictionary *dic2 = @{@"where": whereDict, @"push_time":[dateFormatter stringFromDate:self.eventDatePicker.date], @"data":dataDict};
-                              
-                              [manager POST:@"https://api.parse.com/1/push" parameters: dic2
-                                    success:^(AFHTTPRequestOperation *operation, id responseObject) {
-                                        NSLog(@"POST data JSON returned: %@", responseObject);
-                                    }
-                                    failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                                        NSLog(@"Error: %@", error);
-                                    }
-                               ];
                           }
                           
                           

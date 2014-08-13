@@ -21,15 +21,9 @@
 {
     [super viewDidLoad];
     
-    UIActivityIndicatorView *indicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
-    indicator.color = [UIColor darkGrayColor];
-    [indicator startAnimating];
-    [indicator hidesWhenStopped];
-    [self.imageView addSubview: indicator];
-    
     [self.recipe.image getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
         self.imageView.image = [UIImage imageWithData:data];
-        [indicator startAnimating];
+        [self.activityIndicator stopAnimating];
     }];
     
     self.dishTitleLabel.text = self.recipe.title;

@@ -26,6 +26,7 @@
 @property (nonatomic) CGFloat itemHeight;
 @property (nonatomic) CGFloat columnWidth;
 @property (nonatomic) NSUInteger numberOfColumns;
+@property (nonatomic) UIEdgeInsets sectionInsets;
 
 
 @end

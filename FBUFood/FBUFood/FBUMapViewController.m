@@ -50,6 +50,9 @@
         [alert show];
 
     }
+    
+    [[UIButton appearance] setTintColor:[UIColor colorWithRed:250.0/255.0 green:205.0/255.0 blue:115.0/255.0 alpha:1.00]];
+
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -71,25 +74,17 @@
     PFQuery *eventQuery = [FBUEvent query];
     // Interested in locations near user.
     [eventQuery whereKey:@"eventGeoPoint" nearGeoPoint:userGeoPoint withinMiles:1000];
+    [eventQuery whereKey:@"membersOfEvent" equalTo:[PFUser currentUser]];
     // Limit what could be a lot of points.
     eventQuery.limit = 20;
     // Final list of objects
     [eventQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
             for(FBUEvent *event in objects) {
-                if ([event.membersOfEvent containsObject:[PFUser currentUser]]) {
                     FBUMapAnnotation *annotationPoint = [[FBUMapAnnotation alloc] initWithCoordinate:CLLocationCoordinate2DMake(event.eventGeoPoint.latitude, event.eventGeoPoint.longitude) title:event.eventName];
-                    annotationPoint.color = @"green";
+                    annotationPoint.imageName = @"pin.png";
                     [self.annotations addObject:annotationPoint];
                     [self.mapView addAnnotation:annotationPoint];
-                } else {
-                    FBUMapAnnotation *annotationPoint = [[FBUMapAnnotation alloc] initWithCoordinate:CLLocationCoordinate2DMake(event.eventGeoPoint.latitude, event.eventGeoPoint.longitude) title:event.eventName];
-                    annotationPoint.color = @"purple";
-                    [self.annotations addObject:annotationPoint];
-                    
-                    [self.mapView addAnnotation:annotationPoint];
-                    
-                }
             }
         }
     }];
@@ -108,8 +103,8 @@
 
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation
 {
-    static NSString *GeoQueryMyAnnotationIdentifier = @"GreenPin";
-    static NSString *GeoQueryNearAnnotationIdentifier = @"PurplePin";
+    static NSString *GeoQueryMyAnnotationIdentifier = @"Pin";
+//    static NSString *GeoQueryNearAnnotationIdentifier = @"PurplePin";
     
     if (annotation == mapView.userLocation) {
         // Doe snot give the user's locatino a pin
@@ -119,33 +114,47 @@
     } else if ([annotation isKindOfClass:[FBUMapAnnotation class]]) {
         
        // Casts an annotation as an instance of FBUMapAnnotation
-        FBUMapAnnotation *annotations = (FBUMapAnnotation *)annotation;
-        if ([annotations.color isEqualToString:@"green"]) {
-            MKPinAnnotationView *annotationView = (MKPinAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:GeoQueryMyAnnotationIdentifier];
-            if (!annotationView) {
-                annotationView = [[MKPinAnnotationView alloc] initWithAnnotation:annotations reuseIdentifier:GeoQueryMyAnnotationIdentifier];
-                annotationView.pinColor = MKPinAnnotationColorGreen;
+        FBUMapAnnotation *ann = (FBUMapAnnotation *)annotation;
+        if ([ann.imageName isEqualToString:@"pin.png"]) {
+            MKAnnotationView *forkAnnotationView = (MKAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:GeoQueryMyAnnotationIdentifier];
+        
+            if (!forkAnnotationView) {
+                MKAnnotationView *annotationView = [[MKAnnotationView alloc] initWithAnnotation:ann reuseIdentifier:GeoQueryMyAnnotationIdentifier];
                 annotationView.canShowCallout = YES;
+                UIImage *fork = [UIImage imageNamed:ann.imageName];
+                
+                // size the flag down to the appropriate size
+                CGRect resizeRect;
+                resizeRect.size = fork.size;
+                CGSize maxSize = CGRectInset(self.view.bounds,
+                                             [FBUMapViewController annotationPadding],
+                                             [FBUMapViewController annotationPadding]).size;
+                maxSize.height -= self.navigationController.navigationBar.frame.size.height + [FBUMapViewController calloutHeight];
+                if (resizeRect.size.width > maxSize.width)
+                    resizeRect.size = CGSizeMake(maxSize.width, resizeRect.size.height / resizeRect.size.width * maxSize.width);
+                if (resizeRect.size.height > maxSize.height)
+                    resizeRect.size = CGSizeMake(resizeRect.size.width / resizeRect.size.height * maxSize.height, maxSize.height);
+                
+                resizeRect.origin = CGPointMake(0.0, 0.0);
+                UIGraphicsBeginImageContext(resizeRect.size);
+                [fork drawInRect:resizeRect];
+                UIImage *resizedImage = UIGraphicsGetImageFromCurrentImageContext();
+                UIGraphicsEndImageContext();
+                
+                annotationView.image = resizedImage;
+                annotationView.opaque = NO;
+                
                 annotationView.draggable = YES;
-                annotationView.animatesDrop = YES;
                 annotationView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+                
+                 annotationView.centerOffset = CGPointMake( annotationView.centerOffset.x + annotationView.image.size.width/2, annotationView.centerOffset.y - annotationView.image.size.height/2 );
+                  return annotationView;
+            } else {
+                forkAnnotationView.annotation = annotation;
             }
             
-            return annotationView;
-            
-        } else if ([annotations.color isEqualToString:@"purple"]) {
-            MKPinAnnotationView *annotationView = (MKPinAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:GeoQueryNearAnnotationIdentifier];
-            
-            if (!annotationView) {
-                annotationView = [[MKPinAnnotationView alloc] initWithAnnotation:annotations reuseIdentifier:GeoQueryNearAnnotationIdentifier];
-                annotationView.pinColor = MKPinAnnotationColorPurple;
-                annotationView.canShowCallout = YES;
-                annotationView.draggable = YES;
-                annotationView.animatesDrop = YES;
-                annotationView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
-            }
-            
-            return annotationView;
+            return forkAnnotationView;
+          
         }
     }
 
@@ -163,6 +172,16 @@
         [self.navigationController pushViewController:controller animated:YES];
 
     }];
+}
+
++ (CGFloat)annotationPadding;
+{
+    return 10.0f;
+}
+
++ (CGFloat)calloutHeight;
+{
+    return 40.0f;
 }
 
 @end

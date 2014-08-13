@@ -27,9 +27,9 @@
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *moreOptionsBarButton;
 @property (weak, nonatomic) IBOutlet UIButton *unsubscribeButton;
 @property (weak, nonatomic) IBOutlet UIButton *leaveGroupButton;
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
 @property (weak, nonatomic) NSArray *eventsByGroup;
-@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
 @end
 

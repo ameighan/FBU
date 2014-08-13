@@ -24,29 +24,32 @@
 // An empty implementation adversely affects performance during animation.
 - (void)drawRect:(CGRect)rect
 {
-    CGColorRef cgColorWhite = [UIColor whiteColor].CGColor;
+    CGColorRef cgColorWhite = [UIColor colorWithRed:180.0/255.0
+                                              green:212.0/255.0
+                                               blue:161.0/255.0
+                                              alpha:1.0].CGColor;
     
-    UIColor* color235Gray = [UIColor colorWithRed:235.0/255.0
-                                            green:235.0/255.0
-                                             blue:235.0/255.0
+    UIColor* color235Gray = [UIColor colorWithRed:166.0/255.0
+                                            green:204.0/255.0
+                                             blue:144.0/255.0
                                             alpha:1.0];
     CGColorRef cgColor235Gray = color235Gray.CGColor;
     
-    UIColor* color214Gray = [UIColor colorWithRed:214.0/255.0
-                                            green:214.0/255.0
-                                             blue:214.0/255.0
+    UIColor* color214Gray = [UIColor colorWithRed:180.0/255.0
+                                            green:212.0/255.0
+                                             blue:161.0/255.0
                                             alpha:1.0];
     CGColorRef cgColor214Gray = color214Gray.CGColor;
     
-    UIColor* color210Gray = [UIColor colorWithRed:210.0/255.0
-                                            green:210.0/255.0
-                                             blue:210.0/255.0
+    UIColor* color210Gray = [UIColor colorWithRed:180.0/255.0
+                                            green:212.0/255.0
+                                             blue:161.0/255.0
                                             alpha:1.0];
     CGColorRef cgColor210Gray = color210Gray.CGColor;
     
-    UIColor* color190Gray = [UIColor colorWithRed:190.0/255.0
-                                            green:190.0/255.0
-                                             blue:190.0/255.0
+    UIColor* color190Gray = [UIColor colorWithRed:166.0/255.0
+                                            green:204.0/255.0
+                                             blue:144.0/255.0
                                             alpha:1.0];
     CGColorRef cgColor190Gray = color190Gray.CGColor;
     

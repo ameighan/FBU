@@ -17,11 +17,22 @@
 
 
 
+@property (weak, nonatomic) IBOutlet UITabBar *tabBar;
 @property (strong, nonatomic) FBURecipeContainerViewController *container;
 @end
 
 @implementation FBURecipeViewController
 
+-(void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    [[UITabBar appearance] setBarTintColor:[UIColor colorWithRed:232.0/255.0 green:232.0/255.0 blue:235.0/255.0 alpha:1.0]];
+    [[UITabBar appearance] setTintColor:[UIColor colorWithRed:252.0/255.0 green:140.0/255.0 blue:106.0/255.0 alpha:0.75]];
+    
+    self.tabBar.selectedItem = [self.tabBar.items objectAtIndex:0];
+    
+}
 
 -(void)viewWillAppear:(BOOL)animated
 {

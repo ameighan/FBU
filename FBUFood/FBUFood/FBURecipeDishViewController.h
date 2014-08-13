@@ -18,5 +18,6 @@
 @property (nonatomic) FBURecipe *recipe;
 @property (nonatomic) FBUEvent *event;
 @property (weak, nonatomic) IBOutlet UIButton *featureDishButton;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 
 @end

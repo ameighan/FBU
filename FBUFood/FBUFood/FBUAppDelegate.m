@@ -40,8 +40,15 @@
 {
     self.window.backgroundColor = [UIColor colorWithRed:245.0/255.0 green:215.0/255.0 blue:213.0/255.0 alpha:1.0];
     
+    [[UIBarButtonItem appearanceWhenContainedIn:[UINavigationBar class], nil]
+     setTitleTextAttributes:
+     @{NSForegroundColorAttributeName:[UIColor whiteColor],
+       NSFontAttributeName:[UIFont fontWithName:@"Avenir" size:15.0]
+       }
+     forState:UIControlStateNormal];
+    
     [[UILabel appearance] setFont:[UIFont fontWithName:@"Avenir" size:15.0]];
-    [[UIButton appearance] setTintColor:[UIColor whiteColor]];
+//    [[UIButton appearance] setTintColor:[UIColor colorWithRed:196.0/255.0 green:49.0/255.0 blue:56.0/255.0 alpha:1.00]];
     [[[UIButton appearance] titleLabel] setFont:[UIFont fontWithName:@"Avenir" size:15.0]];
 //    [[UIButton appearance] setBackgroundColor:[UIColor colorWithRed:248.0/255.0 green:194.0/255.0 blue:96.0/255.0 alpha:0.75]];
     
@@ -54,12 +61,7 @@
                                                           nil]];
     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
     
-    [[UIBarButtonItem appearanceWhenContainedIn:[UINavigationBar class], nil]
-     setTitleTextAttributes:
-     @{NSForegroundColorAttributeName:[UIColor whiteColor],
-       NSFontAttributeName:[UIFont fontWithName:@"Avenir" size:15.0]
-       }
-     forState:UIControlStateNormal];
+    
     
 
 }

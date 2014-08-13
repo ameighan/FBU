@@ -29,6 +29,7 @@
 @property (weak, nonatomic) IBOutlet UIView *blankView;
 @property (weak, nonatomic) IBOutlet UICollectionView *dashboardCollectionView;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
+@property (weak, nonatomic) IBOutlet UIImageView *blankSlateImageView;
 
 @end
 
@@ -95,6 +96,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.navigationItem.rightBarButtonItem.tintColor = [UIColor whiteColor];
+    self.navigationItem.leftBarButtonItem.tintColor = [UIColor whiteColor];
     
     //Establishing a location manager that will start updating the location of the user
     self.locationManager = [[CLLocationManager alloc] init];
@@ -106,6 +109,9 @@
     if (![PFUser currentUser]) { // No user logged in
         [self makeLoginAppear];
     }
+    
+    self.blankSlateImageView.image = [UIImage imageNamed:@"fork&knife.png"];
+    
     self.blankView.hidden = YES;
 }
 
@@ -126,18 +132,6 @@
     if (!event.featureImageHeight) {
         return 200;
     }
-    
-    
-//    UIImageView* imageView = [[UIImageView alloc] initWithImage:[UIImage imageWithData:[event.featureImage getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
-//        code
-//    }]]];
-//    CGSize rctSizeOriginal = imageView.bounds.size;
-//    double scale = (222  - (kCollectionCellBorderLeft + kCollectionCellBorderRight)) / rctSizeOriginal.width;
-//    CGSize rctSizeFinal = CGSizeMake(rctSizeOriginal.width * scale,rctSizeOriginal.height * scale);
-//    imageView.frame = CGRectMake(kCollectionCellBorderLeft,kCollectionCellBorderTop,rctSizeFinal.width,rctSizeFinal.height);
-//    
-//    CGFloat height = imageView.bounds.size.height + 50;
-    
     return event.featureImageHeight;
 }
 
@@ -190,6 +184,7 @@
     
     if (!event.featureImage) {
         UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"fork&knife.png"]];
+        imageView.contentMode = UIViewContentModeScaleAspectFit;
         
         CGSize rctSizeOriginal = imageView.bounds.size;
         double scale = (cell.bounds.size.width  - (kCollectionCellBorderLeft + kCollectionCellBorderRight)) / rctSizeOriginal.width;
@@ -218,6 +213,7 @@
         return cell;
     } else {
         UIImageView *imageView = [[UIImageView alloc] init];
+        imageView.contentMode = UIViewContentModeScaleAspectFit;
         
         UIActivityIndicatorView *indicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
         indicator.color = [UIColor darkGrayColor];
@@ -227,7 +223,7 @@
         [imageView addSubview:indicator];
         
         [event.featureImage getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
-            [imageView removeFromSuperview];
+//            [imageView removeFromSuperview];
             imageView.image = [UIImage imageWithData:data];
             [indicator stopAnimating];
             

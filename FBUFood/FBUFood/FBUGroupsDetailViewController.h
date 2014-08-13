@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FBUGroupsDetailViewController : UIViewController
+@interface FBUGroupsDetailViewController : UIViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *nameOfGroupTextField;
 @property (weak, nonatomic) IBOutlet UITextView *descriptionOfGroupTextView;

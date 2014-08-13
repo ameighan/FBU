@@ -22,7 +22,7 @@
 - (IBAction)userSeesAllGroups:(id)sender
 {
     self.displayedGroups = self.exploratoryGroups;
-    
+
     [self.groupsCollection reloadData];
 }
 
@@ -130,9 +130,11 @@
     layout.lineSpacing = 5.0;
 }
 
-- (void)viewDidAppear:(BOOL)animated
+- (void)viewWillAppear:(BOOL)animated
 {
-    [super viewDidAppear:animated];
+    [super viewWillAppear:animated];
+    
+    [self queryingForGroupsCurrentUserIsNotIn];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
@@ -163,7 +165,7 @@
         return 200;
     }
     
-    return group.groupImageHeight + 80;
+    return group.groupImageHeight+10;
 }
 
 

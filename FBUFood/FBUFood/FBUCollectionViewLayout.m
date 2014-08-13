@@ -36,6 +36,11 @@
         _interitemSpacing = interitemSpacing;
 }
 
+-(void)setSectionInsets:(UIEdgeInsets)insets
+{
+    _sectionInsets = insets;
+}
+
 -(void)setItemHeight:(CGFloat)itemHeight
 {
     // sanity checks
@@ -83,6 +88,7 @@
     self.itemHeight = 50.0;
     self.columnWidth = 40.0;
     self.numberOfColumns = 2;
+    self.sectionInsets = UIEdgeInsetsMake(10, 15, 10, 15);
 }
 
 
