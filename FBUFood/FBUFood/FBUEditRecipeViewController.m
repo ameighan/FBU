@@ -38,6 +38,7 @@
         self.recipe.title= self.recipeTextField.text;
         self.recipe.ingredientsList = self.ingredientsTextView.text;
         self.recipe.directions = self.directionsTextView.text;
+        self.recipe.fromYummly = NO;
         if(self.imageView.image){
             NSData *imageData = UIImageJPEGRepresentation(self.imageView.image, 0.8);
             NSString *filename = [NSString stringWithFormat:@"%@.png", self.recipeTextField.text];
@@ -59,6 +60,7 @@
         newRecipe.title = self.recipeTextField.text;
         newRecipe.ingredientsList = self.ingredientsTextView.text;
         newRecipe.directions = self.directionsTextView.text;
+        newRecipe.fromYummly = NO;
         if(self.imageView.image){
             NSData *imageData = UIImageJPEGRepresentation(self.imageView.image, 0.8);
             NSString *filename = [NSString stringWithFormat:@"%@.png", self.recipeTextField.text];

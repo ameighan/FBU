@@ -3,12 +3,11 @@
     {
       "idiom" : "universal",
       "scale" : "1x",
-      "filename" : "dashboard.png"
+      "filename" : "featureDishDefault.png"
     },
     {
       "idiom" : "universal",
-      "scale" : "2x",
-      "filename" : "dashboard-1.png"
+      "scale" : "2x"
     }
   ],
   "info" : {

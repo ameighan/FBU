@@ -54,6 +54,31 @@
     
     [[UITabBar appearance] setBarTintColor:[UIColor colorWithRed:249.0/255.0 green:118.0/255.0 blue:87.0/255.0 alpha:0.75]];
     [[UITabBar appearance] setTintColor:[UIColor whiteColor]];
+    
+    [[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor], NSForegroundColorAttributeName, nil] forState:UIControlStateSelected];
+    
+    
+    [[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor colorWithRed:196.0/255.0 green:49.0/255.0 blue:56.0/255.0 alpha:1.00], NSForegroundColorAttributeName, nil]
+                                             forState:UIControlStateNormal];
+
+    //Setting selected and unselected items
+    UITabBarController *tabBarController = (UITabBarController *)self.window.rootViewController;
+    UITabBar *tabBar = tabBarController.tabBar;
+    UITabBarItem *tabBarItem1 = [tabBar.items objectAtIndex:0];
+    UITabBarItem *tabBarItem2 = [tabBar.items objectAtIndex:1];
+    UITabBarItem *tabBarItem3 = [tabBar.items objectAtIndex:2];
+    
+    tabBarItem1.image = [[UIImage imageNamed:@"dashboardUnselected.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    tabBarItem1.selectedImage = [UIImage imageNamed:@"dashboardSelected.png"];
+    
+    tabBarItem2.image = [[UIImage imageNamed:@"exploreUnselected.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    tabBarItem2.selectedImage = [UIImage imageNamed:@"exploreSelected.png"];
+    
+    tabBarItem3.image = [[UIImage imageNamed:@"profileUnselected.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    tabBarItem3.selectedImage = [UIImage imageNamed:@"profileSelected.png"];
+    
+    
+    
     [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:249.0/255.0 green:118.0/255.0 blue:87.0/255.0 alpha:0.75]];
     [[UINavigationBar appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
                                    [UIFont fontWithName:@"Avenir" size:17.0], NSFontAttributeName,

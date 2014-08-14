@@ -11,7 +11,7 @@
 
 @interface FBUGroupsDetailViewController () <UITextViewDelegate>
 
-@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (strong, nonatomic) UIImage *image;
 
 @end
 
@@ -91,19 +91,27 @@
     newGroup.groupName = self.nameOfGroupTextField.text;
     newGroup.groupDescription = self.descriptionOfGroupTextView.text;
     
-    if (!self.imageView.image) {
+    if (!self.image) {
         UIImage *image = [UIImage imageNamed:@"dining.png"];
         NSData *imageData = UIImageJPEGRepresentation(image, 0.5);
         NSString *filename = [NSString stringWithFormat:@"%@.png", @"group image"];
         PFFile *imageFile = [PFFile fileWithName:filename data:imageData];
         newGroup.groupImage = imageFile;
         newGroup.groupImageHeight = 300;
+        [newGroup saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+            NSLog(@"Saving group");
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"savedGroup" object:self];
+        }];
     } else {
-        NSData *imageData = UIImageJPEGRepresentation(self.imageView.image, 0.8);
+        NSData *imageData = UIImageJPEGRepresentation(self.image, 0.8);
         NSString *filename = [NSString stringWithFormat:@"%@.png", @"group image"];
         PFFile *imageFile = [PFFile fileWithName:filename data:imageData];
         newGroup.groupImage = imageFile;
-        newGroup.groupImageHeight = self.imageView.image.size.height/(self.imageView.image.size.height*0.005);
+        newGroup.groupImageHeight = self.image.size.height/(self.image.size.height*0.005);
+        [newGroup saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+            NSLog(@"Saving group");
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"savedGroup" object:self];
+        }];
     }
     newGroup.owner = [PFUser currentUser];
     [newGroup addObject:[PFUser currentUser] forKey:@"cooksInGroup"];
@@ -130,8 +138,8 @@
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
     UIImage *image = info[UIImagePickerControllerOriginalImage];
-    self.imageView.image = image;
-    self.imageView.contentMode = UIViewContentModeScaleAspectFit;
+    self.image = image;
+    NSLog(@"%@", self.image);
     [self dismissViewControllerAnimated:YES completion:NULL];
 }
 

@@ -350,15 +350,15 @@
             <objects>
                 <viewController id="o3u-ux-cak" customClass="FBUGroupSubscribersViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mUF-9r-iOX">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="700"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="s7N-Yf-BVi">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="66" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="userCell" id="QLm-bg-Xi6">
-                                        <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="86" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QLm-bg-Xi6" id="rXw-5N-ofe">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -381,7 +381,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rkx-0U-VVe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="693" y="109"/>
+            <point key="canvasLocation" x="439" y="133"/>
         </scene>
         <!--Groups View Controller - FBUGroupsViewController-->
         <scene sceneID="po8-AG-mth">
@@ -551,15 +551,15 @@
                                             <outlet property="delegate" destination="H9r-p1-AHy" id="17b-2C-oqK"/>
                                         </connections>
                                     </collectionView>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" id="9de-lm-BoJ">
-                                        <rect key="frame" x="0.0" y="42" width="320" height="127"/>
-                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" id="9de-lm-BoJ">
+                                        <rect key="frame" x="10" y="42" width="300" height="127"/>
+                                        <color key="backgroundColor" red="0.95294123888015747" green="0.84313732385635376" blue="0.83529418706893921" alpha="1" colorSpace="deviceRGB"/>
                                         <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                         <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="13"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="EgL-i9-nMI">
-                                        <rect key="frame" x="112" y="177" width="100" height="30"/>
+                                        <rect key="frame" x="10" y="177" width="300" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Leave Group">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -569,13 +569,23 @@
                                         </connections>
                                     </button>
                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="TRt-RS-YAL">
-                                        <rect key="frame" x="112" y="177" width="100" height="30"/>
+                                        <rect key="frame" x="10" y="177" width="300" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Unsubscribe">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
                                             <action selector="userDidUnsubscribeToGroup:" destination="H9r-p1-AHy" eventType="touchUpInside" id="3Jr-J3-lG0"/>
+                                        </connections>
+                                    </button>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="aLy-2b-shV">
+                                        <rect key="frame" x="87" y="347" width="150" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Create an Event">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="uHd-qP-I1t" kind="push" identifier="createEvent" id="3om-Nn-uRe"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -597,6 +607,7 @@
                     <connections>
                         <outlet property="cooksCollectionView" destination="dva-N4-geA" id="PhB-Ub-k4n"/>
                         <outlet property="cooksLabel" destination="MkQ-tw-dL2" id="XpP-rH-mPS"/>
+                        <outlet property="createEventButton" destination="aLy-2b-shV" id="gKK-rv-7vI"/>
                         <outlet property="eventsCollectionView" destination="YcL-8e-Pd7" id="azI-Yt-oQO"/>
                         <outlet property="eventsLabel" destination="XRb-kr-qlo" id="wK4-41-WaC"/>
                         <outlet property="groupDescriptionTextView" destination="9de-lm-BoJ" id="8uC-S3-o5e"/>
@@ -609,7 +620,7 @@
                         <outlet property="unsubscribeButton" destination="TRt-RS-YAL" id="vJ7-To-MuL"/>
                         <segue destination="uHd-qP-I1t" kind="push" identifier="createEvent" id="pOF-iu-Gx5"/>
                         <segue destination="5vy-0z-OFu" kind="push" identifier="groupRecipe" id="J2e-wD-Dmq"/>
-                        <segue destination="GZv-qx-koQ" kind="push" identifier="viewSubscribers" id="SIo-AI-fDU"/>
+                        <segue destination="o3u-ux-cak" kind="push" identifier="viewSubscribers" id="zKJ-94-yX6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JPs-9s-xLb" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -691,15 +702,15 @@
             <objects>
                 <viewController id="GZv-qx-koQ" customClass="FBUMembersViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BWJ-FC-RJv">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="700"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="42" sectionHeaderHeight="22" sectionFooterHeight="22" id="L26-V0-p0Y">
-                                <rect key="frame" x="0.0" y="66" width="320" height="507"/>
+                                <rect key="frame" x="0.0" y="21" width="320" height="507"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="memberCell" rowHeight="42" id="2BS-gO-Z8E">
-                                        <rect key="frame" x="0.0" y="86" width="320" height="42"/>
+                                        <rect key="frame" x="0.0" y="22" width="320" height="42"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2BS-gO-Z8E" id="J55-SS-CKo">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="41"/>
@@ -718,7 +729,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ceH-ix-ugm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="357" y="97"/>
+            <point key="canvasLocation" x="963" y="3"/>
         </scene>
         <!--Grocery List View Controller-->
         <scene sceneID="B8b-pS-jMx">
@@ -947,14 +958,14 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="KXb-VO-BUx">
-                                <rect key="frame" x="32" y="144" width="254" height="326"/>
+                                <rect key="frame" x="0.0" y="144" width="320" height="375"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="recipeCell" id="bPg-oQ-6vg">
-                                        <rect key="frame" x="0.0" y="22" width="254" height="44"/>
+                                        <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bPg-oQ-6vg" id="xxn-2U-3VI">
-                                            <rect key="frame" x="0.0" y="0.0" width="221" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <connections>
@@ -1006,7 +1017,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" id="XqR-AW-P4C">
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="10" id="XqR-AW-P4C">
                                 <rect key="frame" x="0.0" y="356" width="320" height="162"/>
                                 <date key="date" timeIntervalSinceReferenceDate="426796343.25326997">
                                     <!--2014-07-11 18:32:23 +0000-->
@@ -1089,48 +1100,48 @@
             <objects>
                 <viewController id="BQl-mP-k22" customClass="FBUEditRecipeViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cxe-OD-gru" customClass="UIControl">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="650"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="R2s-Gf-VL1">
-                                <rect key="frame" x="0.0" y="78" width="320" height="115"/>
+                                <rect key="frame" x="0.0" y="66" width="320" height="115"/>
                                 <color key="backgroundColor" red="0.68600369930000005" green="0.2527399977" blue="0.75" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingredients" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1du-zb-Xr5">
-                                <rect key="frame" x="42" y="297" width="86" height="21"/>
+                                <rect key="frame" x="42" y="258.5" width="86" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Directions" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="KAV-j7-5U3">
-                                <rect key="frame" x="191" y="297" width="77" height="21"/>
+                                <rect key="frame" x="191" y="258.5" width="77" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="4TR-I3-LL6">
-                                <rect key="frame" x="20" y="410" width="135" height="263"/>
+                                <rect key="frame" x="20" y="323" width="135" height="263"/>
                                 <color key="backgroundColor" red="0.75261230020000003" green="0.84825067929999998" blue="0.61746695610000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="eU5-Bo-F0i">
-                                <rect key="frame" x="163" y="410" width="137" height="263"/>
+                                <rect key="frame" x="163" y="323" width="137" height="263"/>
                                 <color key="backgroundColor" red="0.75261230020000003" green="0.84825067929999998" blue="0.61746695610000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recipe Name:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="MZA-TU-ajt">
-                                <rect key="frame" x="21" y="216" width="109" height="21"/>
+                                <rect key="frame" x="21" y="188" width="109" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="b0a-6g-rXc">
-                                <rect key="frame" x="152" y="218" width="148" height="30"/>
+                                <rect key="frame" x="152" y="189" width="148" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="E8D-dG-hjb">
-                                <rect key="frame" x="0.0" y="82" width="320" height="101"/>
+                                <rect key="frame" x="0.0" y="70" width="320" height="101"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <action selector="takePicture:" destination="BQl-mP-k22" eventType="touchUpInside" id="uiv-Ps-tT4"/>
@@ -1938,12 +1949,12 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="r2z-H4-L7n"/>
+        <segue reference="tQi-UH-gjD"/>
         <segue reference="y2B-5h-yd3"/>
         <segue reference="WtZ-5P-KRU"/>
-        <segue reference="J2e-wD-Dmq"/>
         <segue reference="xlT-pm-NoS"/>
-        <segue reference="pOF-iu-Gx5"/>
-        <segue reference="vBe-2g-paS"/>
-        <segue reference="BDX-Yd-wDn"/>
+        <segue reference="3om-Nn-uRe"/>
+        <segue reference="J2e-wD-Dmq"/>
     </inferredMetricsTieBreakers>
 </document>

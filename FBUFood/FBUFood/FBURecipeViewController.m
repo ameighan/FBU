@@ -74,6 +74,7 @@
 - (IBAction)importRecipe:(id)sender {
     [self showAlertWithTitle:@"Success!" message:@"You imported a recipe!"];
     self.recipe.publisher = [PFUser currentUser];
+    self.recipe.fromYummly = YES;
     [self.recipe saveInBackground];
 }
 

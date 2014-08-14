@@ -45,6 +45,8 @@
     
     NSString *ingredient = self.groceryList.ingredientsToBuy[indexPath.row];
     
+    [cell.textLabel setFont:[UIFont fontWithName:@"Avenir" size:17.0]];
+    [cell.textLabel setTintColor:[UIColor blackColor]];
     cell.textLabel.text = ingredient;
     NSLog(@"%@", ingredient);
     return cell;

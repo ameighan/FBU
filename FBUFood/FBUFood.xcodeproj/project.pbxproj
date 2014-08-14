@@ -648,7 +648,7 @@
 				ORGANIZATIONNAME = FacebookU;
 				TargetAttributes = {
 					D2AF54991970595E00F0A0F2 = {
-						DevelopmentTeam = C32ZAJ57F6;
+						DevelopmentTeam = 33WPRZMU33;
 					};
 					D2AF54B41970595F00F0A0F2 = {
 						TestTargetID = D2AF54991970595E00F0A0F2;

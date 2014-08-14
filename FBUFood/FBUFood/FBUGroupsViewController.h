@@ -17,6 +17,9 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *joinGroupButton;
 @property (weak, nonatomic) IBOutlet UIButton *subscribeGroupButton;
+@property (weak, nonatomic) IBOutlet UIButton *createEventButton;
+
+
 @property (weak, nonatomic) IBOutlet UICollectionView *eventsCollectionView;
 @property (weak, nonatomic) IBOutlet UICollectionView *cooksCollectionView;
 @property (weak, nonatomic) IBOutlet UILabel *groupNameLabel;

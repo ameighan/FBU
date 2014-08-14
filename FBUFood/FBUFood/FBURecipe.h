@@ -25,4 +25,6 @@
 //Directions will be an NSArray of strings for Step 1, 2, etc.
 @property (strong, nonatomic) NSString *directions;
 
+@property (nonatomic) BOOL fromYummly;
+
 @end

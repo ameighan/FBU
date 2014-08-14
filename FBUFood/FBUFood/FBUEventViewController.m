@@ -6,7 +6,6 @@
 //  Copyright (c) 2014 FacebookU. All rights reserved.
 //
 
-#import <QuartzCore/QuartzCore.h>
 #import "FBUEventViewController.h"
 #import "FBUMembersViewController.h"
 #import "FBUEventDetailViewController.h"
@@ -30,7 +29,7 @@
 
     [self locateEventOnMap];
     [self zoomToLocation];
-//    [self importRecipesToGroceryList];
+    [self importRecipesToGroceryList];
     self.eventRecipesCollectionView.backgroundColor = [UIColor clearColor];
     self.eventMembersCollectionView.backgroundColor = [UIColor clearColor];
     NSLog(@"Members of Event: %@", self.event.membersOfEvent);
@@ -91,11 +90,16 @@
 {
     if (!self.event.eventGroceryList) {
         self.event.eventGroceryList = [[FBUGroceryList alloc] init];
+    } else {
+        if (self.event.recipesInEvent == NULL) {
+            NSLog(@"No recipes to import from yet");
+        } else {
+        self.event.eventGroceryList.recipesToFollow = self.event.recipesInEvent;
+        [self.event saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+            NSLog(@"Saving grocery list: %@", self.event.eventGroceryList.recipesToFollow);
+        }];
+        }
     }
-    self.event.eventGroceryList.recipesToFollow = self.event.recipesInEvent;
-    [self.event saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-        NSLog(@"Saving grocery list: %@", self.event.eventGroceryList.recipesToFollow);
-    }];
 }
 
 - (void)createButtonUI:(UIButton *)button
@@ -119,6 +123,7 @@
     [self.event addObject:[PFUser currentUser] forKey:@"membersOfEvent"];
     [self.event saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         NSLog(@"Adding user to the members array");
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"savedEvent" object:self];
     }];
     
     PFInstallation *currentInstallation = [PFInstallation currentInstallation];
@@ -135,6 +140,7 @@
     [self.event removeObject:[PFUser currentUser]  forKey:@"membersOfEvent"];
     [self.event saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         NSLog(@"Removing user from the members array");
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"savedEvent" object:self];
     }];
     
     

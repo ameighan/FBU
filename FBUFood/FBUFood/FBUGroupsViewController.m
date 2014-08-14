@@ -29,7 +29,7 @@
     self.cooksCollectionView.backgroundColor = [UIColor clearColor];
     
     UIFont *defaultFont = [UIFont fontWithName:@"Avenir" size:14.0];
-    UIFont *headerFont = [UIFont fontWithName:@"Avenir" size:18.0];
+    UIFont *headerFont = [UIFont fontWithName:@"Avenir" size:20.0];
     
     
     [self.cooksLabel setFont:headerFont];
@@ -39,8 +39,12 @@
     [self createButtonUI:self.subscribeGroupButton];
     [self createButtonUI:self.unsubscribeButton];
     [self createButtonUI:self.leaveGroupButton];
+    [self createButtonUI:self.createEventButton];
     
     [self.groupNameLabel setFont:[UIFont fontWithName:@"Avenir" size:24.0]];
+    self.groupDescriptionTextView.layer.cornerRadius = 3;
+    self.groupDescriptionTextView.clipsToBounds = YES;
+
     self.groupDescriptionTextView.font = defaultFont;
     
     CGFloat height = 198.0 * [self.group.eventsInGroup count];
@@ -88,6 +92,12 @@
     } else if ([self.group checkIfUserIsInGroupArray:self.group.subscribersOfGroup]) {
         [self toggleSubscriberView];
         NSLog(@"Toggling subscriber view");
+    }
+    
+    if ([self.group.eventsInGroup count] == 0) {
+        self.eventsCollectionView = nil;
+        self.createEventButton.hidden = NO;
+        self.createEventButton.enabled = YES;
     }
     
     self.title = self.group.groupName;
@@ -154,10 +164,14 @@
         
         FBUEvent *event = self.group.eventsInGroup[indexPath.row];
         
-        
-        [event.featureImage getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
-            cell.eventImageView.image = [UIImage imageWithData:data];
-        }];
+        if (!event.featureImage) {
+            cell.eventImageView.image = [[UIImage imageNamed:@"featureDishDefault.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+        } else {
+            
+            [event.featureImage getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+                cell.eventImageView.image = [UIImage imageWithData:data];
+            }];
+        }
         
         cell.eventNameLabel.text = event.eventName;
         cell.eventLocationLabel.text = event.eventAddress;

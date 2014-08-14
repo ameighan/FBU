@@ -22,5 +22,6 @@
 @dynamic quantityOfIngredients;
 @dynamic directions;
 @dynamic publisher;
+@dynamic fromYummly;
 
 @end
