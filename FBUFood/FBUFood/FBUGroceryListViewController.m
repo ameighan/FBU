@@ -23,10 +23,17 @@
     return self;
 }
 
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
+    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"groceryCell"];
+}
+
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    
     [self.groceryList fillInGroceryList];
 }
 
@@ -40,15 +47,14 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"groceryCell"
-                                                            forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"groceryCell"forIndexPath:indexPath];
     
-    NSString *ingredient = self.groceryList.ingredientsToBuy[indexPath.row];
+    NSMutableString *ingredient = self.groceryList.ingredientsToBuy[indexPath.row];
     
-    [cell.textLabel setFont:[UIFont fontWithName:@"Avenir" size:17.0]];
-    [cell.textLabel setTintColor:[UIColor blackColor]];
+    //[cell.textLabel setFont:[UIFont fontWithName:@"Avenir" size:17.0]];
+    //[cell.textLabel setTintColor:[UIColor blackColor]];
     cell.textLabel.text = ingredient;
-    NSLog(@"%@", ingredient);
+    NSLog(@"%@", cell.textLabel.text);
     return cell;
     
 }

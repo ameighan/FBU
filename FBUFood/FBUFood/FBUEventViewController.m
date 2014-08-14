@@ -91,13 +91,18 @@
     if (!self.event.eventGroceryList) {
         self.event.eventGroceryList = [[FBUGroceryList alloc] init];
     } else {
+        [self.event.eventGroceryList fetchIfNeeded];
         if (self.event.recipesInEvent == NULL) {
             NSLog(@"No recipes to import from yet");
         } else {
-        self.event.eventGroceryList.recipesToFollow = self.event.recipesInEvent;
-        [self.event saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-            NSLog(@"Saving grocery list: %@", self.event.eventGroceryList.recipesToFollow);
-        }];
+            if (self.event.eventGroceryList.recipesToFollow == nil) {
+                self.event.eventGroceryList.recipesToFollow = [[NSMutableArray alloc] init];
+            }
+            self.event.eventGroceryList.recipesToFollow = self.event.recipesInEvent;
+            [self.event.eventGroceryList saveInBackground];
+            [self.event saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                NSLog(@"Saving grocery list: %@", self.event.eventGroceryList.recipesToFollow);
+            }];
         }
     }
 }

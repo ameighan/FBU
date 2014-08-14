@@ -12,5 +12,6 @@
 @interface FBUGroceryListViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 @property (strong, nonatomic) FBUGroceryList *groceryList;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end

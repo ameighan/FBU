@@ -23,10 +23,11 @@
 
 - (void)fillInGroceryList
 {
+    [self fetchIfNeeded];
     for (FBURecipe *recipe in self.recipesToFollow) {
-        
+        [recipe fetchIfNeeded];
         if (recipe.fromYummly == YES) {
-            NSArray *recipeIngredients = [recipe.ingredientsList componentsSeparatedByString:@",\\n    "];
+            NSArray *recipeIngredients = [recipe.ingredientsList componentsSeparatedByString:@",\n"];
             for (NSString *word in recipeIngredients) {
                 if (![self.ingredientsToBuy containsObject: word]) {
                     [self addObject:word forKey:@"ingredientsToBuy"];

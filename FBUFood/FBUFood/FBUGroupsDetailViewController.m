@@ -91,33 +91,13 @@
     newGroup.groupName = self.nameOfGroupTextField.text;
     newGroup.groupDescription = self.descriptionOfGroupTextView.text;
     
-<<<<<<< HEAD
-    if (!self.image) {
-=======
     if (self.groupImage == nil) {
->>>>>>> fixed UI bug that set toolbar items to a default tint
         UIImage *image = [UIImage imageNamed:@"dining.png"];
         NSData *imageData = UIImageJPEGRepresentation(image, 0.8);
         NSString *filename = [NSString stringWithFormat:@"%@.png", @"group image"];
         PFFile *imageFile = [PFFile fileWithName:filename data:imageData];
         newGroup.groupImage = imageFile;
-<<<<<<< HEAD
-        newGroup.groupImageHeight = 300;
-        [newGroup saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-            NSLog(@"Saving group");
-            [[NSNotificationCenter defaultCenter] postNotificationName:@"savedGroup" object:self];
-        }];
-    } else {
-        NSData *imageData = UIImageJPEGRepresentation(self.image, 0.8);
-        NSString *filename = [NSString stringWithFormat:@"%@.png", @"group image"];
-        PFFile *imageFile = [PFFile fileWithName:filename data:imageData];
-        newGroup.groupImage = imageFile;
-        newGroup.groupImageHeight = self.image.size.height/(self.image.size.height*0.005);
-        [newGroup saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-            NSLog(@"Saving group");
-            [[NSNotificationCenter defaultCenter] postNotificationName:@"savedGroup" object:self];
-        }];
-=======
+
         newGroup.groupImageHeight = 200;
     } else {
         NSData *imageData = UIImageJPEGRepresentation(self.groupImage, 0.8);
@@ -125,7 +105,6 @@
         PFFile *imageFile = [PFFile fileWithName:filename data:imageData];
         newGroup.groupImage = imageFile;
         newGroup.groupImageHeight = self.groupImage.size.height/(self.groupImage.size.height*0.005);
->>>>>>> fixed UI bug that set toolbar items to a default tint
     }
     newGroup.owner = [PFUser currentUser];
     [newGroup addObject:[PFUser currentUser] forKey:@"cooksInGroup"];
@@ -152,12 +131,7 @@
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
     UIImage *image = info[UIImagePickerControllerOriginalImage];
-<<<<<<< HEAD
-    self.image = image;
-    NSLog(@"%@", self.image);
-=======
     self.groupImage = image;
->>>>>>> fixed UI bug that set toolbar items to a default tint
     [self dismissViewControllerAnimated:YES completion:NULL];
 }
 
