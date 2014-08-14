@@ -435,8 +435,10 @@
 
 - (IBAction)unwindToGroupViewController:(UIStoryboardSegue *)segue
 {
-    FBUEventDetailViewController *controller = segue.sourceViewController;
-    [controller saveEventData];
+    if([segue.identifier isEqualToString:@"saveEventToGroup"]){
+        FBUEventDetailViewController *controller = segue.sourceViewController;
+        [controller saveEventData];
+    }
 }
 
 

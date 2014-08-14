@@ -944,7 +944,7 @@
             <objects>
                 <viewController id="5vy-0z-OFu" customClass="FBUGroupsRecipesViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iA4-SY-sKc">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="700"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="HNo-Dq-uuT">
@@ -952,7 +952,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="KXb-VO-BUx">
-                                <rect key="frame" x="32" y="93" width="254" height="326"/>
+                                <rect key="frame" x="32" y="143.5" width="254" height="326"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="recipeCell" id="bPg-oQ-6vg">
@@ -997,16 +997,16 @@
             <objects>
                 <viewController id="uHd-qP-I1t" customClass="FBUEventDetailViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="EGG-t5-pfy" customClass="UIControl">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="700"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ihg-ca-brN">
-                                <rect key="frame" x="22" y="85" width="94" height="21"/>
+                                <rect key="frame" x="22" y="105.5" width="94" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" id="XqR-AW-P4C">
-                                <rect key="frame" x="22" y="300" width="280" height="162"/>
+                                <rect key="frame" x="22" y="397.5" width="280" height="162"/>
                                 <date key="date" timeIntervalSinceReferenceDate="426796343.25326997">
                                     <!--2014-07-11 18:32:23 +0000-->
                                 </date>
@@ -1018,18 +1018,18 @@
                                 </connections>
                             </datePicker>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="4Z8-8g-AaY">
-                                <rect key="frame" x="116" y="478" width="88" height="30"/>
+                                <rect key="frame" x="116" y="595" width="88" height="30"/>
                                 <state key="normal" title="Add Recipes">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date of Event" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="q02-W6-nNo">
-                                <rect key="frame" x="108" y="286" width="104" height="21"/>
+                                <rect key="frame" x="108" y="355" width="104" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="XZz-BG-3LD">
-                                <rect key="frame" x="128" y="81" width="172" height="30"/>
+                                <rect key="frame" x="128" y="100.5" width="172" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
@@ -1037,12 +1037,12 @@
                                 </connections>
                             </textField>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="VKh-0u-I8D">
-                                <rect key="frame" x="20" y="122" width="64" height="21"/>
+                                <rect key="frame" x="20" y="151" width="64" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="y7b-OL-Bq1">
-                                <rect key="frame" x="95" y="118" width="205" height="30"/>
+                                <rect key="frame" x="95" y="146.5" width="205" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
@@ -1050,23 +1050,23 @@
                                 </connections>
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="mSM-KS-mUX">
-                                <rect key="frame" x="20" y="206" width="280" height="70"/>
+                                <rect key="frame" x="20" y="260.5" width="280" height="70"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event Description" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2XB-G6-cUy">
-                                <rect key="frame" x="92" y="188" width="136" height="21"/>
+                                <rect key="frame" x="92" y="233" width="136" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of Meals" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="PEh-r1-NqN">
-                                <rect key="frame" x="20" y="160" width="132" height="21"/>
+                                <rect key="frame" x="20" y="198.5" width="132" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="CwC-N2-2dh">
-                                <rect key="frame" x="166" y="153" width="134" height="30"/>
+                                <rect key="frame" x="166" y="190.5" width="134" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -1238,11 +1238,11 @@
             <objects>
                 <viewController id="ioq-xv-ETc" customClass="FBUAddRecipesViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5MB-lr-4gR">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="700"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsMultipleSelection="YES" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="QO8-5L-nxc">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="66" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="recipeCell" id="vhU-XD-zru">
@@ -1963,16 +1963,13 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="vUP-9j-jWm"/>
         <segue reference="y2B-5h-yd3"/>
+        <segue reference="WtZ-5P-KRU"/>
         <segue reference="J2e-wD-Dmq"/>
-        <segue reference="xlT-pm-NoS"/>
-        <segue reference="XIi-Rl-PXj"/>
-        <segue reference="lfT-lW-nr9"/>
-        <segue reference="vBe-2g-paS"/>
         <segue reference="pOF-iu-Gx5"/>
         <segue reference="218-qX-u7v"/>
         <segue reference="E3o-aQ-dmJ"/>
-        <segue reference="WtZ-5P-KRU"/>
+        <segue reference="vUP-9j-jWm"/>
+        <segue reference="XIi-Rl-PXj"/>
     </inferredMetricsTieBreakers>
 </document>

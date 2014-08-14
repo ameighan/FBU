@@ -31,7 +31,7 @@
     self.featureDishButton.hidden = YES;
     self.featureDishButton.enabled = NO;
     [self.featureDishButton setTintColor:[UIColor colorWithRed:249.0/255.0 green:118.0/255.0 blue:87.0/255.0 alpha:0.75]];
-    [[UILabel appearance] setFont:[UIFont fontWithName:@"Avenir" size:30.0]];
+    [self.dishTitleLabel setFont:[UIFont fontWithName:@"Avenir" size:30.0]];
 }
 
 - (IBAction)userDidFeatureDish:(id)sender
