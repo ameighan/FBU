@@ -22,6 +22,7 @@
 
 @property (strong, nonatomic) NSArray *myGroupsArray;
 
+@property (weak, nonatomic) IBOutlet UIToolbar *toolBar;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *addGroup;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;

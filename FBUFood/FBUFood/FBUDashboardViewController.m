@@ -226,7 +226,6 @@
         [imageView addSubview:indicator];
         
         [event.featureImage getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
-//            [imageView removeFromSuperview];
             imageView.image = [UIImage imageWithData:data];
             [indicator stopAnimating];
             
@@ -237,6 +236,23 @@
             
             [cell.contentView addSubview:imageView];
             
+            CGRect descriptionLabel = CGRectMake(kCollectionCellBorderLeft,kCollectionCellBorderTop + rctSizeFinal.height + 20,rctSizeFinal.width,40);
+            CGRect nameLabel = CGRectMake(kCollectionCellBorderLeft,kCollectionCellBorderTop, rctSizeFinal.width,15);
+            
+            UILabel* name = [[UILabel alloc] initWithFrame:nameLabel];
+            name.numberOfLines = 0;
+            [name setFont:[UIFont fontWithName:@"Avenir" size:12.0]];
+            
+            UILabel* description = [[UILabel alloc] initWithFrame:descriptionLabel];
+            description.numberOfLines = 2;
+            [description setFont:[UIFont fontWithName:@"Avenir" size:10.0]];
+            
+            name.text = [event eventName];
+            description.text = [event eventDescription];
+            
+            [cell.contentView addSubview:name];
+            [cell.contentView addSubview:description];
+            
         }];
         
         CGSize rctSizeOriginal = CGSizeMake(80,event.featureImageHeight-100);
@@ -245,23 +261,7 @@
         imageView.frame = CGRectMake(kCollectionCellBorderLeft,kCollectionCellBorderTop + 20,rctSizeFinal.width,rctSizeFinal.height);
         
         [cell.contentView addSubview:imageView];
-        
-        CGRect descriptionLabel = CGRectMake(kCollectionCellBorderLeft,kCollectionCellBorderTop + rctSizeFinal.height + 10,rctSizeFinal.width,65);
-        CGRect nameLabel = CGRectMake(kCollectionCellBorderLeft,kCollectionCellBorderTop, rctSizeFinal.width,15);
-        
-        UILabel* name = [[UILabel alloc] initWithFrame:nameLabel];
-        name.numberOfLines = 0;
-        name.font = [UIFont systemFontOfSize:12];
-        
-        UILabel* description = [[UILabel alloc] initWithFrame:descriptionLabel];
-        description.numberOfLines = 2;
-        description.font = [UIFont systemFontOfSize:12];
-        
-        name.text = [event eventName];
-        description.text = [event eventDescription];
-        
-        [cell.contentView addSubview:name];
-        [cell.contentView addSubview:description];
+    
         
         return cell;
 

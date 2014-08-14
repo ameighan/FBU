@@ -126,8 +126,8 @@
     [self queryingForGroupsCurrentUserIsNotIn];
     
     FBUCollectionViewLayout *layout = [[FBUCollectionViewLayout alloc] init];
-    layout.interitemSpacing = 5.0;
-    layout.lineSpacing = 5.0;
+    layout.interitemSpacing = 0;
+    layout.lineSpacing = 2.5;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -198,16 +198,16 @@
         
         [cell.contentView addSubview:imageView];
         
-        CGRect descriptionLabel = CGRectMake(kCollectionCellBorderLeft,kCollectionCellBorderTop + rctSizeFinal.height + 15,rctSizeFinal.width,40);
+        CGRect descriptionLabel = CGRectMake(kCollectionCellBorderLeft,kCollectionCellBorderTop + rctSizeFinal.height + 20,rctSizeFinal.width,40);
         CGRect nameLabel = CGRectMake(kCollectionCellBorderLeft,kCollectionCellBorderTop, rctSizeFinal.width,15);
         
         UILabel* name = [[UILabel alloc] initWithFrame:nameLabel];
         name.numberOfLines = 0;
-        name.font = [UIFont systemFontOfSize:12];
+        [name setFont:[UIFont fontWithName:@"Avenir" size:12.0]];
         
         UILabel* description = [[UILabel alloc] initWithFrame:descriptionLabel];
         description.numberOfLines = 2;
-        description.font = [UIFont systemFontOfSize:12];
+        [description setFont:[UIFont fontWithName:@"Avenir" size:10.0]];
         
         name.text = [group groupName];
         description.text = [group groupDescription];
@@ -222,23 +222,6 @@
     imageView.frame = CGRectMake(kCollectionCellBorderLeft,kCollectionCellBorderTop + 20,rctSizeFinal.width,rctSizeFinal.height);
     
     [cell.contentView addSubview:imageView];
-    
-    CGRect descriptionLabel = CGRectMake(kCollectionCellBorderLeft,kCollectionCellBorderTop + rctSizeFinal.height + 15,rctSizeFinal.width,40);
-    CGRect nameLabel = CGRectMake(kCollectionCellBorderLeft,kCollectionCellBorderTop, rctSizeFinal.width,15);
-    
-    UILabel* name = [[UILabel alloc] initWithFrame:nameLabel];
-    name.numberOfLines = 0;
-    name.font = [UIFont systemFontOfSize:12];
-    
-    UILabel* description = [[UILabel alloc] initWithFrame:descriptionLabel];
-    description.numberOfLines = 2;
-    description.font = [UIFont systemFontOfSize:12];
-    
-    name.text = [group groupName];
-    description.text = [group groupDescription];
-    
-    [cell.contentView addSubview:name];
-    [cell.contentView addSubview:description];
     
     return cell;
 }
