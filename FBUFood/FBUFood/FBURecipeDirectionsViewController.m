@@ -24,6 +24,7 @@
         NSString *directionsURL = self.recipe.directions;
         NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:directionsURL]];
         UIWebView *myWV = [[UIWebView alloc] init];
+        myWV.scalesPageToFit = YES;
         self.view = myWV;
         [(UIWebView *)self.view loadRequest:request];
     } else {

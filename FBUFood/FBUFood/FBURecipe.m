@@ -23,6 +23,5 @@
 @dynamic directions;
 @dynamic publisher;
 @dynamic fromYummly;
-@dynamic isYummlyRecipe;
 
 @end
