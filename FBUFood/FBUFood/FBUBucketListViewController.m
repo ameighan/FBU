@@ -16,6 +16,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [self.itemNameLabel setFont:[UIFont fontWithName:@"Avenir" size:17.0]];
+
+    
     self.itemNameLabel.text = self.item.itemName;
     UIImage *image = [UIImage imageWithData:[self.item.picture getData]];
     self.imageOfBucketListItem.image = image;

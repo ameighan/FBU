@@ -16,6 +16,8 @@
 @property (strong, nonatomic) NSMutableArray *recipeArray;
 @property (weak, nonatomic) IBOutlet UIButton *addButton;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (weak, nonatomic) IBOutlet UIButton *createButton;
+@property (weak, nonatomic) IBOutlet UIButton *importButton;
 
 -(void)queryForRecipes;
 

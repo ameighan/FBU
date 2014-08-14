@@ -25,6 +25,17 @@
     }
 }
 
+
+- (void)createButtonUI:(UIButton *)button
+{
+    [button setTintColor:[UIColor colorWithRed:196.0/255.0 green:49.0/255.0 blue:56.0/255.0 alpha:1.00]];
+    [[button layer] setBorderWidth:1.5f];
+    [[button layer] setBorderColor:[UIColor colorWithRed:196.0/255.0 green:49.0/255.0 blue:56.0/255.0 alpha:1.00].CGColor];
+    button.layer.cornerRadius = 3;
+    button.clipsToBounds = YES;
+    
+}
+
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
@@ -49,6 +60,9 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"BucketListCell"
                                                             forIndexPath:indexPath];
     FBUBucketListItem *bucketItem = self.items[indexPath.row];
+    
+    [cell.textLabel setFont:[UIFont fontWithName:@"Avenir" size:17.0]];
+
     if (bucketItem.isCrossedOff) {
         NSMutableAttributedString *titleString = [[NSMutableAttributedString alloc] initWithString:[bucketItem itemName]];
         
@@ -126,8 +140,16 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+    
     self.items = [self queryingForBucketListItems];
     [self.tableView reloadData];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self createButtonUI:self.editButton];
+    [self createButtonUI:self.crossOffButton];
 }
 
 @end

@@ -191,6 +191,9 @@
                               
                               [self.group addObject:newEvent forKey:@"eventsInGroup"];
                               
+                              NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"eventTimeDate" ascending:YES];
+                              self.group.eventsInGroup = [self.group.eventsInGroup sortedArrayUsingDescriptors:[NSArray arrayWithObject:sortDescriptor]];
+                              
                               newEvent.eventTimeDate = self.eventDatePicker.date;
                               
                               [newEvent saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
@@ -199,7 +202,10 @@
                                   
                               }];
                               
-                              [self.group saveInBackground];
+                              
+                              [self.group saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                                  NSLog(@"Hi");
+                              }];
                               
                               PFInstallation *currentInstallation = [PFInstallation currentInstallation];
                               [currentInstallation addUniqueObject:[self.eventNameTextField.text stringByReplacingOccurrencesOfString:@" " withString:@""] forKey:@"channels"];

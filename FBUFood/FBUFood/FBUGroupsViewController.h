@@ -34,6 +34,8 @@
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
 @property (weak, nonatomic) NSArray *eventsByGroup;
+@property (strong, nonatomic) NSArray *sortedEvents;
+
 
 @end
 

@@ -39,6 +39,8 @@
         UIImage *image = [UIImage imageWithData:[self.item.picture getData]];
         self.imageView.image = image;
         self.addTextfield.text = self.item.itemName;
+        [self.addTextfield setFont:[UIFont fontWithName:@"Avenir" size:17.0]];
+
     }
     UIImage *backImage = [UIImage imageNamed:@"BucketListBackground.jpg"];
     [self.backgroundImageView setImage:backImage];

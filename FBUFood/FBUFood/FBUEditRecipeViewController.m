@@ -20,6 +20,13 @@
     [super viewDidLoad];
     
     if(self.recipe){
+        
+        self.ingredientsTextView.layer.borderWidth = 0.5;
+        self.ingredientsTextView.layer.cornerRadius = 8;
+        
+        self.directionsTextView.layer.borderWidth = 0.5;
+        self.directionsTextView.layer.cornerRadius = 8;
+        
         UIImage *image = [UIImage imageWithData:[self.recipe.image getData]];
         self.imageView.image = image;
         self.recipeTextField.text = self.recipe.title;

@@ -25,8 +25,9 @@
 {
     [super viewDidLoad];
     
-    [[UITabBar appearance] setBarTintColor:[UIColor colorWithRed:232.0/255.0 green:232.0/255.0 blue:235.0/255.0 alpha:1.0]];
-    [[UITabBar appearance] setTintColor:[UIColor colorWithRed:252.0/255.0 green:140.0/255.0 blue:106.0/255.0 alpha:0.75]];
+    [self.tabBar setBarTintColor:[UIColor colorWithRed:232.0/255.0 green:232.0/255.0 blue:235.0/255.0 alpha:1.0]];
+    [self.tabBar setTintColor:[UIColor colorWithRed:252.0/255.0 green:140.0/255.0 blue:106.0/255.0 alpha:0.75]];
+    [self createButtonUI:self.importButton];
     
     self.tabBar.selectedItem = [self.tabBar.items objectAtIndex:0];
     
@@ -48,6 +49,18 @@
         self.container.event = self.event;
         NSLog(@"%@", self.container.eventRecipe);
     }
+    
+}
+
+- (void)createButtonUI:(UIButton *)button
+{
+    [[button titleLabel] setFont:[UIFont fontWithName:@"Avenir" size:17.0]];
+    [button setTintColor:[UIColor colorWithRed:196.0/255.0 green:49.0/255.0 blue:56.0/255.0 alpha:1.00]];
+    [button setBackgroundColor:[UIColor whiteColor]];
+    [[button layer] setBorderWidth:1.5f];
+    [[button layer] setBorderColor:[UIColor colorWithRed:196.0/255.0 green:49.0/255.0 blue:56.0/255.0 alpha:1.00].CGColor];
+    button.layer.cornerRadius = 3;
+    button.clipsToBounds = YES;
     
 }
 

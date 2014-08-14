@@ -97,7 +97,6 @@
         NSString *filename = [NSString stringWithFormat:@"%@.png", @"group image"];
         PFFile *imageFile = [PFFile fileWithName:filename data:imageData];
         newGroup.groupImage = imageFile;
-
         newGroup.groupImageHeight = 200;
     } else {
         NSData *imageData = UIImageJPEGRepresentation(self.groupImage, 0.8);

@@ -191,7 +191,8 @@
     //static NSString *cellIdentifier = @"UITableViewCell";
     FBUYummlyRecipeCell *cell = (FBUYummlyRecipeCell *)[self.recipesTableView dequeueReusableCellWithIdentifier:@"FBUYummlyRecipeCell" forIndexPath:indexPath];
     FBURecipe *recipe = [self.yummlyRecipes objectAtIndex:indexPath.row];
-    //cell.recipeTitle.text = recipe[@"title"];
+    
+    [cell.textLabel setFont:[UIFont fontWithName:@"Avenir" size:17.0]];
     cell.textLabel.text = recipe[@"title"];
     cell.imageView.image = [UIImage imageWithData:[recipe.image getData]];
     return cell;

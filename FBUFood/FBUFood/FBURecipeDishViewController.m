@@ -31,7 +31,10 @@
     self.featureDishButton.hidden = YES;
     self.featureDishButton.enabled = NO;
     [self.featureDishButton setTintColor:[UIColor colorWithRed:249.0/255.0 green:118.0/255.0 blue:87.0/255.0 alpha:0.75]];
-    [self.dishTitleLabel setFont:[UIFont fontWithName:@"Avenir" size:30.0]];
+    [self.dishTitleLabel setFont:[UIFont fontWithName:@"Avenir" size:20.0]];
+    [self.dishTitleLabel setBackgroundColor:[UIColor colorWithRed:196.0/255.0 green:49.0/255.0 blue:56.0/255.0 alpha:0.5]];
+    self.dishTitleLabel.layer.cornerRadius = 3;
+    self.dishTitleLabel.clipsToBounds = YES;
 }
 
 - (IBAction)userDidFeatureDish:(id)sender

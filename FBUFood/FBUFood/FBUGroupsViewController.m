@@ -13,11 +13,11 @@
 #import "FBURecipesListViewController.h"
 #import "FBUEventDetailViewController.h"
 #import "FBUAddRecipesViewController.h"
-#import "FBUMembersViewController.h"
 #import "FBUEventViewController.h"
 #import "FBUGroupsRecipesViewController.h"
 #import "FBUEventCollectionViewCell.h"
 #import "FBUUserCollectionViewCell.h"
+
 
 @implementation FBUGroupsViewController
 
@@ -30,7 +30,6 @@
     
     UIFont *defaultFont = [UIFont fontWithName:@"Avenir" size:14.0];
     UIFont *headerFont = [UIFont fontWithName:@"Avenir" size:20.0];
-    
     
     [self.cooksLabel setFont:headerFont];
     [self.eventsLabel setFont:headerFont];
@@ -84,6 +83,12 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"eventTimeDate" ascending:YES];
+    self.group.eventsInGroup = [self.group.eventsInGroup sortedArrayUsingDescriptors:[NSArray arrayWithObject:sortDescriptor]];
+    [self.group saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        NSLog(@"Hello");
+    }];
     
     if ([self.group checkIfUserIsInGroupArray:self.group.cooksInGroup]) {
         [self toggleCookView];
@@ -426,12 +431,6 @@
         FBUEventDetailViewController *eventDetailViewController = segue.destinationViewController;
         eventDetailViewController.group = self.group;
         eventDetailViewController.title = @"Create New Event";
-        
-    } else if ([segue.identifier isEqualToString:@"viewCooks"]) {
-        
-        FBUMembersViewController *membersViewController = segue.destinationViewController;
-        //membersViewController.group = self.group;
-        membersViewController.membersArray = self.group.cooksInGroup;
         
     } else if ([segue.identifier isEqualToString:@"eventCell"]) {
         

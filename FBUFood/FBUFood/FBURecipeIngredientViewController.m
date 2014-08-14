@@ -22,6 +22,7 @@
     [super viewDidLoad];
     
     self.ingredientsList.text = self.recipe.ingredientsList;
+    [self.ingredientsList setFont:[UIFont fontWithName:@"Avenir" size:17.0]];
 
 }
 

@@ -52,7 +52,20 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    
+    [self createButtonUI:self.createButton];
+    [self createButtonUI:self.importButton];
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"UITableViewCell"];
+}
+
+- (void)createButtonUI:(UIButton *)button
+{
+    [button setTintColor:[UIColor colorWithRed:196.0/255.0 green:49.0/255.0 blue:56.0/255.0 alpha:1.00]];
+    [[button layer] setBorderWidth:1.5f];
+    [[button layer] setBorderColor:[UIColor colorWithRed:196.0/255.0 green:49.0/255.0 blue:56.0/255.0 alpha:1.00].CGColor];
+    button.layer.cornerRadius = 3;
+    button.clipsToBounds = YES;
+    
 }
 
 -(void)queryForRecipes
@@ -76,6 +89,8 @@
 
     FBURecipe *recipe = [self.recipeArray objectAtIndex:indexPath.row];
     
+    [cell.textLabel setFont:[UIFont fontWithName:@"Avenir" size:17.0]];
+
     cell.textLabel.text = recipe[@"title"];
     cell.imageView.image = [UIImage imageWithData:[recipe.image getData]];
     

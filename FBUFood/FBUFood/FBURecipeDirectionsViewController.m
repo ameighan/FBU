@@ -29,6 +29,8 @@
         [(UIWebView *)self.view loadRequest:request];
     } else {
         self.directions.text = self.recipe.directions;
+        [self.directions setFont:[UIFont fontWithName:@"Avenir" size:17.0]];
+
     }
 }
 

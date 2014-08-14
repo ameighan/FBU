@@ -7,7 +7,6 @@
 //
 
 #import "FBUEventViewController.h"
-#import "FBUMembersViewController.h"
 #import "FBUEventDetailViewController.h"
 #import "FBUGroupsRecipesViewController.h"
 #import "FBUGroceryListViewController.h"
@@ -342,10 +341,7 @@
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if([segue.identifier isEqualToString:@"PeopleGoing"]){
-        FBUMembersViewController *controller = (FBUMembersViewController *)segue.destinationViewController;
-        controller.membersArray = self.event.membersOfEvent;
-    } else if ([segue.identifier isEqualToString:@"recipes"]){
+    if ([segue.identifier isEqualToString:@"recipes"]){
         
         FBUGroupsRecipesViewController *recipesViewController = [[FBUGroupsRecipesViewController alloc] init];
         recipesViewController = segue.destinationViewController;

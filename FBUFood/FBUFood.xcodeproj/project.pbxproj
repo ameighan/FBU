@@ -47,7 +47,6 @@
 		966554DF197450B500DDBED0 /* FBUBucketListItemsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 966554DE197450B500DDBED0 /* FBUBucketListItemsViewController.m */; };
 		9681146F199A8F4200039BAB /* FBUYummlyRecipeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9681146E199A8F4200039BAB /* FBUYummlyRecipeCell.m */; };
 		968134311994B8EC00F48BD0 /* Imagination.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 968134301994B8EC00F48BD0 /* Imagination.jpg */; };
-		969C8E6D1983060400D0E7B3 /* FBUMembersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 969C8E6C1983060400D0E7B3 /* FBUMembersViewController.m */; };
 		969C8EAB199157E000D0E7B3 /* FBUGroupCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 969C8EAA199157E000D0E7B3 /* FBUGroupCollectionViewCell.m */; };
 		969C8EAD1992B8C600D0E7B3 /* BucketList.png in Resources */ = {isa = PBXBuildFile; fileRef = 969C8EAC1992B8C600D0E7B3 /* BucketList.png */; };
 		96BC1E821992D95F009953A4 /* New.png in Resources */ = {isa = PBXBuildFile; fileRef = 96BC1E811992D95F009953A4 /* New.png */; };
@@ -172,8 +171,6 @@
 		9681146D199A8F4200039BAB /* FBUYummlyRecipeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBUYummlyRecipeCell.h; sourceTree = "<group>"; };
 		9681146E199A8F4200039BAB /* FBUYummlyRecipeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBUYummlyRecipeCell.m; sourceTree = "<group>"; };
 		968134301994B8EC00F48BD0 /* Imagination.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Imagination.jpg; sourceTree = "<group>"; };
-		969C8E6B1983060400D0E7B3 /* FBUMembersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBUMembersViewController.h; sourceTree = "<group>"; };
-		969C8E6C1983060400D0E7B3 /* FBUMembersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBUMembersViewController.m; sourceTree = "<group>"; };
 		969C8EA9199157E000D0E7B3 /* FBUGroupCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBUGroupCollectionViewCell.h; sourceTree = "<group>"; };
 		969C8EAA199157E000D0E7B3 /* FBUGroupCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBUGroupCollectionViewCell.m; sourceTree = "<group>"; };
 		969C8EAC1992B8C600D0E7B3 /* BucketList.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BucketList.png; sourceTree = "<group>"; };
@@ -534,8 +531,6 @@
 			isa = PBXGroup;
 			children = (
 				D2AF54CC197059B000F0A0F2 /* Main.storyboard */,
-				969C8E6B1983060400D0E7B3 /* FBUMembersViewController.h */,
-				969C8E6C1983060400D0E7B3 /* FBUMembersViewController.m */,
 				D2AF54AC1970595F00F0A0F2 /* FBUAppDelegate.h */,
 				D2AF54AD1970595F00F0A0F2 /* FBUAppDelegate.m */,
 				939F6EB9199C570A00FE90AF /* Images */,
@@ -760,7 +755,6 @@
 				D28632DE197F1E4C007BBD28 /* FBUEventViewController.m in Sources */,
 				D295F99D1976029D000ED2C1 /* FBURecipe.m in Sources */,
 				D25A4C9C199581D400267D35 /* FBUGroceryListViewController.m in Sources */,
-				969C8E6D1983060400D0E7B3 /* FBUMembersViewController.m in Sources */,
 				966554D61973B28700DDBED0 /* FBUEditProfileViewController.m in Sources */,
 				93D9D35F19916BEB00ABCC5B /* FBUCollectionViewLayout.m in Sources */,
 				D2AF54D619705DF200F0A0F2 /* FBUDashboardViewController.m in Sources */,

@@ -48,15 +48,9 @@
      forState:UIControlStateNormal];
     
     [[UILabel appearance] setFont:[UIFont fontWithName:@"Avenir" size:15.0]];
-//    [[UIButton appearance] setTintColor:[UIColor colorWithRed:196.0/255.0 green:49.0/255.0 blue:56.0/255.0 alpha:1.00]];
     [[[UIButton appearance] titleLabel] setFont:[UIFont fontWithName:@"Avenir" size:15.0]];
-//    [[UIButton appearance] setBackgroundColor:[UIColor colorWithRed:248.0/255.0 green:194.0/255.0 blue:96.0/255.0 alpha:0.75]];
     
-    [[UITabBar appearance] setBarTintColor:[UIColor colorWithRed:249.0/255.0 green:118.0/255.0 blue:87.0/255.0 alpha:0.75]];
-    [[UITabBar appearance] setTintColor:[UIColor whiteColor]];
-    
-    [[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor], NSForegroundColorAttributeName, nil] forState:UIControlStateSelected];
-    
+    [[UITabBar appearance] setBarTintColor:[UIColor colorWithRed:249.0/255.0 green:118.0/255.0 blue:87.0/255.0 alpha:0.75]];    
     
     [[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor colorWithRed:196.0/255.0 green:49.0/255.0 blue:56.0/255.0 alpha:1.00], NSForegroundColorAttributeName, nil]
                                              forState:UIControlStateNormal];
@@ -64,6 +58,7 @@
     //Setting selected and unselected items
     UITabBarController *tabBarController = (UITabBarController *)self.window.rootViewController;
     UITabBar *tabBar = tabBarController.tabBar;
+    [tabBar setTintColor:[UIColor whiteColor]];
     UITabBarItem *tabBarItem1 = [tabBar.items objectAtIndex:0];
     UITabBarItem *tabBarItem2 = [tabBar.items objectAtIndex:1];
     UITabBarItem *tabBarItem3 = [tabBar.items objectAtIndex:2];
