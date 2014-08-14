@@ -24,17 +24,6 @@
 
 @implementation FBUEventViewController
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    self.eventUnjoinButton.hidden = YES;
-    self.eventUnjoinButton.enabled = NO;
-    
-   // self.eventJoinButton.hidden = YES;
-   // self.eventJoinButton.enabled = NO;
-}
-
-
 - (void)viewWillAppear:(BOOL)animated
 {
 
@@ -43,33 +32,54 @@
 //    [self importRecipesToGroceryList];
     self.eventRecipesCollectionView.backgroundColor = [UIColor clearColor];
     self.eventMembersCollectionView.backgroundColor = [UIColor clearColor];
-    [self.eventJoinButton setTintColor:[UIColor colorWithRed:196.0/255.0 green:49.0/255.0 blue:56.0/255.0 alpha:1.00]];
     NSLog(@"Members of Event: %@", self.event.membersOfEvent);
+    
+    [self createButtonUI:self.goingButton];
+    [self createButtonUI:self.notGoingButton];
     
     
     self.title = self.event.eventName;
     self.eventLocationLabel.text = self.event.eventAddress;
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setTimeStyle:NSDateFormatterMediumStyle];
+    [dateFormatter setDateStyle:NSDateFormatterMediumStyle];
     
-    self.eventTimeDateLabel.text = [dateFormatter stringFromDate:self.event.eventTimeDate];
+    NSString *date = [dateFormatter stringFromDate:self.event.eventTimeDate];
+    
+    NSDateFormatter *timeFormatter = [[NSDateFormatter alloc] init];
+    [timeFormatter setTimeStyle:NSDateFormatterShortStyle];
+    
+    NSString *time = [timeFormatter stringFromDate:self.event.eventTimeDate];
+    NSString *conjunction = @" \@ ";
+    NSString *append = [conjunction stringByAppendingString:time];
+    
+    self.eventTimeDateLabel.text = [date stringByAppendingString:append];
+    
     if (self.event.eventMeals) {
         self.eventMealsLabel.text = [@"Meals: " stringByAppendingString:self.event.eventMeals];
     }
     
     if (![self.event checkIfUserIsInEventArray:self.event.membersOfEvent]) {
-        self.navigationItem.rightBarButtonItem = nil;
-        self.eventJoinButton.hidden = NO;
-        self.eventJoinButton.enabled = YES;
-        self.eventUnjoinButton.hidden = YES;
-        self.eventUnjoinButton.enabled = NO;
+        [self toggleNotGoingView];
     } else {
-        self.eventJoinButton.hidden = YES;
-        self.eventJoinButton.enabled = NO;
-        self.eventUnjoinButton.hidden = NO;
-        self.eventUnjoinButton.enabled = YES;
+        [self toggleGoingView];
     }
+}
+
+- (void)toggleNotGoingView
+{
+    self.notGoingButton.hidden = NO;
+    self.notGoingButton.enabled = YES;
+    self.goingButton.hidden = YES;
+    self.goingButton.enabled = NO;
+}
+
+- (void)toggleGoingView
+{
+    self.goingButton.hidden = NO;
+    self.goingButton.enabled = YES;
+    self.notGoingButton.hidden = YES;
+    self.notGoingButton.enabled = NO;
 }
 
 - (void)importRecipesToGroceryList
@@ -83,6 +93,18 @@
     }];
 }
 
+- (void)createButtonUI:(UIButton *)button
+{
+    [[button titleLabel] setFont:[UIFont fontWithName:@"Avenir" size:17.0]];
+    [button setTintColor:[UIColor colorWithRed:196.0/255.0 green:49.0/255.0 blue:56.0/255.0 alpha:1.00]];
+    [button setBackgroundColor:[UIColor whiteColor]];
+    [[button layer] setBorderWidth:1.5f];
+    [[button layer] setBorderColor:[UIColor colorWithRed:196.0/255.0 green:49.0/255.0 blue:56.0/255.0 alpha:1.00].CGColor];
+    button.layer.cornerRadius = 3;
+    button.clipsToBounds = YES;
+    
+}
+
 
 - (IBAction)userDidJoinEvent:(id)sender
 {
@@ -90,19 +112,15 @@
                      message:[NSString stringWithFormat:@"You are going to %@ !", self.title]];
     
     [self.event addObject:[PFUser currentUser] forKey:@"membersOfEvent"];
-    [self.event saveInBackground];
+    [self.event saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        NSLog(@"Adding user to the members array");
+    }];
     
     PFInstallation *currentInstallation = [PFInstallation currentInstallation];
     [currentInstallation addUniqueObject:[self.event.eventName stringByReplacingOccurrencesOfString:@" " withString:@""] forKey:@"channels"];
     [currentInstallation saveInBackground];
 
-    
-    //Disable join button once user has joined.
-    self.eventJoinButton.hidden = YES;
-    self.eventJoinButton.enabled = NO;
-    
-    self.eventUnjoinButton.hidden = NO;
-    self.eventUnjoinButton.enabled = YES;
+    [self toggleGoingView];
 }
 
 - (IBAction)userDidUnjoinEvent:(id)sender {
@@ -110,17 +128,16 @@
     [self showAlertWithTitle:self.title
                      message:[NSString stringWithFormat:@"You are no longer going to %@ !", self.title]];
     [self.event removeObject:[PFUser currentUser]  forKey:@"membersOfEvent"];
-    [self.event saveInBackground];
+    [self.event saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        NSLog(@"Removing user from the members array");
+    }];
+    
     
     PFInstallation *currentInstallation = [PFInstallation currentInstallation];
     [currentInstallation removeObject:[self.event.eventName stringByReplacingOccurrencesOfString:@" " withString:@""] forKey:@"channels"];
     [currentInstallation saveInBackground];
-    
-    self.eventJoinButton.hidden = NO;
-    self.eventJoinButton.enabled = YES;
-    
-    self.eventUnjoinButton.hidden = YES;
-    self.eventUnjoinButton.enabled = NO;
+
+    [self toggleNotGoingView];
     
 }
 
@@ -223,15 +240,16 @@
 }
 
 
-# pragma mark - Pop-up Menu
+# pragma mark - Action Sheet
 - (IBAction)moreOptions:(id)sender
 {
+    
     UIActionSheet *popupMenu = [[UIActionSheet alloc] initWithTitle:@""
                                                            delegate:self
                                                   cancelButtonTitle:@"Cancel"
                                              destructiveButtonTitle:nil
                                                   otherButtonTitles:@"Edit Event",
-                                                                    @"Event Recipes",
+                                                                    @"Event Dishes",
                                                                     @"Grocery List",
                                                                     nil];
     popupMenu.tag = 1;
@@ -259,6 +277,16 @@
             default:
                 break;
         }
+}
+
+- (void)willPresentActionSheet:(UIActionSheet *)actionSheet
+{
+    [actionSheet.subviews enumerateObjectsUsingBlock:^(UIView *subview, NSUInteger idx, BOOL *stop) {
+        if ([subview isKindOfClass:[UIButton class]]) {
+            UIButton *button = (UIButton *)subview;
+            button.titleLabel.textColor = [UIColor colorWithRed:196.0/255.0 green:49.0/255.0 blue:56.0/255.0 alpha:1.00];
+        }
+    }];
 }
 
 # pragma mark - Actions and Segues

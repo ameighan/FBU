@@ -18,8 +18,11 @@
 @property (weak, nonatomic) IBOutlet UILabel *eventTimeDateLabel;
 @property (weak, nonatomic) IBOutlet UICollectionView *eventRecipesCollectionView;
 @property (weak, nonatomic) IBOutlet UICollectionView *eventMembersCollectionView;
-@property (weak, nonatomic) IBOutlet UIButton *eventJoinButton;
-@property (weak, nonatomic) IBOutlet UIButton *eventUnjoinButton;
+
+@property (weak, nonatomic) IBOutlet UIButton *goingButton;
+@property (weak, nonatomic) IBOutlet UIButton *notGoingButton;
+
+
 @property (weak, nonatomic) IBOutlet UILabel *eventMealsLabel;
 @property (weak, nonatomic) IBOutlet MKMapView *eventMapView;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *moreOptionsButton;

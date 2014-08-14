@@ -708,7 +708,7 @@
             </objects>
             <point key="canvasLocation" x="-759" y="199"/>
         </scene>
-        <!--Members View Controller - People-->
+        <!--Members View Controller - Subscribers-->
         <scene sceneID="5kX-n9-sdz">
             <objects>
                 <viewController id="GZv-qx-koQ" customClass="FBUMembersViewController" sceneMemberID="viewController">
@@ -733,7 +733,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="People" id="8Gp-x8-Jbk"/>
+                    <navigationItem key="navigationItem" title="Subscribers" id="8Gp-x8-Jbk"/>
                     <connections>
                         <outlet property="membersTableView" destination="L26-V0-p0Y" id="2g1-ff-NrH"/>
                     </connections>
@@ -747,11 +747,11 @@
             <objects>
                 <viewController id="2vq-pk-ADW" customClass="FBUGroceryListViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PEY-xG-obU">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="700"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="9Oe-ic-RYT">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="700"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -783,57 +783,69 @@
             <objects>
                 <viewController storyboardIdentifier="event" title="event" id="Oc1-VQ-Dbf" customClass="FBUEventViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fYm-nB-wp6">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="700"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="s6s-bo-0xA">
-                                <rect key="frame" x="0.0" y="306" width="320" height="105"/>
+                                <rect key="frame" x="0.0" y="258" width="320" height="71"/>
                                 <color key="backgroundColor" red="0.96862751250000001" green="0.87450987099999999" blue="0.86666673419999996" alpha="1" colorSpace="deviceRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Location" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Du0-4P-zg2">
-                                <rect key="frame" x="39" y="351" width="280" height="21"/>
+                                <rect key="frame" x="31" y="261" width="280" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Time/Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f7w-Es-ggb">
-                                <rect key="frame" x="20" y="381" width="280" height="21"/>
+                                <rect key="frame" x="31" y="284" width="281" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Meals: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c6m-ay-Euu">
-                                <rect key="frame" x="20" y="412" width="94" height="21"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Meals Served:  " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c6m-ay-Euu">
+                                <rect key="frame" x="31" y="307" width="119" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Attending" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xvM-AH-cmj">
+                                <rect key="frame" x="1" y="345" width="94" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What are we cooking?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="FlA-uu-QpQ">
+                                <rect key="frame" x="0.0" y="485" width="171" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="xOs-YQ-ZXa">
-                                <rect key="frame" x="0.0" y="541" width="320" height="248"/>
+                                <rect key="frame" x="-2" y="510" width="324" height="123"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Iyb-6q-neU">
                                     <size key="itemSize" width="150" height="150"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    <inset key="sectionInset" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="recipe" id="jLe-OQ-AFZ" customClass="FBURecipeCollectionViewCell">
-                                        <rect key="frame" x="0.0" y="24" width="200" height="200"/>
+                                        <rect key="frame" x="10" y="12" width="100" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="2Cg-RC-JyU">
-                                                    <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
-                                        <size key="customSize" width="200" height="200"/>
+                                        <size key="customSize" width="100" height="100"/>
                                         <connections>
                                             <outlet property="recipeImage" destination="2Cg-RC-JyU" id="0yg-Hq-9as"/>
                                             <segue destination="kQr-eQ-54T" kind="push" identifier="recipeCell" id="vBe-2g-paS"/>
@@ -846,50 +858,48 @@
                                 </connections>
                             </collectionView>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="Nd9-gL-2IW">
-                                <rect key="frame" x="0.0" y="85" width="320" height="175"/>
+                                <rect key="frame" x="1" y="84" width="320" height="140"/>
                                 <connections>
                                     <outlet property="delegate" destination="Oc1-VQ-Dbf" id="aFu-bq-0Zg"/>
                                 </connections>
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U0j-rQ-m9B">
-                                <rect key="frame" x="262" y="267" width="52" height="30"/>
-                                <state key="normal" title="Join">
+                                <rect key="frame" x="212" y="295" width="100" height="30"/>
+                                <state key="normal" title="Going">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="userDidJoinEvent:" destination="Oc1-VQ-Dbf" eventType="touchUpInside" id="p1q-sB-DWM"/>
+                                    <action selector="userDidUnjoinEvent:" destination="Oc1-VQ-Dbf" eventType="touchUpInside" id="8pZ-y1-58K"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="vJa-ox-HQD">
-                                <rect key="frame" x="267" y="257" width="52" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Leave">
-                                    <color key="titleColor" red="0.2823529541" green="0.8078432083" blue="0.91372555489999996" alpha="1" colorSpace="deviceRGB"/>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="vJa-ox-HQD">
+                                <rect key="frame" x="212" y="295" width="100" height="30"/>
+                                <state key="normal" title="Not Going">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="userDidUnjoinEvent:" destination="Oc1-VQ-Dbf" eventType="touchUpInside" id="22T-52-a3p"/>
+                                    <action selector="userDidJoinEvent:" destination="Oc1-VQ-Dbf" eventType="touchUpInside" id="vgA-bP-Pxh"/>
                                 </connections>
                             </button>
                             <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="ZCe-Uh-6lM">
-                                <rect key="frame" x="0.0" y="455" width="320" height="86"/>
+                                <rect key="frame" x="0.0" y="370" width="320" height="106"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="iiq-cQ-zUR">
-                                    <size key="itemSize" width="57" height="57.5"/>
+                                    <size key="itemSize" width="60" height="60"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    <inset key="sectionInset" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="user" id="3Y5-wl-dQi" customClass="FBUUserCollectionViewCell">
-                                        <rect key="frame" x="0.0" y="13" width="60" height="60"/>
+                                        <rect key="frame" x="10" y="23" width="60" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="E3E-jv-0Fr">
-                                                    <rect key="frame" x="0.0" y="-1" width="60" height="60"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 </imageView>
                                             </subviews>
@@ -907,7 +917,13 @@
                                 </connections>
                             </collectionView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="location" id="1Xd-HY-GbJ">
-                                <rect key="frame" x="16" y="350" width="20" height="20"/>
+                                <rect key="frame" x="10" y="264" width="15" height="15"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calendar" id="cO4-gm-U1a">
+                                <rect key="frame" x="10" y="287" width="15" height="15"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fork&amp;knife.png" id="JOj-eb-U6F">
+                                <rect key="frame" x="10" y="310" width="15" height="15"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -920,16 +936,17 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <size key="freeformSize" width="320" height="700"/>
                     <connections>
-                        <outlet property="eventJoinButton" destination="U0j-rQ-m9B" id="p0z-XR-cKi"/>
                         <outlet property="eventLocationLabel" destination="Du0-4P-zg2" id="hbh-cU-dIe"/>
                         <outlet property="eventMapView" destination="Nd9-gL-2IW" id="ZSG-MK-War"/>
                         <outlet property="eventMealsLabel" destination="c6m-ay-Euu" id="uQf-7b-hww"/>
                         <outlet property="eventMembersCollectionView" destination="ZCe-Uh-6lM" id="R5T-8I-8n7"/>
                         <outlet property="eventRecipesCollectionView" destination="xOs-YQ-ZXa" id="L7D-W6-BOz"/>
                         <outlet property="eventTimeDateLabel" destination="f7w-Es-ggb" id="mGM-kG-Zgw"/>
-                        <outlet property="eventUnjoinButton" destination="vJa-ox-HQD" id="ovu-yo-irK"/>
+                        <outlet property="goingButton" destination="U0j-rQ-m9B" id="VUp-os-EPL"/>
                         <outlet property="moreOptionsButton" destination="c1J-S7-TKG" id="smg-XP-1Sl"/>
+                        <outlet property="notGoingButton" destination="vJa-ox-HQD" id="dB6-CJ-LMJ"/>
                         <segue destination="uHd-qP-I1t" kind="push" identifier="editEvent" id="lfT-lW-nr9"/>
                         <segue destination="2vq-pk-ADW" kind="push" identifier="groceryList" id="c3n-lx-HNU"/>
                         <segue destination="5vy-0z-OFu" kind="push" identifier="recipes" id="cfB-gW-Pi3"/>
@@ -952,7 +969,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="KXb-VO-BUx">
-                                <rect key="frame" x="32" y="143.5" width="254" height="326"/>
+                                <rect key="frame" x="32" y="144" width="254" height="326"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="recipeCell" id="bPg-oQ-6vg">
@@ -1001,12 +1018,12 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ihg-ca-brN">
-                                <rect key="frame" x="22" y="105.5" width="94" height="21"/>
+                                <rect key="frame" x="22" y="106" width="94" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" id="XqR-AW-P4C">
-                                <rect key="frame" x="22" y="397.5" width="280" height="162"/>
+                                <rect key="frame" x="22" y="398" width="280" height="162"/>
                                 <date key="date" timeIntervalSinceReferenceDate="426796343.25326997">
                                     <!--2014-07-11 18:32:23 +0000-->
                                 </date>
@@ -1029,7 +1046,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="XZz-BG-3LD">
-                                <rect key="frame" x="128" y="100.5" width="172" height="30"/>
+                                <rect key="frame" x="128" y="101" width="172" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
@@ -1042,7 +1059,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="y7b-OL-Bq1">
-                                <rect key="frame" x="95" y="146.5" width="205" height="30"/>
+                                <rect key="frame" x="95" y="147" width="205" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
@@ -1050,7 +1067,7 @@
                                 </connections>
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="mSM-KS-mUX">
-                                <rect key="frame" x="20" y="260.5" width="280" height="70"/>
+                                <rect key="frame" x="20" y="260" width="280" height="70"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -1061,12 +1078,12 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of Meals" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="PEh-r1-NqN">
-                                <rect key="frame" x="20" y="198.5" width="132" height="21"/>
+                                <rect key="frame" x="20" y="199" width="132" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="CwC-N2-2dh">
-                                <rect key="frame" x="166" y="190.5" width="134" height="30"/>
+                                <rect key="frame" x="166" y="191" width="134" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -1948,6 +1965,7 @@
         <image name="dish" width="80" height="80"/>
         <image name="explore" width="50" height="50"/>
         <image name="favorite_notselected" width="50" height="50"/>
+        <image name="fork&amp;knife.png" width="256" height="256"/>
         <image name="ingredients" width="25" height="25"/>
         <image name="location" width="80" height="80"/>
         <image name="logout" width="45" height="45"/>
@@ -1964,12 +1982,12 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="y2B-5h-yd3"/>
-        <segue reference="WtZ-5P-KRU"/>
-        <segue reference="J2e-wD-Dmq"/>
-        <segue reference="pOF-iu-Gx5"/>
-        <segue reference="218-qX-u7v"/>
-        <segue reference="E3o-aQ-dmJ"/>
         <segue reference="vUP-9j-jWm"/>
-        <segue reference="XIi-Rl-PXj"/>
+        <segue reference="WtZ-5P-KRU"/>
+        <segue reference="xlT-pm-NoS"/>
+        <segue reference="cfB-gW-Pi3"/>
+        <segue reference="vBe-2g-paS"/>
+        <segue reference="lfT-lW-nr9"/>
+        <segue reference="E3o-aQ-dmJ"/>
     </inferredMetricsTieBreakers>
 </document>

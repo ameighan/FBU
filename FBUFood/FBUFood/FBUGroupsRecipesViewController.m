@@ -32,8 +32,14 @@
     [super viewWillAppear:animated];
     [self.recipesTableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"recipeCell"];
     
-    if (![self.group checkIfUserIsInGroupArray:self.group.cooksInGroup]) {
-        [self.navigationItem setRightBarButtonItem:nil animated:YES];
+    if ([self.sourceVC isEqualToString:@"group"]) {
+        if (![self.group checkIfUserIsInGroupArray:self.group.cooksInGroup]) {
+            [self.navigationItem setRightBarButtonItem:nil animated:YES];
+        }
+    } else if ([self.sourceVC isEqualToString:@"event"]) {
+        if (![self.event checkIfUserIsInEventArray:self.event.membersOfEvent]) {
+            [self.navigationItem setRightBarButtonItem:nil animated:YES];
+        }
     }
 }
 
