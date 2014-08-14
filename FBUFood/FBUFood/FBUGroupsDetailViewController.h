@@ -12,8 +12,8 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *nameOfGroupTextField;
 @property (weak, nonatomic) IBOutlet UITextView *descriptionOfGroupTextView;
-@property (weak, nonatomic) IBOutlet UIButton *addRecipesToGroupButton;
-@property (weak, nonatomic) IBOutlet UIButton *addCooksToGroupButton;
+@property (weak, nonatomic) IBOutlet UIButton *uploadPhotoButton;
+
 
 -(void)saveGroup;
 

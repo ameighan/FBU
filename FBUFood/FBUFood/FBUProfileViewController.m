@@ -63,7 +63,7 @@
     
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(queryForGroupData) name:@"savedGroup" object:nil];
     
-    [self.addGroup setTintColor:[UIColor colorWithRed:252.0/255.0 green:140.0/255.0 blue:106.0/255.0 alpha:1.00]];
+    [self.addGroup setTintColor:[UIColor colorWithRed:209.0/255.0 green:69.0/255.0 blue:69.0/255.0 alpha:1.00]];
     [self.recipesButton setTintColor:[UIColor colorWithRed:196.0/255.0 green:49.0/255.0 blue:56.0/255.0 alpha:1.00]];
     [self.bucketListButton setTintColor:[UIColor colorWithRed:196.0/255.0 green:49.0/255.0 blue:56.0/255.0 alpha:1.00]];
     [self.nameLabel setFont:[UIFont fontWithName:@"Avenir" size:20.0]];

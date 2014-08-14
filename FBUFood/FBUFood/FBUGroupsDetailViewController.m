@@ -21,8 +21,34 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    [self.nameOfGroupTextField becomeFirstResponder];
+    self.descriptionOfGroupTextView.layer.borderColor = [[UIColor lightGrayColor] CGColor];
+    self.descriptionOfGroupTextView.layer.borderWidth = 0.5;
+    self.descriptionOfGroupTextView.layer.cornerRadius = 8;
     
+    self.descriptionOfGroupTextView.text = @"#italian #pasta #pizza";
+    self.descriptionOfGroupTextView.textColor = [UIColor lightGrayColor];
+    
+    [self createButtonUI:self.uploadPhotoButton];
+    
+}
+
+- (void)textViewDidBeginEditing:(UITextView *)textView
+{
+    if ([textView.text isEqualToString:@"#italian #pasta #pizza"]) {
+        textView.text = @"";
+        textView.textColor = [UIColor blackColor]; //optional
+    }
+    [textView becomeFirstResponder];
+}
+
+- (void)textViewDidEndEditing:(UITextView *)textView
+{
+    if ([textView.text isEqualToString:@""]) {
+        textView.text = @"#italian #pasta #pizza";
+        textView.textColor = [UIColor lightGrayColor]; //optional
+    }
+    [textView resignFirstResponder];
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
@@ -46,6 +72,16 @@
     [self.view endEditing:YES];
 }
 
+- (void)createButtonUI:(UIButton *)button
+{
+    [button setTintColor:[UIColor colorWithRed:196.0/255.0 green:49.0/255.0 blue:56.0/255.0 alpha:1.00]];
+    [[button layer] setBorderWidth:1.5f];
+    [[button layer] setBorderColor:[UIColor colorWithRed:196.0/255.0 green:49.0/255.0 blue:56.0/255.0 alpha:1.00].CGColor];
+    button.layer.cornerRadius = 3;
+    button.clipsToBounds = YES;
+    
+}
+
 
 -(void)saveGroup
 {
@@ -61,7 +97,7 @@
         NSString *filename = [NSString stringWithFormat:@"%@.png", @"group image"];
         PFFile *imageFile = [PFFile fileWithName:filename data:imageData];
         newGroup.groupImage = imageFile;
-        newGroup.groupImageHeight = 200;
+        newGroup.groupImageHeight = 300;
     } else {
         NSData *imageData = UIImageJPEGRepresentation(self.imageView.image, 0.8);
         NSString *filename = [NSString stringWithFormat:@"%@.png", @"group image"];

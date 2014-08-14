@@ -24,14 +24,10 @@
 -(void)viewDidLoad
 {
     [super viewDidLoad];
-    self.eventNameTextField.delegate = self;
-    self.eventMealsTextField.delegate = self;
-    self.eventAddressTextField.delegate = self;
-    self.eventDescriptionTextView.delegate = self;
     self.dateChanged = NO;
     
     if (self.event) {
-        self.eventAddressTextField.text = self.event.eventAddress;
+        self.eventAddressTextView.text = self.event.eventAddress;
         self.eventDescriptionTextView.text = self.event.eventDescription;
         self.eventMealsTextField.text = self.event.eventMeals;
         self.eventNameTextField.text = self.event.eventName;
@@ -41,6 +37,44 @@
     }
     
     self.eventDatePicker.minimumDate = [NSDate date];
+    
+    self.eventDescriptionTextView.text = @"#noodle #beef #nom";
+    self.eventDescriptionTextView.textColor = [UIColor lightGrayColor];
+    
+    self.eventAddressTextView.text = @"enter the address of this event";
+    self.eventAddressTextView.textColor = [UIColor lightGrayColor];
+    
+    [self.eventNameTextField becomeFirstResponder];
+    self.eventAddressTextView.layer.borderColor = [[UIColor lightGrayColor] CGColor];
+    self.eventAddressTextView.layer.borderWidth = 0.5;
+    self.eventAddressTextView.layer.cornerRadius = 8;
+    
+    self.eventDescriptionTextView.layer.borderColor = [[UIColor lightGrayColor] CGColor];
+    self.eventDescriptionTextView.layer.borderWidth = 0.5;
+    self.eventDescriptionTextView.layer.cornerRadius = 8;
+}
+
+- (void)textViewDidBeginEditing:(UITextView *)textView
+{
+    if ([textView.text isEqualToString:@"#noodle #beef #nom"] | [textView.text isEqualToString:@"enter the address of this event"]) {
+        textView.text = @"";
+        textView.textColor = [UIColor blackColor]; //optional
+    }
+    [textView becomeFirstResponder];
+}
+
+- (void)textViewDidEndEditing:(UITextView *)textView
+{
+    if ([textView.text isEqualToString:@""]) {
+        if(textView == self.eventDescriptionTextView){
+            textView.text = @"#noodle #beef #nom";
+            textView.textColor = [UIColor lightGrayColor]; //optional
+        } else {
+        textView.text = @"enter the address of this event";
+        textView.textColor = [UIColor lightGrayColor]; //optional
+        }
+    }
+    [textView resignFirstResponder];
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
@@ -68,7 +102,7 @@
 -(void)saveEventData
 {
     // Gathering geopoint info and saving the event
-    [self convertAddressToCoordinates:self.eventAddressTextField.text];
+    [self convertAddressToCoordinates:self.eventAddressTextView.text];
 
 }
 
@@ -89,7 +123,6 @@
                           NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
                           [dateFormatter setDateStyle:NSDateFormatterMediumStyle];
 
-                          
                           if (self.event) {
                               //Resaves an event if it is being edited
                               self.event.eventName = self.eventNameTextField.text;
@@ -97,7 +130,7 @@
                               self.event.creator = [PFUser currentUser];
                               
                               self.event.eventDescription = self.eventDescriptionTextView.text;
-                              self.event.eventAddress = self.eventAddressTextField.text;
+                              self.event.eventAddress = self.eventAddressTextView.text;
                               self.event.eventMeals = self.eventMealsTextField.text;
                               
                               PFGeoPoint *geoPoint = [PFGeoPoint geoPointWithLocation:eventLocation];
@@ -135,13 +168,12 @@
                                         }
                                    ];
                                   
+                              }
                                   [self.event saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
                                       NSLog(@"Resaving the event");
                                       [[NSNotificationCenter defaultCenter] postNotificationName:@"savedEvent" object:self];
-
                                   }];
                                   
-                              }
                               
                               
                           } else {
@@ -149,7 +181,7 @@
                               FBUEvent *newEvent = [FBUEvent object];
                               newEvent.eventName = self.eventNameTextField.text;
                               newEvent.eventDescription = self.eventDescriptionTextView.text;
-                              newEvent.eventAddress = self.eventAddressTextField.text;
+                              newEvent.eventAddress = self.eventAddressTextView.text;
                               newEvent.eventMeals = self.eventMealsTextField.text;
                               newEvent.creator = [PFUser currentUser];
                               [newEvent addObject:[PFUser currentUser] forKey:@"membersOfEvent"];

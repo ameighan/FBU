@@ -166,7 +166,7 @@
         return 200;
     }
     
-    return group.groupImageHeight+10;
+    return group.groupImageHeight;
 }
 
 

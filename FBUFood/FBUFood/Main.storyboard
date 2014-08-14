@@ -85,14 +85,9 @@
                     <tabBarItem key="tabBarItem" title="Explore" id="YyU-pI-mCB"/>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Explore" id="Xn2-aR-Enw">
-                        <barButtonItem key="leftBarButtonItem" systemItem="refresh" id="lMB-Fp-2dI">
+                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="lMB-Fp-2dI">
                             <connections>
                                 <action selector="userSeesAllGroups:" destination="IKZ-S5-mvs" id="kC4-7q-Obg"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" image="map" id="uQY-WY-Q4g">
-                            <connections>
-                                <segue destination="iV8-kv-3cG" kind="push" id="5nV-DU-bJ8"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -115,11 +110,11 @@
             <objects>
                 <viewController id="iV8-kv-3cG" customClass="FBUMapViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FEX-pa-WA1">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" pitchEnabled="NO" showsUserLocation="YES" id="cuT-Od-gGa">
-                                <rect key="frame" x="0.0" y="82" width="320" height="454"/>
+                                <rect key="frame" x="0.0" y="64" width="320" height="454"/>
                                 <connections>
                                     <outlet property="delegate" destination="iV8-kv-3cG" id="nzS-Tm-P59"/>
                                 </connections>
@@ -629,57 +624,34 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="HYR-8U-EhU">
-                                <rect key="frame" x="20" y="95" width="280" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="enter group name" minimumFontSize="17" id="HYR-8U-EhU">
+                                <rect key="frame" x="20" y="86" width="280" height="30"/>
+                                <color key="backgroundColor" red="0.96862751250000001" green="0.87450987099999999" blue="0.86666673419999996" alpha="1" colorSpace="deviceRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <outlet property="delegate" destination="oA1-3b-vE0" id="dfg-0n-UTI"/>
                                 </connections>
                             </textField>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Group Name:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6os-PH-DTr">
-                                <rect key="frame" x="109" y="70" width="103" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="7BH-4U-Uxe">
-                                <rect key="frame" x="118" y="276" width="88" height="21"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="we like to cook..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="7BH-4U-Uxe">
+                                <rect key="frame" x="20" y="154" width="162" height="28"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" id="lQ4-DX-I8g">
-                                <rect key="frame" x="20" y="279" width="280" height="187"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <rect key="frame" x="20" y="190" width="280" height="187"/>
+                                <color key="backgroundColor" red="0.96862751250000001" green="0.87450987099999999" blue="0.86666673419999996" alpha="1" colorSpace="deviceRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <connections>
                                     <outlet property="delegate" destination="oA1-3b-vE0" id="fty-XM-YYw"/>
                                 </connections>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="DBs-ST-M7O">
-                                <rect key="frame" x="29" y="480" width="88" height="30"/>
-                                <state key="normal" title="Add Recipes">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="qHc-NI-8Jl">
-                                <rect key="frame" x="217" y="480" width="77" height="30"/>
-                                <state key="normal" title="Add Cooks">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="LeL-4Z-Qe8">
-                                <rect key="frame" x="87" y="133" width="150" height="150"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="hCL-wl-2xj">
-                                <rect key="frame" x="87" y="133" width="150" height="150"/>
+                                <rect key="frame" x="50" y="425" width="221" height="47"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <state key="normal" title="Upload A Group Photo">
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                <state key="normal" title="upload a group thumbnail">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -704,11 +676,9 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="568"/>
                     <connections>
-                        <outlet property="addCooksToGroupButton" destination="qHc-NI-8Jl" id="BxA-oN-b7h"/>
-                        <outlet property="addRecipesToGroupButton" destination="DBs-ST-M7O" id="sDU-Ky-GBu"/>
                         <outlet property="descriptionOfGroupTextView" destination="lQ4-DX-I8g" id="Lij-7c-YTP"/>
-                        <outlet property="imageView" destination="LeL-4Z-Qe8" id="BY5-cn-xRv"/>
                         <outlet property="nameOfGroupTextField" destination="HYR-8U-EhU" id="fJ2-Yq-xYR"/>
+                        <outlet property="uploadPhotoButton" destination="hCL-wl-2xj" id="0vA-lp-mCm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qxF-Ia-cWg" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -981,10 +951,10 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="recipeCell" id="bPg-oQ-6vg">
-                                        <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="22" width="254" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bPg-oQ-6vg" id="xxn-2U-3VI">
-                                            <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="221" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <connections>
@@ -1033,16 +1003,11 @@
             <objects>
                 <viewController id="uHd-qP-I1t" customClass="FBUEventDetailViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="EGG-t5-pfy" customClass="UIControl">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="700"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ihg-ca-brN">
-                                <rect key="frame" x="22" y="106" width="94" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" id="XqR-AW-P4C">
-                                <rect key="frame" x="22" y="398" width="280" height="162"/>
+                                <rect key="frame" x="0.0" y="356" width="320" height="162"/>
                                 <date key="date" timeIntervalSinceReferenceDate="426796343.25326997">
                                     <!--2014-07-11 18:32:23 +0000-->
                                 </date>
@@ -1053,59 +1018,39 @@
                                     <action selector="dateChanged:" destination="uHd-qP-I1t" eventType="valueChanged" id="aGa-bo-a6Y"/>
                                 </connections>
                             </datePicker>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="4Z8-8g-AaY">
-                                <rect key="frame" x="116" y="595" width="88" height="30"/>
-                                <state key="normal" title="Add Recipes">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date of Event" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="q02-W6-nNo">
-                                <rect key="frame" x="108" y="355" width="104" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="XZz-BG-3LD">
-                                <rect key="frame" x="128" y="101" width="172" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="event name" minimumFontSize="17" id="XZz-BG-3LD">
+                                <rect key="frame" x="20" y="81" width="280" height="30"/>
+                                <color key="backgroundColor" red="0.96862751250000001" green="0.87450987099999999" blue="0.86666673419999996" alpha="1" colorSpace="deviceRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <outlet property="delegate" destination="uHd-qP-I1t" id="dfU-1L-A4H"/>
                                 </connections>
                             </textField>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="VKh-0u-I8D">
-                                <rect key="frame" x="20" y="151" width="64" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="y7b-OL-Bq1">
-                                <rect key="frame" x="95" y="147" width="205" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="uHd-qP-I1t" id="YBD-Jd-YGn"/>
-                                </connections>
-                            </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="mSM-KS-mUX">
-                                <rect key="frame" x="20" y="260" width="280" height="70"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="20" y="277" width="280" height="38"/>
+                                <color key="backgroundColor" red="0.96862751250000001" green="0.87450987099999999" blue="0.86666673419999996" alpha="1" colorSpace="deviceRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event Description" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2XB-G6-cUy">
-                                <rect key="frame" x="92" y="233" width="136" height="21"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="set a date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2XB-G6-cUy">
+                                <rect key="frame" x="92" y="323" width="136" height="25"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of Meals" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="PEh-r1-NqN">
-                                <rect key="frame" x="20" y="199" width="132" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="CwC-N2-2dh">
-                                <rect key="frame" x="166" y="191" width="134" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="# of extra meals" minimumFontSize="17" id="CwC-N2-2dh">
+                                <rect key="frame" x="20" y="233" width="280" height="30"/>
+                                <color key="backgroundColor" red="0.96862751250000001" green="0.87450987099999999" blue="0.86666673419999996" alpha="1" colorSpace="deviceRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="q6a-ln-izX">
+                                <rect key="frame" x="20" y="130" width="280" height="85"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.96862751250000001" green="0.87450987099999999" blue="0.86666673419999996" alpha="1" colorSpace="deviceRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <connections>
@@ -1124,8 +1069,10 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="568"/>
                     <connections>
-                        <outlet property="eventAddressTextField" destination="y7b-OL-Bq1" id="x8P-IC-do6"/>
+                        <outlet property="eventAddressTextView" destination="q6a-ln-izX" id="4Kn-eI-0WD"/>
                         <outlet property="eventDatePicker" destination="XqR-AW-P4C" id="qav-8Y-twg"/>
                         <outlet property="eventDescriptionTextView" destination="mSM-KS-mUX" id="NIU-hu-UOP"/>
                         <outlet property="eventMealsTextField" destination="CwC-N2-2dh" id="XLw-sX-N2t"/>
@@ -1340,24 +1287,21 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Allergies" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fzI-7h-wxl">
-                                <rect key="frame" x="20" y="454" width="65" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="enter your email" minimumFontSize="17" id="GaQ-Cy-F7h">
                                 <rect key="frame" x="99" y="324" width="201" height="30"/>
+                                <color key="backgroundColor" red="0.96862751250000001" green="0.87450987099999999" blue="0.86666673419999996" alpha="1" colorSpace="deviceRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="enter your number" minimumFontSize="17" id="8cr-SI-3Xd">
                                 <rect key="frame" x="99" y="370" width="201" height="30"/>
+                                <color key="backgroundColor" red="0.96862751250000001" green="0.87450987099999999" blue="0.86666673419999996" alpha="1" colorSpace="deviceRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your full name" minimumFontSize="17" id="ZW7-VG-VIj">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="enter your full name" minimumFontSize="17" id="ZW7-VG-VIj">
                                 <rect key="frame" x="99" y="278" width="201" height="30"/>
+                                <color key="backgroundColor" red="0.96862751250000001" green="0.87450987099999999" blue="0.86666673419999996" alpha="1" colorSpace="deviceRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -1367,12 +1311,6 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="List allergies here" id="sXz-wz-BiY">
-                                <rect key="frame" x="62" y="500" width="199" height="59"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="Kyh-In-i5a">
                                 <rect key="frame" x="88" y="96" width="146" height="139"/>
                             </imageView>
@@ -1408,7 +1346,6 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="allergiesTextView" destination="sXz-wz-BiY" id="5oR-lR-Gzy"/>
                         <outlet property="emailTextField" destination="GaQ-Cy-F7h" id="yyv-o3-OvW"/>
                         <outlet property="fullNameTextField" destination="ZW7-VG-VIj" id="XVp-1M-Dci"/>
                         <outlet property="imageView" destination="Kyh-In-i5a" id="oj1-JR-JR7"/>
@@ -1435,7 +1372,7 @@
                                     <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="G1d-jR-2Uh">
                                         <rect key="frame" x="0.0" y="170" width="320" height="411"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                        <color key="backgroundColor" red="0.91372555489999996" green="0.90588241820000004" blue="0.9215686917" alpha="1" colorSpace="deviceRGB"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <inset key="scrollIndicatorInsets" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
                                         <collectionViewLayout key="collectionViewLayout" id="xd0-Rf-W5M" customClass="FBUCollectionViewLayout"/>
                                         <activityIndicatorView key="backgroundView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" id="EZc-Zf-2aW">
@@ -1495,6 +1432,7 @@
                                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="RFo-6W-r7Z">
                                                 <rect key="frame" x="0.0" y="127" width="320" height="44"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <items>
                                                     <barButtonItem image="add" id="n9r-vf-jVi">
                                                         <connections>
@@ -1508,17 +1446,17 @@
                                                 <rect key="frame" x="118" y="138" width="85" height="21"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" red="0.98823535442352295" green="0.54901963472366333" blue="0.41568630933761597" alpha="1" colorSpace="deviceRGB"/>
+                                                <color key="textColor" red="0.81960784310000001" green="0.27058823529999998" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.91372555489999996" green="0.90588241820000004" blue="0.9215686917" alpha="1" colorSpace="deviceRGB"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
                                 </subviews>
                                 <inset key="contentInset" minX="0.0" minY="10" maxX="0.0" maxY="0.0"/>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" id="iVZ-sK-KBW"/>
                     <navigationItem key="navigationItem" title="My Profile" id="bVA-hL-wGE">
@@ -1977,7 +1915,7 @@
     </scenes>
     <resources>
         <image name="add" width="35" height="35"/>
-        <image name="bucketList" width="55" height="55"/>
+        <image name="bucketList" width="65" height="65"/>
         <image name="calendar" width="90" height="90"/>
         <image name="dashboard" width="50" height="50"/>
         <image name="directions" width="25" height="25"/>
@@ -1991,7 +1929,7 @@
         <image name="map" width="45" height="45"/>
         <image name="more" width="40" height="40"/>
         <image name="profile" width="50" height="50"/>
-        <image name="recipes" width="70" height="70"/>
+        <image name="recipes" width="65" height="65"/>
         <image name="settings" width="70" height="70"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
@@ -2000,18 +1938,12 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="WtZ-5P-KRU"/>
-        <segue reference="5nV-DU-bJ8"/>
-        <segue reference="XIi-Rl-PXj"/>
-        <segue reference="cfB-gW-Pi3"/>
-        <segue reference="lfT-lW-nr9"/>
-        <segue reference="218-qX-u7v"/>
         <segue reference="y2B-5h-yd3"/>
-        <segue reference="BDX-Yd-wDn"/>
-        <segue reference="vUP-9j-jWm"/>
-        <segue reference="xlT-pm-NoS"/>
-        <segue reference="vBe-2g-paS"/>
-        <segue reference="pOF-iu-Gx5"/>
+        <segue reference="WtZ-5P-KRU"/>
         <segue reference="J2e-wD-Dmq"/>
+        <segue reference="xlT-pm-NoS"/>
+        <segue reference="pOF-iu-Gx5"/>
+        <segue reference="vBe-2g-paS"/>
+        <segue reference="BDX-Yd-wDn"/>
     </inferredMetricsTieBreakers>
 </document>
