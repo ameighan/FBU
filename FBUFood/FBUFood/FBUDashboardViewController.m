@@ -163,6 +163,7 @@
 {
     if ([segue.identifier isEqualToString:@"eventCell"]) {
         FBUEventViewController *controller = (FBUEventViewController *)segue.destinationViewController;
+        controller.moreOptions = NO;
         NSIndexPath *ip = [self.dashboardCollectionView indexPathForCell:sender];
         controller.event = self.eventsArray[ip.row];
     } 

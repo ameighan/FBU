@@ -125,6 +125,7 @@
         FBUGroup *selectedGroup = self.myGroupsArray[ip.row];
         
         FBUGroupsViewController *groupViewController = (FBUGroupsViewController *)segue.destinationViewController;
+        groupViewController.moreOptions = YES;
         
         groupViewController.group = selectedGroup;
         NSLog(@"%@ was selected", selectedGroup.groupName);

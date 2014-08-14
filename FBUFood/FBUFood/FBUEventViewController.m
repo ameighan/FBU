@@ -6,6 +6,7 @@
 //  Copyright (c) 2014 FacebookU. All rights reserved.
 //
 
+#import <QuartzCore/QuartzCore.h>
 #import "FBUEventViewController.h"
 #import "FBUMembersViewController.h"
 #import "FBUEventDetailViewController.h"
@@ -54,6 +55,10 @@
     NSString *append = [conjunction stringByAppendingString:time];
     
     self.eventTimeDateLabel.text = [date stringByAppendingString:append];
+    
+    if (self.moreOptions == NO) {
+        self.navigationItem.rightBarButtonItem = nil;
+    }
     
     if (self.event.eventMeals) {
         self.eventMealsLabel.text = [@"Meals: " stringByAppendingString:self.event.eventMeals];
@@ -188,15 +193,33 @@
         
         NSLog(@"Displaying members of event...");
         
+        
         FBUUserCollectionViewCell *cell = [self.eventMembersCollectionView dequeueReusableCellWithReuseIdentifier:@"user" forIndexPath:indexPath];
+        
+        cell.userProfileImage.layer.cornerRadius = cell.userProfileImage.frame.size.width / 2;
+        cell.userProfileImage.clipsToBounds = YES;
+        
+        cell.userProfileImage.layer.borderWidth = 2.5f;
+        cell.userProfileImage.layer.borderColor = [UIColor colorWithRed:248.0/255.0 green:194.0/255.0 blue:96.0/255.0 alpha:0.75].CGColor;
         
         PFUser *member = self.event.membersOfEvent[indexPath.row];
         [member fetchIfNeeded];
         
-        [member[@"profileImage"] getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
-            UIImage *image = [UIImage imageWithData:data scale:0.8];
-            cell.userProfileImage.image = [self getRoundedRectImageFromImage:image onReferenceView:cell.userProfileImage withCornerRadius: cell.userProfileImage.frame.size.width/2];
-        }];
+        if(member[@"fbImage"]) {
+            UIImage *img = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:member[@"fbImage"]]]];
+            cell.userProfileImage.image = img;
+        } else {
+            if (member[@"profileImage"]) {
+                [member[@"profileImage"] getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+                    UIImage *image = [UIImage imageWithData:data scale:0.8];
+                    cell.userProfileImage.image = image;
+                }];
+            } else {
+                UIImage *image = [UIImage imageNamed:@"profile_default.png"];
+                cell.userProfileImage.image = image;
+            }
+        }
+        
         
         return cell;
     }

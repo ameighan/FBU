@@ -13,6 +13,7 @@
 @interface FBUGroupsViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate, UIActionSheetDelegate, UIAlertViewDelegate>
 
 @property (strong, nonatomic) FBUGroup *group;
+@property (nonatomic) BOOL moreOptions;
 
 @property (weak, nonatomic) IBOutlet UIButton *joinGroupButton;
 @property (weak, nonatomic) IBOutlet UIButton *subscribeGroupButton;

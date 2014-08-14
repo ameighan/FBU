@@ -141,6 +141,7 @@
 {
     if ([segue.identifier isEqualToString:@"groupCell"]) {
         FBUGroupsViewController *controller = (FBUGroupsViewController *)segue.destinationViewController;
+        controller.moreOptions = NO;
         NSIndexPath *ip = [self.groupsCollection indexPathForCell:sender];
         controller.group = self.displayedGroups[ip.row];
         

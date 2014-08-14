@@ -186,8 +186,8 @@
         cell.userProfileImage.layer.cornerRadius = cell.userProfileImage.frame.size.width / 2;
         cell.userProfileImage.clipsToBounds = YES;
         
-        cell.userProfileImage.layer.borderWidth = 0.5f;
-        cell.userProfileImage.layer.borderColor = [UIColor blackColor].CGColor;
+        cell.userProfileImage.layer.borderWidth = 2.5f;
+        cell.userProfileImage.layer.borderColor = [UIColor colorWithRed:248.0/255.0 green:194.0/255.0 blue:96.0/255.0 alpha:0.75].CGColor;
         
         PFUser *member = self.group.cooksInGroup[indexPath.row];
         [member fetchIfNeeded];
@@ -428,6 +428,7 @@
         FBUEvent *selectedEvent= self.group.eventsInGroup[indexPath.row];
         
         eventViewController.event = selectedEvent;
+        eventViewController.moreOptions = self.moreOptions;
     
     }
 }

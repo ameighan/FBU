@@ -13,6 +13,7 @@
 @interface FBUEventViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate, MKMapViewDelegate, UIActionSheetDelegate>
 
 @property (strong, nonatomic) FBUEvent *event;
+@property (nonatomic) BOOL moreOptions;
 
 @property (weak, nonatomic) IBOutlet UILabel *eventLocationLabel;
 @property (weak, nonatomic) IBOutlet UILabel *eventTimeDateLabel;

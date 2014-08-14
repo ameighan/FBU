@@ -95,7 +95,6 @@
                               self.event.eventName = self.eventNameTextField.text;
                               
                               self.event.creator = [PFUser currentUser];
-                              [self.event addObject:[PFUser currentUser] forKey:@"membersOfEvent"];
                               
                               self.event.eventDescription = self.eventDescriptionTextView.text;
                               self.event.eventAddress = self.eventAddressTextField.text;
@@ -138,6 +137,8 @@
                                   
                                   [self.event saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
                                       NSLog(@"Resaving the event");
+                                      [[NSNotificationCenter defaultCenter] postNotificationName:@"savedEvent" object:self];
+
                                   }];
                                   
                               }
