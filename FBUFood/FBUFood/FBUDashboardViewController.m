@@ -43,12 +43,12 @@
     [logInViewController setDelegate:self]; // Set ourselves as the delegate
     
     [logInViewController setFacebookPermissions:@[ @"user_about_me", @"user_relationships", @"user_birthday", @"user_location", @"user_friends"]];
-    [logInViewController setFields: PFLogInFieldsFacebook | PFLogInFieldsUsernameAndPassword | PFLogInFieldsLogInButton | PFLogInFieldsSignUpButton];
+    [logInViewController setFields: PFLogInFieldsFacebook | PFLogInFieldsUsernameAndPassword | PFLogInFieldsSignUpButton];
     
     // Create the sign up view controller
     FBUSignUpViewController *signUpViewController = [[FBUSignUpViewController alloc] init];
     [signUpViewController setDelegate:self]; // Set ourselves as the delegate
-    [signUpViewController setFields:PFSignUpFieldsAdditional | PFSignUpFieldsDismissButton | PFSignUpFieldsSignUpButton | PFSignUpFieldsEmail | PFSignUpFieldsAdditional];
+    [signUpViewController setFields:PFSignUpFieldsAdditional | PFSignUpFieldsDefault];
     
     // Formats the additional field
     signUpViewController.signUpView.additionalField.placeholder = @"Phone Number";
