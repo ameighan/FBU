@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "FBUProfileViewController.h"
 
-@interface FBUEditProfileViewController : UIViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
+@interface FBUEditProfileViewController : UIViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate, UITextFieldDelegate, UITextViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UITextField *fullNameTextField;

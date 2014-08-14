@@ -9,7 +9,7 @@
 #import "FBUBucketListDetailViewController.h"
 #import "FBUBucketListItem.h"
 
-@interface FBUBucketListDetailViewController() <UINavigationControllerDelegate, UIImagePickerControllerDelegate, UITextViewDelegate>
+@interface FBUBucketListDetailViewController() <UINavigationControllerDelegate, UIImagePickerControllerDelegate, UITextFieldDelegate>
 
 @end
 

@@ -40,7 +40,7 @@
 
     [self locateEventOnMap];
     [self zoomToLocation];
-    [self importRecipesToGroceryList];
+//    [self importRecipesToGroceryList];
     self.eventRecipesCollectionView.backgroundColor = [UIColor clearColor];
     self.eventMembersCollectionView.backgroundColor = [UIColor clearColor];
     [self.eventJoinButton setTintColor:[UIColor colorWithRed:196.0/255.0 green:49.0/255.0 blue:56.0/255.0 alpha:1.00]];
@@ -111,6 +111,10 @@
                      message:[NSString stringWithFormat:@"You are no longer going to %@ !", self.title]];
     [self.event removeObject:[PFUser currentUser]  forKey:@"membersOfEvent"];
     [self.event saveInBackground];
+    
+    PFInstallation *currentInstallation = [PFInstallation currentInstallation];
+    [currentInstallation removeObject:[self.event.eventName stringByReplacingOccurrencesOfString:@" " withString:@""] forKey:@"channels"];
+    [currentInstallation saveInBackground];
     
     self.eventJoinButton.hidden = NO;
     self.eventJoinButton.enabled = YES;
