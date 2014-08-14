@@ -13,6 +13,8 @@
 @interface FBURecipeDirectionsViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UITextView *directions;
+//@property (strong, nonatomic) IBOutletCollection(UIWebView) NSArray *directionsWeb;
+//@property (strong, nonatomic) IBOutlet UIWebView *directionsWeb;
 @property (nonatomic) FBURecipe *recipe;
 
 

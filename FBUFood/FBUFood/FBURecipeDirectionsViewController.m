@@ -20,9 +20,15 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    self.directions.text = self.recipe.directions;
-
+    if (self.recipe.isYummlyRecipe) {
+        NSString *directionsURL = self.recipe.directions;
+        NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:directionsURL]];
+        UIWebView *myWV = [[UIWebView alloc] init];
+        self.view = myWV;
+        [(UIWebView *)self.view loadRequest:request];
+    } else {
+        self.directions.text = self.recipe.directions;
+    }
 }
 
 

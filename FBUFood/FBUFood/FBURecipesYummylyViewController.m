@@ -97,6 +97,7 @@
         [recipeIngredients replaceOccurrencesOfString:@")" withString:@"" options:NSCaseInsensitiveSearch range:(NSRange){0,[recipeIngredients length]}];
         [recipeIngredients replaceOccurrencesOfString:@"\"" withString:@"" options:NSCaseInsensitiveSearch range:(NSRange){0,[recipeIngredients length]}];
         myRecipe.ingredientsList = recipeIngredients;
+        myRecipe.isYummlyRecipe = true;
         
         NSMutableString *myURLString = [[NSMutableString alloc] initWithString:@"http://api.yummly.com/v1/api/recipe/"];
         NSString *recipeId = recipeDict[@"id"];
