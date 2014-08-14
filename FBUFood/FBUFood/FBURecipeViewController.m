@@ -30,6 +30,12 @@
     
     self.tabBar.selectedItem = [self.tabBar.items objectAtIndex:0];
     
+    if ([[self.editButton title] isEqualToString:@"Edit"]) {
+        NSLog(@"I was here");
+        self.importButton.enabled = NO;
+        self.importButton.hidden = YES;
+    }
+    
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -65,31 +71,45 @@
     }
     
 }
+- (IBAction)importRecipe:(id)sender {
+    [self showAlertWithTitle:@"Success!" message:@"You imported a recipe!"];
+    self.recipe.publisher = [PFUser currentUser];
+    [self.recipe saveInBackground];
+}
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if([segue.identifier isEqualToString:@"detailToEditView"]){
         
-        FBUEditRecipeViewController *controller = (FBUEditRecipeViewController *)segue.destinationViewController;
-        
-        controller.title = @"Edit Recipe";
-        
-        controller.recipe.image= self.recipe.image;
-        
-        controller.recipe.ingredientsList = self.recipe.ingredientsList;
-        
-        controller.recipe.directions = self.recipe.directions;
-        
-        controller.recipe.title = self.recipe.title;
-        
-        controller.recipe = self.recipe;
-
+        if ([self.editButton.title isEqualToString:@"Edit"]) {
+            FBUEditRecipeViewController *controller = (FBUEditRecipeViewController *)segue.destinationViewController;
+            
+            controller.title = @"Edit Recipe";
+            
+            controller.recipe.image= self.recipe.image;
+            
+            controller.recipe.ingredientsList = self.recipe.ingredientsList;
+            
+            controller.recipe.directions = self.recipe.directions;
+            
+            controller.recipe.title = self.recipe.title;
+            
+            controller.recipe = self.recipe;
+        }
     } else if ([segue.identifier isEqualToString:@"embedContainer"]) {
-    
-        NSLog(@"%s", __PRETTY_FUNCTION__);
         self.container = segue.destinationViewController;
         self.container.recipe = self.recipe;
     }
+}
+
+-(void)showAlertWithTitle:(NSString *)title message:(NSString *)message
+{
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title
+                                                    message:message
+                                                   delegate:nil
+                                          cancelButtonTitle:@"OK"
+                                          otherButtonTitles:nil];
+    [alert show];
 }
 
 @end

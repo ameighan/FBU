@@ -18,9 +18,6 @@
     [super viewDidLoad];
     self.itemNameLabel.text = self.item.itemName;
     UIImage *image = [UIImage imageWithData:[self.item.picture getData]];
-    if (image == nil) {
-        NSLog(@"OMG UMA");
-    }
     self.imageOfBucketListItem.image = image;
     UIImage *backImage = [UIImage imageNamed:@"Imagination.jpg"];
     [self.backgroundImageView setImage:backImage];

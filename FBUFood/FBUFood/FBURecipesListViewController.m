@@ -101,6 +101,7 @@
         FBURecipeViewController *controller = (FBURecipeViewController *)segue.destinationViewController;
         NSIndexPath *ip = [self.tableView indexPathForCell:sender];
         controller.recipe = self.recipeArray[ip.row];
+        
 
     } else if ([segue.identifier isEqualToString:@"listViewToEditView"]){
         

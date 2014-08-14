@@ -24,7 +24,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KAO-ns-ZIh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4868" y="-1"/>
+            <point key="canvasLocation" x="-4734" y="-43"/>
         </scene>
         <!--Explore View Controller - Explore-->
         <scene sceneID="77f-mL-JdB">
@@ -108,18 +108,18 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BXb-QD-ljQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1632" y="2946"/>
+            <point key="canvasLocation" x="-2252" y="748"/>
         </scene>
         <!--Map View Controller - Events -->
         <scene sceneID="yPA-qx-urV">
             <objects>
                 <viewController id="iV8-kv-3cG" customClass="FBUMapViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FEX-pa-WA1">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" pitchEnabled="NO" showsUserLocation="YES" id="cuT-Od-gGa">
-                                <rect key="frame" x="0.0" y="64" width="320" height="454"/>
+                                <rect key="frame" x="0.0" y="82" width="320" height="454"/>
                                 <connections>
                                     <outlet property="delegate" destination="iV8-kv-3cG" id="nzS-Tm-P59"/>
                                 </connections>
@@ -198,11 +198,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Discover Recipes!" id="fFh-JH-T75">
-                        <barButtonItem key="rightBarButtonItem" title="Import" style="plain" id="iqz-cB-3hF">
-                            <connections>
-                                <action selector="addRecipesToMyRecipes:" destination="vim-JO-Oca" id="S1p-yV-ld2"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="iqz-cB-3hF"/>
                     </navigationItem>
                     <connections>
                         <outlet property="importRecipes" destination="iqz-cB-3hF" id="WIf-L1-Ggs"/>
@@ -317,13 +313,23 @@
                                     <segue destination="Pc0-wX-D9w" kind="embed" identifier="embedContainer" id="neP-51-5b5"/>
                                 </connections>
                             </containerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="55O-c0-mg7">
+                                <rect key="frame" x="255" y="120" width="45" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Import">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="importRecipe:" destination="kQr-eQ-54T" eventType="touchDown" id="xVE-jL-sRU"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="1mY-VD-MQO">
                         <barButtonItem key="rightBarButtonItem" title="Edit" id="Z3n-jh-sk2">
                             <connections>
-                                <segue destination="BQl-mP-k22" kind="push" identifier="detailToEditView" id="E3o-aQ-dmJ"/>
+                                <segue destination="BQl-mP-k22" kind="push" id="r2z-H4-L7n"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -334,6 +340,8 @@
                     <size key="freeformSize" width="320" height="568"/>
                     <connections>
                         <outlet property="directions" destination="Oin-Vt-ISq" id="KMH-qk-n3t"/>
+                        <outlet property="editButton" destination="Z3n-jh-sk2" id="eAZ-yK-oI8"/>
+                        <outlet property="importButton" destination="55O-c0-mg7" id="BGq-Rn-v2h"/>
                         <outlet property="ingredientsList" destination="ofD-js-Hm9" id="YtD-bU-OKW"/>
                         <outlet property="tabBar" destination="JVs-pc-tDF" id="NHd-Rk-0VY"/>
                     </connections>
@@ -378,7 +386,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rkx-0U-VVe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1568" y="504"/>
+            <point key="canvasLocation" x="693" y="109"/>
         </scene>
         <!--Groups View Controller - FBUGroupsViewController-->
         <scene sceneID="po8-AG-mth">
@@ -973,10 +981,10 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="recipeCell" id="bPg-oQ-6vg">
-                                        <rect key="frame" x="0.0" y="22" width="254" height="44"/>
+                                        <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bPg-oQ-6vg" id="xxn-2U-3VI">
-                                            <rect key="frame" x="0.0" y="0.0" width="221" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <connections>
@@ -989,6 +997,17 @@
                                     <outlet property="delegate" destination="5vy-0z-OFu" id="scB-WP-Kr8"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="lNi-kR-SRq">
+                                <rect key="frame" x="257" y="71" width="47" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Edit">
+                                    <color key="titleColor" red="1" green="0.42730543599999998" blue="0.28250229240000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="toggleEditingMode:" destination="5vy-0z-OFu" eventType="touchDown" id="Cvg-Vt-N4E"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -1123,48 +1142,48 @@
             <objects>
                 <viewController id="BQl-mP-k22" customClass="FBUEditRecipeViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cxe-OD-gru" customClass="UIControl">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="650"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="R2s-Gf-VL1">
-                                <rect key="frame" x="0.0" y="66" width="320" height="115"/>
+                                <rect key="frame" x="0.0" y="78" width="320" height="115"/>
                                 <color key="backgroundColor" red="0.68600369930000005" green="0.2527399977" blue="0.75" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingredients" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1du-zb-Xr5">
-                                <rect key="frame" x="42" y="258" width="86" height="21"/>
+                                <rect key="frame" x="42" y="297" width="86" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Directions" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="KAV-j7-5U3">
-                                <rect key="frame" x="191" y="258" width="77" height="21"/>
+                                <rect key="frame" x="191" y="297" width="77" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="4TR-I3-LL6">
-                                <rect key="frame" x="20" y="323" width="135" height="263"/>
+                                <rect key="frame" x="20" y="410" width="135" height="263"/>
                                 <color key="backgroundColor" red="0.75261230020000003" green="0.84825067929999998" blue="0.61746695610000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="eU5-Bo-F0i">
-                                <rect key="frame" x="163" y="323" width="137" height="263"/>
+                                <rect key="frame" x="163" y="410" width="137" height="263"/>
                                 <color key="backgroundColor" red="0.75261230020000003" green="0.84825067929999998" blue="0.61746695610000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recipe Name:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="MZA-TU-ajt">
-                                <rect key="frame" x="21" y="188" width="109" height="21"/>
+                                <rect key="frame" x="21" y="216" width="109" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="b0a-6g-rXc">
-                                <rect key="frame" x="152" y="189" width="148" height="30"/>
+                                <rect key="frame" x="152" y="218" width="148" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="E8D-dG-hjb">
-                                <rect key="frame" x="0.0" y="70" width="320" height="101"/>
+                                <rect key="frame" x="0.0" y="82" width="320" height="101"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <action selector="takePicture:" destination="BQl-mP-k22" eventType="touchUpInside" id="uiv-Ps-tT4"/>
@@ -1200,7 +1219,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bjj-vF-fbC" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="V2d-tn-euH" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-827" y="-2183"/>
+            <point key="canvasLocation" x="-492" y="-3008"/>
         </scene>
         <!--Recipe Directions View Controller-->
         <scene sceneID="ZDD-7f-kMO">
@@ -1399,7 +1418,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JmF-w6-EvT" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Pqh-cX-cmn" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-2051" y="-3685"/>
+            <point key="canvasLocation" x="-2252" y="-2317"/>
         </scene>
         <!--Profile View Controller - My Profile-->
         <scene sceneID="jiH-e9-1BY">
@@ -1525,7 +1544,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LhX-rd-lsx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2877" y="-2439"/>
+            <point key="canvasLocation" x="-3124" y="-1770"/>
         </scene>
         <!--Bucket List Items View Controller - My Bucket List-->
         <scene sceneID="e2S-0K-lgi">
@@ -1665,7 +1684,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ey0-dt-unS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3397" y="-2398"/>
+            <point key="canvasLocation" x="-3693" y="-1807"/>
         </scene>
         <!--Dashboard View Controller - Dashboard-->
         <scene sceneID="iCV-ti-dAi">
@@ -1874,7 +1893,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nGF-OG-jUY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2410" y="2962"/>
+            <point key="canvasLocation" x="-2675" y="742"/>
         </scene>
         <!--Recipe Dish View Controller-->
         <scene sceneID="c8B-ub-y26">
@@ -1981,13 +2000,16 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="y2B-5h-yd3"/>
-        <segue reference="vUP-9j-jWm"/>
         <segue reference="WtZ-5P-KRU"/>
-        <segue reference="xlT-pm-NoS"/>
+        <segue reference="5nV-DU-bJ8"/>
+        <segue reference="XIi-Rl-PXj"/>
         <segue reference="cfB-gW-Pi3"/>
-        <segue reference="vBe-2g-paS"/>
         <segue reference="lfT-lW-nr9"/>
-        <segue reference="E3o-aQ-dmJ"/>
+        <segue reference="218-qX-u7v"/>
+        <segue reference="y2B-5h-yd3"/>
+        <segue reference="BDX-Yd-wDn"/>
+        <segue reference="vUP-9j-jWm"/>
+        <segue reference="xlT-pm-NoS"/>
+        <segue reference="vBe-2g-paS"/>
     </inferredMetricsTieBreakers>
 </document>

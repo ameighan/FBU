@@ -17,14 +17,35 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    UIImage *myImage = [UIImage imageNamed:@"RecipeList.jpg"];
-    [self.imageView setImage:myImage];
+    //UIImage *myImage = [UIImage imageNamed:@"RecipeList.jpg"];
+    //[self.imageView setImage:myImage];
     // populated array from wherever the source was -> rename to unfetchedRecipesArray
     // fetchAll
       // in the callback -- set self.recipesArray =
       // reloadData
     
-    
+}
+
+- (IBAction)toggleEditingMode:(id)sender
+{
+    if (self.recipesTableView.isEditing) {
+        [sender setTitle:@"Edit" forState:UIControlStateNormal];
+        [self.recipesTableView setEditing:NO animated:YES];
+    } else {
+        [sender setTitle:@"Done" forState:UIControlStateNormal];
+        [self.recipesTableView setEditing:YES animated:YES];
+    }
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        NSMutableArray *myItems = [[NSMutableArray alloc]initWithArray:self.recipesArray];
+        [myItems removeObject:self.recipesArray[indexPath.row]];
+        [self.recipesArray[indexPath.row] deleteInBackground];
+        self.recipesArray = myItems;
+        [self.recipesTableView reloadData];
+    }
 }
 
 -(void)viewWillAppear:(BOOL)animated

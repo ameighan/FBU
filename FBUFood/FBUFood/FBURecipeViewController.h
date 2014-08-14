@@ -15,5 +15,7 @@
 @property (nonatomic) FBURecipe *recipe;
 @property (nonatomic) FBUEvent *event;
 @property (nonatomic) NSString *eventRecipe;
+@property (weak, nonatomic) IBOutlet UIButton *importButton;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *editButton;
 
 @end

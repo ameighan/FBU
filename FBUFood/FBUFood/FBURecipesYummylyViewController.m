@@ -25,7 +25,7 @@
 {
     self.recipesTableView.delegate = self;
     self.recipesTableView.dataSource = self;
-    self.recipesTableView.allowsMultipleSelection = YES;
+    //self.recipesTableView.allowsMultipleSelection = YES;
     
 }
 
@@ -156,19 +156,20 @@
         FBURecipeViewController *controller = (FBURecipeViewController *)segue.destinationViewController;
         NSIndexPath *ip = [self.recipesTableView indexPathForSelectedRow];
         controller.recipe = self.yummlyRecipes[ip.row];
-        
+        [controller.editButton setTitle:@""];
+        controller.editButton.enabled = NO;
     }
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if([tableView cellForRowAtIndexPath:indexPath].accessoryType == UITableViewCellAccessoryCheckmark){
+    /*if([tableView cellForRowAtIndexPath:indexPath].accessoryType == UITableViewCellAccessoryCheckmark){
         [tableView cellForRowAtIndexPath:indexPath].accessoryType = UITableViewCellAccessoryNone;
     } else {
         [tableView cellForRowAtIndexPath:indexPath].accessoryType = UITableViewCellAccessoryCheckmark;
-    }
+    }*/
     
-    // [self performSegueWithIdentifier:@"seeInsideView" sender:self];
+    [self performSegueWithIdentifier:@"seeInsideView" sender:self];
 }
 
 - (IBAction)addRecipesToMyRecipes:(id)sender
