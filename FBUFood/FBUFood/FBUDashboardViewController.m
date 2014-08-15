@@ -192,7 +192,7 @@
         CGSize rctSizeOriginal = imageView.bounds.size;
         double scale = (cell.bounds.size.width  - (kCollectionCellBorderLeft + kCollectionCellBorderRight)) / rctSizeOriginal.width;
         CGSize rctSizeFinal = CGSizeMake(rctSizeOriginal.width * scale,rctSizeOriginal.height * scale);
-        imageView.frame = CGRectMake(kCollectionCellBorderLeft,kCollectionCellBorderTop + 20,rctSizeFinal.width,rctSizeFinal.height);
+        imageView.frame = CGRectMake(kCollectionCellBorderLeft,kCollectionCellBorderTop + 30,rctSizeFinal.width,rctSizeFinal.height);
         
         [cell.contentView addSubview:imageView];
         

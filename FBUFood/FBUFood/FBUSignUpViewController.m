@@ -43,13 +43,17 @@
     layer.shadowOpacity = 0.0f;
     
     // Set text color
+    [self.signUpView.usernameField setAttributedPlaceholder:[[NSAttributedString alloc] initWithString:@"username" attributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}]];
     [self.signUpView.usernameField setTextColor:[UIColor colorWithRed:135.0f/255.0f green:118.0f/255.0f blue:92.0f/255.0f alpha:1.0]];
+    [self.signUpView.passwordField setAttributedPlaceholder:[[NSAttributedString alloc] initWithString:@"password" attributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}]];
     [self.signUpView.passwordField setTextColor:[UIColor colorWithRed:135.0f/255.0f green:118.0f/255.0f blue:92.0f/255.0f alpha:1.0]];
+    [self.signUpView.emailField setAttributedPlaceholder:[[NSAttributedString alloc] initWithString:@"email" attributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}]];
     [self.signUpView.emailField setTextColor:[UIColor colorWithRed:135.0f/255.0f green:118.0f/255.0f blue:92.0f/255.0f alpha:1.0]];
-    [self.signUpView.additionalField setTextColor:[UIColor colorWithRed:135.0f/255.0f green:118.0f/255.0f blue:92.0f/255.0f alpha:1.0]];
     
     // Change "Additional" to match our use
     [self.signUpView.additionalField setPlaceholder:@"Phone number"];
+    [self.signUpView.additionalField setAttributedPlaceholder:[[NSAttributedString alloc] initWithString:@"phone number" attributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}]];
+    [self.signUpView.additionalField setTextColor:[UIColor colorWithRed:135.0f/255.0f green:118.0f/255.0f blue:92.0f/255.0f alpha:1.0]];
     
 }
 

@@ -54,7 +54,10 @@
     [self.logInView bringSubviewToFront:self.signupLabel];
     
     //Set field text color
+    [self.logInView.usernameField setAttributedPlaceholder:[[NSAttributedString alloc] initWithString:@"username" attributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}]];
     [self.logInView.usernameField setTextColor:[UIColor whiteColor]];
+    
+    [self.logInView.passwordField setAttributedPlaceholder:[[NSAttributedString alloc] initWithString:@"password" attributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}]];
     [self.logInView.passwordField setTextColor:[UIColor whiteColor]];
     self.logInView.externalLogInLabel.hidden = YES;
     self.logInView.signUpLabel.hidden = YES;

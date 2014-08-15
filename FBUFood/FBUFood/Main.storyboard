@@ -1916,17 +1916,12 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="WtZ-5P-KRU"/>
-        <segue reference="BDX-Yd-wDn"/>
-        <segue reference="XIi-Rl-PXj"/>
-        <segue reference="y2B-5h-yd3"/>
-        <segue reference="xlT-pm-NoS"/>
-        <segue reference="lfT-lW-nr9"/>
-        <segue reference="cfB-gW-Pi3"/>
-        <segue reference="vBe-2g-paS"/>
         <segue reference="uqP-75-2Yg"/>
-        <segue reference="pOF-iu-Gx5"/>
+        <segue reference="WtZ-5P-KRU"/>
         <segue reference="F55-Ha-Ut8"/>
         <segue reference="r2z-H4-L7n"/>
+        <segue reference="xlT-pm-NoS"/>
+        <segue reference="pOF-iu-Gx5"/>
+        <segue reference="cfB-gW-Pi3"/>
     </inferredMetricsTieBreakers>
 </document>
